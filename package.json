@@ -2,16 +2,19 @@
   "name": "pac",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://prosapac.com/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.17",
     "autoprefixer": "10.4.14",
     "eslint": "8.44.0",
     "eslint-config-next": "^12.0.4",
+    "graphql": "^16.7.1",
     "next": "13.4.9",
     "postcss": "8.4.25",
     "react": "18.2.0",
