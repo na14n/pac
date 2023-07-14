@@ -25,7 +25,7 @@ async function getPosts() {
 }
 
 let posts = await getPosts();
-console.log(posts);
+// console.log(posts);
 
 export default function MyComponent() {
     return (
