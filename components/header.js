@@ -31,7 +31,7 @@ const Header = () => {
 
     return (
         <Provider>
-            <div className={headerState ? 'min-h-24 h-24 max-h-24 w-full fixed top-0 flex justify-center items-center px-24 transition-all' : 'min-h-20 h-16 max-h-16 w-full fixed top-0 flex justify-center items-center px-16 bg-nav-green transition-all'}>
+            <div className={headerState ? 'z-100 min-h-24 h-24 max-h-24 w-full fixed top-0 flex justify-center items-center px-24 transition-all' : 'z-100 min-h-20 h-16 max-h-16 w-full fixed top-0 flex justify-center items-center px-16 bg-nav-green transition-all'}>
                 <div className="flex-shrink-0 h-full basis-1/4 flex justify-center items-center">
                     <img src="/pac-white.png" className={headerState ? 'h-auto w-48' : 'h-auto w-44'}></img>
                 </div>
