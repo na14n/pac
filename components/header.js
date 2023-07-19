@@ -1,5 +1,6 @@
 'use client';
 import { Provider, atom, useAtom } from "jotai";
+import Button from "./button";
 import { HeaderStateAtom } from "@/lib/stores/headerState";
 
 const Header = () => {
@@ -31,8 +32,8 @@ const Header = () => {
 
     return (
         <Provider>
-            <div className={headerState ? 'z-100 min-h-24 h-24 max-h-24 w-full fixed top-0 flex justify-center items-center px-24 transition-all' : 'z-100 min-h-20 h-16 max-h-16 w-full fixed top-0 flex justify-center items-center px-16 bg-nav-green transition-all'}>
-                <div className="flex-shrink-0 h-full basis-1/4 flex justify-center items-center">
+            <div className={headerState ? 'fixed z-50 min-h-24 h-24 max-h-24 w-full top-0 flex justify-center items-center px-24 transition-all' : 'fixed z-50 min-h-20 h-16 max-h-16 w-full top-0 flex justify-center items-center px-16 bg-nav-green transition-all'}>
+                <div className="flex-shrink-0 h-full basis-1/4 flex justify-start items-center">
                     <img src="/pac-white.png" className={headerState ? 'h-auto w-48' : 'h-auto w-44'}></img>
                 </div>
                 <div className="flex-shrink-0 h-full basis-1/2 flex justify-center items-center">
@@ -44,7 +45,9 @@ const Header = () => {
                         </a>
                     ))}
                 </div>
-                <div className="flex-shrink-0 h-full basis-1/4 flex justify-center items-center text-[#fcfcfc]">(shop now && search)</div>
+                <div className="flex-shrink-0 h-full basis-1/4 flex justify-end items-center text-[#fcfcfc]">
+                    <Button type={1} name={'Shop Now'} />
+                </div>
             </div>
 
         </Provider>

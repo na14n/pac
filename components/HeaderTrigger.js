@@ -13,7 +13,7 @@ const HeaderTrigger = ({ children }) => {
     }
 
     return (
-        <div className="z-0 w-full h-full">
+        <div className="z-50 w-full h-full">
             <div ref={ref} className="absolute t-0 w-full h-[10px]"></div>
             {children}
         </div>
