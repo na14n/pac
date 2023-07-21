@@ -20,17 +20,17 @@ const Footer = () => {
             group: 'about',
         },
         {
+            name: 'Seminars',
+            link: '#',
+            group: 'events',
+        },
+        {
             name: 'Trainings and Workshops',
             link: '#',
             group: 'events',
         },
         {
-            name: 'Dental Conventions and Exhibits',
-            link: '#',
-            group: 'events',
-        },
-        {
-            name: 'Seminars',
+            name: 'Conventions and Exhibits',
             link: '#',
             group: 'events',
         },
@@ -60,7 +60,7 @@ const Footer = () => {
             group: 'our-products',
         },
         {
-            name: 'Prostige Platinum',
+            name: 'Prostige Rewards',
             link: '#',
             group: 'our-products',
         },
@@ -71,11 +71,6 @@ const Footer = () => {
         },
         {
             name: 'Sales Agents',
-            link: '#',
-            group: 'resources',
-        },
-        {
-            name: 'Aesthetics',
             link: '#',
             group: 'resources',
         },

@@ -46,7 +46,7 @@ const Header = () => {
                     ))}
                 </div>
                 <div className="= shrink-0 h-full basis-1/4 flex justify-end items-center gap-4 text-[#fcfcfc]">
-                    <Button type={1} name={'Shop Now'} />
+                    <Button type={1} name={'Shop Now'} link={'#'} />
                     <SearchBar/>
                 </div>
             </div>
