@@ -2,12 +2,21 @@ import Button from "./button";
 
 const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl }) => {
     return (
-        (heroType === 1) ? (
+        (heroType === 'slider') ? (
             <div>
                 (slider)
             </div>
-        ) : (heroType === 2) ? (
-            <div className="relative w-full h-[100vh] bg-[#171717] flex items-center">
+        ) : (heroType === 'video') ? (
+            <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">
+                <div className="z-10 lg:ml-48 xs:ml-8 sm:ml-16 py-10">
+                    <div className="font-bold text-[#FCFCFC] text-4xl">
+                        {(title ? { title } : 'Insert Heading')}
+                    </div>
+                    <div className="text-[#F0F0F0]/90 font-regular text-xl mb-8">
+                        {(subheading ? { subheading } : 'Insert Subheading')}
+                    </div>
+                    <Button name={(buttonName ? { buttonName } : 'Insert Button Name')} />
+                </div>
                 <div className="absolute z-0 t-0 w-full h-full">
                     <video
                         autoPlay
@@ -22,20 +31,39 @@ const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl })
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div className="z-10 ml-16 p-10">
-                    <div className="font-bold text-[#FCFCFC] text-4xl">
+
+            </div>
+        ) : (heroType === 'orange') ? (
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
+                <img className="absolute z-0 t-0 w-full h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
                         {(title ? { title } : 'Insert Heading')}
-                    </div>
-                    <div className="text-[#F0F0F0]/90 font-regular text-xl mb-8">
-                        {(subheading ? { subheading } : 'Insert Subheading')}
-                        </div>
-                    <Button name={(buttonName ? { buttonName } : 'Insert Button Name')} />
+                </div>
+            </div>
+        ): (heroType === 'green') ? (
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#077232]/90 via-[#077232]/90 to-[#063013]/90 w-full h-full"></div>
+                <img className="absolute z-0 t-0 w-full h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
+                        {(title ? { title } : 'Insert Heading')}
+                </div>
+            </div>
+        ): (heroType === 'gray') ? (
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#121212]/90 w-full h-full"></div>
+                <img className="absolute z-0 t-0 w-full h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
+                        {(title ? { title } : 'Insert Heading')}
                 </div>
             </div>
         ) : (
-            <div className="relative z-0 w-full h-[100vh] bg-[#171717] flex items-center">
-                <div className="absolute t-0 w-full h-full test"></div>
-                <div className="z-0 w-72 ml-16 h-72 bg-white test text-black">(text & button)</div>
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                {/* <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#121212]/90 w-full h-full"></div> */}
+                <img className="absolute z-0 t-0 w-full h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
+                        {(title ? { title } : 'Insert Heading')}
+                </div>
             </div>
         )
     )
