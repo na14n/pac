@@ -3,10 +3,10 @@ import Button from './button';
 
 const Footer = () => {
     return (
-        <div className="w-full h-content bg-[#121212] flex flex-col items-center justify-center px-16 pb-2 pt-4">
+        <div className="w-full h-content bg-[#121212] flex flex-col items-center justify-center lg:px-16 xs:px-2 pb-2 pt-4">
             <div className=" w-full h-full grow-1 flex items-center justify-center lg:flex-row xs:flex-col">
                 <div className=" w-full h-full basis-1/4 flex flex-col justify-center items-center">
-                    <div className=" w-full h-full flex flex-col justify-start pt-12 pb-4">
+                    <div className=" w-full h-full flex flex-col justify-start lg:pt-12 xs:pt-8 pb-4">
                         <img src="/pac-white.png" className='w-64'></img>
                     </div>
                     <div className=" w-full h-full flex flex-col justify-start pb-4">
@@ -46,9 +46,9 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-content shrink-1 border-t-2 border-[#e1e1e1]/90 sm:px-0 py-1 flex items-start justify-between flex-row">
+            <div className="w-full h-content shrink-1 border-t-2 border-[#e1e1e1]/90 sm:px-0 py-1 flex items-start justify-between flex-row xs:flex-col xs:gap-2">
                 <span className="text-[#e1e1e1] text-xs ">All Rights Reeserved 2023</span>
-                <div className="flex xs:flex-col lg:flex-row lg:gap-4 xs:gap-2">
+                <div className="flex xs:flex-col lg:flex-row lg:gap-4 xs:gap-0">
                     <a className="text-[#e1e1e1]/90 text-xs underline-offset-2 hover:underline hover:text-[#fcfcfc]" href="#">Data Protection</a>
                     <a className="text-[#e1e1e1]/90 text-xs underline-offset-2 hover:underline hover:text-[#fcfcfc]" href="#">Privacy Policy</a>
                 </div>
