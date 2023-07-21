@@ -2,55 +2,228 @@ import { Icon } from '@iconify-icon/react';
 import Button from './button';
 
 const Footer = () => {
+
+    const footerLinks = [
+        {
+            name: 'Careers',
+            link: '#',
+            group: 'about',
+        },
+        {
+            name: 'History',
+            link: '#',
+            group: 'about',
+        },
+        {
+            name: 'Sales Agents',
+            link: '#',
+            group: 'about',
+        },
+        {
+            name: 'Trainings and Workshops',
+            link: '#',
+            group: 'events',
+        },
+        {
+            name: 'Dental Conventions and Exhibits',
+            link: '#',
+            group: 'events',
+        },
+        {
+            name: 'Seminars',
+            link: '#',
+            group: 'events',
+        },
+        {
+            name: 'PAC Exclusive Brands',
+            link: '#',
+            group: 'our-products',
+        },
+        {
+            name: 'Orthodontics',
+            link: '#',
+            group: 'our-products',
+        },
+        {
+            name: 'Aesthetics',
+            link: '#',
+            group: 'our-products',
+        },
+        {
+            name: 'Restorative',
+            link: '#',
+            group: 'our-products',
+        },
+        {
+            name: 'Implant',
+            link: '#',
+            group: 'our-products',
+        },
+        {
+            name: 'Prostige Platinum',
+            link: '#',
+            group: 'our-products',
+        },
+        {
+            name: 'How to Order',
+            link: '#',
+            group: 'resources',
+        },
+        {
+            name: 'Sales Agents',
+            link: '#',
+            group: 'resources',
+        },
+        {
+            name: 'Aesthetics',
+            link: '#',
+            group: 'resources',
+        },
+        {
+            name: 'News and Updates',
+            link: '#',
+            group: 'resources',
+        },
+        {
+            name: 'E - Catalogues',
+            link: '#',
+            group: 'resources',
+        },
+        {
+            name: 'ri:facebook-circle-fill',
+            link: '#',
+            group: 'soc-med',
+        },
+        {
+            name: 'ri:instagram-fill',
+            link: '#',
+            group: 'soc-med',
+        },
+        {
+            name: 'ri:tiktok-fill',
+            link: '#',
+            group: 'soc-med',
+        },
+        {
+            name: 'ri:youtube-fill',
+            link: '#',
+            group: 'soc-med',
+        },
+        {
+            name: 'ri:linkedin-box-fill',
+            link: '#',
+            group: 'soc-med',
+        },
+        {
+            name: 'shop now',
+            link: '#',
+            title: 'Already Know What to Order?',
+            group: 'quick-btn',
+        },
+        {
+            name: 'know more',
+            link: '#',
+            title: 'Stay Updated on our Activities',
+            group: 'quick-btn',
+        },
+        {
+            name: 'Data Protection',
+            link: '#',
+            group: 'extras',
+        },
+        {
+            name: 'Privacy Policy',
+            link: '#',
+            group: 'extras',
+        }
+    ]
+
+    const aboutLinks = footerLinks.filter((link) => link.group === 'about');
+    const resourcesLinks = footerLinks.filter((link) => link.group === 'resources');
+    const eventLinks = footerLinks.filter((link) => link.group === 'events');
+    const productLinks = footerLinks.filter((link) => link.group === 'our-products');
+    const socmedLinks = footerLinks.filter((link) => link.group === 'soc-med')
+    const quickLinks = footerLinks.filter((link) => link.group === 'quick-btn')
+    const extraLinks = footerLinks.filter((link) => link.group === 'extras')
+
+
+
     return (
-        <div className="w-full h-content bg-[#121212] flex flex-col items-center justify-center lg:px-16 xs:px-2 pb-2 pt-4">
-            <div className=" w-full h-full grow-1 flex items-center justify-center lg:flex-row xs:flex-col">
-                <div className=" w-full h-full basis-1/4 flex flex-col justify-center items-center">
-                    <div className=" w-full h-full flex flex-col justify-start lg:pt-12 xs:pt-8 pb-4">
-                        <img src="/pac-white.png" className='w-64'></img>
-                    </div>
-                    <div className=" w-full h-full flex flex-col justify-start pb-4">
-                        {/* <img src="/pac-white.png" className='w-56'></img> */}
-                    </div>
-                    <div className=" w-full h-content text-[#e1e1e1] text-sm flex flex-col justify-start pb-8">
+        <div className="w-full min-h-content lg:max-h-[67vh] xs:h-content bg-[#171717] flex flex-col divide-y py-4 lg:px-16 xs:px-4 gap-4 pt-8">
+            <div className="w-full h-full shrink-0 basis-[90%] flex lg:flex-row xs:flex-col gap-4">
+                <div className='w-full basis-[30%] flex flex-col justify-between'>
+                    <img src="/pac-white.png" className='w-64 '></img>
+                    <div className=" w-full h-content text-[#e1e1e1] text-sm flex flex-col justify-start lg:pb-4 ">
                         <span>768 General Malvar St., Malate, Manila</span>
                         <span>PROSAPAC@prosapac.com</span>
                         <span>+63 912 3456 789</span>
                     </div>
                 </div>
-                <div className=" w-full h-full lg:pt-12 lg:px-12 xs:py-4 basis-1/2 grid lg:grid-cols-2 xs:grid-cols-1">
-                    <div className="flex flex-col xs:py-4 lg:py-0">
-                        <span className="text-[#fcfcfc] uppercase font-bold pb-1">about</span>
+                <div className=' w-full basis-[50%] grid lg:grid-cols-2'>
+                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
+                            about
+                        </span>
+                        {aboutLinks.map((link, index) => (
+                            <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
+                        ))}
                     </div>
-                    <div className="flex flex-col xs:py-4 lg:py-0">
-                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">events</span>
+                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
+                            events
+                        </span>
+                        {eventLinks.map((link, index) => (
+                            <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
+                        ))}
                     </div>
-                    <div className="flex flex-col xs:py-4 lg:py-0">
-                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">our products</span>
+                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
+                            our products
+                        </span>
+                        {productLinks.map((link, index) => (
+                            <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
+                        ))}
                     </div>
-                    <div className="flex flex-col xs:py-4 lg:py-0">
-                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">resources</span>
-                        <a className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-pac-orange text-sm" href="#">How to order</a>
+                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
+                            resources
+                        </span>
+                        {resourcesLinks.map((link, index) => (
+                            <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
+                        ))}
                     </div>
                 </div>
-                <div className=" w-full h-full basis-1/4 flex flex-col items-center xs:gap-8 xs:py-6 lg:gap-4">
-                    <div className=" w-full h-full flex gap-4 items-center text-[#fcfcfc]">
+                <div className=' w-full h-full basis-[20%] flex flex-col justify-between'>
+                    <div className=' w-full h-content py-1 flex lg:justify-between gap-2'>
+                        {socmedLinks.map((link, index) => (
+                            <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>
+                                <Icon icon={link.name} width="42" height="42" />
+                            </a>
+                        ))}
                     </div>
-                    <div className=" w-full h-full flex flex-col gap-2 items-start">
-                        <span className='text-[#fcfcfc] text-sm font-semibold'>Already Know What to Order?</span>
-                        <Button type={3} name={'SHOP NOW'} />
-                    </div>
-                    <div className=" w-full h-full flex flex-col gap-2 items-start">
-                        <span className='text-[#fcfcfc] text-sm font-semibold'>Stay Updated on our activities</span>
-                        <Button type={3} name={'KNOW MORE'} />
-                    </div>
+                    {quickLinks.map((link, index) => (
+                        <div key={index} className=" w-content h-full flex flex-col gap-2 items-start xs:py-2" >
+                            <span className='text-[#fcfcfc] text-sm font-semibold'>
+                                {link.title}
+                            </span>
+                            <a className='w-content px-5 py-3 h-content border-2 rounded-md border-nav-orange text-nav-orange font-semibold text-sm uppercase flex items-center justify-center hover:text-[#fcfcfc] hover:border-[#fcfcfc]' href={link.link}>
+                                {link.name}
+                            </a>
+                        </div>
+                    ))}
+
                 </div>
             </div>
-            <div className="w-full h-content shrink-1 border-t-2 border-[#e1e1e1]/90 sm:px-0 py-1 flex items-start justify-between flex-row xs:flex-col xs:gap-2">
-                <span className="text-[#e1e1e1] text-xs ">All Rights Reeserved 2023</span>
-                <div className="flex xs:flex-col lg:flex-row lg:gap-4 xs:gap-0">
-                    <a className="text-[#e1e1e1]/90 text-xs underline-offset-2 hover:underline hover:text-[#fcfcfc]" href="#">Data Protection</a>
-                    <a className="text-[#e1e1e1]/90 text-xs underline-offset-2 hover:underline hover:text-[#fcfcfc]" href="#">Privacy Policy</a>
+            <div className="w-full shrink-1 lg:px-8 flex lg:flex-row xs:flex-col-reverse justify-between pt-2">
+                <span className=' w-content h-full text-xs text-[#fcfcfc]'>
+                    All Rights Reeserved 2023
+                </span>
+                <div className=' w-content h-full flex xs:gap-8 lg:gap-4'>
+                    {extraLinks.map((link, index) => (
+                        <a key={index} className="text-[#e1e1e1]/90 text-xs underline-offset-2 hover:underline hover:text-nav-orange" href={link.link}>
+                            {link.name}
+                        </a>
+                    ))}
                 </div>
             </div>
         </div>
