@@ -1,4 +1,4 @@
-import { MyComponent, HeaderTrigger, Hero } from "@/components"
+import { MyComponent, HeaderTrigger, Hero, LocationCard, MessageUsForm } from "@/components"
 import { client } from "@/lib/apollo"
 
 export default function ContactUs() {
@@ -9,8 +9,11 @@ export default function ContactUs() {
           <Hero heroType={'orange'} />
         </HeaderTrigger>
       </div>
-      <div className="w-full h-[100vh]">
-        (content)
+      <div className="w-full lg:h-[67vh] lg:px-32">
+        <LocationCard />
+      </div>
+      <div className="w-full lg:h-[63vh] ">
+        <MessageUsForm />
       </div>
     </main>
   )

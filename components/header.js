@@ -11,7 +11,7 @@ const Header = () => {
     const links = [
         {
             link: 'home',
-            href: '#'
+            href: '/'
         },
         {
             link: 'about us',
@@ -33,11 +33,11 @@ const Header = () => {
 
     return (
         <Provider>
-            <div className={headerState ? 'fixed z-50 min-h-24 h-24 max-h-24 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center lg:px-24 xs:px-4 transition-all duration-200 gap-16' : 'fixed z-50 min-h-20 h-16 max-h-16 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center lg:px-16 xs:px-8 bg-nav-green transition-all duration-300 gap-4'}>
-                <div className="shrink-0 h-full w-full  min-[1280px]:basis-1/4 xs:basis-1/2 flex min-[1280px]:justify-end xs:justify-start items-center">
+            <div className={headerState ? 'fixed z-50 min-h-24 h-24 max-h-24 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center 2xl:px-44 xs:px-16 transition-all duration-200 gap-16' : 'fixed z-50 min-h-20 h-16 max-h-16 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center 2xl:px-12 xs:px-24 bg-nav-green transition-all duration-300 gap-4'}>
+                <div className="shrink-0 h-full w-content  min-[1280px]:basis-1/5 xs:basis-1/2 flex min-[1280px]:justify-start xs:justify-start items-center">
                     <img src="/pac-white.png" className={headerState ? 'h-auto lg:w-48 xs:w-2/3' : 'h-auto lg:w-44 xs:w-2/3 '}></img>
                 </div>
-                <div className=" shrink-0 h-full basis-1/2 min-[1280px]:flex xs:hidden xs:w-0 justify-center items-center">
+                <div className="shrink-0 h-full basis-1/2 min-[1280px]:flex xs:hidden xs:w-0 justify-center items-center">
                     {links.map((item, index) => (
                         <a key={index} href={item.href} className="m-2">
                             <div className="w-content uppercase font-semibold text-sm text-[#fcfcfc] hover:text-white group">{item.link}
@@ -45,7 +45,7 @@ const Header = () => {
                         </a>
                     ))}
                 </div>
-                <div className="= shrink-0 h-full basis-1/4 min-[1280px]:flex xs:hidden  justify-end items-center gap-4 text-[#fcfcfc]">
+                <div className="= shrink-0 h-full basis-1/5 min-[1280px]:flex xs:hidden  justify-end items-center gap-4 text-[#fcfcfc]">
                     <Button type={1} name={'Shop Now'} link={'#'} />
                     <SearchBar />
                 </div>
