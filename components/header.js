@@ -27,7 +27,7 @@ const Header = () => {
         },
         {
             link: 'contact us',
-            href: '#'
+            href: '/contact-us'
         },
     ]
 
