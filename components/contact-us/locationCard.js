@@ -29,7 +29,7 @@ const LocationCard = () => {
         <div className="flex w-full h-full flex-col justify-center items-center p-8 gap-16">
             <div className='h-content flex gap-16'>
                 {branches.map((b, index) => (
-                    <div className="w-72 h-56 bg-gradient-to-b from-[#f1f1f1] to-[#efefef] hover:from-[#E66204] hover:to-[#F0892B] shadow-md rounded-md group hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col items-center justify-around p-8 cursor-pointer ">
+                    <div className="w-72 h-56 bg-gradient-to-b from-[#f1f1f1] to-[#efefef] hover:from-[#E66204] hover:to-[#F0892B] shadow-md rounded-md group hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col items-center justify-around p-8 cursor-pointer " key={index}>
                         <span className="text-2xl font-bold uppercase text-[#121212] group-hover:text-[#FCFCFC] mb-8">{b.name ? b.name : 'Branch Name'}</span>
                         <div className='flex flex-col items-center justify-around h-full '>
                             <div className="text-[#575757] group-hover:text-[#EFEFEF] flex items-center">
