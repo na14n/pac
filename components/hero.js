@@ -36,7 +36,7 @@ const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl })
         ) : (heroType === 'orange') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
-                <img className="absolute z-0 t-0 w-auto h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <img className="absolute z-0 t-0 w-auto h-auto " src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
                         {(title ? { title } : 'Insert Heading')}
                 </div>
@@ -44,7 +44,7 @@ const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl })
         ): (heroType === 'green') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#077232]/90 via-[#077232]/90 to-[#063013]/90 w-full h-full"></div>
-                <img className="absolute z-0 t-0 w-auto h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <img className="absolute z-0 t-0 w-auto h-auto " src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
                         {(title ? { title } : 'Insert Heading')}
                 </div>
@@ -52,7 +52,7 @@ const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl })
         ): (heroType === 'gray') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#121212]/90 w-full h-full"></div>
-                <img className="absolute z-0 t-0 w-auto h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <img className="absolute z-0 t-0 w-auto h-auto " src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
                         {(title ? { title } : 'Insert Heading')}
                 </div>
@@ -60,7 +60,7 @@ const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl })
         ) : (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 {/* <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#121212]/90 w-full h-full"></div> */}
-                <img className="absolute z-0 t-0 w-auto h-auto test" src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
+                <img className="absolute z-0 t-0 w-auto h-auto " src={mediaUrl ? {mediaUrl} : 'https://picsum.photos/1920/1080'} alt="dental-website-banner"></img>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
                         {(title ? { title } : 'Insert Heading')}
                 </div>
