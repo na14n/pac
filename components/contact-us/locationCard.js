@@ -48,7 +48,7 @@ const LocationCard = () => {
                     </div>
                 ))}
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.3597214861439!2d120.98738826963395!3d14.574049697071853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c98756f234cf%3A0x4927449f66b1c985!2sPROS-APAC%20Corporation!5e0!3m2!1sen!2sph!4v1690178925291!5m2!1sen!2sph" width="1000" height="300" style={{ border: 0 }} allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className='shadow-xl rounded-md'></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.3597214861439!2d120.98738826963395!3d14.574049697071853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c98756f234cf%3A0x4927449f66b1c985!2sPROS-APAC%20Corporation!5e0!3m2!1sen!2sph!4v1690178925291!5m2!1sen!2sph" width="1000" height="300" style={{ border: 0 }} allowfullscreen="false" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='shadow-xl rounded-md'></iframe>
         </div>
     )
 }
