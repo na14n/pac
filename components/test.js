@@ -1,5 +1,5 @@
 
-import { client } from '@/lib/apollo';
+import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 
 async function getPosts() {

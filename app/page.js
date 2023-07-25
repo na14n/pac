@@ -1,5 +1,4 @@
-import { MyComponent, HeaderTrigger, Hero } from "@/components"
-import { client } from "@/lib/apollo"
+import { HeaderTrigger, Hero } from "@/components"
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
         </HeaderTrigger>
       </div>
       <div className='w-full h-[100vh] bg-green-400'>
-        <MyComponent />
       </div>
     </main>
   )
