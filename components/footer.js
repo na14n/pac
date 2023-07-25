@@ -20,18 +20,18 @@ const Footer = () => {
             group: 'about',
         },
         {
+            name: 'Workshops',
+            link: '/trainings-&-seminars/workshops',
+            group: 'events',
+        },
+        {
             name: 'Seminars',
-            link: '#',
+            link: '/trainings-&-seminars/seminars',
             group: 'events',
         },
         {
-            name: 'Trainings and Workshops',
-            link: '#',
-            group: 'events',
-        },
-        {
-            name: 'Conventions and Exhibits',
-            link: '#',
+            name: 'Conventions',
+            link: '/trainings-&-seminars/conventions',
             group: 'events',
         },
         {
