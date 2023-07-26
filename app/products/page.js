@@ -1,4 +1,4 @@
-import { HeaderTrigger, Hero } from "@/components"
+import { HeaderTrigger, Hero, CategoryBanner, BrandSlider, FeaturedProductsList } from "@/components"
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 
@@ -27,7 +27,32 @@ async function Products() {
         }
     }
 
+    async function GetBrands() {
+        try {
+            const result = await client.query({
+                query: gql`
+                query GetBrands {
+                    brands {
+                      nodes {
+                        name
+                        logo {
+                          link
+                        }
+                      }
+                    }
+                  }
+          `,
+                fetchPolicy: 'network-only',
+            });
+            return result.data.brands.nodes
+        } catch (error) {
+            console.error('Error occurred:', error);
+            return [];
+        }
+    }
+
     let sliderMedia = await GetMediaSlider();
+    let sliderBrands = await GetBrands();
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
@@ -36,7 +61,14 @@ async function Products() {
                     <Hero heroType={'slider'} mediaArray={sliderMedia} />
                 </HeaderTrigger>
             </div>
-            <div className='w-full h-[100vh] bg-green-400'>
+            <div className='w-full lg:h-[15vh]'>
+                <CategoryBanner />
+            </div>
+            <div className='w-full lg:h-[60vh] bg-[#EEE] overflow-hidden flex justify-center items-center'>
+                <BrandSlider brands={sliderBrands} />
+            </div>
+            <div className='w-full lg:h-[100vh] bg-[#EEE] overflow-hidden flex justify-center items-center'>
+                <FeaturedProductsList />
             </div>
         </div>
     )
