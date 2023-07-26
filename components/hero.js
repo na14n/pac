@@ -1,10 +1,15 @@
 import Button from "./button";
+import { HeroSlider } from "./embla/heroSlider";
 
-const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl }) => {
+const Hero = ({ heroType, title, subheading, buttonName, buttonLink, mediaUrl, mediaArray }) => {
+
+
+
+
     return (
         (heroType === 'slider') ? (
-            <div>
-                (slider)
+            <div className="w-hull h-full overflow-hidden">
+                <HeroSlider media={mediaArray} />
             </div>
         ) : (heroType === 'video') ? (
             <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">

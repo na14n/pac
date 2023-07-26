@@ -11,6 +11,12 @@ dependencies:
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.25)
+  embla-carousel-autoplay:
+    specifier: 8.0.0-rc11
+    version: 8.0.0-rc11(embla-carousel@8.0.0-rc11)
+  embla-carousel-react:
+    specifier: 8.0.0-rc11
+    version: 8.0.0-rc11(react@18.2.0)
   eslint:
     specifier: 8.44.0
     version: 8.44.0
@@ -782,6 +788,36 @@ packages:
 
   /electron-to-chromium@1.4.454:
     resolution: {integrity: sha512-pmf1rbAStw8UEQ0sr2cdJtWl48ZMuPD9Sto8HVQOq9vx9j2WgDEN6lYoaqFvqEHYOmGA9oRGn7LqWI9ta0YugQ==}
+    dev: false
+
+  /embla-carousel-autoplay@8.0.0-rc11(embla-carousel@8.0.0-rc11):
+    resolution: {integrity: sha512-Yzy0cW1ggGL/bJUbp1n6csKiQVz8qYiMQLwsx+/k3bD3niZyXikWEQMSiDUeNHLNUksBAaqHwoLDsrP6Ci/ydg==}
+    peerDependencies:
+      embla-carousel: 8.0.0-rc11
+    dependencies:
+      embla-carousel: 8.0.0-rc11
+    dev: false
+
+  /embla-carousel-react@8.0.0-rc11(react@18.2.0):
+    resolution: {integrity: sha512-hXOAUMOIa0GF5BtdTTqBuKcjgU+ipul6thTCXOZttqnu2c6VS3SIzUUT+onIIEw+AptzKJcPwGcoAByAGa9eJw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      embla-carousel: 8.0.0-rc11
+      embla-carousel-reactive-utils: 8.0.0-rc11(embla-carousel@8.0.0-rc11)
+      react: 18.2.0
+    dev: false
+
+  /embla-carousel-reactive-utils@8.0.0-rc11(embla-carousel@8.0.0-rc11):
+    resolution: {integrity: sha512-pDNVJNCn0dybLkHw93My+cMfkRQ5oLZff6ZCwgmrw+96aPiZUyo5ANywz8Lb70SWWgD/TNBRrtQCquvjHS31Sg==}
+    peerDependencies:
+      embla-carousel: 8.0.0-rc11
+    dependencies:
+      embla-carousel: 8.0.0-rc11
+    dev: false
+
+  /embla-carousel@8.0.0-rc11:
+    resolution: {integrity: sha512-Toeaug98PGYzSY56p/xsa+u4zbQbAXgGymwEDUc2wqT+1XCnnUsH42MClglhABJQbobwDYxOabhJrfXyJKUMig==}
     dev: false
 
   /emoji-regex@9.2.2:
