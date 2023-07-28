@@ -12,7 +12,8 @@ import { CategoryBanner } from './products/categoryBanner'
 import { BrandSlider } from './embla/brandSlider'
 import FeaturedProductsList from './products/featuredProductsList'
 import ProductCard from './products/productCard'
+import CatalogueCard from './resources-pages/catalogueCard'
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard
 }

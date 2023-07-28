@@ -69,11 +69,11 @@ const Footer = () => {
             link: '#',
             group: 'resources',
         },
-        {
-            name: 'Sales Agents',
-            link: '#',
-            group: 'resources',
-        },
+        // {
+        //     name: 'Sales Agents',
+        //     link: '#',
+        //     group: 'resources',
+        // },
         {
             name: 'News and Updates',
             link: '#',
@@ -81,7 +81,7 @@ const Footer = () => {
         },
         {
             name: 'E - Catalogues',
-            link: '#',
+            link: '/resources/brand-catalogues',
             group: 'resources',
         },
         {

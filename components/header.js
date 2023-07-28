@@ -19,7 +19,7 @@ const Header = () => {
         },
         {
             link: 'products',
-            href: '#'
+            href: '/products'
         },
         {
             link: 'trainings & seminars',
