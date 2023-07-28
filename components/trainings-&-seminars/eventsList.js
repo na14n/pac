@@ -106,42 +106,42 @@ async function EventsList({ sorting, eventType }) {
     return (
 
         (sorting === 'default') ? (
-            <div className='w-full h-full grid justify-items-center xs:grid-cols-1 lg:grid-cols-3 gap-8 '>
+            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
                 {workshops.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'nameAsc') ? (
-            <div className='w-full h-full grid justify-items-center xs:grid-cols-1 lg:grid-cols-3 gap-8 '>
+            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
                 {nameSortedAsc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'nameDesc') ? (
-            <div className='w-full h-full grid justify-items-center xs:grid-cols-1 lg:grid-cols-3 gap-8 '>
+            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
                 {nameSortedDesc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'dateAsc') ? (
-            <div className='w-full h-full grid justify-items-center xs:grid-cols-1 lg:grid-cols-3 gap-8 '>
+            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
                 {dateSortedAsc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'dateDesc') ? (
-            <div className='w-full h-full grid justify-items-center xs:grid-cols-1 lg:grid-cols-3 gap-8 '>
+            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
                 {dateSortedDesc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (
-            <div className='w-full h-full grid justify-items-center xs:grid-cols-1 lg:grid-cols-3 gap-8 '>
+            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
                 {workshops.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
