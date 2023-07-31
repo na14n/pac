@@ -1,0 +1,3 @@
+// Taxonomy By Province and City
+// If lowest Taxonomy is City, open specific search bar...
+// Search Bar search terms from City Taxonomy Results

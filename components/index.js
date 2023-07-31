@@ -13,7 +13,11 @@ import { BrandSlider } from './embla/brandSlider'
 import FeaturedProductsList from './products/featuredProductsList'
 import ProductCard from './products/productCard'
 import CatalogueCard from './resources-pages/catalogueCard'
+import { AboutF } from './homepage/aboutF'
+import { Strengths } from './homepage/strengths'
+import { Reach } from './homepage/reach'
+import { BrandSliderF } from './embla/brandSliderF'
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF
 }
