@@ -6,6 +6,8 @@ import Image from 'next/image';
 
 
 export const BrandSlider = ({ brands }) => {
+    
+    
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
 
@@ -46,8 +48,9 @@ export const BrandSlider = ({ brands }) => {
                         <div key={index} className='embla__slide w-full h-full grid lg:grid-cols-5 gap-4 py-8 justify-items-center items-center px-16'>
                             {w.map((c, index) => (
                                 <a key={index} className='bg-[#EEE] w-28 h-28 p-2 flex flex-col justify-center items-center rounded-md hover:-translate-y-1 hover:shadow-md transition-all border-pac-green hover:border-2' href='#'>
-                                    <Image className='w-full h-auto' src={c.logo.link} alt='dental-product-brand-logo' />
+                                    <Image width={256} height={256} src={c.logo.link ? c.logo.link : 'https://picsum.photos/2400'} alt="dental-product-brand" />
                                 </a>
+                                
                             ))}
                         </div>
                     ))}

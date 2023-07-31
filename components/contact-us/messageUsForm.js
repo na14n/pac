@@ -1,11 +1,13 @@
 import { Button } from "@/components"
 import Image from "next/image";
 
-const MessageUsForm = () => {
+const MessageUsForm = ({ mediaUrl }) => {
     return (
         <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
             <div className="absolute z-10 t-0 bg-gradient-to-b from-[#077232]/95 via-[# 063013]/95 to-[#063013]/95 w-full h-full"></div>
-            <Image className="absolute z-0 t-0  w-auto h-auto" src="https://picsum.photos/1920/1080" alt="dental-website-banner"></Image>
+            <div className="absolute z-0 t-0 w-auto h-auto">
+                <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400'} alt="dental-website-banner" />
+            </div>
             <div className="z-40 text-2xl w-full h-content flex flex-col justify-center items-center lg:gap-2 2xl:gap-16 lg:px-32">
                 <div className="flex flex-col justify-center items-center  xs:p-8 xs:gap-4 lg:gap-0">
                     <div className="lg:text-3xl xs:text-2xl  uppercase font-bold text-[#FCFCFC] ">send us a message</div>

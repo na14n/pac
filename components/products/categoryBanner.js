@@ -35,7 +35,7 @@ export async function CategoryBanner() {
         <div className='w-full h-full bg-[#FCFCFC] lg:px-32 flex justify-center items-center gap-8'>
             {categories.map((c, index) => (
                 <a key={index} className="flex flex-col items-center h-content justify-center gap-2 group p-2 hover:-translate-y-1 transition-all" href="#">
-                    <Image className="w-8 h-8" src={c.icon.link} alt='dental-product-category-icon' />
+                    <Image width={64} height={64} src={c.icon.link ? c.icon.link : 'https://picsum.photos/2400'} alt="dental-product-category" />
                     <div className="text-[#272727] group-hover:text-pac-orange font-semibold text-sm uppercase">
                         {c.name}
                     </div>

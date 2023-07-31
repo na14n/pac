@@ -30,7 +30,7 @@ export const HeroSlider = ({ height, media }) => {
                 <div className="embla__container h-full">
                     {media.map((m, index) => (
                         <div key={index} className="embla__slide">
-                            <Image src={m.link ? m.link : "https://picsum.photos/1920/1080"} className='w-full h-auto' alt='dental-distributor' />
+                            <Image width={2400} height={600} src={m.link ? m.link : 'https://picsum.photos/2400'} alt="dental-website-banner" />
                         </div>
                     ))}
                 </div>
