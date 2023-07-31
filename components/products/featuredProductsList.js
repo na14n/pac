@@ -7,7 +7,7 @@ const FeaturedProductsList = () => {
                 <div className='w-full h-content px-4 py-2 border-b-2 uppercase text-pac-orange text-sm font-semibold'>
                     Featured Products
                 </div>
-                <div className="w-full h-full p-4 test">
+                <div className="w-full h-full p-4">
                     <ProductCard />
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import client from '@/lib/apollo';
 import EventCard from './eventCard';
-import { gql } from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 async function EventsList({ sorting, eventType }) {
 
@@ -71,14 +71,21 @@ async function EventsList({ sorting, eventType }) {
                             name
                             description
                             location
+                            shortDescription
+                            eventDate
+                            eventTime
+                            cardImage{
+                                link
+                            }
                           }
                         }
                       }
                     }
                   }
           `,
-                fetchPolicy: 'network-only',
+                fetchPolicy: 'no-cache',
             });
+            console.log('WORKSHOPS: ',result.data.eventsType.nodes[0].events.nodes);
             return result.data.eventsType.nodes[0].events.nodes;
         } catch (error) {
             console.error('Error occurred:', error);
@@ -106,42 +113,42 @@ async function EventsList({ sorting, eventType }) {
     return (
 
         (sorting === 'default') ? (
-            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
+            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
                 {workshops.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'nameAsc') ? (
-            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
+            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
                 {nameSortedAsc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'nameDesc') ? (
-            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
+            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
                 {nameSortedDesc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'dateAsc') ? (
-            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
+            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
                 {dateSortedAsc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'dateDesc') ? (
-            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
+            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
                 {dateSortedDesc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (
-            <div className='w-full h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
+            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 sm:grid-cols-2 gap-8'>
                 {workshops.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
