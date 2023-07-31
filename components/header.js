@@ -3,6 +3,7 @@ import { Provider, atom, useAtom } from "jotai";
 import Button from "./button";
 import { HeaderStateAtom } from "@/lib/stores/headerState";
 import SearchBar from "./searchBar";
+import Image from "next/image";
 
 const Header = () => {
 
@@ -35,7 +36,7 @@ const Header = () => {
         <Provider>
             <div className={headerState ? 'fixed z-50 min-h-24 h-24 max-h-24 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center 2xl:px-44 xs:px-16 transition-all duration-200 gap-16' : 'fixed z-50 min-h-20 h-16 max-h-16 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center 2xl:px-12 xs:px-24 bg-nav-green transition-all duration-300 gap-4'}>
                 <div className="shrink-0 h-full w-content  min-[1280px]:basis-1/5 xs:basis-1/2 flex min-[1280px]:justify-start xs:justify-start items-center">
-                    <img src="/pac-white.png" className={headerState ? 'h-auto lg:w-48 xs:w-2/3' : 'h-auto lg:w-44 xs:w-2/3 '}></img>
+                    <Image alt='pros-apac-logo' src="/pac-white.png" className={headerState ? 'h-auto lg:w-48 xs:w-2/3' : 'h-auto lg:w-44 xs:w-2/3 '}></Image>
                 </div>
                 <div className="shrink-0 h-full basis-1/2 min-[1280px]:flex xs:hidden xs:w-0 justify-center items-center">
                     {links.map((item, index) => (

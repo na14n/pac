@@ -3,6 +3,7 @@ import React, { useCallback } from 'react'
 import { Icon } from '@iconify-icon/react';
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import Image from 'next/image';
 
 export const HeroSlider = ({ height, media }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
@@ -25,11 +26,11 @@ export const HeroSlider = ({ height, media }) => {
                     <Icon icon="ic:round-keyboard-arrow-right" width="32" height="32" className='pl-1 pr-1 group-hover:text-pac-orange' />
                 </button>
             </div>
-            <div class="embla__viewport h-full" ref={emblaRef}>
+            <div className="embla__viewport h-full" ref={emblaRef}>
                 <div className="embla__container h-full">
                     {media.map((m, index) => (
-                        <div className="embla__slide">
-                            <img src={m.link ? m.link : "https://picsum.photos/1920/1080"} className='w-full h-auto' />
+                        <div key={index} className="embla__slide">
+                            <Image src={m.link ? m.link : "https://picsum.photos/1920/1080"} className='w-full h-auto' alt='dental-distributor' />
                         </div>
                     ))}
                 </div>

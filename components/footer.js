@@ -1,5 +1,6 @@
 import { Icon } from '@iconify-icon/react';
 import Button from './button';
+import Image from 'next/image';
 
 const Footer = () => {
 
@@ -147,7 +148,7 @@ const Footer = () => {
         <div className="w-full min-h-content lg:max-h-[67vh] xs:h-content bg-[#171717] flex flex-col divide-y py-4 lg:px-16 xs:px-4 gap-4 pt-8 z-50">
             <div className="w-full h-full shrink-0 basis-[90%] flex lg:flex-row xs:flex-col gap-4">
                 <div className='w-full basis-[30%] flex flex-col justify-between'>
-                    <img src="/pac-white.png" className='w-64 '></img>
+                    <Image src="/pac-white.png" className='w-64' alt='pros-apac-logo'></Image>
                     <div className=" w-full h-content text-[#e1e1e1] text-sm flex flex-col justify-start lg:pb-4 ">
                         <span>768 General Malvar St., Malate, Manila</span>
                         <span>PROSAPAC@prosapac.com</span>

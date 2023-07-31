@@ -2,6 +2,7 @@
 import React, { useCallback } from 'react'
 import { Icon } from '@iconify-icon/react';
 import useEmblaCarousel from 'embla-carousel-react'
+import Image from 'next/image';
 
 
 export const BrandSlider = ({ brands }) => {
@@ -39,13 +40,13 @@ export const BrandSlider = ({ brands }) => {
                     <Icon icon="ic:round-keyboard-arrow-right" width="64" height="64" className='pl-1 pr-1 text-nav-orange group-hover:text-pac-orange' />
                 </button>
             </div>
-            <div class="embla__viewport self-center h-full w-full" ref={emblaRef}>
+            <div className="embla__viewport self-center h-full w-full" ref={emblaRef}>
                 <div className="embla__container h-full w-full">
                     {arrayOfArrays.map((w, index) => (
-                        <div className='embla__slide w-full h-full grid lg:grid-cols-5 gap-4 py-8 justify-items-center items-center px-16'>
+                        <div key={index} className='embla__slide w-full h-full grid lg:grid-cols-5 gap-4 py-8 justify-items-center items-center px-16'>
                             {w.map((c, index) => (
-                                <a className='bg-[#EEE] w-28 h-28 p-2 flex flex-col justify-center items-center rounded-md hover:-translate-y-1 hover:shadow-md transition-all border-pac-green hover:border-2' href='#'>
-                                    <img className='w-full h-auto' src={c.logo.link} />
+                                <a key={index} className='bg-[#EEE] w-28 h-28 p-2 flex flex-col justify-center items-center rounded-md hover:-translate-y-1 hover:shadow-md transition-all border-pac-green hover:border-2' href='#'>
+                                    <Image className='w-full h-auto' src={c.logo.link} alt='dental-product-brand-logo' />
                                 </a>
                             ))}
                         </div>

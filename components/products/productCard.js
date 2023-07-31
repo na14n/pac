@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 const ProductCard = () => {
     return (
         <a className="z-10 rounded-md border-2 border-[#B1B1B1] bg-[#EEE] w-64 h-72 relative overflow-hidden flex flex-col items-center justify-end group hover:border-pac-green" href="#">
-            <img className="w-full h-auto absolute top-0" />
+            <Image className="w-full h-auto absolute top-0" alt="dental-product-image" />
             <div className="w-full h-2/5 flex flex-col p-2 bg-[#FCFCFC] shadow-md">
                 <div className="font-bold text-[#171717] text-xl">Product Name</div>
                 <div className="text-[#373737] text-sm">Product Brand Name</div>

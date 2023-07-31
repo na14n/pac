@@ -52,7 +52,7 @@ export const LocationCard = ({ data }) => {
                     </button>
                 ))}
             </div>
-            <iframe src={selectedTab} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className='border-2 border-[#121212]/25 shadow-md rounded-md w-full 2xl:h-80 lg:h-72'></iframe>
+            <iframe src={selectedTab} allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='border-2 border-[#121212]/25 shadow-md rounded-md w-full 2xl:h-80 lg:h-72'></iframe>
         </div>
     )
 }
