@@ -19,7 +19,7 @@ const Button = ({ type, name, link }) => {
                 <span className="text-sm font-semibold text-nav-orange group-hover:text-[#fcfcfc]">{name}</span>
             </button>
         ) : (type === 'download') ? (
-            <a className="group w-fit px-2 py-1 rounded-md bg-size-200 bg-pos-0 bg-gradient-to-b from-[#E05B25] via-[#FD8F29] to-[#E05B25] shadow-sm hover:shadow-xl hover:bg-pos-100 transition-all duration-500" target='_blank' href={link} download={name} rel='noreferrer'>
+            <a className="group w-fit h-fit px-2 py-1 rounded-md bg-size-200 bg-pos-0 bg-gradient-to-b from-[#E05B25] via-[#FD8F29] to-[#E05B25] shadow-sm hover:shadow-xl hover:bg-pos-100 transition-all duration-500" target='_blank' href={link} download={name} rel='noreferrer'>
                 <div className="pl-1 text-sm font-semibold text-[#F1F1F1] flex items-center">
                     <span className='text-[#F1F1F1] group-hover:text=[#FFFFFF]'>{name}</span>
                     <Icon icon="mdi:file-download" width="24" height="24" className='pl-1' />
