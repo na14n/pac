@@ -1,4 +1,4 @@
-import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandsF, TestimonialsF, EventsF, ProstigeF } from "@/components"
+import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandsF, TestimonialsF, EventsF, ProstigeF, } from "@/components"
 
 
 export default function Home() {
