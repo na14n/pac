@@ -119,7 +119,7 @@ const Footer = () => {
         {
             name: 'know more',
             link: '#',
-            title: 'Stay Updated on our Activities',
+            title: 'Stay Updated on our Events',
             group: 'quick-btn',
         },
         {

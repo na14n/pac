@@ -10,14 +10,14 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             </div>
         ) : (heroType === 'video') ? (
             <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">
-                <div className="z-10 max-w-[900px] lg:ml-32 xs:ml-8 sm:ml-16 py-10">
-                    <div className="font-bold text-[#FCFCFC] text-4xl uppercase">
+                <div className="z-10 lg:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 lg:ml-32 xs:ml-8 sm:ml-16 py-10">
+                    <div className="font-bold text-[#FCFCFC] lg:text-4xl 2xl:text-5xl uppercase">
                         {title ? title : 'Insert Heading'}
                     </div>
-                    <div className="font-bold text-nav-orange text-4xl uppercase">
+                    <div className="font-bold text-nav-orange lg:text-4xl 2xl:text-5xl uppercase">
                         {title2 ? title2 : 'Insert Heading'}
                     </div>
-                    <div className="text-[#F0F0F0]/90 font-regular mb-8 max-w-[600px]">
+                    <div className="text-[#F0F0F0]/90 font-regular mb-8 lg:max-w-[600px] 2xl:max-w-[750px] 2xl:text-lg">
                         {subheading ? subheading : 'Insert Subheading'}
                     </div>
                     <Button name={(buttonName ? buttonName : 'Insert Button Name')} />
@@ -64,7 +64,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             </div>
         ) : (heroType === 'centered3') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30 py-16 ">
-                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#077232]/90 via-[#077232]/90 to-[#063013]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
                     <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
                 </div>

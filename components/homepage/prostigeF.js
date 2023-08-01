@@ -3,8 +3,8 @@ import Button from "../button";
 
 export default function ProstigeF() {
   return (
-    <div className="flex md:flex-row  flex-col items-center my-10 mx-32">
-      <article className="md:max-w-lg max-w-full flex-col gap-8">
+    <div className="flex md:flex-row  flex-col items-center my-10 mx-32 test">
+      <article className="md:max-w-lg max-w-full flex-col gap-8 test">
         <div className="text-3xl text-gray-600 font-bold">
           PROSTIGE PLATINUM
         </div>

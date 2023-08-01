@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-export async function AboutF() {
+export async function AboutF({media, about}) {
     return (
-        <div className="min-h-[50vh] max-h-fit h-full relative lg:px-32 lg:py-16">
-            <div className="w-64 h-72 rounded-md absolute shadow-lg lg:-top-32 lg:right-32 bg-[#F1F1F1] overflow-hidden">
-                <Image fill={true} alt="dental-products-distributor" />
+        <div className=" max-h-fit relative lg:px-32 2xl:px-48 lg:py-16 2xl:py-36 lg:min-h-[50vh]">
+            <div className="lg:w-64 lg:h-72 2xl:w-80 2xl:h-96 rounded-md absolute shadow-lg lg:-top-32 lg:right-32 2xl:right-48 bg-[#F1F1F1] overflow-hidden">
+                <Image fill={true} alt="dental-products-distributor" src={media ? media :'https://picsum.photos/1080/1920'} />
             </div>
-            <div className="text-[#121212] lg:max-w-[750px]">
-                {`Over the years, PROS-APAC has built a reputation among Filipinos in the Dental Industry as a Top notch distributor offering internationally recognized brands. We attribute part of this success to the strong supplier relationships we have built over time. With the help of our suppliers, we have come so far in providing wonderful service to our customers that eventually led to the fulfillment of our vision of bringing back the smile on every Filipino.`}
+            <div className="text-[#121212] lg:max-w-[750px] 2xl:text-lg">
+                {about ? about : `Over the years, PROS-APAC has built a reputation among Filipinos in the Dental Industry as a Top notch distributor offering internationally recognized brands. We attribute part of this success to the strong supplier relationships we have built over time. With the help of our suppliers, we have come so far in providing wonderful service to our customers that eventually led to the fulfillment of our vision of bringing back the smile on every Filipino.`}
             </div>
         </div>
     )
