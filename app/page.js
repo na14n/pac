@@ -1,5 +1,4 @@
-import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandSliderF, BrandsF,} from "@/components"
-import ProstigeF from "@/components/homepage/prostigeF"
+import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandsF, TestimonialsF, EventsF } from "@/components"
 
 
 export default function Home() {
@@ -26,8 +25,16 @@ export default function Home() {
         <BrandsF />
       </div>
       <div className='w-full h-[100vh] max-h-fit bg-[#F1F1F1]'>
-        <ProstigeF />
-    </div>
+      </div>
+      <div className='w-full min-h-[100vh] lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
+        <TestimonialsF />
+      </div>
+      <div className='w-full max-h-fit bg-[#F1F1F1]'>
+        <EventsF />
+      </div>
+      <div className='w-full min-h-fit max-h-fit bg-[#F1F1F1]'>
+        <Hero heroType={'centered3'} title={'want to order?'} subheading={'To know more about our purchase and delivery information'} buttonName={'Click Here'} />
+      </div>
     </main>
   )
 }

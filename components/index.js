@@ -18,7 +18,9 @@ import { Strengths } from './homepage/strengths'
 import { Reach } from './homepage/reach'
 import { BrandSliderF } from './embla/brandSliderF'
 import { BrandsF } from './homepage/brandsF'
+import { TestimonialsF } from './homepage/testimonialsF'
+import { EventsF } from './homepage/eventsF'
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF
 }
