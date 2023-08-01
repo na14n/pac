@@ -1,7 +1,7 @@
 import TestimonialCard from "../testimonials/testimonialCard"
 import Image from "next/image"
 
-export async function TestimonialsF({mediaUrl}) {
+export async function TestimonialsF({ mediaUrl }) {
     return (
         <div className="w-full h-full lg:px-32 lg:py-16 relative flex flex-col justify-center items-center overflow-hidden gap-12 ">
             <div className="w-full h-2/5 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 absolute z-10 top-0"></div>
