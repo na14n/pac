@@ -1,4 +1,5 @@
 import { Icon } from "@iconify-icon/react";
+import Image from "next/image";
 
 
 
@@ -32,7 +33,7 @@ export async function Strengths({ strengths }) {
             <div className="w-full h-content absolute -top-20 flex items-center justify-between gap-12 px-32">
                 {strengths.map((s, index) => (
                     <div key={index} className="w-56 h-44 2xl:w-96 2xl:h-72 shadow-lg bg-gradient-to-b from-[#FAA541] to-[#EE6400] rounded-md flex justify-center gap-4 flex-col items-center p-4 text-[#FCFCFC]">
-                        <Image src={s.link} height={64} width={64} />
+                        <Image src={s.link} height={64} width={64} alt="pros-apac-strengths"/>
                         <div className="w-full h-content text-center text-sm 2xl:text-lg">
                             {s.description}
                         </div>
