@@ -48,7 +48,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                     {title ? title : 'Insert Heading'}
                     <Button name={(buttonName ? buttonName : 'Insert Button Name')} />
                 </div>
-                
+
             </div>
         ) : (heroType === 'centered2') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30">
@@ -60,7 +60,25 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                     {title ? title : 'Insert Heading'}
                     <Button name={(buttonName ? buttonName : 'Insert Button Name')} />
                 </div>
-                
+
+            </div>
+        ) : (heroType === 'centered3') ? (
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30 py-16 ">
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
+                <div className="absolute z-0 t-0 w-full h-full">
+                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                </div>
+                <div className="z-20 flex flex-col items-center justify-center gap-2 ">
+                    <span className="text-3xl uppercase font-bold text-[#FCFCFC] ">
+                        {title ? title : 'Insert Title'}
+                    </span>
+                    <div className="w-[400px] h-[2px] bg-white rounded-md"></div>
+                    <span className="text-[#EFEFEF] mb-4">
+                        {subheading ? subheading : 'Insert Subheading'}
+                    </span>
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} link={buttonLink} type={'inverse'} />
+                </div>
+
             </div>
         ) : (heroType === 'orange') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
