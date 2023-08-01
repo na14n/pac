@@ -21,6 +21,8 @@ import { BrandsF } from './homepage/brandsF'
 import { TestimonialsF } from './homepage/testimonialsF'
 import { EventsF } from './homepage/eventsF'
 import ProstigeF from './homepage/prostigeF'
+import ViberBanner from './contact-us/viberBanner'
+
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner
 }

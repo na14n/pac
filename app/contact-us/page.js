@@ -1,4 +1,4 @@
-import { MyComponent, HeaderTrigger, Hero, LocationCard, MessageUsForm } from "@/components"
+import { MyComponent, HeaderTrigger, Hero, LocationCard, MessageUsForm, ViberBanner } from "@/components"
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 
@@ -47,6 +47,9 @@ export default async function ContactUs() {
       </div>
       <div className="w-full lg:h-[63vh] ">
         <MessageUsForm />
+      </div>
+      <div className="w-full max-h-fit">
+        <ViberBanner />
       </div>
     </main>
   )
