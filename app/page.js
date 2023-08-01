@@ -1,4 +1,6 @@
-import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandSliderF } from "@/components"
+import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandSliderF, BrandsF } from "@/components"
+
+
 
 export default function Home() {
   return (
@@ -9,19 +11,21 @@ export default function Home() {
         </HeaderTrigger>
       </div>
       <div className='w-full min-h-[50vh] max-h-fit bg-[#F1F1F1]'>
-        <AboutF/>
+        <AboutF />
       </div>
       <div className='w-full min-h-4 max-h-fit bg-[#F1F1F1]'>
         <Strengths />
       </div>
       <div className='w-full h-[80vh] max-h-fit bg-[#F1F1F1]'>
-        <Hero heroType={'centered'} title={'To know more about our Story'} buttonName={'Click Here'}/>
+        <Hero heroType={'centered'} title={'To know more about our Story'} buttonName={'Click Here'} />
       </div>
       <div className='w-full min-h-4 max-h-fit bg-[#F1F1F1]'>
         <Reach />
       </div>
       <div className='w-full h-[100vh] max-h-fit bg-[#F1F1F1]'>
-        <BrandSliderF />
+        <BrandsF />
+      </div>
+      <div className='w-full h-[100vh] max-h-fit bg-[#F1F1F1]'>
       </div>
     </main>
   )
