@@ -1,4 +1,4 @@
-import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandSliderF, BrandsF } from "@/components"
+import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF } from "@/components"
 
 
 
@@ -26,6 +26,9 @@ export default function Home() {
         <BrandsF />
       </div>
       <div className='w-full h-[100vh] max-h-fit bg-[#F1F1F1]'>
+      </div>
+      <div className='w-full h-[100vh] max-h-fit bg-[#F1F1F1]'>
+        <TestimonialsF />
       </div>
     </main>
   )
