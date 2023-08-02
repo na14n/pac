@@ -71,7 +71,6 @@ export default function SitemapF() {
       <Dropdown title="Dropdown 1" content="Dropdown Content 1" />
       <Dropdown title="Dropdown 2" content="Dropdown Content 2" />
       <Dropdown title="Dropdown 3" content="Dropdown Content 3" />
-      {/* Add more Dropdown instances with different titles and contents as needed */}
     </div>
     </div>
   );

@@ -40,6 +40,15 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+    },
+    keyframes: {
+      'open-menu': {
+        '0%': { transform: 'scaleY(0.3)' },
+        '100%': { transform: 'scaleY(1)' },
+      }
+    },
+    animation: {
+      'open-menu': 'open-menu 0.5s ease-in-out forwards',
     }
   },
 }
