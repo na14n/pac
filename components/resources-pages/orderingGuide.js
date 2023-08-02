@@ -98,7 +98,7 @@ const OrderingGuide = ({ props }) => {
     }
 
     return (
-        <div className="w-full h-full flex flex-col justify-center items-center bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 gap-8 py-12 lg:px-32 2xl:px-48">
+        <div className="w-full h-full flex flex-col justify-center 2xl:justify-start items-center bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 gap-8 py-12 lg:px-32 2xl:px-48 2xl:py-32">
             <h1 className="w-fit h-fit lg:text-3xl 2xl:text-5xl text-[#FCFCFC] font-bold uppercase">
                 Step-by-Step Ordering Guide
             </h1>
@@ -111,16 +111,16 @@ const OrderingGuide = ({ props }) => {
                     </button>
                 ))}
             </div>
-            <div className="w-full flex px-16 justify-center align-center gap-4">
+            <div className="w-full flex px-16 justify-center align-center gap-4 2xl:gap-12">
                 {selectedTab.steps.map((s, index) => (
-                    <div key={index} className='w-[500px] lg:max-w-[500px] h-fit flex flex-col items-center gap-2'>
+                    <div key={index} className='w-[500px] lg:w-[500px] 2xl:w-[300px] h-fit flex flex-col items-center gap-2'>
                         <span className='bg-[#EFEFEF] w-8 h-8 flex justify-center items-center rounded-full text-nav-orange font-bold'>
                             {index + 1}
                         </span>
                         <h1 className='font-bold text-lg text-[#FCFCFC] mb-4'>
                             {s.title}
                         </h1>
-                        <p className='text-[#373737] text-center w-full bg-[#FCFCFC] py-4 px-2 rounded-md lg:h-[250px]'>
+                        <p className='text-[#373737] text-center w-full bg-[#FCFCFC] p-4 rounded-md lg:h-[250px]'>
                             {s.description}
                         </p>
                     </div>

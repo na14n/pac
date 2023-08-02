@@ -8,7 +8,7 @@ export default async function ContactUs() {
     try {
       const result = await client.query({
         query: gql`
-            query GetBranches {
+            query GetBranchesInformation {
                 branchesInformation {
                   nodes {
                     branchName
@@ -19,12 +19,13 @@ export default async function ContactUs() {
                     mobileNumber
                     email
                     googleMapsSourceLink
+                    officeHours
                     date
                   }
                 }
               }
       `,
-        fetchPolicy: 'network-only',
+        fetchPolicy: 'no-cache',
       });
       return result.data.branchesInformation.nodes;
     } catch (error) {
@@ -42,7 +43,7 @@ export default async function ContactUs() {
           <Hero heroType={'orange'} title={'Contact Us'} />
         </HeaderTrigger>
       </div>
-      <div className="w-full lg:max-h-[100vh] min-h-fit lg:px-32">
+      <div className="w-full lg:min-h-[100vh] 2xl:min-h-fit max-h-fit lg:px-32">
         <LocationCard data={data} />
       </div>
       <div className="w-full lg:h-[63vh] ">

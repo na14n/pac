@@ -8,11 +8,13 @@ export default async function HowToOrder() {
                     <Hero heroType={'orange'} title={'How to Order'} />
                 </HeaderTrigger>
             </div>
-            <div className='w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
+            <div className='w-full lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1]'>
                 <QuotationGUide />
             </div>
-            <div className='w-full lg:h-[100vh] h max-h-fit bg-[#F1F1F1]'>
+            <div className='w-full lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1]'>
                 <OrderingGuide />
+            </div>
+            <div className='w-full lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1]'>
             </div>
         </div>
     )

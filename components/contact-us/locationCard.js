@@ -13,9 +13,9 @@ export const LocationCard = ({ data }) => {
 
     return (
         <div className="flex w-full h-full flex-col justify-start items-center px-8 lg:px-32 py-16 gap-16">
-            <div className='h-content flex lg:flex-row xs:flex-col gap-16'>
+            <div className='h-fit flex lg:flex-row xs:flex-col gap-16'>
                 {branches.map((b, index) => (
-                    <button className={`w-80 h-60 bg-gradient-to-b shadow-md rounded-md group hover:-translate-y-1 transition-all flex flex-col items-center justify-start px-8 py-4 cursor-pointer shrink-0 gap-2 hover:shadow-lg ${selectedTab === b.googleMapsSourceLink ? 'first:from-[#E66204] first:to-[#F0892B] from-[#077232] to-[#063013] last:from-[#3E3E3E] last:to-[#121212]' : 'from-[#f1f1f1] to-[#efefef] hover:first:from-[#E66204] hover:first:to-[#F0892B] hover:from-[#077232] hover:to-[#063013] hover:last:from-[#3E3E3E] hover:last:to-[#121212]'}`} key={index} onClick={() => handleTabClick(b.googleMapsSourceLink)}>
+                    <button className={`w-80 h-[360px] bg-gradient-to-b shadow-md rounded-md group hover:-translate-y-1 transition-all flex flex-col items-center justify-start px-8 py-4 cursor-pointer shrink-0 gap-2 hover:shadow-lg ${selectedTab === b.googleMapsSourceLink ? 'first:from-[#E66204] first:to-[#F0892B] from-[#077232] to-[#063013] last:from-[#3E3E3E] last:to-[#121212]' : 'from-[#f1f1f1] to-[#efefef] hover:first:from-[#E66204] hover:first:to-[#F0892B] hover:from-[#077232] hover:to-[#063013] hover:last:from-[#3E3E3E] hover:last:to-[#121212]'}`} key={index} onClick={() => handleTabClick(b.googleMapsSourceLink)}>
                         <span className={selectedTab === b.googleMapsSourceLink ? 'w-full text-xl font-bold uppercase text-center text-[#FCFCFC] group-hover:text-[#F1F1F1] mb-2' : 'w-full text-xl font-bold uppercase text-center text-[#121212] group-hover:text-[#FCFCFC] mb-2'}>{b.branchName ? b.branchName : 'Branch Name'}</span>
                         <div className='w-full flex flex-col items-start justify-start h-full gap-2'>
                             <div className={selectedTab === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
@@ -35,7 +35,8 @@ export const LocationCard = ({ data }) => {
                                         ))}
                                     </div>
                                 </div>
-                            ) : b.landlineNumber.length > 0 ? (
+                            ) : ''}
+                            {b.landlineNumber.length > 0 ? (
                                 <div className={selectedTab === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
                                     <Icon icon="mdi:phone" width="24" height="24" className='pr-1' />
                                     <div className='flex flex-col text-sm h-full justify-center'>
@@ -49,6 +50,16 @@ export const LocationCard = ({ data }) => {
                                 <Icon icon="mdi:email" width="24" height="24" className='pr-1' />
                                 <span className="text-sm text-left w-full">{b.email ? b.email : 'Email'}</span>
                             </div>
+                            {b.officeHours.length > 0 ? (
+                                <div className={selectedTab === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
+                                    <Icon icon="mdi:clock" width="24" height="24" className='pr-1' />
+                                    <div className='flex flex-col text-sm h-full justify-center'>
+                                        {b.officeHours.map((m, index) => (
+                                            <span key={index} className='text-left w-full'>{m}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ) : ''}
                         </div>
                     </button>
                 ))}
