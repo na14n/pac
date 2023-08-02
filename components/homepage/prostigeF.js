@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function ProstigeF() {
   return (
-    <div className="bg-[url('https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/359897511_1039866690356735_2947693243556521007_n.png?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFg_RMWZjz2k69X0jJU7F6-K_MzKS6jmh8r8zMpLqOaH2SsgQP0x7VEbeTKAESPmoNg2gjmcQwUJopr7ISbn5Vf&_nc_ohc=O2G5R-uPgSAAX90DKk-&_nc_ht=scontent.fmnl3-4.fna&oh=03_AdR-8QTFrUmLd0bF6O3d68VvklJqiovYNG7rNAxmXGqAgQ&oe=64F12481')] bg-cover bg-center w-full flex md:flex-row flex-col items-center justify-center h-screen">
-      <div className="flex md:flex-row flex-col items-center mt-10 md:my-10 max-w-7xl h-auto">
+    <div className="bg-[url('https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/359897511_1039866690356735_2947693243556521007_n.png?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFg_RMWZjz2k69X0jJU7F6-K_MzKS6jmh8r8zMpLqOaH2SsgQP0x7VEbeTKAESPmoNg2gjmcQwUJopr7ISbn5Vf&_nc_ohc=O2G5R-uPgSAAX90DKk-&_nc_ht=scontent.fmnl3-4.fna&oh=03_AdR-8QTFrUmLd0bF6O3d68VvklJqiovYNG7rNAxmXGqAgQ&oe=64F12481')] bg-cover bg-center w-full flex md:flex-row flex-col items-center justify-center h-screen pt-10 md:py-10">
+      <div className="flex md:flex-row flex-col items-center max-w-7xl h-auto">
         <article className="md:max-w-lg max-w-full flex-col gap-8">
           <div className="text-3xl text-gray-600 font-bold">
             PROSTIGE PLATINUM

@@ -22,7 +22,8 @@ import { TestimonialsF } from './homepage/testimonialsF'
 import { EventsF } from './homepage/eventsF'
 import ProstigeF from './homepage/prostigeF'
 import SitemapF from './sitemap/sitemapF'
-import Dropdown from './dropdown'
+import CareersF from './careers/CareersF'
+
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, SitemapF, Dropdown,
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, SitemapF, CareersF
 }
