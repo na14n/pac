@@ -20,7 +20,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                     <div className="text-[#F0F0F0]/90 font-regular mb-8 lg:max-w-[600px] 2xl:max-w-[750px] 2xl:text-lg">
                         {subheading ? subheading : 'Insert Subheading'}
                     </div>
-                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} />
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} />
                 </div>
                 <div className="absolute z-0 t-0 w-full h-full">
                     <video
@@ -46,7 +46,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                 </div>
                 <div className="z-20 font-bold text-[#FCFCFC] text-3xl mt-16 flex flex-col items-center justify-center gap-4 pb-8">
                     {title ? title : 'Insert Heading'}
-                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} />
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} />
                 </div>
 
             </div>
@@ -76,7 +76,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                     <span className="text-[#EFEFEF] mb-4">
                         {subheading ? subheading : 'Insert Subheading'}
                     </span>
-                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} link={buttonLink} type={'inverse'} />
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} color={'white'} link={buttonLink} />
                 </div>
 
             </div>

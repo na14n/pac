@@ -1,36 +1,36 @@
 import React from "react";
 import Button from "../button";
+import Image from "next/image";
 
-export default function ProstigeF() {
+export default function ProstigeF(props) {
+
   return (
-    <div className="flex md:flex-row  flex-col items-center my-10 mx-32 test">
-      <article className="md:max-w-lg max-w-full flex-col gap-8 test">
-        <div className="text-3xl text-gray-600 font-bold">
-          PROSTIGE PLATINUM
+    <div className="w-full h-full flex justify-around items-center lg:px-32 2xl:px-48 gap-16 ">
+      <div className="md:max-w-lg max-w-full flex flex-col gap-4">
+        <div className="flex flex-col justify-center gap-1">
+          <h2 className="font-bold text-4xl 2xl:text-5xl text-[#121212] ">PROSTIGE PLATINUM</h2>
+          <div className="bg-pac-green w-full h-[2px]" />
         </div>
-        <hr className="bg-pac-green mb-5 w-full h-1" />
-        <div className="max-w-lg">
-          <div className="text-xl mb-3">
-            <span className="font-semibold">Turn your</span>{" "}
-            <span className="text-pac-orange mb-10 font-bold">Purchases</span>
-            <br />
-            <span className="font-semibold">Into more</span>{" "}
-            <span className="text-pac-green font-bold">Rewards</span>
-            <br />
-          </div>
-          <div className="text-xl text-pac-green mb-3 font-bold">
-            NEVER MISS A POINT!
-          </div>
-          <div className="text-sm mb-5">
+        <div className="flex flex-col w-fit items-start">
+          <h3 className="font-semibold text-xl 2xl:text-2xl text-[#373737] ">
+            Turn your <span className="text-pac-orange mb-10 font-bold">Purchases</span>
+          </h3>
+          <h3 className="font-semibold text-xl 2xl:text-2xl text-[#373737] self-end ">
+            Into more <span className="text-pac-green font-bold">Rewards</span>
+          </h3>
+        </div>
+        <div className="">
+          <h3 className="text-pac-green font-bold text-xl 2xl:text-2xl">NEVER MISS A POINT!</h3>
+          <p className="text-sm 2xl:text-lg text-[#373737]">
             What are you waiting for? Become a member of PROS-APAC’s loyalty
             program by Availing our PROSTIGE Reward card now to earn points and
-            get special rewards and discounts.
-          </div>
-          <Button name={"Learn More Here"} />
+            get special rewards and discounts
+          </p>
         </div>
-      </article>
-      <div className="border-dashed border-red-500 bg-slate-700 rounded-md w-96 h-52 rotate-6 border-8 text-center align-middle md:ml-28 pt-20">
-        PLACE IMAGE HERE
+        <Button type={1} color={'orange'} name={"Learn More Here"} link={'/#'}/>
+      </div>
+      <div className="2xl:w-[640px] 2xl:h-[360px] xs:w-64 xs:h-36 lg:w-[384px] lg:h-[216px] rotate-12 bg-[#E3E3E3] shadow-md rounded-md overflow-hidden">
+        <Image src={props.link} fill={true} alt="prostige-reward-card" />
       </div>
     </div>
   );
