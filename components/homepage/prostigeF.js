@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function ProstigeF(props) {
 
   return (
-    <div className="w-full h-full flex justify-around items-center lg:px-32 2xl:px-48 gap-16 ">
-      <div className="md:max-w-lg max-w-full flex flex-col gap-4">
+    <div className="w-full h-full flex xs:flex-col-reverse lg:flex-row xs:justify-center lg:justify-around items-center xs:px-4 lg:px-32 2xl:px-48 lg:gap-16 xs:gap-32 xs:py-20 lg:py-0">
+      <div className="md:max-w-lg max-w-full flex flex-col gap-4 ">
         <div className="flex flex-col justify-center gap-1">
           <h2 className="font-bold text-4xl 2xl:text-5xl text-[#121212] ">PROSTIGE PLATINUM</h2>
           <div className="bg-pac-green w-full h-[2px]" />
@@ -29,7 +29,7 @@ export default function ProstigeF(props) {
         </div>
         <Button type={1} color={'orange'} name={"Learn More Here"} link={'/#'}/>
       </div>
-      <div className="2xl:w-[640px] 2xl:h-[360px] xs:w-64 xs:h-36 lg:w-[384px] lg:h-[216px] rotate-12 bg-[#E3E3E3] shadow-md rounded-md overflow-hidden">
+      <div className="2xl:w-[640px] 2xl:h-[360px] xs:w-64 xs:h-36 lg:w-[384px] lg:h-[216px] rotate-12 bg-[#E3E3E3] shadow-md rounded-md overflow-hidden ">
         <Image src={props.link} fill={true} alt="prostige-reward-card" />
       </div>
     </div>

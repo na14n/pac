@@ -7,6 +7,10 @@ const Button = ({ type, name, link, color }) => {
                 <a className="group w-fit h-fit bg-[#FCFCFC] py-2 px-3 rounded-md hover:bg-nav-orange grow-0 shrink-0" href={link}>
                     <span className="xs:text-sm 2xl:text-lg font-semibold text-nav-orange group-hover:text-[#FCFCFC] transition-all duration-50">{name}</span>
                 </a>
+            ) : (color === 'white-green') ? (
+                <a className="group w-fit h-fit bg-[#FCFCFC] py-2 px-3 rounded-md hover:bg-pac-green grow-0 shrink-0" href={link}>
+                    <span className="xs:text-sm 2xl:text-lg font-semibold text-nav-orange group-hover:text-[#FCFCFC] transition-all duration-50">{name}</span>
+                </a>
             ) : (
                 <a className="group w-fit h-fit bg-size-200 bg-gradient-to-b from-[#E05B25] via-[#FD8F29] to-[#E05B25] py-2 px-3 rounded-md hover:bg-pos-100 grow-0 shrink-0 xs:text-sm 2xl:text-lg font-semibold text-[#F1F1F1] transition-all duration-50" href={link}>
                     {name}
