@@ -34,7 +34,7 @@ export async function Reach({ type, props }) {
                 </div>
                 <div className="h-full lg:w-[600px] 2xl:w-[600px] grid grid-cols-2 px-8 2xl:px-0 2xl:pr-8 py-2">
                     {props.map((p, index) => (
-                        <div className="w-content h-full flex flex-col justify-center items-center 2xl:gap-1 z-40">
+                        <div key={index} className="w-content h-full flex flex-col justify-center items-center 2xl:gap-1 z-40">
                             <div className="text-3xl 2xl:text-5xl font-semibold text-[#FCFCFC]">{p.description}</div>
                             <div className="text-[#EFEFEF] uppercase text-sm 2xl:text-lg font-semibold">{p.title}</div>
                         </div>
@@ -57,7 +57,7 @@ export async function Reach({ type, props }) {
                 </div>
                 <div className="h-full lg:w-[600px] 2xl:w-[600px] grid grid-cols-2 px-8 2xl:px-0 2xl:pr-8 py-2">
                     {placeholder.map((p, index) => (
-                        <div className="w-content h-full flex flex-col justify-center items-center 2xl:gap-1 z-40">
+                        <div key={index} className="w-content h-full flex flex-col justify-center items-center 2xl:gap-1 z-40">
                             <div className="text-3xl 2xl:text-5xl font-semibold text-[#FCFCFC]">{p.description}</div>
                             <div className="text-[#EFEFEF] uppercase text-sm 2xl:text-lg font-semibold">{p.title}</div>
                         </div>
