@@ -36,7 +36,7 @@ export default function ProstigeF() {
         <img
           src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.15752-9/359685073_773142744818063_6970793800610648065_n.png?_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGpYUNt1nOTLjAiG4akJCrQqPho9gWwYdqo-Gj2BbBh2tJUAlKXAwKRa_tutEReu--wk8qJPU-lzP07y7dLekx8&_nc_ohc=3WnblSDGXYIAX-dNs27&_nc_ht=scontent.fmnl3-3.fna&oh=03_AdTmPYRBuE__T6EsvOS2Jz-Lodxu1Eul-LfD1XMWpcxjlg&oe=64F124F1"
           alt="dental-products-distributor"
-          className="r rotate-12 ml-10 md:mt-0 -mt-10 flex scale-105"
+          className="ml-10 md:mt-0 -mt-10 flex scale-125 rotate-6"
         />
       </div>
     </div>

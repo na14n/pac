@@ -1,4 +1,5 @@
 import React from "react";
+import Dropdown from "../dropdown";
 
 export default function SitemapF() {
   return (
@@ -66,6 +67,12 @@ export default function SitemapF() {
           <h1 className="text-lg font-b">SHOP NOW</h1>
         </article>
       </div>
+      <div>
+      <Dropdown title="Dropdown 1" content="Dropdown Content 1" />
+      <Dropdown title="Dropdown 2" content="Dropdown Content 2" />
+      <Dropdown title="Dropdown 3" content="Dropdown Content 3" />
+      {/* Add more Dropdown instances with different titles and contents as needed */}
+    </div>
     </div>
   );
 }
