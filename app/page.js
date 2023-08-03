@@ -10,6 +10,7 @@ import {
   ProstigeF,
   SitemapF,
   CareersF,
+  NewsUpdatesF,
 } from "@/components";
 
 export default function Home() {
@@ -53,13 +54,9 @@ export default function Home() {
 
       {/* -----TEMPORARILY PLACED TO VISUALIZE----- */}
       <div className="w-full h-auto max-h-fit bg-[#F1F1F1]">
-        <SitemapF />
+        <NewsUpdatesF />
       </div>
 
-      {/* -----TEMPORARILY PLACED TO VISUALIZE----- */}
-      <div className="w-full h-auto max-h-fit bg-[#F1F1F1]">
-        <CareersF />
-      </div>
       <div className="w-full min-h-[100vh] lg:h-[100vh] max-h-fit bg-[#F1F1F1]">
         <TestimonialsF />
       </div>

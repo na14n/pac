@@ -30,31 +30,31 @@ export default function CareersF() {
       
       <section className="ml-4 max-w-4xl w-2/5 flex flex-col gap-3">
         <div className=" w-full max-w-4xl bg-white flex flex-row rounded-tl-xl rounded-bl-xl h-24">
-            <div className="bg-pac-orange h-full w-20 text-center text-white align-middle py-8 rounded-tl-xl rounded-bl-xl">
+            <div className="bg-pac-orange h-full w-20 text-center text-white align-middle py-8 rounded-tl-xl rounded-bl-xl font-bold text-xl">
                 1
             </div>
             <article className="py-2 px-3">
-                <span className="text-xl text-pac-orange font-bold">Reason 1</span>
+                <span className="text-xl text-pac-orange font-bold">Quick Access</span>
                 <br />
                 <span className="m text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </article>
         </div>
         <div className=" w-full max-w-4xl bg-white flex flex-row rounded-tl-xl rounded-bl-xl h-24">
-            <div className="bg-pac-orange h-full w-20 text-center text-white align-middle py-8 rounded-tl-xl rounded-bl-xl">
-                1
+            <div className="bg-pac-orange h-full w-20 text-center text-white align-middle py-8 rounded-tl-xl rounded-bl-xl font-bold text-xl">
+                2
             </div>
             <article className="py-2 px-3">
-                <span className="text-xl text-pac-orange font-bold">Reason 1</span>
+                <span className="text-xl text-pac-orange font-bold">Next Day Delivery</span>
                 <br />
                 <span className="m text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </article>
         </div>
         <div className=" w-full max-w-4xl bg-white flex flex-row rounded-tl-xl rounded-bl-xl h-24">
-            <div className="bg-pac-orange h-full w-20 text-center text-white align-middle py-8 rounded-tl-xl rounded-bl-xl">
-                1
+            <div className="bg-pac-orange h-full w-20 text-center text-white align-middle py-8 rounded-tl-xl rounded-bl-xl font-bold text-xl">
+                3
             </div>
             <article className="py-2 px-3">
-                <span className="text-xl text-pac-orange font-bold">Reason 1</span>
+                <span className="text-xl text-pac-orange font-bold">Accessible</span>
                 <br />
                 <span className="m text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </article>

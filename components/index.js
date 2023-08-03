@@ -23,7 +23,8 @@ import { EventsF } from './homepage/eventsF'
 import ProstigeF from './homepage/prostigeF'
 import SitemapF from './sitemap/sitemapF'
 import CareersF from './careers/CareersF'
+import NewsUpdatesF from './news-updates/NewsUpdatesF'
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, SitemapF, CareersF
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, SitemapF, CareersF, NewsUpdatesF
 }
