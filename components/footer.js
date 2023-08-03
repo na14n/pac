@@ -21,6 +21,11 @@ const Footer = () => {
             group: 'about',
         },
         {
+            name: 'Why Pros-Apac',
+            link: '/why-pros-apac',
+            group: 'about',
+        },
+        {
             name: 'Workshops',
             link: '/trainings-&-seminars/workshops',
             group: 'events',
