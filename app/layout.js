@@ -1,5 +1,5 @@
 import './globals.css'
-import { Header } from '@/components'
+import { Header, SideMenu } from '@/components'
 import Footer from '@/components/footer'
 import { Inter } from 'next/font/google'
 
@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="pac">
       <body className={inter.className}>
         <Header />
+        <SideMenu />
         {children}
         <Footer />
       </body>
