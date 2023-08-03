@@ -29,7 +29,7 @@ const Faq = () => {
             </h1>
             <div className="w-full h-fit flex flex-col items-center gap-8">
                 {placeholder.map((q,index) => (
-                    <FaqItem question={q.q} answer={q.a} />
+                    <FaqItem key={index} question={q.q} answer={q.a} />
                 ))}
             </div>
         </div>
