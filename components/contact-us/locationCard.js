@@ -48,7 +48,7 @@ export const LocationCard = ({ data }) => {
                             ) : ''}
                             <div className={selectedTab === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
                                 <Icon icon="mdi:email" width="24" height="24" className='pr-1' />
-                                <span className="text-sm text-left w-full">{b.email ? b.email : 'Email'}</span>
+                                <a className="text-sm text-left w-full hover:underline" href={`mailto:${b.email}`}>{b.email ? b.email : 'Email'}</a>
                             </div>
                             {b.officeHours.length > 0 ? (
                                 <div className={selectedTab === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
