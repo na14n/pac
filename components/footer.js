@@ -17,7 +17,7 @@ const Footer = () => {
         },
         {
             name: 'Sales Agents',
-            link: '#',
+            link: '/resources/sales-agent-search',
             group: 'about',
         },
         {
@@ -67,7 +67,7 @@ const Footer = () => {
         },
         {
             name: 'How to Order',
-            link: '#',
+            link: '/resources/how-to-order',
             group: 'resources',
         },
         // {
@@ -119,7 +119,7 @@ const Footer = () => {
         {
             name: 'know more',
             link: '#',
-            title: 'Stay Updated on our Activities',
+            title: 'Stay Updated on our Events',
             group: 'quick-btn',
         },
         {

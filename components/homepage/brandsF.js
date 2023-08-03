@@ -29,19 +29,20 @@ async function GetBrands() {
 
 const b = await GetBrands();
 
-export async function BrandsF({mediaUrl}) {
-    return(
-        <div className="w-full h-full overflow-hidden relative shadow-lg flex flex-col items-center justify-center px-32">
-            <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/60 via-[#3E3E3E]/90 to-[#3E3E3E]/90 w-full h-full"></div>
-            <div className="absolute z-0 t-0 w-full h-full">
-                <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
-            </div>
-            <div className='w-content py-2 flex flex-col gap-2 items-center justify-center  pt-16 z-40'>
-                <div className='px-4 uppercase text-3xl font-bold text-[#FCFCFC]'>Our Partner Brands</div>
-                <div className='w-[600px] rounded-md h-[2px] bg-pac-orange'></div>
-                <div className='text-sm max-w-[700px] text-center text-[#EFEFEF]'> Currently, PROS-APAC  is partnered with a total of 35 exclusive dental Brands from both local and international level of products, all of which are of the best quality for our dentists.</div>
-            </div>
-            <BrandSliderF brands={b}/>
-        </div>
-    )
+export async function BrandsF({ mediaUrl }) {
+  return (
+    <div className="w-full h-full overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 lg:px-32 2xl:px-48 ">
+      <div className="absolute z-10 top-0 bg-gradient-to-b from-[#F0892B]/60 via-[#3E3E3E]/90 to-[#3E3E3E]/90 w-full h-full"></div>
+      <div className="absolute z-0 top-0 w-full h-full">
+        <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400/1600'} alt="dental-website-banner" />
+        {/* <img className="w-full h-full" src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" /> */}
+      </div>
+      <div className='xs:w-full lg:w-fit py-2 flex flex-col gap-2 items-center justify-center pt-16 z-40 xs:mt-32 lg:mt-0 xs:px-4 lg:px-0'>
+        <div className='px-4 uppercase text-3xl 2xl:text-5xl font-bold text-[#FCFCFC] text-center'>Our Partner Brands</div>
+        <div className='xs:w-full lg:w-[600px] 2xl:w-[900px] rounded-md h-[2px] bg-pac-orange'></div>
+        <div className='text-sm xs:w-full xs:px-4 lg:px-0 2xl:text-lg max-w-[700px] 2xl:max-w-[800px] text-center text-[#EFEFEF]'> Currently, PROS-APAC  is partnered with a total of 35 exclusive dental Brands from both local and international level of products, all of which are of the best quality for our dentists.</div>
+      </div>
+      <BrandSliderF brands={b} />
+    </div>
+  )
 }

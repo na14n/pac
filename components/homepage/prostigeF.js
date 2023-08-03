@@ -1,43 +1,36 @@
 import React from "react";
 import Button from "../button";
-import Link from "next/link";
+import Image from "next/image";
 
-export default function ProstigeF() {
+export default function ProstigeF(props) {
+
   return (
-    <div className="bg-[url('https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/359897511_1039866690356735_2947693243556521007_n.png?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFg_RMWZjz2k69X0jJU7F6-K_MzKS6jmh8r8zMpLqOaH2SsgQP0x7VEbeTKAESPmoNg2gjmcQwUJopr7ISbn5Vf&_nc_ohc=O2G5R-uPgSAAX90DKk-&_nc_ht=scontent.fmnl3-4.fna&oh=03_AdR-8QTFrUmLd0bF6O3d68VvklJqiovYNG7rNAxmXGqAgQ&oe=64F12481')] bg-cover bg-center w-full flex md:flex-row flex-col items-center justify-center h-screen pt-10 md:py-10">
-      <div className="flex md:flex-row flex-col items-center max-w-7xl h-auto">
-        <article className="md:max-w-lg max-w-full flex-col gap-8">
-          <div className="text-3xl text-gray-600 font-bold">
-            PROSTIGE PLATINUM
-          </div>
-          <hr className="bg-pac-green mb-5 w-full h-1" />
-          <div className="max-w-lg">
-            <div className="text-xl mb-3">
-              <span className="font-semibold">Turn your</span>{" "}
-              <span className="text-pac-orange mb-10 font-bold">Purchases</span>
-              <br />
-              <span className="font-semibold">Into more</span>{" "}
-              <span className="text-pac-green font-bold">Rewards</span>
-              <br />
-            </div>
-            <div className="text-xl text-pac-green mb-3 font-bold">
-              NEVER MISS A POINT!
-            </div>
-            <div className="text-sm mb-5">
-              What are you waiting for? Become a member of PROS-APAC’s loyalty
-              program by Availing our PROSTIGE Reward card now to earn points
-              and get special rewards and discounts.
-            </div>
-            <Link href="/components/sitemap/sitemapF.js">
-              <Button name={"Learn More Here"} />
-            </Link>
-          </div>
-        </article>
-        <img
-          src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.15752-9/359685073_773142744818063_6970793800610648065_n.png?_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGpYUNt1nOTLjAiG4akJCrQqPho9gWwYdqo-Gj2BbBh2tJUAlKXAwKRa_tutEReu--wk8qJPU-lzP07y7dLekx8&_nc_ohc=3WnblSDGXYIAX-dNs27&_nc_ht=scontent.fmnl3-3.fna&oh=03_AdTmPYRBuE__T6EsvOS2Jz-Lodxu1Eul-LfD1XMWpcxjlg&oe=64F124F1"
-          alt="dental-products-distributor"
-          className="ml-10 md:mt-0 -mt-10 flex scale-125 rotate-6"
-        />
+    <div className="w-full h-full flex xs:flex-col-reverse lg:flex-row xs:justify-center lg:justify-around items-center xs:px-4 lg:px-32 2xl:px-48 lg:gap-16 xs:gap-32 xs:py-20 lg:py-0">
+      <div className="md:max-w-lg max-w-full flex flex-col gap-4 ">
+        <div className="flex flex-col justify-center gap-1">
+          <h2 className="font-bold text-4xl 2xl:text-5xl text-[#121212] ">PROSTIGE PLATINUM</h2>
+          <div className="bg-pac-green w-full h-[2px]" />
+        </div>
+        <div className="flex flex-col w-fit items-start">
+          <h3 className="font-semibold text-xl 2xl:text-2xl text-[#373737] ">
+            Turn your <span className="text-pac-orange mb-10 font-bold">Purchases</span>
+          </h3>
+          <h3 className="font-semibold text-xl 2xl:text-2xl text-[#373737] self-end ">
+            Into more <span className="text-pac-green font-bold">Rewards</span>
+          </h3>
+        </div>
+        <div className="">
+          <h3 className="text-pac-green font-bold text-xl 2xl:text-2xl">NEVER MISS A POINT!</h3>
+          <p className="text-sm 2xl:text-lg text-[#373737]">
+            What are you waiting for? Become a member of PROS-APAC’s loyalty
+            program by Availing our PROSTIGE Reward card now to earn points and
+            get special rewards and discounts
+          </p>
+        </div>
+        <Button type={1} color={'orange'} name={"Learn More Here"} link={'/#'}/>
+      </div>
+      <div className="2xl:w-[640px] 2xl:h-[360px] xs:w-64 xs:h-36 lg:w-[384px] lg:h-[216px] rotate-12 bg-[#E3E3E3] shadow-md rounded-md overflow-hidden ">
+        <Image src={props.link} fill={true} alt="prostige-reward-card" />
       </div>
     </div>
   );

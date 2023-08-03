@@ -10,17 +10,17 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             </div>
         ) : (heroType === 'video') ? (
             <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">
-                <div className="z-10 max-w-[900px] lg:ml-32 xs:ml-8 sm:ml-16 py-10">
-                    <div className="font-bold text-[#FCFCFC] text-4xl uppercase">
+                <div className="z-10 lg:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 lg:ml-32 xs:ml-8 sm:ml-16 py-10">
+                    <h1 className="font-bold text-[#FCFCFC] lg:text-4xl 2xl:text-5xl xs:text-2xl uppercase">
                         {title ? title : 'Insert Heading'}
-                    </div>
-                    <div className="font-bold text-nav-orange text-4xl uppercase">
+                    </h1>
+                    <div className="font-bold text-nav-orange lg:text-4xl 2xl:text-5xl xs:text-2xl uppercase">
                         {title2 ? title2 : 'Insert Heading'}
                     </div>
-                    <div className="text-[#F0F0F0]/90 font-regular mb-8 max-w-[600px]">
+                    <div className="text-[#F0F0F0]/90 font-regular mb-8 lg:max-w-[600px] 2xl:max-w-[750px] 2xl:text-lg xs:text-sm xs:max-w-[280px]">
                         {subheading ? subheading : 'Insert Subheading'}
                     </div>
-                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} />
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} />
                 </div>
                 <div className="absolute z-0 t-0 w-full h-full">
                     <video
@@ -42,11 +42,11 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#F0892B]/60 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} alt="dental-website-banner" />
                 </div>
-                <div className="z-20 font-bold text-[#FCFCFC] text-3xl mt-16 flex flex-col items-center justify-center gap-4 pb-8">
+                <div className="z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl mt-16 flex flex-col items-center justify-center gap-4 lg:pb-8 xs:mb-32">
                     {title ? title : 'Insert Heading'}
-                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} />
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} />
                 </div>
 
             </div>
@@ -64,19 +64,19 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             </div>
         ) : (heroType === 'centered3') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30 py-16 ">
-                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#F0892B]/60 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} alt="dental-website-banner" />
                 </div>
                 <div className="z-20 flex flex-col items-center justify-center gap-2 ">
                     <span className="text-3xl uppercase font-bold text-[#FCFCFC] ">
                         {title ? title : 'Insert Title'}
                     </span>
                     <div className="w-[400px] h-[2px] bg-white rounded-md"></div>
-                    <span className="text-[#EFEFEF] mb-4">
+                    <span className="text-[#EFEFEF] mb-4 text-center">
                         {subheading ? subheading : 'Insert Subheading'}
                     </span>
-                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} link={buttonLink} type={'inverse'} />
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} color={'white-green'} link={buttonLink} />
                 </div>
 
             </div>
