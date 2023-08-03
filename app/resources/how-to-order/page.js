@@ -1,4 +1,4 @@
-import { HeaderTrigger, Hero, QuotationGUide, OrderingGuide } from "@/components"
+import { HeaderTrigger, Hero, QuotationGUide, OrderingGuide, Faq } from "@/components"
 
 export default async function HowToOrder() {
     return (
@@ -15,6 +15,7 @@ export default async function HowToOrder() {
                 <OrderingGuide />
             </div>
             <div className='w-full lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1]'>
+                <Faq />
             </div>
         </div>
     )

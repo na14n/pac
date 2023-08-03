@@ -91,7 +91,6 @@ const OrderingGuide = ({ props }) => {
     ]
 
     const [selectedTab, setSelectedTab] = useState(placeholder[0]);
-    const [selectedSteps, setSelectedSteps] = useState(placeholder[0])
 
     const handleTabClick = (props) => {
         setSelectedTab(props);
@@ -105,7 +104,7 @@ const OrderingGuide = ({ props }) => {
             <div className="grid grid-cols-4 bg-[#F1F1F1] py-2 rounded-md divide-x-[2px] divide-[#E1E1E1] border-2 border-[#E1E1E1] mb-8">
                 {placeholder.map((p, index) => (
                     <button key={index} className={` px-4 lg:max-w-[180px]`} onClick={() => handleTabClick(p)}>
-                        <p className={`uppercase h-full px-6 py-2 rounded-md font-bold lg:text-sm flex justify-center items-center transition-all ${selectedTab.title === p.title ? `bg-[#323232] text-nav-orange` : `text-[#575757]/50 hover:text-nav-orange`}`}>
+                        <p className={`uppercase h-full px-6 py-2 rounded-md font-bold lg:text-sm flex justify-center items-center transition-all ${selectedTab.title === p.title ? `bg-nav-orange text-[#FCFCFC]` : `text-[#575757]/50 hover:text-nav-orange`}`}>
                             {p.title}
                         </p>
                     </button>
