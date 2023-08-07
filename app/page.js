@@ -1,4 +1,5 @@
 import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandsF, TestimonialsF, EventsF, ProstigeF } from "@/components"
+import NewsUpdatesF from "@/components/news-updates/NewsUpdatesF"
 
 
 export default function Home() {
@@ -27,8 +28,11 @@ export default function Home() {
       <div className='w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
         <ProstigeF link={'https://picsum.photos/1280/720'}/>
       </div>
-      <div className='w-full xs:h-fit lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1] '>
-        <TestimonialsF />
+      <div className='w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
+        <ProstigeF link={'https://picsum.photos/1280/720'}/>
+      </div>
+      <div className='w-full xs:h-fit lg:h-auto 2xl:h-fit max-h-fit bg-[#F1F1F1] '>
+        <NewsUpdatesF />
       </div>
       <div className='w-full max-h-fit lg:h-[100vh] 2xl:h-fit bg-[#F1F1F1]'>
         <EventsF />
