@@ -21,6 +21,11 @@ const Footer = () => {
             group: 'about',
         },
         {
+            name: 'Why Pros-Apac',
+            link: '/why-pros-apac',
+            group: 'about',
+        },
+        {
             name: 'Workshops',
             link: '/trainings-&-seminars/workshops',
             group: 'events',
@@ -147,17 +152,17 @@ const Footer = () => {
     return (
         <div className="w-full min-h-content lg:max-h-[67vh] xs:h-content bg-[#171717] flex flex-col divide-y py-4 lg:px-16 xs:px-4 gap-4 pt-8 z-50">
             <div className="w-full h-full shrink-0 basis-[90%] flex lg:flex-row xs:flex-col gap-4">
-                <div className='w-full basis-[30%] flex flex-col justify-between gap-8'>
+                <div className='w-full basis-[30%] flex flex-col justify-start gap-4'>
                     <div className='w-64 h-12 relative'>
                         <Image src="/pac-white.png" fill={true} alt='pros-apac-logo' />
                     </div>
                     <div className=" w-full h-content text-[#e1e1e1] text-sm justify-start lg:pb-4 ">
                         We put the <span className='uppercase font-bold text-pac-orange'>smile</span> back on every <span className='uppercase font-bold text-[#077232]'>filipino</span>
                     </div>
-                    <div className=" w-full h-content text-[#e1e1e1] text-sm flex flex-col justify-start lg:pb-4 ">
+                    <div className=" w-full h-content text-[#e1e1e1] text-sm flex flex-col justify-start lg:pb-4 justify-self-end">
                         <span>768 Gen. Malvar St.,</span>
                         <span>Malate, Manila, Philippines 1004</span>
-                        <span>customerservice@prosapac.com</span>
+                        <a href="mailto:customerservice@prosapac.com" className='hover:text-nav-orange hover:underline'>customerservice@prosapac.com</a>
                         <span>+63 2 8526 3870 / 8526 2911 / 8524 0331</span>
                     </div>
                 </div>
@@ -218,7 +223,7 @@ const Footer = () => {
             </div>
             <div className="w-full shrink-1 lg:px-8 flex lg:flex-row xs:flex-col-reverse justify-between pt-2">
                 <span className=' w-content h-full text-xs text-[#fcfcfc]'>
-                    All Rights Reeserved 2023
+                    All Rights Reserved 2023
                 </span>
                 <div className=' w-content h-full flex xs:gap-8 lg:gap-4'>
                     {extraLinks.map((link, index) => (

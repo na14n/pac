@@ -14,7 +14,7 @@ export default async function HowToOrder() {
             <div className='w-full lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1]'>
                 <OrderingGuide />
             </div>
-            <div className='w-full lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1]'>
+            <div className='w-full lg:min-h-[100vh] 2xl:min-h-fit 2xl:h-fit max-h-fit bg-[#F1F1F1]'>
                 <Faq />
             </div>
         </div>
