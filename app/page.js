@@ -1,5 +1,4 @@
 import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandsF, TestimonialsF, EventsF, ProstigeF } from "@/components"
-import NewsUpdatesF from "@/components/news-updates/NewsUpdatesF"
 
 
 export default function Home() {
