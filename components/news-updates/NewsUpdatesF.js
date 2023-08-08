@@ -3,7 +3,7 @@ import Updates from "../updates";
 import Button from "../button";
 export default function NewsUpdatesF() {
   return (
-    <div className="bg-[#FCFCFC] items-center flex-col md:flex-row ">
+    <div className="bg-[#F1F1F1] items-center flex-col md:flex-row ">
       {/* -----BANNER----- */}
       <section>
         <div class="relative mb-10">
@@ -129,24 +129,6 @@ export default function NewsUpdatesF() {
 
           {/* -----POPULAR CARDS----- */}
           <section className="gap-3">
-            <Updates
-              type={4}
-              title={
-                "LAUGHING GAS HAS PROVED TO INCREASE DENTAL PROCEDURE EFFECTIVENESS"
-              }
-              image={"https://i.gifer.com/Td9n.gif"}
-              alttext={"Popular type image"}
-              date={"June 5, 2023"}
-            />
-            <Updates
-              type={4}
-              title={
-                "LAUGHING GAS HAS PROVED TO INCREASE DENTAL PROCEDURE EFFECTIVENESS"
-              }
-              image={"https://i.gifer.com/Td9n.gif"}
-              alttext={"Popular type image"}
-              date={"June 5, 2023"}
-            />
             <Updates
               type={4}
               title={

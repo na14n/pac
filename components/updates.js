@@ -5,7 +5,7 @@ const Updates = ({ type, title, description, image, date, alttext }) => {
         <section className="text-white">
           <section className="flex flex-col items-start mr-3 relative">
             <img
-              className="w-full h-[312px] rounded-xl my-2 hover:border-pac-green hover:border-4 hover:border-solid"
+              className="w-full h-[312px] rounded-xl my-2 hover:border-pac-green hover:border-4"
               src={image}
               alt={alttext}
             />
@@ -37,8 +37,8 @@ const Updates = ({ type, title, description, image, date, alttext }) => {
             alt={alttext}
           />
           <p className="text-xl font-semibold">{title}</p>
-          <p className="text-sm text-pac-orange mb-2">{date}</p>
-          <p className="text-sm">{description}</p>
+          <p className="text-md text-pac-orange mb-2 font-semibold">{date}</p>
+          <p className="text-md font-normal">{description}</p>
         </div>
       ) : type === 4 ? (
         <div className="w-full h-auto hover:border-2 hover:border-pac-green p-1 rounded-xl flex mb-2">
@@ -52,7 +52,7 @@ const Updates = ({ type, title, description, image, date, alttext }) => {
                   <p className="text-xl font-semibold">
                     {title}
                   </p>
-                  <p className="text-sm text-gray-500 mb-2">{date}</p>
+                  <p className="text-sm text-gray-500 mb-2 font-medium">{date}</p>
                 </div>
               </div>
             </div>
