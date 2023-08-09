@@ -56,18 +56,18 @@ async function Products() {
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
-            <div className='w-full h-[50vh]'>
+            <div className='w-full h-fit'>
                 <HeaderTrigger>
                     <Hero heroType={'slider'} mediaArray={sliderMedia} />
                 </HeaderTrigger>
             </div>
-            <div className='w-full lg:h-[15vh]'>
+            <div className='w-full lg:h-fit'>
                 <CategoryBanner />
             </div>
-            <div className='w-full lg:h-[60vh] bg-[#EEE] overflow-hidden flex justify-center items-center'>
+            <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
                 <BrandSlider brands={sliderBrands} />
             </div>
-            <div className='w-full lg:h-[100vh] bg-[#EEE] overflow-hidden flex justify-center items-center'>
+            <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
                 <FeaturedProductsList />
             </div>
         </div>

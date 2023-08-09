@@ -17,16 +17,11 @@ export const HeroSlider = ({ height, media }) => {
     }, [emblaApi])
 
     return (
-        <div className="embla h-full" >
-            <div className={'absolute flex justify-between items-center w-full px-16 h-1/2'}>
-                <button className="embla__next z-40 bg-[#F1F1F1] flex justify-center items-center py-1 rounded-full shadow-md group" onClick={scrollPrev}>
-                    <Icon icon="ic:round-keyboard-arrow-left" width="32" height="32" className='pl-1 pr-1 group-hover:text-pac-orange' />
-                </button>
-                <button className="embla__next z-40 bg-[#F1F1F1] flex justify-center items-center py-1 rounded-full shadow-md group" onClick={scrollNext}>
-                    <Icon icon="ic:round-keyboard-arrow-right" width="32" height="32" className='pl-1 pr-1 group-hover:text-pac-orange' />
-                </button>
-            </div>
-            <div className="embla__viewport h-full" ref={emblaRef}>
+        <div className="embla lg:h-[40vh] 2xl:h-[30vh] flex items-center justify-between relative px-32" >
+            <button className="embla__next z-40 bg-[#F1F1F1] flex justify-center items-center py-1 rounded-full shadow-md group" onClick={scrollPrev}>
+                <Icon icon="ic:round-keyboard-arrow-left" className='pl-1 pr-1 text-2xl group-hover:text-pac-orange' />
+            </button>
+            <div className="embla__viewport w-full h-full absolute top-0 left-0" ref={emblaRef}>
                 <div className="embla__container h-full">
                     {media.map((m, index) => (
                         <div key={index} className="embla__slide">
@@ -35,7 +30,9 @@ export const HeroSlider = ({ height, media }) => {
                     ))}
                 </div>
             </div>
-
+            <button className="embla__next z-40 bg-[#F1F1F1] flex justify-center items-center py-1 rounded-full shadow-md group" onClick={scrollNext}>
+                <Icon icon="ic:round-keyboard-arrow-right" className='pl-1 pr-1 text-2xl group-hover:text-pac-orange' />
+            </button>
         </div>
     )
 }
