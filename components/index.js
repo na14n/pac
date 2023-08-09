@@ -29,7 +29,10 @@ import Faq from './resources-pages/faq'
 import TestimonialCard from './testimonials/testimonialCard'
 import SalesAgentSearchBar from './resources-pages/agentSearchBar'
 import SalesAgentCard from './resources-pages/salesAgentCard'
+import BrandLogo from './brands/brandLogo'
+import BrandInfo from './brands/brandInfo'
+import SearchBar from './searchBar'
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu,Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu,Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar
 }
