@@ -7,7 +7,7 @@ const FeaturedProductsList = () => {
                 Featured Products
             </h1>
             <div className='w-4/5 h-[2px] bg-pac-orange' />
-            <div className="w-full h-full px-8 pt-16 grid lg:grid-cols-4 2xl:grid-cols-6 lg:gap-y-4 2xl:gap-y-6">
+            <div className="w-full h-full px-8 pt-16 grid gap-4 grid-auto-fit-xs">
                 <ProductCard best={'true'} />
                 <ProductCard best={'true'} />
                 <ProductCard best={'true'} />

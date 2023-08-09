@@ -27,6 +27,7 @@
     "zustand": "^4.3.9"
   },
   "devDependencies": {
-    "@iconify-icon/react": "^1.0.8"
+    "@iconify-icon/react": "^1.0.8",
+    "@shrutibalasa/tailwind-grid-auto-fit": "^1.1.0"
   }
 }

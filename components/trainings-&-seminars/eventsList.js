@@ -85,7 +85,7 @@ async function EventsList({ sorting, eventType }) {
           `,
                 fetchPolicy: 'no-cache',
             });
-            console.log('WORKSHOPS: ',result.data.eventsType.nodes[0].events.nodes);
+            console.log('WORKSHOPS: ', result.data.eventsType.nodes[0].events.nodes);
             return result.data.eventsType.nodes[0].events.nodes;
         } catch (error) {
             console.error('Error occurred:', error);
@@ -113,42 +113,42 @@ async function EventsList({ sorting, eventType }) {
     return (
 
         (sorting === 'default') ? (
-            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 min-[1900px]:grid-cols-5 gap-8'>
+            <div className='w-full h-full grid justify-items-center gap-4 grid-auto-fit-xl '>
                 {workshops.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'nameAsc') ? (
-            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
+            <div className='w-full h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
                 {nameSortedAsc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'nameDesc') ? (
-            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
+            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center  '>
                 {nameSortedDesc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'dateAsc') ? (
-            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
+            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center '>
                 {dateSortedAsc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (sorting === 'dateDesc') ? (
-            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 sm:grid-cols-2 '>
+            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center '>
                 {dateSortedDesc.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}
             </div>
 
         ) : (
-            <div className='w-fit h-full grid justify-items-start xs:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 sm:grid-cols-2 gap-8'>
+            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center'>
                 {workshops.map((w, index) => (
                     <EventCard key={index} title={w.name} description={w.description} />
                 ))}

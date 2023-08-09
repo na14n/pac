@@ -42,4 +42,7 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     }
   },
+  plugins: [
+    require('@shrutibalasa/tailwind-grid-auto-fit'),
+  ],
 }
