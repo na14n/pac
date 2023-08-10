@@ -6,7 +6,7 @@ const ProductCard = ({ media, name, brand, category, slug, best }) => {
             <div className={`w-fit h-fit absolute top-0 left-0 z-10 bg-gradient-to-r from-nav-orange to-pac-orange px-3 py-2 flex flex-col justify-end items-center ${best == 'true' ? '' : 'hidden'}`}>
                 <p className="text-[#FCFCFC] capitalize font-bold text-xs">Best Seller</p>
             </div>
-            <div className="w-full h-48 z-0 relative flex items-center justify-center">
+            <div className="w-full h-48 z-0 relative flex items-center justify-center overflow-hidden">
                 <Image height={192} width={192} src={media ? media : '/gengigel-bottle.png'} alt="dental-product" />
             </div>
             <div className="w-full h-fit flex flex-col px-4 py-2 z-10">

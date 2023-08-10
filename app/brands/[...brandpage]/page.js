@@ -1,4 +1,4 @@
-import { HeaderTrigger, Hero, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList } from "@/components"
+import { HeaderTrigger, Hero, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProductCard } from "@/components"
 import { slugFormatter, bgAccentFormatter, hoverTextAccentFormatter } from "@/lib/helpers"
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
@@ -38,7 +38,6 @@ export default async function BrandPage({ params, searchParams }) {
     }
 
     let data = await GetBrand();
-    console.log(data);
 
     return (
         <main className="w-full flex flex-col items-center justify-center">
@@ -55,12 +54,19 @@ export default async function BrandPage({ params, searchParams }) {
             </div>
             <div className="w-full h-fit relative flex justify-center items-center bg-[#EFEFEF]">
                 <div className="py-16 flex flex-col justify-center items-center gap-8 ">
-                    <SearchBar type={'search'} placeholder={`Search ${params.brandpage} products here.`} color={data.data.brands.nodes[0].brandingColor} />
+                    <SearchBar type={'search'} placeholder={`Search ${slugFormatter(params.brandpage, false)} products here.`} color={data.data.brands.nodes[0].brandingColor} />
                     <BrandCategoriesList c={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].itemCategories.nodes : []} p={params.brandpage} q={searchParams.q} color={data.data.brands.nodes[0].brandingColor} />
                 </div>
             </div>
-            <div className={`bg-[#EFEFEF] w-full h-[100vh]`}>
-                
+            <div className="w-full h-fit lg:px-32 2xl:px-48 py-16 grid gap-4 grid-auto-fit-xs bg-[#EFEFEF]">
+                <ProductCard best={'true'} />
+                <ProductCard best={'true'} />
+                <ProductCard best={'true'} />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
             </div>
         </main>
 
