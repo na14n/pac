@@ -2,41 +2,34 @@
 import { Icon } from '@iconify-icon/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { hoverTextAccentFormatter, focusBorderAccentFormatter } from '@/lib/helpers';
 
+const SearchBar = (props) => {
 
-const SearchBar = ({ type }) => {
+    const router = useRouter();
+    const [searchInput, setSearchInput] = useState(' ')
 
-    // const router = useRouter();
+    let search = (e) => {
+        e.preventDefault();
+        return router.push(`${searchInput}`, undefined, { shallow: true })
+    }
 
-    // const [selectedDivision, setSelectedDivision] = useState(divisions[0].name)
-    // const [locationInput, setLocationInput] = useState(' ')
-
-    // let search = (e) => {
-    //     e.preventDefault();
-    //     return router.push(`/resources/sales-agent-search?division=${selectedDivision}&location=${locationInput}`, undefined, { shallow: true })
-    // }
+    const text = props.textAccent
 
     return (
-        (type === 'header') ? (
+        (props.type === 'header') ? (
             <div className="relative w-content justify-end h-content rounded-md py-2 px-1 flex gap-2 items-center">
                 <input type="text" placeholder="Search Products..." className="bg-white/0 w-[140px] px-1 py-1 ring-2 ring-[#FCFCFC] text-[#373737] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#575757] focus:bg-[#f1f1f1] placeholder:text-[#f1f1f1]" />
                 <Icon icon="ic:round-search" width="24" height="24" />
             </div>
-        ) : (type === 'brands') ? (
-            <div className='w-full min-h-full max-h-fit lg:px-32 lg:py-8 flex flex-col items-center'>
-                {/* <form className=' w-full p-4 flex items-center justify-center gap-8'>
-                    <select className='py-1 h-10 w-fit px-2 rounded-md border-[#272727]/30 border-2 outline-none focus:border-pac-orange text-[#272727] capitalize' id='selectDivision' defaultValue={selectedDivision} onChange={(e) => { setSelectedDivision(e.target.value) }}>
-                        {divisions.map((d, index) => (
-                            <option key={index} value={d.name} className='capitalize'>{d.name}</option>
-                        ))}
-                    </select>
-                    <input type='text' placeholder='Enter your Locaton' className='h-10 w-[400px] px-2 rounded-md border-[#272727]/30 border-2 focus:border-pac-orange outline-none placeholder:text-[#575757]/50 text-[#272727]' id='inputLocation' onChange={(e) => { setLocationInput(e.target.value) }} />
-                    <button type='submit' className='h-10 w-fit flex items-center justify-around px-2 gap-2 rounded-md shadow-md bg-nav-orange text-[#FCFCFC] hover:shadow-lg hover:bg-pac-orange transition-all'
-                        onClick={search}>
-                        <Icon icon="mdi:account-search-outline" className='text-xl' />
-                        <p className='font-semibold'>Search</p>
+        ) : (props.type === 'search') ? (
+            <div className='w-full min-h-full max-h-fit flex flex-col items-center'>
+                <form className=' h-10 lg:w-[600px] flex items-center justify-center relative overflow-hidden' onSubmit={search}>
+                    <input type='text' placeholder={props.placeholder} className={`w-full h-full px-3 py-2 rounded-l-sm outline-none border-2 border-[#575757] focus:border-nav-orange bg-[#FCFCFC]`} onChange={(e) => { setSearchInput(e.target.value) }} />
+                    <button type='submit' className={`h-10 w-fit flex items-center z-10 justify-around px-4 gap-2 rounded-r-sm shadow-md bg-[#575757] text-[#FCFCFC] hover:text-nav-orange text-2xl transition-all`}>
+                        <Icon icon="material-symbols:search-rounded" />
                     </button>
-                </form> */}
+                </form>
             </div>
         ) : (
             <div className="relative w-content justify-end h-content rounded-md py-2 px-1 flex gap-2 items-center">

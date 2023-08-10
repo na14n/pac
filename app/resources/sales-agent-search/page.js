@@ -63,7 +63,6 @@ export default async function SalesAgentSearch({ searchParams }) {
     let divisions = await GetDivisions();
 
     let salesAgents = searchParams.division ? await QuerySalesAgents() : []
-    console.log(salesAgents);
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
