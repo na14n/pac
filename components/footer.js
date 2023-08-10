@@ -92,17 +92,17 @@ const Footer = () => {
         },
         {
             name: 'ri:facebook-circle-fill',
-            link: '#',
+            link: 'https://www.facebook.com/pros.apac/',
             group: 'soc-med',
         },
         {
             name: 'ri:instagram-fill',
-            link: '#',
+            link: 'https://www.instagram.com/pros.apac/?hl=en',
             group: 'soc-med',
         },
         {
             name: 'ri:tiktok-fill',
-            link: '#',
+            link: 'https://www.tiktok.com/discover/pros-apac',
             group: 'soc-med',
         },
         {
@@ -135,6 +135,11 @@ const Footer = () => {
         {
             name: 'Privacy Policy',
             link: '#',
+            group: 'extras',
+        },
+        {
+            name: 'Site Map',
+            link: '/site-map',
             group: 'extras',
         }
     ]

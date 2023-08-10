@@ -26,7 +26,7 @@ const Header = () => {
         },
         {
             link: 'trainings & seminars',
-            href: '#'
+            href: '/trainings-&-seminars'
         },
         {
             link: 'contact us',
