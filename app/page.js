@@ -11,6 +11,7 @@ import {
   LandingF,
 } from "@/components";
 import TestimonyPageCard from "@/components/TestimonyPageCard";
+import BannerF from "@/components/about/BannerF";
 import NewsUpdatesF from "@/components/news-updates/NewsUpdatesF";
 
 export default function Home() {
@@ -52,9 +53,13 @@ export default function Home() {
       <div className="w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]">
         <ProstigeF link={"https://picsum.photos/1280/720"} />
       </div>
-      
+
       <div className="w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]">
-        <TestimonyPageCard />
+      <a href="/TestimonyPage" className="text-7xl font-extrabold text-center"> RAWR </a>
+      </div>
+
+      <div className="w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]">
+      <a href="/about">HAKDOG</a>
       </div>
 
       <div className="w-full max-h-fit lg:h-[100vh] 2xl:h-fit bg-[#F1F1F1]">

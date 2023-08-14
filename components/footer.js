@@ -7,7 +7,7 @@ const Footer = () => {
     const footerLinks = [
         {
             name: 'Careers',
-            link: '#',
+            link: '/careers',
             group: 'about',
         },
         {

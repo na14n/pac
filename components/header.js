@@ -18,7 +18,7 @@ const Header = () => {
         },
         {
             link: 'about us',
-            href: '#'
+            href: '/about'
         },
         {
             link: 'products',

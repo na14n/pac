@@ -1,20 +1,39 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
-export default function TestimonyPageCard() {
+const TestimonyPageCard = ({ title, name, comment, image, alttext }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div>
-      <div className=" mx-20">
-        <img
-          className="w-1/4 h-80 rounded-xl"
-          src="https://pbs.twimg.com/media/E8dWXTFVgAQey7O.jpg:large"
-          alt="Testimony"
-        />
-      </div>
-      <div className=" mx-20">
-        <div className=" bg-gradient-to-t from-black to-transparent h-80 w-1/4 text-pac-orange">
-            <p className=" text-end justify-end  items-end">Hello World</p>
-        </div>
+    <div className=" w-full flex">
+      <div
+        className="relative"
+        onMouseOver={() => setIsHovered(true)}
+        onMouseOut={() => setIsHovered(false)}
+      >
+        <img className="w-[50vw] md:w-[25vw] h-[65vh] rounded-md" src={image} alt={alttext} />
+        {isHovered && (
+          <div className="absolute bottom-0 right-0 bg-gradient-to-t from-gray-900 to-transparent h-72 w-full rounded-md p-3">
+            <div className="flex flex-col justify-end h-full">
+              <p className="text-4xl text-white font-extrabold">”</p>
+              <p className="text-center text-white text-lg font-semibold italic -mt-8">
+                {comment}
+              </p>
+              <p className="text-4xl text-white font-extrabold text-right -mt-1">
+                ”
+              </p>
+              <div className="text-end my-4 mx-4">
+                <p className="text-sm font-normal text-white">{name}</p>
+                <p className="text-xs font-thin italic text-pac-orange">
+                  {title}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
+
+export default TestimonyPageCard;
