@@ -1,6 +1,7 @@
 import client from '@/lib/apollo';
 import AddToBasket from '@/components/products/addToBasket';
 import { gql } from 'graphql-tag';
+import { redirect } from 'next/navigation';
 
 
 
@@ -41,21 +42,19 @@ export default async function Page({ params }) {
   }
 
   let data = await GetProduct();
-  console.log('DATA', data);
-
   return (
-    <div className="w-full h-[100vh] bg-nav-orange/50 flex flex-col items-center justify-center">
-      {/* <p>PARAMS SLUG: {params.slug}</p>
-            <p>PRODUCT NAME: {data.name}</p>
-            <p>PRODUCT BRAND: {data.brand.node.name}</p>
-            <p>PRODUCT CATEGORY: {data.category.node.name}</p>
-            <p>TAGS: {data.tags}</p> */}
-      <p>SEARCH SLUG: {String(params.slug).replace(/-/g, ' ')}</p>
-      <p>PARAMS SLUG: {String(data.name).replace(/\s+/g, '-')}</p>
-      <pre>
-        {JSON.stringify(data, null, 2)}
-      </pre>
-      <AddToBasket item={data} />
-    </div>
+    (data.length === 0) ? (redirect('/error')) :
+      (
+        <div className="w-full h-[100vh] bg-nav-orange/50 flex flex-col items-center justify-center">
+          <p>SEARCH SLUG: {String(params.slug).replace(/-/g, ' ')}</p>
+          <p>PARAMS SLUG: {String(data.name).replace(/\s+/g, '-')}</p>
+          <pre>
+            {JSON.stringify(data, null, 2)}
+          </pre>
+          <AddToBasket item={data} />
+  //   </div>
+      )
   )
+
+
 } 

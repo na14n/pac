@@ -17,7 +17,7 @@ export const HeroSlider = ({ height, media }) => {
     }, [emblaApi])
 
     return (
-        <div className="embla lg:h-[40vh] 2xl:h-[40vh] flex items-center justify-between relative px-32" >
+        <div className="embla lg:h-[50vh] 2xl:h-[40vh] max-h-fit flex items-center justify-between relative px-32" >
             <button className="embla__next z-40 bg-[#F1F1F1] flex justify-center items-center py-1 rounded-full shadow-md group" onClick={scrollPrev}>
                 <Icon icon="ic:round-keyboard-arrow-left" className='pl-1 pr-1 text-2xl group-hover:text-pac-orange' />
             </button>
