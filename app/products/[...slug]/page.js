@@ -26,7 +26,6 @@ export default async function Page({ params }) {
                 }
               }
               shortDescription
-              inclusions
               bestSelling
               imageGallery {
                 link
@@ -34,11 +33,7 @@ export default async function Page({ params }) {
               instructionFileLink
               mainWebsiteLink
               longDescription
-              youtubeVideoEmbedSource
               new
-              awards {
-                link
-              }
               productLogo {
                 link
               }
@@ -52,6 +47,10 @@ export default async function Page({ params }) {
                   name
                 }
               }
+              awards {
+                link
+              }
+              youtubeVideoEmbedSource
             }
           }
         }

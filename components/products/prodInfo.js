@@ -1,4 +1,3 @@
-import { slugFormatter } from "@/lib/helpers"
 import ProdGallerySlider from "../embla/prodGallerySlider"
 import AddToBasket from "./addToBasket"
 
@@ -11,8 +10,7 @@ export default function ProdInfo(props) {
             <section className="w-[600px] 2xl:w-[800px] h-fit flex flex-col gap-4 2xl:gap-8 ">
                 <h1 className="text-4xl 2xl:text-5xl font-bold text-[#121212] uppercase ">{props.data.name ? props.data.name : ``}</h1>
                 <p className="text-[#272727] text-sm 2xl:text-lg h-[150px]">
-                    {/* {props.data.shortDescription ? props.data.shortDescription : ``} */}
-                    Exploring the cosmos has always captivated human minds, driving us to develop advanced telescopes, probes, and rovers. As we gaze at distant stars and planets, we uncover the mysteries of our universe's origins and potential for extraterrestrial life. With technological leaps, such as the James Webb Space Telescope, we're poised to delve even deeper into space, revealing breathtaking vistas and advancing our understanding of the celestial tapestry that stretches beyond our planet's boundaries.
+                    {props.data.shortDescription ? props.data.shortDescription : ``}
                 </p>
                 <AddToBasket item={props.data} />
                 <div className="bg-[#121212]/50 h-[1px] w-full" />
@@ -21,14 +19,11 @@ export default function ProdInfo(props) {
                     <p className="text-[#272727] text-sm h-fit capitalize 2xl:text-lg">{props.data.inclusions ? props.data.inclusions : ``}</p>
                 </div>
                 <div className="w-full h-fit flex gap-4 flex-wrap">
-                    <img src={props.data.productLogo.link} className={`w-auto h-28 ${props.data.awards[0].link ? `` : `hidden`}`} />
+                    <img src={props.data.productLogo ? props.data.productLogo.link : '' } className={`w-auto h-28 ${props.data.productLogo ? `` : `hidden`}`} />
                     {props.data.awards.map((a, index) => (
                         <img key={index} src={a.link} className="w-auto h-28" />
                     ))}
                 </div>
-                {/* <pre>
-                    {JSON.stringify(props.data, null, 2)}
-                </pre> */}
             </section>
 
         </main>
