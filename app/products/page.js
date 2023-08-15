@@ -4,20 +4,34 @@ import { gql } from 'graphql-tag';
 
 async function Products() {
 
+    const GET_BRANDS = gql`
+        query getBrands {
+            brands {
+            nodes {
+                id
+                name
+                logo {
+                link
+                }
+            }
+            }
+        }
+    `
+
     async function GetMediaSlider() {
         try {
             const result = await client.query({
                 query: gql`
-                query GetMediaSlider {
-                    mediaSliders(where: {name: "Products Page Media Slider"}) {
-                      nodes {
-                        media {
-                          link
+                    query GetMediaSlider {
+                        mediaSliders(where: {name: "Products Page Media Slider"}) {
+                          nodes {
+                            media {
+                              link
+                            }
+                          }
                         }
                       }
-                    }
-                  }
-          `,
+              `,
                 fetchPolicy: 'network-only',
             });
             return result.data.mediaSliders.nodes[0].media;
@@ -29,11 +43,12 @@ async function Products() {
 
     async function GetBrands() {
         try {
-            const result = await client.query({
+            const { loading, error, data } = await client.query({
                 query: gql`
-                query GetBrands {
+                query getAllBrands {
                     brands {
                       nodes {
+                        id
                         name
                         logo {
                           link
@@ -42,9 +57,8 @@ async function Products() {
                     }
                   }
           `,
-                fetchPolicy: 'network-only',
             });
-            return result.data.brands.nodes
+            return data
         } catch (error) {
             console.error('Error occurred:', error);
             return [];
@@ -65,7 +79,8 @@ async function Products() {
                 <CategoryBanner />
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
-                <BrandSlider brands={sliderBrands} />
+                <BrandSlider brands={sliderBrands.brands.nodes} />
+                {/* <pre>{JSON.stringify(sliderBrands.brands.nodes, null, 2)}</pre> */}
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
                 <FeaturedProductsList />

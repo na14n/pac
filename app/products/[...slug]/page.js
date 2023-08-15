@@ -2,6 +2,8 @@ import client from '@/lib/apollo';
 import AddToBasket from '@/components/products/addToBasket';
 import { gql } from 'graphql-tag';
 import { redirect } from 'next/navigation';
+import { slugFormatter } from '@/lib/helpers';
+import { ProdInfo, HeaderTrigger } from '@/components';
 
 
 
@@ -11,30 +13,52 @@ export default async function Page({ params }) {
     try {
       const result = await client.query({
         query: gql`
-                query FetchProducts {
-                  products(where: {search: "${String(params.slug).replace(/-/g, ' ')}", orderby: {field: TITLE, order: ASC}}) {
-                    nodes {
-                      id
-                      name
-                      tags
-                      brand {
-                        node {
-                          name
-                        }
-                      }
-                      category {
-                        node {
-                          name
-                        }
-                      }
-                      description
-                    }
+        query FetchProducts {
+          products(where: {search: "${slugFormatter(params.slug, false, false)}", orderby: {field: TITLE, order: ASC}}) {
+            nodes {
+              name
+              brand {
+                node {
+                  name
+                  logo {
+                    link
                   }
                 }
+              }
+              shortDescription
+              inclusions
+              bestSelling
+              imageGallery {
+                link
+              }
+              instructionFileLink
+              mainWebsiteLink
+              longDescription
+              youtubeVideoEmbedSource
+              new
+              awards {
+                link
+              }
+              productLogo {
+                link
+              }
+              itemCategories {
+                nodes {
+                  parent {
+                    node {
+                      name
+                    }
+                  }
+                  name
+                }
+              }
+            }
+          }
+        }
           `,
         fetchPolicy: 'no-cache',
       });
-      return result.data.products.nodes[0];
+      return result;
     } catch (error) {
       console.error('Error occurred:', error);
       return [];
@@ -42,18 +66,23 @@ export default async function Page({ params }) {
   }
 
   let data = await GetProduct();
+
   return (
-    (data.length === 0) ? (redirect('/error')) :
-      (
-        <div className="w-full h-[100vh] bg-nav-orange/50 flex flex-col items-center justify-center">
-          <p>SEARCH SLUG: {String(params.slug).replace(/-/g, ' ')}</p>
-          <p>PARAMS SLUG: {String(data.name).replace(/\s+/g, '-')}</p>
-          <pre>
-            {JSON.stringify(data, null, 2)}
-          </pre>
-          <AddToBasket item={data} />
-  //   </div>
-      )
+    (data.data.products.nodes.length === 0) ? (
+      redirect('/error')
+    ) : (
+      <main className="w-full h-fit overflow-hidden bg-[#EFEFEF] flex flex-col items-center">
+        <div className='w-full min-h-24 h-24 max-h-24'>
+          <HeaderTrigger>
+            <div className='w-full h-full bg-pac-green z-0' />
+          </HeaderTrigger>
+        </div>
+        <ProdInfo data={data.data.products.nodes[0]} />
+        <section className="w-full h-screen test">
+          <pre>{JSON.stringify(data.data.products.nodes[0].itemCategories.nodes, null, 2)}</pre>
+        </section>
+      </main>
+    )
   )
 
 

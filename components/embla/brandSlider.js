@@ -45,7 +45,7 @@ export const BrandSlider = ({ brands }) => {
                         {arrayOfArrays.map((w, index) => (
                             <div key={index} className='embla__slide w-fit h-full grid lg:grid-cols-5 py-8 gap-2 lg:gap-x-16'>
                                 {w.map((c, index) => (
-                                    <a key={index} className='lg:w-32 lg:h-32 2xl:w-56 2xl:h-56 p-2 flex flex-col justify-center items-center rounded-sm hover:-translate-y-1 hover:shadow-lg hover:border-2 border-[#575757]/0 transition-all text-red-500`' href={`/brands/${slugFormatter(c.name)}`}>
+                                    <a key={index} className='lg:w-32 lg:h-32 2xl:w-56 2xl:h-56 p-2 flex flex-col justify-center items-center rounded-sm hover:-translate-y-1 hover:shadow-lg hover:border-2 border-[#575757]/0 transition-all text-red-500`' href={`/brands/${slugFormatter(c.name, false, true)}`}>
                                         <Image width={256} height={256} src={c.logo.link ? c.logo.link : 'https://picsum.photos/2400'} alt="dental-product-brand" />
                                     </a>
                                 ))}
