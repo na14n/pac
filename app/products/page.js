@@ -41,32 +41,7 @@ async function Products() {
         }
     }
 
-    async function GetBrands() {
-        try {
-            const { loading, error, data } = await client.query({
-                query: gql`
-                query getAllBrands {
-                    brands {
-                      nodes {
-                        id
-                        name
-                        logo {
-                          link
-                        }
-                      }
-                    }
-                  }
-          `,
-            });
-            return data
-        } catch (error) {
-            console.error('Error occurred:', error);
-            return [];
-        }
-    }
-
     let sliderMedia = await GetMediaSlider();
-    let sliderBrands = await GetBrands();
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
@@ -79,7 +54,7 @@ async function Products() {
                 <CategoryBanner />
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
-                <BrandSlider brands={sliderBrands.brands.nodes} />
+                <BrandSlider />
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
                 <FeaturedProductsList />

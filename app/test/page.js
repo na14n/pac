@@ -23,7 +23,7 @@ const query = gql`query GetBrand($search: String = "american orthodontics") {
     }
   }`
 
-const testPage = () => {
+const TestPage = () => {
 
   // const { data } = await getClient().query({
   //     query,
@@ -34,7 +34,16 @@ const testPage = () => {
   //     }
   // });
 
-  const { data } = useSuspenseQuery(query)
+  const { data } = useSuspenseQuery(
+    query,
+    {
+      context: {
+        fetchOptions: {
+          next: { revalidate: 5 },
+        },
+      },
+    }
+  );
 
   // console.log(loading);
 
@@ -43,4 +52,4 @@ const testPage = () => {
   </pre>;
 };
 
-export default testPage;
+export default TestPage;

@@ -32,15 +32,15 @@ const TestimonialCard = (props) => {
                     <Icon icon="ri:double-quotes-l" width={48} height={48} />
                 </div>
                 <div className="w-full h-fit text-center text-sm 2xl:text-lg text-[#272727] mt-2">
-                    I’m one of the first members of the first batch (Batch 1 BICON Implant Class) so happy ako sa service and cooperation, and you’ve got good staff as well as the dentists who helped us. The service and the friendship na nagkaroon na tayo ng personal… family …PROS-APAC family. Thanks to all the personnel and staff of PROS-APAC, I wish you all the best!
+                    {props?.data?.message}
                 </div>
             </div>
             <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col justify-center items-end">
                 <div className="font-bold text-pac-green 2xl:text-xl">
-                    Dr. Margaret Jugueta
+                    {props?.data?.name}
                 </div>
                 <div className="text-sm 2xl:text-lg font-semibold text-[#373737]">
-                    Cubao, Quezon City, Philipppines
+                    {props?.data?.location}
                 </div>
             </div>
         </div>

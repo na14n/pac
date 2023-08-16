@@ -13,13 +13,13 @@ import { BrandSlider } from './embla/brandSlider'
 import FeaturedProductsList from './products/featuredProductsList'
 import ProductCard from './products/productCard'
 import CatalogueCard from './resources-pages/catalogueCard'
-import { AboutF } from './homepage/aboutF'
-import { Strengths } from './homepage/strengths'
-import { Reach } from './homepage/reach'
+import AboutF from './homepage/aboutF'
+import Strengths from './homepage/strengths'
+import Reach from './homepage/reach'
 import { BrandSliderF } from './embla/brandSliderF'
-import { BrandsF } from './homepage/brandsF'
-import { TestimonialsF } from './homepage/testimonialsF'
-import { EventsF } from './homepage/eventsF'
+import BrandsF from './homepage/brandsF'
+import TestimonialsF from './homepage/testimonialsF'
+import EventsF from './homepage/eventsF'
 import ProstigeF from './homepage/prostigeF'
 import ViberBanner from './contact-us/viberBanner'
 import QuotationGUide from './resources-pages/quotationGuide'
@@ -34,7 +34,10 @@ import BrandInfo from './brands/brandInfo'
 import SearchBar from './searchBar'
 import BrandCategoriesList from './brands/brandCategoriesList'
 import ProdInfo from './products/prodInfo'
+import HeroBanner from './homepage/heroBanner'
+import HomeLoading from './homepage/homeLoading'
+
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu,Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading
 }

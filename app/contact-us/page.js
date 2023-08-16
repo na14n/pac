@@ -1,40 +1,9 @@
-import { MyComponent, HeaderTrigger, Hero, LocationCard, MessageUsForm, ViberBanner } from "@/components"
-import client from '@/lib/apollo';
-import { gql } from 'graphql-tag';
+import { HeaderTrigger, Hero, LocationCard, MessageUsForm, ViberBanner } from "@/components"
+
+export const dynamic = 'force-dynamic'
+
 
 export default async function ContactUs() {
-
-  async function GetBranches() {
-    try {
-      const result = await client.query({
-        query: gql`
-            query GetBranchesInformation {
-                branchesInformation {
-                  nodes {
-                    branchName
-                    addressLine1
-                    addressLine2
-                    addressLine3
-                    landlineNumber
-                    mobileNumber
-                    email
-                    googleMapsSourceLink
-                    officeHours
-                    date
-                  }
-                }
-              }
-      `,
-        fetchPolicy: 'no-cache',
-      });
-      return result.data.branchesInformation.nodes;
-    } catch (error) {
-      console.error('Error occurred:', error);
-      return [];
-    }
-  }
-
-  let data = await GetBranches();
 
   return (
     <main className="w-full flex flex-col items-center justify-center">

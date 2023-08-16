@@ -15,12 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="pac">
       <body className={inter.className}>
-        <ApolloWrapper>
-          <Header />
-          <SideMenu />
-          {children}
-          <Footer />
-        </ApolloWrapper>
+          <ApolloWrapper>
+            <Header />
+            <SideMenu />
+            {children}
+            <Footer />
+          </ApolloWrapper>
       </body>
     </html>
   )

@@ -12,7 +12,7 @@ export default async function BrandPage({ params, searchParams }) {
             const result = await client.query({
                 query: gql`
                 query GetBrand {
-                    brands(where: {search: "${slugFormatter(params.brandpage, false)}"}) {
+                    brands(where: {search: "${slugFormatter(params.brandpage, false, false)}"}) {
                         nodes {
                           name
                           logo {
