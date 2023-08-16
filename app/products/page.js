@@ -80,7 +80,6 @@ async function Products() {
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
                 <BrandSlider brands={sliderBrands.brands.nodes} />
-                {/* <pre>{JSON.stringify(sliderBrands.brands.nodes, null, 2)}</pre> */}
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
                 <FeaturedProductsList />

@@ -1,7 +1,12 @@
-import { getClient } from "@/lib/client";
+'use client';
+
+export const dynamic = 'force-dynamic'
+
+// import { getClient } from "@/lib/client";
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { gql } from "@apollo/client";
 
-const query = gql`query GetBrand($search: String = "jeil") {
+const query = gql`query GetBrand($search: String = "american orthodontics") {
     brands(where: {search: $search}) {
       nodes {
         name
@@ -18,18 +23,24 @@ const query = gql`query GetBrand($search: String = "jeil") {
     }
   }`
 
-export default async function testPage() {
+const testPage = () => {
 
-    const { data } = await getClient().query({
-        query,
-        context: {
-            fetchOptions: {
-                next: { revalidate: 30 },
-            }
-        }
-    });
+  // const { data } = await getClient().query({
+  //     query,
+  //     context: {
+  //         fetchOptions: {
+  //             next: { revalidate: 30 },
+  //         }
+  //     }
+  // });
 
-    // console.log(data);
+  const { data } = useSuspenseQuery(query)
 
-    return <pre className="w-full h-screen flex items-center justify-center text-black">{JSON.stringify(data, null, 2)}</pre>;
+  // console.log(loading);
+
+  return <pre className="w-full h-screen flex items-center justify-center text-black">
+    {JSON.stringify(data, null, 2)}
+  </pre>;
 };
+
+export default testPage;
