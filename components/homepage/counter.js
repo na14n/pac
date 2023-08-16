@@ -22,22 +22,11 @@ const Counter = ({ target, title, duration }) => {
 				)}
 			</CountUp>
 			<p
-				className={`font-bold text-lg animation delay ${
-					inView === true ? 'opacity-100 transform-show' : 'opacity-0 transform-hide'
+				className={`font-bold text-lg transition-all ${
+					inView === true ? 'opacity-100 ' : 'opacity-0 '
 				}`}>
 				{title}
 			</p>
-			<style jsx>{`
-				.delay {
-					transition-delay: ${duration}s;
-				}
-				.transform-hide {
-					transform: translate3d(0, 1rem, 0);
-				}
-				.transform-show {
-					transform: translate3d(0, 0, 0);
-				}
-			`}</style>
 		</div>
 	);
 };
