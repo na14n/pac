@@ -42,7 +42,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#F0892B]/60 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
-                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} alt="dental-website-banner" />
+                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover'   alt="dental-website-banner" />
                 </div>
                 <div className="z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl mt-16 flex flex-col items-center justify-center gap-4 lg:pb-8 xs:mb-32">
                     {title ? title : 'Insert Heading'}
@@ -54,7 +54,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/60 via-[#3E3E3E]/60 to-[#3E3E3E]/60 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover'  alt="dental-website-banner" />
                 </div>
                 <div className="z-20 font-bold text-[#FCFCFC] text-3xl mt-16 flex flex-col items-center justify-center gap-4 pb-8">
                     {title ? title : 'Insert Heading'}
@@ -65,8 +65,8 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
         ) : (heroType === 'centered3') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30 py-16 ">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#F0892B]/60 w-full h-full"></div>
-                <div className="absolute z-0 t-0 w-full h-full">
-                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} alt="dental-website-banner" />
+                <div className="absolute z-0 t-0 w-full h-full flex items-center justify-center">
+                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover'  alt="dental-website-banner" />
                 </div>
                 <div className="z-20 flex flex-col items-center justify-center gap-2 ">
                     <span className="text-3xl uppercase font-bold text-[#FCFCFC] ">
@@ -84,7 +84,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover'  alt="dental-website-banner" />
                 </div>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16 uppercase">
                     {title ? title : 'Insert Heading'}
@@ -94,7 +94,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#077232]/90 via-[#077232]/90 to-[#063013]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-auto h-auto">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover'  alt="dental-website-banner" />
                 </div>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16 uppercase">
                     {title ? title : 'Insert Heading'}
@@ -104,7 +104,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#121212]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-auto h-auto">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover'  alt="dental-website-banner" />
                 </div>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16 uppercase">
                     {title ? title : 'Insert Heading'}
@@ -114,7 +114,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#121212]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-auto h-auto">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover'  alt="dental-website-banner" />
                 </div>
                 <div className="z-10 h-fit lg:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 lg:ml-32 xs:ml-8 sm:ml-16 py-10">
                     <h1 className="font-bold text-[#FCFCFC] lg:text-4xl 2xl:text-5xl xs:text-2xl uppercase">
@@ -132,7 +132,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 {/* <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#121212]/90 w-full h-full"></div> */}
                 <div className="absolute z-0 t-0 w-auto h-auto">
-                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                    <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover'   alt="dental-website-banner" />
                 </div>
                 <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16">
                     {title ? title : 'Insert Heading'}

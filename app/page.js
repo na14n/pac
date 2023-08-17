@@ -25,7 +25,7 @@ export default function Home() {
         <div className='w-full min-h-min lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
           <BrandsF />
         </div>
-        <div className='w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
+        <div className='w-full lg:min-h-[100vh] max-h-fit bg-[#F1F1F1]'>
           <ProstigeF link={'https://picsum.photos/1280/720'} />
         </div>
         <div className='w-full xs:h-fit lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1] '>
