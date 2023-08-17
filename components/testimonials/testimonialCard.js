@@ -36,10 +36,10 @@ const TestimonialCard = (props) => {
                 </div>
             </div>
             <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col justify-center items-end">
-                <div className="font-bold text-nav-orange 2xl:text-xl">
+                <div className="font-bold text-pac-green 2xl:text-xl">
                     {props?.data?.name}
                 </div>
-                <div className="text-sm 2xl:text-lg font-semibold text-[#EFEFEF]">
+                <div className="text-sm 2xl:text-lg font-semibold text-[#373737]">
                     {props?.data?.location}
                 </div>
             </div>

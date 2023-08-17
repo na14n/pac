@@ -1,4 +1,4 @@
-import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandsF, TestimonialsF, EventsF, ProstigeF, HeroBanner, HomeLoading } from "@/components"
+import { HeaderTrigger, Hero, AboutF, Strengths, Reach, BrandsF, TestimonialsF, EventsF, ProstigeF, HeroBanner, HomeLoading, OrderF, OurStory } from "@/components"
 import { Suspense } from "react"
 
 export default function Home() {
@@ -13,11 +13,12 @@ export default function Home() {
         <div className='w-full max-h-fit lg:h-[50vh] bg-[#F1F1F1]'>
           <AboutF />
         </div>
-        <div className='w-full min-h-4 max-h-fit bg-[#F1F1F1]'>
+        <div className='w-full h-0 bg-[#F1F1F1]'>
           <Strengths />
         </div>
         <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[60vh] max-h-fit bg-[#F1F1F1]'>
-          <Hero heroType={'centered'} title={'To know more about our Story'} buttonName={'Click Here'} buttonLink={'/#'} />
+          {/* <Hero heroType={'centered'} title={'To know more about our Story'} buttonName={'Click Here'} buttonLink={'/#'} /> */}
+          <OurStory />
         </div>
         <div className='w-full max-h-fit bg-[#F1F1F1]'>
           <Reach type={'green'} />
@@ -35,7 +36,8 @@ export default function Home() {
           <EventsF />
         </div>
         <div className='w-full min-h-fit max-h-fit bg-[#F1F1F1]'>
-          <Hero heroType={'centered3'} title={'want to order?'} subheading={'To know more about our purchase and delivery information'} buttonName={'Click Here'} buttonLink={'/resources/how-to-order'} />
+          {/* <Hero heroType={'centered3'} title={'want to order?'} subheading={'To know more about our purchase and delivery information'} buttonName={'Click Here'} buttonLink={'/resources/how-to-order'} /> */}
+          <OrderF />
         </div>
       </Suspense>
     </main>

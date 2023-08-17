@@ -23,6 +23,9 @@ const query = gql`
           title
           sectionHeading
           contentLine1
+          mediaLine1{
+            link
+          }
         }
       }
     }
@@ -42,12 +45,12 @@ export default function BrandsF({ mediaUrl }) {
   );
 
   return (
-    <div className="w-full h-full overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 lg:px-32 2xl:px-48 ">
+    <div className="w-full h-full overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 lg:px-32 2xl:px-48 py-16 ">
       <div className="absolute z-10 top-0 bg-gradient-to-b from-[#F0892B]/60 via-[#3E3E3E]/90 to-[#3E3E3E]/90 w-full h-full"></div>
       <div className="absolute z-0 top-0 w-full h-full">
-        <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400/1600'} alt="dental-website-banner" />
+        <Image fill={true} src={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0].link : 'https://picsum.photos/2400/1600'} className="z-0 object-cover" alt="dental-website-banner" />
       </div>
-      <div className='xs:w-full lg:w-fit py-2 flex flex-col gap-2 items-center justify-center pt-16 z-40 xs:mt-32 lg:mt-0 xs:px-4 lg:px-0'>
+      <div className=' xs:w-full lg:w-fit  flex flex-col gap-3 items-center justify-center  z-40 mt-20 xs:px-4 lg:px-0 lg:mt-24 2xl:mt-32 xs:mt-28'>
         <div className='px-4 uppercase text-3xl 2xl:text-5xl font-bold text-[#FCFCFC] text-center'>
           {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading : `Our Partner Brands`}
         </div>

@@ -36,8 +36,10 @@ import BrandCategoriesList from './brands/brandCategoriesList'
 import ProdInfo from './products/prodInfo'
 import HeroBanner from './homepage/heroBanner'
 import HomeLoading from './homepage/homeLoading'
+import OurStory from './homepage/ourStory'
+import OrderF from './homepage/orderF'
 
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading, OurStory, OrderF
 }
