@@ -13,21 +13,16 @@ export default function PACabout() {
       <section className="flex flex-row absolute mt-16">
         <section className="indent-5 w-1/2 h-full text-lg text-justify pt-4 mr-20">
           <p className="pb-5">
-            Founded by Mr. Renato S. Angeles, PROS-APAC Corporation is a dental
-            company which was established in 1996 as the exclusive distributor
-            of premium quality dental products in the Philippines. While its
-            first product was Orthodontic supplies, PAC has been expanding into
-            other dental specializations: Aesthetics/Restoration, Dental
-            Implants, Bone regeneration, Imaging, Anesthesia, and Prosthetics. 
+          Established in 1996, PROS-APAC Corporation stands out as a prominent dental company in the Philippines. The company was founded by Mr. Renato S. Angeles and embarked on its journey as an exclusive distributor of high-quality dental products and supplies. 
+
           </p>
-          <p>
-            PAC’s main office is in Manila but has branch offices located in
-            Cebu City and Davao City in the Southern Philippines. Currently,
-            there are 45 Sales Representatives distributed nationwide. The
-            company’s Sales and Marketing team also includes 5 Product Managers
-            all of whom are licensed dentists who collectively take care of
-            marketing, brand development, and product training/familiarization
-            of sales associates and customers.
+          <p className="pb-5">
+          Over time, it gradually expanded its expertise to encompass various dental specializations, such as Aesthetics/Restoration, Dental Implants, Bone Regeneration, Imaging, Anesthesia, and Prosthetics.
+          </p>
+
+          <p className="pb-5">
+          PAC's headquarters is located in Manila, with strategically positioned branch offices in Cebu City and Davao City.
+
           </p>
         </section>
         <section className="h-full w-[35vw]">

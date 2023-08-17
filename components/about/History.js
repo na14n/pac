@@ -6,47 +6,49 @@ export default function History() {
     {
       year: "1996",
       title: "YEAR FOUNDED",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: "Mr. Renato S. Angeles, returning to the Philippines after residing in the United States, approached Rocky Mountain Orthodontics (RMO) to propose becoming their Philippine dealer. RMO agreed, leading to the birth of Pacific Rim Orthodontic Supplies (PROS).",
+      description2: "PAC's inaugural office, situated at Rm. 201, Don Santiago Building, Taft Avenue in Manila, became the hub for early operations. The team comprised two sales representatives, an inventory clerk, and an accountant, forming the core of the company's initial steps into the dental domain.",
       image:
         "https://pbs.twimg.com/media/F3cB7igXYAA6do1?format=jpg&name=medium",
       alttext: "Hakdog",
     },
     {
-      year: "1997-2006",
-      title: "RAWR",
-      description: " adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      year: "1997",
+      title: "FIRST BREAKTHROUGH",
+      description: "In parallel, another sole proprietorship emerged as 'APAC Orthodontic Supplies' (APAC), under Mr. Angeles' leadership. GAC International became APAC's first principal, adding another prominent Orthodontic products supplier to the portfolio.",
       image:
         "https://pbs.twimg.com/media/F3cB7igXYAA6do1?format=jpg&name=medium",
       alttext: "Hakdog",
     },
     {
-      year: "2007-2010",
-      title: "HAKDOG",
-      description: "Lorem ipsum dolor  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      year: "Early 200s",
+      title: "ADDITIONAL BRANDS",
+      description: "Mr. Angeles secures distribution rights for Bisco, a distinguished US-based manufacturer specializing in dental cement and adhesives, including orthodontic bonding cement and accessories. This strategic partnership significantly enriches PAC's Orthodontic product offerings, marking a pivotal milestone in the company's growth trajectory.",
       image:
         "https://pbs.twimg.com/media/F3cB7igXYAA6do1?format=jpg&name=medium",
       alttext: "Hakdog",
     },
     {
-      year: "2011-2015",
-      title: "BOMBASTIC SIDEYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      year: "2007",
+      title: "CONSISTENT PROGRESS",
+      description: "PROS APAC Corporation was formed, consolidating the distribution of various dental products in the Philippines.",
       image:
         "https://pbs.twimg.com/media/F3cB7igXYAA6do1?format=jpg&name=medium",
       alttext: "Hakdog",
     },
     {
-      year: "2016-2019",
-      title: "BOOM",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      year: "2023",
+      title: "COOLAB",
+      description: "PROS-APAC launched COOLAB, a dynamic and transformative platform that encapsulated its visionary approach. COOLAB embodied a 'Startup Mindset', emphasizing collaboration, innovation, rapid growth, and purpose-driven initiatives. This initiative elevated team performance, underscoring PROS-APAC's dedication to shaping the future of the industry.",
       image:
         "https://pbs.twimg.com/media/F3cB7igXYAA6do1?format=jpg&name=medium",
       alttext: "Hakdog",
     },
     {
-      year: "2020-Present",
-      title: "AYEEEE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint.",
+      year: "2023-Present",
+      title: "OJTeam Lol",
+      description: "PROS-APAC Corporation has extended its reach from not just enriching the minds of aspiring dentists but also the youth by opening their doors to their first ever On-the-Job Training program whom which designed and developed this very website you are on!",
+      description2: "-Gawa gawa lang HAHAHAHA wala content sa sinend eh",
       image:
         "https://pbs.twimg.com/media/F3cB7igXYAA6do1?format=jpg&name=medium",
       alttext: "Hakdog",
@@ -82,6 +84,7 @@ export default function History() {
     <section className="felx flex-col w-1/2 mr-28">
       <p className="text-4xl font-bold pb-8 text-pac-green">{YearClick.title}</p>
       <p className="text-sm text-justify indent-8">{YearClick.description}</p>
+      <p className="text-sm text-justify indent-8 pt-3">{YearClick.description2}</p>
     </section>
     <img
       className="items-end justify-end w-1/3 h-[100%] align-middle rounded-xl"
