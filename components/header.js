@@ -36,15 +36,16 @@ const Header = () => {
 
     return (
         <Provider>
-            <div className={`fixed z-50 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center transition-all ${headerState ? 'min-h-24 h-24 max-h-24   2xl:px-44 lg:px-16 xs:px-4 duration-200 gap-16' : ' min-h-20 h-16 max-h-16   2xl:px-12 xs:px-6 lg:px-24 bg-nav-green duration-300 gap-4'}`}>
-                <div className="shrink-0 h-full w-content  min-[1280px]:basis-1/5 xs:basis-1/2 flex min-[1280px]:justify-start xs:justify-start items-center">
+            <div className={`fixed z-50 w-full top-0 flex min-[1280px]:justify-center xs:justify-between items-center transition-all ${headerState ? 'min-h-24 h-24 max-h-24   2xl:px-44 lg:px-16 xs:px-4 duration-200 gap-16' : ' min-h-20 h-16 max-h-16   2xl:px-12 xs:px-6 lg:px-24  duration-300 gap-4'}`}>
+                <div className={`w-full h-full bg-nav-green absolute transition-all duration-200  ${headerState ? `-top-24` : `top-0`}`} />
+                <div className="shrink-0 z-[60] h-full w-content  min-[1280px]:basis-1/5 xs:basis-1/2 flex min-[1280px]:justify-start xs:justify-start items-center">
                     <div className={headerState ? 'xs:h-6 lg:h-9 lg:w-48 xs:w-36 relative' : 'xs:h-6 lg:h-8 lg:w-44 xs:w-36 relative'}>
-                        <a className="w-full h-full z-50" href="/">
+                        <a className="w-full h-full z-[60]" href="/">
                             <Image alt='pros-apac-logo' src="/pac-white.png" fill={true} />
                         </a>
                     </div>
                 </div>
-                <div className="shrink-0 h-full basis-1/2 min-[1280px]:flex xs:hidden xs:w-0 justify-center items-center">
+                <div className="shrink-0 z-[60] h-full basis-1/2 min-[1280px]:flex xs:hidden xs:w-0 justify-center items-center">
                     {links.map((item, index) => (
                         <a key={index} href={item.href} className="m-2">
                             <h6 className="w-content uppercase font-semibold text-sm text-[#fcfcfc] hover:text-white group">{item.link}
@@ -52,7 +53,7 @@ const Header = () => {
                         </a>
                     ))}
                 </div>
-                <div className="= shrink-0 h-full basis-1/5 min-[1280px]:flex xs:hidden  justify-end items-center gap-4 text-[#fcfcfc]">
+                <div className="z-[60] shrink-0 h-full basis-1/5 min-[1280px]:flex xs:hidden  justify-end items-center gap-4 text-[#fcfcfc]">
                     <Button type={'inverse'} color={'white'} name={'Shop Now'} link={'#'} />
                     <SearchBar />
                 </div>
