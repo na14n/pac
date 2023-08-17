@@ -32,11 +32,11 @@ export async function CategoryBanner() {
 
 
     return (
-        <div className='w-full h-full bg-[#FCFCFC] lg:px-32 flex justify-center items-center gap-8'>
+        <div className='w-full h-full bg-pac-green lg:px-32 flex justify-center items-center gap-1 py-4'>
             {categories.map((c, index) => (
-                <a key={index} className="flex flex-col items-center h-content justify-center gap-2 group p-2 hover:-translate-y-1 transition-all" href="#">
-                    <Image width={64} height={64} src={c.icon.link ? c.icon.link : 'https://picsum.photos/2400'} alt="dental-product-category" />
-                    <div className="text-[#272727] group-hover:text-pac-orange font-semibold text-sm uppercase">
+                <a key={index} className="flex flex-col items-center w-24 h-content justify-center gap-2 group hover:-translate-y-[2px] transition-all" href="#">
+                    <Image width={48} height={48} src={c.icon.link ? c.icon.link : 'https://picsum.photos/2400'} alt="dental-product-category" />
+                    <div className="text-[#FCFCFC] group-hover:text-nav-orange text-xs capitalize">
                         {c.name}
                     </div>
                 </a>
