@@ -40,7 +40,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             </div>
         ) : (heroType === 'centered') ? (
             <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden z-30 ">
-                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#F0892B]/60 w-full h-full"></div>
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#F0892B]/70 to-[#F0892B]/70 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
                     <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover'   alt="dental-website-banner" />
                 </div>
@@ -63,7 +63,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             </div>
         ) : (heroType === 'centered3') ? (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-30 py-16 ">
-                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#3E3E3E]/90 to-[#F0892B]/60 w-full h-full"></div>
+                <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 via-[#F0892B]/90 to-[#F0892B]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full flex items-center justify-center">
                     <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover'  alt="dental-website-banner" />
                 </div>

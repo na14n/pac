@@ -67,7 +67,7 @@ const Footer = () => {
         },
         {
             name: 'Prostige Rewards',
-            link: '#',
+            link: '/products/prostige',
             group: 'our-products',
         },
         {
