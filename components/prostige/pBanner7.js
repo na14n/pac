@@ -102,7 +102,7 @@ export default function PBanner7() {
                 <div className="w-full h-fit flex xs:flex-col lg:flex-row justify-center items-center gap-16 2xl:gap-24">
                     {data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.sectionHeading.map(
                         (h, i) => (
-                            <TestimonialCard
+                            <TestimonialCard key={i}
                                 message={data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.contentLine2[i] : ''}
                                 name={h}
                                 location={data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.sectionSubheading[i] : ''}
