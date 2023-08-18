@@ -43,6 +43,10 @@ const Button = ({ type, name, link, color }) => {
                     <Icon icon="ic:round-arrow-right-alt" width="24" height="24" className='pl-1 pr-1 group-hover:pl-2 group-hover:pr-0 transition-all' />
                 </div>
             </button>
+        ) : (type === 'large') ? (
+            <a className="group w-fit h-full bg-size-200 shadow-md bg-gradient-to-r from-[#E05B25] via-[#FD8F29] to-[#E05B25] py-2 px-3 rounded-md hover:bg-pos-100 grow-0 shrink-0 xs:text-sm lg:text-lg 2xl:text-2xl font-semibold text-[#F1F1F1] transition-all duration-50" href={link}>
+                {name}
+            </a>
         ) : (
             <button className="group w-fit px-2 py-1 rounded-md bg-size-200 bg-pos-0 bg-gradient-to-b from-[#E05B25] via-[#FD8F29] to-[#E05B25] shadow-sm hover:shadow-xl hover:bg-pos-100 transition-all duration-500">
                 <div className="pl-1 text-sm font-semibold text-[#F1F1F1] flex items-center">

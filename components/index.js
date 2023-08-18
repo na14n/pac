@@ -42,8 +42,12 @@ import PHero from './prostige/pHero'
 import PBanner2 from './prostige/pBanner2'
 import PBanner3 from './prostige/pBanner3'
 import PBanner4 from './prostige/pBanner4'
+import PBanner5 from './prostige/pBanner5'
+import PBanner6 from './prostige/pBanner6'
+import PBanner7 from './prostige/pBanner7'
+import PBanner8 from './prostige/pBanner8'
 
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading, OurStory, OrderF, PHero, PBanner2, PBanner3, PBanner4
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading, OurStory, OrderF, PHero, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8
 }

@@ -1,6 +1,6 @@
-import { HeaderTrigger, PBanner2, PBanner3, PBanner4, PHero } from "@/components"
+import { HeaderTrigger, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PHero } from "@/components"
 
-export default function Page(params) {
+export default function Page() {
     return (
         <main className="w-full h-fit">
             <HeaderTrigger>
@@ -10,6 +10,10 @@ export default function Page(params) {
             <PBanner2 />
             <PBanner3 />
             <PBanner4 />
+            <PBanner5 />
+            <PBanner6 />
+            <PBanner7 />
+            <PBanner8 />
         </main>
     )
 }

@@ -35,7 +35,7 @@ export default function PBanner3() {
     );
 
     return (
-        <section className="w-full h-screen max-h-fit flex flex-col items-center justify-center gap-16 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-gradient-to-b from-nav-orange/90 via-nav-orange to-nav-orange">
+        <section className="w-full h-fit flex flex-col items-center justify-center gap-16 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-gradient-to-b from-nav-orange/90 via-nav-orange to-nav-orange">
             <div className="w-full h-fit flex flex-col gap-1">
                 <h1 className="text-center text-3xl font-semibold uppercase text-[#FCFCFC]">
                     {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].sectionHeading[0] : ''}
@@ -51,7 +51,7 @@ export default function PBanner3() {
                             <span className="w-32 h-32 object-fill relative">
                                 <Image src={data?.prostigePages?.nodes[0].mediaLine2[i].link} fill={true} className="object-contain" />
                             </span>
-                            <h4 className="text-center text-sm  font-semibold uppercase text-[#EFEFEF]">{c}</h4>
+                            <h4 className="text-center text-sm  font-semibold uppercase text-[#F0F0F0]">{c}</h4>
                         </div>
                     )) : ``}
             </div>
