@@ -16,7 +16,7 @@ export default function Home() {
         <div className='w-full xs:h-fit lg:h-0 bg-[#F1F1F1]'>
           <Strengths />
         </div>
-        <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[60vh] max-h-fit bg-[#F1F1F1]'>
+        <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[80vh] max-h-fit bg-[#F1F1F1]'>
           {/* <Hero heroType={'centered'} title={'To know more about our Story'} buttonName={'Click Here'} buttonLink={'/#'} /> */}
           <OurStory />
         </div>
@@ -35,7 +35,7 @@ export default function Home() {
         <div className='w-full max-h-fit lg:h-fit bg-[#F1F1F1]'>
           <EventsF />
         </div>
-        <div className='w-full min-h-fit max-h-fit bg-[#F1F1F1]'>
+        <div className='w-full h-[30vh] max-h-fit bg-[#F1F1F1]'>
           {/* <Hero heroType={'centered3'} title={'want to order?'} subheading={'To know more about our purchase and delivery information'} buttonName={'Click Here'} buttonLink={'/resources/how-to-order'} /> */}
           <OrderF />
         </div>

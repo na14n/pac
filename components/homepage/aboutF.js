@@ -35,7 +35,7 @@ export default function AboutF() {
     );
 
     return (
-        <div className="h-fit max-h-fit relative lg:px-32 2xl:px-48 lg:py-16 2xl:py-36 lg:min-h-[60vh] xs:px-4 xs:py-20 xs:flex xs:flex-col lg:flex-row xs:items-center lg:items-center lg:justify-start xs:gap-8 xs:overflow-hidden lg:overflow-visible">
+        <div className="h-fit max-h-fit relative lg:px-32 2xl:px-48 lg:py-16 lg:min-h-[50vh] xs:px-4 xs:py-20 xs:flex xs:flex-col lg:flex-row xs:items-center lg:items-center lg:justify-start xs:gap-8 xs:overflow-hidden lg:overflow-visible">
             <div className="xs:w-48 xs:h-48 xs:relative lg:w-80 lg:h-80 2xl:w-[480px] 2xl:h-[480px] rounded-md lg:absolute lg:-top-32 lg:right-32 2xl:right-48 overflow-hidden flex items-center justify-center">
                 <Image fill={true} alt="dental-products-distributor" className="object-cover" objectPosition="relative" src={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0]?.link : 'https://picsum.photos/600/800'} />
             </div>

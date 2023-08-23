@@ -53,7 +53,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
             <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden z-30 ">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 via-[#3E3E3E]/90 to-[#3E3E3E]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
-                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover'   alt="dental-website-banner" />
+                    <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-contain'   alt="dental-website-banner" />
                 </div>
                 <div className=" z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl flex flex-col items-center justify-center gap-4 lg:mb-0 xs:mb-32">
                     {title ? title : 'Insert Heading'}

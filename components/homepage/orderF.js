@@ -26,7 +26,7 @@ export default function OrderF() {
   const { data } = useSuspenseQuery(query)
   
   return (
-    <div className="w-full h-fit">
+    <div className="w-full h-full">
       <Hero heroType={'centered3'} title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading[0] : 'want to order?'} subheading={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[0] : 'To know more about our purchase and delivery information'} buttonName={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine1[0] : 'Click Here'} mediaUrl={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0]?.link : ''} buttonLink={'/resources/how-to-order'} />
     </div>
   )
