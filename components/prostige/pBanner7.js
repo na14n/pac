@@ -94,7 +94,7 @@ export default function PBanner7() {
                 <div className="flex flex-col gap-2 z-20  w-full xs:px-4 lg:px-32 2xl:px-48">
                     {data7a?.prostigePages?.nodes[0] ? data7a?.prostigePages?.nodes[0].sectionHeading.map(
                         (h, i) => (
-                            <h1 key={i} className="peer w-full  even:text-pac-orange text-pac-green text-6xl even:text-7xl">{h}</h1>
+                            <h1 key={i} className="peer w-full  even:text-pac-orange text-pac-green lg:text-6xl xs:text-2xl even:text-7xl xs:even:text-4xl">{h}</h1>
                         )) : ''}
                 </div>
             </div>
@@ -114,10 +114,10 @@ export default function PBanner7() {
                 </div>
                 <div className="w-full h-fit flex flex-col justify-center items-center gap-8">
                     <div className="flex flex-col gap-12 z-20 w-full xs:px-4 lg:px-32 2xl:px-48">
-                        <div className="flex gap-3 z-20  w-full justify-center">
+                        <div className="flex gap-3 z-20 flex-wrap  w-full justify-center">
                             {data7c?.prostigePages?.nodes[0] ? data7c?.prostigePages?.nodes[0].sectionHeading.map(
                                 (h, i) => (
-                                    <h1 key={i} className="peer w-fit text-[#FCFCFC] even:font-bold text-5xl">{h}</h1>
+                                    <h1 key={i} className="peer w-fit max-lg:shrink-0 text-[#FCFCFC] even:font-bold lg:text-5xl xs:text-2xl">{h}</h1>
                                 )) : ''}
                         </div>
                         <HorizontalSlider media={data7c?.prostigePages?.nodes[0] ? data7c?.prostigePages?.nodes[0].mediaLine1 : []} />

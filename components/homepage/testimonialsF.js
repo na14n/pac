@@ -59,7 +59,7 @@ export default function TestimonialsF() {
                 <div className="w-full h-full bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 absolute z-10 top-0" />
                 <Image fill={true} className="z-0 object-cover" src={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0].link : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
             </div>
-            <div className="z-20 w-full xs:hidden lg:h-1/3 flex flex-col items-center justify-center gap-2 ">
+            <div className="z-20 w-full xs:hidden lg:flex lg:h-1/3 flex-col items-center justify-center gap-2 ">
                 <div className="uppercase text-[#FCFCFC] font-bold text-3xl 2xl:text-4xl">
                     {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading[0] : `why choose us`}
                 </div>
