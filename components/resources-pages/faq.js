@@ -23,8 +23,8 @@ const Faq = () => {
     ]
 
     return (
-        <div className="w-full h-full xs:px-4 lg:px-28 2xl:px-48 flex flex-col gap-16 lg:py-32 items-center">
-            <h1 className="text-4xl text-pac-orange uppercase font-bold">
+        <div className="w-full h-fit xs:px-4 lg:px-28 2xl:px-48 flex flex-col gap-16 lg:py-32 items-center py-16">
+            <h1 className="lg:text-4xl xs:text-xl text-pac-orange uppercase font-bold">
                 Frequently Asked Questions
             </h1>
             <div className="w-full h-fit flex flex-col items-center gap-8">

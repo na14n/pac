@@ -35,7 +35,7 @@ export default function PBanner2() {
 
     return (
         <section className="w-full h-fit flex lg:flex-row lg:items-center justify-around lg:gap-32 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-[#FCFCFC]">
-            <div className="w-fit shrink-0 h-full flex flex-col justify-center gap-8">
+            <div className="w-fit h-full flex flex-col justify-center gap-8">
                 <span className="w-fit h-fit flex flex-col items-center gap-1">
                     <h1 className="w-fit lg:text-5xl text-pac-green ">
                         {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionHeading[0] : ``}

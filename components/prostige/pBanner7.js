@@ -114,7 +114,7 @@ export default function PBanner7() {
                 </div>
                 <div className="w-full h-fit flex flex-col justify-center items-center gap-8">
                     <div className="flex flex-col gap-12 z-20 w-full xs:px-4 lg:px-32 2xl:px-48">
-                        <div className="flex gap-3 z-20  w-full">
+                        <div className="flex gap-3 z-20  w-full justify-center">
                             {data7c?.prostigePages?.nodes[0] ? data7c?.prostigePages?.nodes[0].sectionHeading.map(
                                 (h, i) => (
                                     <h1 key={i} className="peer w-fit text-[#FCFCFC] even:font-bold text-5xl">{h}</h1>

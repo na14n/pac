@@ -37,11 +37,11 @@ export default function HeroBanner() {
 
     return (
         <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">
-            <div className="z-10 lg:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 lg:ml-32 xs:ml-8 sm:ml-16 py-10">
-                <h1 className="font-bold text-[#FCFCFC] lg:text-4xl 2xl:text-5xl xs:text-2xl uppercase">
+            <div className="z-10 lg:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 lg:ml-32 xs:px-4 sm:ml-16 py-10">
+                <h1 className="font-bold text-[#FCFCFC] lg:text-4xl 2xl:text-5xl xs:text-3xl uppercase">
                     {data?.homepageSections?.nodes[0]?.sectionHeading ? data?.homepageSections?.nodes[0]?.sectionHeading : 'Insert Heading'}
                 </h1>
-                <h1 className="font-bold text-nav-orange lg:text-4xl 2xl:text-5xl xs:text-2xl uppercase">
+                <h1 className="font-bold text-nav-orange lg:text-4xl 2xl:text-5xl xs:text-3xl uppercase">
                     {data?.homepageSections?.nodes[0]?.sectionSubheading ? data?.homepageSections?.nodes[0]?.sectionSubheading : 'Insert Heading'}
                 </h1>
                 <h3 className="text-[#F0F0F0]/90 font-regular mt-4 mb-8 lg:max-w-[600px] 2xl:max-w-[750px] 2xl:text-lg xs:text-sm xs:max-w-[280px]">

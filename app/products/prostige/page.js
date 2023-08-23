@@ -1,4 +1,4 @@
-import { HeaderTrigger, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PHero } from "@/components"
+import { HeaderTrigger, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PBanner9, PHero } from "@/components"
 
 export default function Page() {
     return (
@@ -14,6 +14,7 @@ export default function Page() {
             <PBanner6 />
             <PBanner7 />
             <PBanner8 />
+            <PBanner9 />
         </main>
     )
 }
