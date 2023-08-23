@@ -43,10 +43,10 @@ export default function EventsF() {
     );
 
     return (
-        <div className="w-full max-h-fit h-fit bg-[#E1E1E1] flex flex-col lg:justify-center items-center lg:px-32 2xl:px-48 2xl:py-32 lg:gap-8 2xl:gap-16 xs:px-4  py-12 ">
-            <div className="lg:max-w-full min-w-fit flex lg:flex-col lg:gap-1 h-fit ">
+        <div className="w-full max-h-fit h-fit bg-[#E1E1E1] flex flex-col lg:justify-center items-center lg:px-32 2xl:px-48 2xl:py-32 lg:gap-8 2xl:gap-16 xs:px-4 xs:gap-16 py-12 ">
+            <div className="lg:max-w-full min-w-fit flex flex-col lg:gap-1 h-fit ">
                 {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading.map((h, i) => (
-                    <h1 key={i} className="text-4xl text-[#272727] font-bold  text-center">
+                    <h1 key={i} className="lg:text-4xl xs:text-2xl text-[#272727] font-bold  text-center">
                         {h}
                     </h1>
                 )) : ``}

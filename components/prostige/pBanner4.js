@@ -45,7 +45,7 @@ export default function PBanner4() {
                     {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].sectionSubheading : ''}
                 </h1>
             </div>
-            <div className="flex items-start w-fit gap-8">
+            <div className="flex items-start w-fit gap-24">
                 {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].contentLine1.
                     map((c, i) => (
                         <div key={i} className="w-48 h-72 p-4 flex flex-col gap-2 justify-start items-center bg-[#E1E1E1] shadow-sm hover:shadow-md rounded-sm cursor-pointer hover:-translate-y-1 transition-all">

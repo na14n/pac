@@ -44,7 +44,7 @@ export default function PBanner2() {
                         {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionHeading[1] : ``}
                     </h1>
                 </span>
-                <span className="lg:max-w-[400px] h-fit flex flex-col gap-4 2xl:text-lg">
+                <span className="lg:max-w-[400px] 2xl:max-w-max h-fit flex flex-col gap-4 2xl:text-lg">
                     {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2.map((c, i) => (
                         <p key={i} className="text-[#373737] text-justify">
                             {c}

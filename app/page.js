@@ -10,10 +10,10 @@ export default function Home() {
             <HeroBanner />
           </HeaderTrigger>
         </div>
-        <div className='w-full max-h-fit lg:h-[50vh] bg-[#F1F1F1]'>
+        <div className='w-full h-fit bg-[#F1F1F1]'>
           <AboutF />
         </div>
-        <div className='w-full h-0 bg-[#F1F1F1]'>
+        <div className='w-full xs:h-fit lg:h-0 bg-[#F1F1F1]'>
           <Strengths />
         </div>
         <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[60vh] max-h-fit bg-[#F1F1F1]'>

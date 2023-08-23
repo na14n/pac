@@ -38,7 +38,7 @@ export default function PBanner5() {
     );
 
     return (
-        <section className="w-full h-fit max-h-fit flex flex-col items-end justify-center gap-16 bg-gradient-to-r from-pac-green to-nav-green ">
+        <section className="w-full h-fit max-h-fit flex flex-col items-end justify-center gap-16 bg-gradient-to-r from-[#0E6200] to-[#103900] ">
             <div className="flex flex-row w-full h-fit justify-between lg:pl-32 2xl:pl-48 xs:pl-4 ">
                 <div className="flex flex-col w-fit h-full justify-center shrink-0 gap-16 2xl:ml-48  py-16">
                     <span className="flex flex-col w-fit h-fit gap-4">
@@ -71,7 +71,7 @@ export default function PBanner5() {
                         </span>
                     </div>
                     <div>
-                        <h4 className="p-4 bg-pac-orange rounded-sm w-fit text-3xl text-[#FCFCFC]">
+                        <h4 className="p-4 bg-[#DC6101] rounded-sm w-fit text-3xl text-[#FCFCFC]">
                                     {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2 : ''}
                         </h4>
                     </div>

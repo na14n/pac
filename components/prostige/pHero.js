@@ -57,7 +57,7 @@ export default function PHero() {
                     </h2>
                 </div>
             </div>
-            <div className="lg:w-[550px] lg:h-[550px] 2xl:w-[900px] 2xl:h-[900px] align-bottom  overflow-hidden relative mt-16">
+            <div className="lg:w-[550px] lg:h-[550px] 2xl:w-[800px] 2xl:h-[800px] align-bottom  overflow-hidden relative mt-16">
                 <Image src={sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[2].link} fill={true} alt="prostige-model" className="object-cover" />
             </div>
             <div className="absolute bg-pac-green h-4 bottom-0 left-0 w-full" />
