@@ -69,7 +69,7 @@ export default function PBanner9() {
                 <div className="flex flex-col gap-8">
                     {data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.contentLine1.map((
                         q, i) => (
-                        <FaqItem question={q} answer={data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.contentLine2[i] : `answer for question ${i}`} />
+                        <FaqItem key={i} question={q} answer={data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.contentLine2[i] : `answer for question ${i}`} />
                     )) : ``}
                 </div>
             </div>

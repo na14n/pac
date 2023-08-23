@@ -39,7 +39,7 @@ export default function PBanner5() {
 
     return (
         <section className="w-full h-fit max-h-fit flex flex-col items-end justify-center gap-16 bg-gradient-to-r from-[#0E6200] to-[#103900] overflow-hidden">
-            <div className="flex lg:flex-row xs:flex-col max-lg:gap-8 w-full h-fit justify-between lg:pl-32 2xl:pl-48 xs:pl-4 ">
+            <div className="flex lg:flex-row xs:flex-col max-lg:gap-8 w-full h-fit justify-between lg:pl-32 2xl:pl-48 xs:pl-4 relative">
                 <div className="flex flex-col w-fit h-full justify-center shrink-0 gap-16 2xl:ml-48  py-16">
                     <span className="flex flex-col w-fit h-fit gap-4">
                         {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionHeading.map((
@@ -76,7 +76,7 @@ export default function PBanner5() {
                         </h4>
                     </div>
                 </div>
-                <div className="lg:w-[700px] lg:h-[600px] xs:w-96 xs:h-96  relative">
+                <div className="lg:w-[700px] lg:h-[600px] xs:w-96 xs:h-96 lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto">
                     <Image fill={true} className="object-cover" src={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.mediaLine1[0].link : ''} />
                 </div>
             </div>

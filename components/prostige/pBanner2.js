@@ -34,7 +34,7 @@ export default function PBanner2() {
     );
 
     return (
-        <section className="w-full h-fit flex xs:flex-col-reverse lg:flex-row lg:items-center justify-around lg:gap-32 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-[rgb(252,252,252)] overflow-hidden">
+        <section className="w-full h-fit flex xs:flex-col-reverse lg:flex-row items-center justify-around lg:gap-32 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-[rgb(252,252,252)] overflow-hidden">
             <div className="lg:w-fit xs:w-full h-full flex flex-col justify-center gap-8">
                 <span className="h-fit lg:w-fit xs:w-full flex flex-col items-center gap-1">
                     <h1 className="w-fit lg:text-5xl xs:text-2xl text-pac-green ">
