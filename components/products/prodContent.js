@@ -78,7 +78,7 @@ export default function ProdContent(props) {
             <div className="py-16 flex flex-col lg:px-32 2xl:px-48 w-full h-fit bg-[#FCFCFC]">
                 <span className="flex">
                     {moreInformation.map((m, i) => (
-                        <button className={
+                        <button key={i} className={
                             `border-[1px] px-4 py-2 
                             hover:border-pac-orange/70 hover:shadow-md  hover:text-[#272727] transition-all duration-75
                             ${selected.title === m.title ? `text-pac-orange border-nav-orange shadow-sm font-semibold`
@@ -95,6 +95,7 @@ export default function ProdContent(props) {
                         href={data?.product ? data?.product?.mainWebsiteLink : ``}
                         className="flex w items-center text-[#272727] hover:text-pac-orange underline"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <p>Go to Manufacturer's Website</p>
                         <Icon icon='mdi:arrow-top-right' className='text-sm' />
