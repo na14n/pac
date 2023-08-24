@@ -44,7 +44,7 @@ export default function HeroBanner() {
                 <h1 className="font-bold text-nav-orange lg:text-4xl 2xl:text-5xl xs:text-3xl uppercase">
                     {data?.homepageSections?.nodes[0]?.sectionSubheading ? data?.homepageSections?.nodes[0]?.sectionSubheading : 'Insert Heading'}
                 </h1>
-                <h3 className="text-[#F0F0F0]/90 font-regular mt-4 mb-8 lg:max-w-[600px] 2xl:max-w-[750px] 2xl:text-lg xs:text-sm xs:max-w-[280px]">
+                <h3 className="text-[#F0F0F0]/90 font-regular mt-4 mb-8 lg:max-w-[600px] 2xl:max-w-[750px] 2xl:text-xl xs:text-lg xs:max-w-[280px]">
                     {data?.homepageSections?.nodes[0]?.contentLine1[0] ? data?.homepageSections?.nodes[0]?.contentLine1[0] : 'Insert Subheading'}
                 </h3>
                 <Button name={('Browse our Products')} type={1} link={'/products'} />

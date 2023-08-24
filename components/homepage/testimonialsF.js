@@ -39,6 +39,8 @@ export default function TestimonialsF() {
 
     const testimonialsF = []
 
+    console.log(data?.homepageSections?.nodes[0]?.mediaLine1[0].link);
+
     for (let i = 0; i < data?.homepageSections?.nodes[0]?.sectionSubheading.length; i++) {
         testimonialsF.push({
             name: data?.homepageSections?.nodes[0]?.sectionSubheading[i],

@@ -7,3 +7,21 @@
     border-style: dashed;
     border-color: red;
 }
+
+.embla  {
+  padding: 1.6rem;
+}
+
+.embla__viewport  {
+  overflow: hidden;
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+}

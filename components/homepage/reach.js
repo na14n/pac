@@ -61,7 +61,7 @@ export default function Reach({ type }) {
 
     return (data) ? (
         <div className="w-full h-full relative z-40 px-32 flex flex-col items-center">
-            <div className={`lg:h-48 xs:h-56  2xl:h-64 w-content shadow-lg rounded-md overflow-hidden bg-gradient-to-b ${type === 'orange' ? ' from-[#EF873C] to-[#D95B00]' : 'from-pac-green to-nav-green'} absolute xs:-top-28 lg:-top-24 2xl:-top-32 flex xs:flex-col lg:flex-row`}>
+            <div className={`lg:h-48 xs:h-56  2xl:h-64 w-content shadow-lg rounded-md overflow-hidden bg-gradient-to-b ${type === 'orange' ? ' from-[#EF873C] to-[#D95B00]' : 'from-[#0E6200] to-[#103900]'} absolute xs:-top-28 lg:-top-24 2xl:-top-32 flex xs:flex-col lg:flex-row`}>
                 <div className="h-full lg:w-[400px] 2xl:w-[600px] flex items-center justify-center overflow-hidden relative">
                     <div className="w-[150px] 2xl:w-[350px] h-full bg-[#FCFCFC] xs:hidden lg:block lg:absolute left-0">
                     </div>
