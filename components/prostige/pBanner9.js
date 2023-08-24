@@ -73,19 +73,19 @@ export default function PBanner9() {
                     )) : ``}
                 </div>
             </div>
-            <div className="w-full h-fit flex flex-col lg:gap-8 gap-3">
+            <div className="w-full h-fit flex flex-col lg:gap-2 gap-3">
                 <div className="flex gap-2 items-center">
-                    <Icon className="text-[#474747] font-semibold lg:text-2xl xs:text-lg" icon="mdi:information-variant-circle" />
-                    <h3 className="text-[#474747] font-semibold lg:text-3xl xs:text-xl">
+                    <Icon className="text-[#474747] font-semibold lg:text-lg xs:text-lg" icon="mdi:information-variant-circle" />
+                    <h3 className="text-[#474747] font-semibold lg:text-xl xs:text-xl">
                         {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.sectionHeading[0] : `faq`}
                     </h3>
                 </div>
                 <div className="w-full h-[2px] bg-pac-green" />
                 <div className="flex flex-col gap-3">
-                    <h2 className="text-[#121212] lg:text-4xl xs:text-2xl font-bold">
+                    <h2 className="text-[#121212] lg:text-xl xs:text-2xl font-bold">
                         {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.sectionHeading[1] : `faq`}
                     </h2>
-                    <h1 className="text-[#373737] lg:text-4xl xs:text-2xl">
+                    <h1 className="text-[#373737] lg:text-lg xs:text-2xl">
                         {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.sectionHeading[2] : `faq`}
                     </h1>
 
@@ -95,9 +95,9 @@ export default function PBanner9() {
                         map((c, i) => (
                             <div key={i} className="flex flex-col gap-2 items-center">
                                 <span className="w-fit h-fit rounded-full bg-gradient-to-b from-nav-orange to-pac-orange flex items-center justify-center">
-                                    <Icon icon={c} className="lg:text-6xl xs:text-4xl p-3 text-[#FCFCFC]" />
+                                    <Icon icon={c} className="lg:text-4xl xs:text-2xl p-3 text-[#FCFCFC]" />
                                 </span>
-                                <h4 className="lg:text-xl xs:text-xs text-[#272727]">
+                                <h4 className="lg:text-lg xs:text-xs text-[#272727]">
                                     {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.sectionSubheading[i] : ``}
                                 </h4>
                             </div>

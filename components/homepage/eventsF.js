@@ -53,7 +53,7 @@ export default function EventsF() {
             </div>
             <div className=" lg:max-w-[900px] 2xl:max-w-full 2xl:px-48 flex flex-col gap-2">
                 {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine2.map((h, i) => (
-                    <p key={i} className="text-sm text-[#373737] text-justify indent-7">
+                    <p key={i} className="text-lg text-[#373737] text-justify">
                         {h}
                     </p>
                 )) : ``}

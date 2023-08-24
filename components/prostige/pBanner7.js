@@ -94,7 +94,7 @@ export default function PBanner7() {
                 <div className="flex flex-col gap-2 z-20  w-full xs:px-4 lg:px-32 2xl:px-48">
                     {data7a?.prostigePages?.nodes[0] ? data7a?.prostigePages?.nodes[0].sectionHeading.map(
                         (h, i) => (
-                            <h1 key={i} className="peer w-full  even:text-pac-orange text-pac-green lg:text-6xl xs:text-2xl even:text-7xl xs:even:text-4xl">{h}</h1>
+                            <h1 key={i} className="peer w-full  even:text-pac-orange text-pac-green lg:text-6xl xs:text-2xl lg:even:text-7xl xs:even:text-4xl">{h}</h1>
                         )) : ''}
                 </div>
             </div>
