@@ -97,7 +97,7 @@ export default function ProdContent(props) {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <p>Go to Manufacturer's Website</p>
+                        <p>Go to Manufacturer&apos;s Website</p>
                         <Icon icon='mdi:arrow-top-right' className='text-sm' />
                     </a>
                 </div>
@@ -106,7 +106,7 @@ export default function ProdContent(props) {
                         <iframe
                             key={i}
                             className="h-48 w-72 shadow-sm rounded-sm"
-                            src={y} title="YouTube video player" frameborder="0"
+                            src={y} title="YouTube video player" frameBorder="0"
                             allow="accelerometer; clipboard-write; encrypted-media;" allowfullscreen
                         />
                     )) : ``}
@@ -119,6 +119,7 @@ export default function ProdContent(props) {
                                 href={data?.product ? data?.product?.instructionFileDownloadLink[0] : ``}
                                 className="flex w items-center text-[#272727] hover:text-pac-orange underline"
                                 target="_blank"
+                                rel="noreferrer"
                             >
                                 <p>View Instruction File</p>
                                 <Icon icon='mdi:arrow-top-right' className='text-sm' />
@@ -134,6 +135,7 @@ export default function ProdContent(props) {
                                 href={data?.product ? data?.product?.catalogueDownloadLink[0] : ``}
                                 className="flex w items-center text-[#272727] hover:text-pac-orange underline"
                                 target="_blank"
+                                rel="noreferrer"
                             >
                                 <p>Download Catalogue</p>
                                 <Icon icon='mdi:download-outline' className='text-sm' />
