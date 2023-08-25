@@ -53,12 +53,12 @@ export const BrandSlider = () => {
     const arrayOfArrays = splitArrayIntoChunks(sortByAttribute(data.brands.nodes, 'slideNumber'), 10);
 
     return (
-        <div className='w-full h-full lg:px-32 2xl:px-48 flex flex-col items-center justify-center py-16 max-lg:py-8'>
+        <div className='w-fit h-full lg:px-32 2xl:px-48 flex flex-col items-center justify-center py-16 max-lg:py-8'>
             <h1 className='w-fit px-4 py-2 uppercase text-pac-orange text-2xl font-semibold `'>
                 Our Partner Brands
             </h1>
             <div className='w-4/5 h-[2px] bg-pac-orange' />
-            <div className="embla h-fit w-full overflow-hidden relative flex items-center justify-around gap-4`" >
+            <div className="embla h-fit w-fit overflow-hidden relative flex items-center justify-around gap-4`" >
                 <button className=" w-fit h-fit z-40 bg-nav-orange flex justify-center items-center group rounded-lg hover:shadow-lg" onClick={scrollPrev}>
                     <Icon icon="ic:round-keyboard-arrow-left" className=' text-5xl max-lg:text-2xl  text-[#FCFCFC] group-hover:text-[#FFF]' />
                 </button>
