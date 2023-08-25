@@ -37,7 +37,7 @@ export default function HeroBanner() {
 
     return (
         <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">
-            <div className="z-10 lg:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 lg:ml-32 xs:px-4 sm:ml-16 py-10">
+            <div className="z-30 lg:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 lg:ml-32 xs:px-4 sm:ml-16 py-10">
                 <h1 className="font-bold text-[#FCFCFC] lg:text-4xl 2xl:text-5xl xs:text-3xl uppercase">
                     {data?.homepageSections?.nodes[0]?.sectionHeading ? data?.homepageSections?.nodes[0]?.sectionHeading : 'Insert Heading'}
                 </h1>
@@ -49,12 +49,13 @@ export default function HeroBanner() {
                 </h3>
                 <Button name={('Browse our Products')} type={1} link={'/products'} />
             </div>
-            <div className="absolute z-0 t-0 w-full h-full">
+            <div className="absolute top-0 z-10 w-full h-full overflow-hidden bg-[#121212]/25" />
+            <div className="absolute z-0 top-0 w-full h-full overflow-hidden flex justify-center items-stretch">
                 <video
                     autoPlay
                     loop
                     muted
-                    className="z-10 w-auto min-w-full min-h-full max-w-none"
+                    className="z-0 block object-cover object-center w-full"
                 >
                     <source
                         src={data?.homepageSections?.nodes[0]?.mediaLine1 && data?.homepageSections?.nodes[0]?.mediaLine1[0]?.mimeType == 'video/mp4' ? data?.homepageSections?.nodes[0]?.mediaLine1[0]?.link : 'https://prosapac.com/homepagesection/hero/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large/'}

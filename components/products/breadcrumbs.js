@@ -53,17 +53,17 @@ export default function Breadcrumbs(props) {
     return (
         <section className="w-full h-fit flex items-center justify-between pt-6 lg:px-32 2xl:px-48 ">
             <div className="w-fit h-fit flex text-blue-900 capitalize gap-2 text-sm">
-                <Link className="hover:underline hover:text-blue-800" href={'/products'}>
+                <a className="hover:underline hover:text-blue-800" href={'/products'}>
                     <p>Products</p>
-                </Link>
+                </a>
                 <span className="text-[#121212]">&gt;</span>
-                <Link className="hover:underline hover:text-blue-800" href={`/categories/${breadcrumbs.parent}`}>
+                <a className="hover:underline hover:text-blue-800" href={`/categories/${breadcrumbs.parent}`}>
                     <p>{breadcrumbs.parent}</p>
-                </Link>
+                </a>
                 <span className="text-[#121212]">&gt;</span>
-                <Link className="hover:underline hover:text-blue-800" href={`/categories/${breadcrumbs.child}`}>
+                <a className="hover:underline hover:text-blue-800" href={`/categories/${breadcrumbs.child}`}>
                     <p>{breadcrumbs.child}</p>
-                </Link>
+                </a>
                 <span className="text-[#121212]">&gt;</span>
                 <p className="text-[#121212]">{data.product.name}</p>
             </div>

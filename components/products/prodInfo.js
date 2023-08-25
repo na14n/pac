@@ -82,6 +82,9 @@ export default function ProdInfo(props) {
                         <img key={index} src={a.link} className="w-auto h-28" />
                     ))}
                 </div>
+                <pre>
+                  {JSON.stringify(data.product, null, 2)}
+                </pre>
             </section>
         </main>
     )

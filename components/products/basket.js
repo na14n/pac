@@ -1,14 +1,18 @@
 'use client';
 import { useState } from "react";
 import { useAtom, Provider } from "jotai";
-import { BasketAtom } from "@/lib/stores/basketAtom";
+// import { BasketAtom } from "@/lib/stores/basketAtom";
 import Increment from "./increment";
+import { atom } from "jotai";
+import {atomWithStorage} from "jotai/utils"
+
+export const BasketAtom = atomWithStorage('basket', []);
+
 
 export default function Basket() {
-
+    
     const [basketItems, setBasketItems] = useAtom(BasketAtom);
     const [inputValues, setInputValues] = useState({});
-    console.log(basketItems);
 
     const increment = (item) => {
         const itemIndex = basketItems.findIndex((basketItem) => basketItem.id === item.id)
@@ -68,7 +72,7 @@ export default function Basket() {
 
     return (
         <Provider>
-            <div className="w-fit min-h-96 h-fit p-32 bg-[#FCFCFC] flex flex-col">
+            <div className="bg-[#FCFCFC] flex flex-col w-full min-h-screen max-h-fit">
                 <h1 className="font-bold text-3xl text-[#121212]">
                     Your Basket
                 </h1>
@@ -78,14 +82,12 @@ export default function Basket() {
                     <ul>
                         {basketItems.map((i, index) => (
                             <li key={index}>
-                                {/* <p>{i.name} - Quantity: {i.qty}</p> */}
-                                {i.id}__
-                                {i.name}__
-                                {i.brand.node.name}__
+                                {i.item.id}__
+                                {i.item.name}__
                                 <input
                                     type="number"
                                     min="0"
-                                    value={inputValues[i.id] || i.qty}
+                                    value={inputValues[i.item.id] || i.qty}
                                     onChange={(e) => handleInputChange(e, i)}
                                 />
                                 <button className={`w-fit h-fit p-1 bg-red-500`} onClick={() => decrement(i)}>
@@ -95,14 +97,10 @@ export default function Basket() {
                                 <button className={`w-fit h-fit p-1 bg-green-500`} onMouseDown={() => increment(i)}>
                                     +
                                 </button>
-
                             </li>
                         ))}
                     </ul>
                 )}
-                {/* <pre>
-                    {JSON.stringify(basketItems, null, 2)}
-                </pre> */}
             </div>
         </Provider>
     )

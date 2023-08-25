@@ -10,14 +10,16 @@ export default function AddToBasket({ item }) {
         const itemIndex = basketItems.findIndex((basketItem) => basketItem.id === item.id)
 
         if (itemIndex === -1) {
-            setBasketItems([...basketItems, { ...item, qty: 1 }])
+            setBasketItems([...basketItems, { item, qty: 1 }])
         } else {
             const updatedBasketItems = [...basketItems];
             updatedBasketItems[itemIndex].qty += 1;
             setBasketItems(updatedBasketItems);
         }
 
-        console.log(basketItems);
+        console.log('ITEM: ',item);
+        console.log('ITEM INDEX: ',itemIndex);
+        console.log('CURRENT BASKET: ',basketItems);
 
     }
 
