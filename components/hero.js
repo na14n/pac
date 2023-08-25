@@ -44,7 +44,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                 <div className="absolute z-0 t-0 w-full h-full">
                     <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover' alt="dental-website-banner" />
                 </div>
-                <div className=" z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl 2xl:text-4xl flex flex-col items-center justify-center gap-4 lg:mb-0 xs:mb-32">
+                <div className=" z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl text-center 2xl:text-4xl flex flex-col items-center justify-center gap-4 lg:mb-0 xs:mb-32 xs:px-4">
                     {title ? title : 'Insert Heading'}
                     <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} />
                 </div>
@@ -96,12 +96,12 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                 <div className="absolute z-0 t-0 w-full h-full flex items-center justify-center">
                     <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover' alt="dental-website-banner" />
                 </div>
-                <div className="z-20 flex flex-col items-center justify-center gap-2 ">
-                    <span className="text-3xl uppercase font-bold text-[#FCFCFC] ">
+                <div className="z-20 flex flex-col items-center w-fit justify-center gap-2 max-lg:px-4 ">
+                    <span className="text-3xl max-lg:text-2xl uppercase font-bold text-[#FCFCFC] ">
                         {title ? title : 'Insert Title'}
                     </span>
-                    <div className="w-[400px] h-[2px] bg-white rounded-md"></div>
-                    <span className="text-[#EFEFEF] mb-4 text-center">
+                    <div className="w-full lg:w-[400px] h-[2px] bg-white rounded-md"></div>
+                    <span className="text-[#EFEFEF] mb-4 text-center ">
                         {subheading ? subheading : 'Insert Subheading'}
                     </span>
                     <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} color={'white-green'} link={buttonLink} />

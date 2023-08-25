@@ -61,11 +61,11 @@ export default function Reach({ type }) {
 
     return (data) ? (
         <div className="w-full h-full relative z-40 px-32 flex flex-col items-center">
-            <div className={`lg:h-48 xs:h-56  2xl:h-64 w-content shadow-lg rounded-md overflow-hidden bg-gradient-to-b ${type === 'orange' ? ' from-[#EF873C] to-[#D95B00]' : 'from-[#0E6200] to-[#103900]'} absolute xs:-top-28 lg:-top-24 2xl:-top-32 flex xs:flex-col lg:flex-row`}>
+            <div className={`lg:h-48 xs:h-56 2xl:h-64 w-content shadow-lg rounded-md overflow-hidden bg-gradient-to-b max-lg:mx-2 ${type === 'orange' ? ' from-[#EF873C] to-[#D95B00]' : 'from-[#0E6200] to-[#103900]'} absolute xs:-top-28 lg:-top-24 2xl:-top-32 flex xs:flex-col lg:flex-row`}>
                 <div className="h-full lg:w-[400px] 2xl:w-[600px] flex items-center justify-center overflow-hidden relative">
                     <div className="w-[150px] 2xl:w-[350px] h-full bg-[#FCFCFC] xs:hidden lg:block lg:absolute left-0">
                     </div>
-                    <div className="w-[250px] h-[250px] 2xl:w-[400px] 2xl:h-[400px] xs:hidden lg:block bg-[#FCFCFC] lg:absolute rotate-45">
+                    <div className=" w-[250px] h-[250px] 2xl:w-[400px] 2xl:h-[400px] xs:hidden lg:block bg-[#FCFCFC] lg:absolute rotate-45">
                     </div>
                     <div className="w-full h-full flex flex-col justify-center items-center xs:py-4 lg:py-0 bg-[#FCFCFC] lg:bg-transparent lg:pr-16 text-3xl 2xl:text-5xl uppercase font-bold z-40 text-pac-orange">
                         our reach
@@ -76,7 +76,7 @@ export default function Reach({ type }) {
                         <div key={index} className="w-content h-full flex flex-col justify-center items-center 2xl:gap-1 z-40">
                             {/* <div className="text-3xl 2xl:text-5xl font-semibold text-[#FCFCFC]">{p.description}</div> */}
                             <Counter target={parseInt(p.description)} duration={1} />
-                            <div className="text-[#EFEFEF] uppercase text-sm 2xl:text-lg font-semibold">{p.title}</div>
+                            <div className="text-[#EFEFEF] uppercase text-sm max-lg:text-xs text-center 2xl:text-lg font-semibold">{p.title}</div>
                         </div>
                     ))
                     }

@@ -17,7 +17,6 @@ export default function Home() {
           <Strengths />
         </div>
         <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[70vh] max-h-fit bg-[#F1F1F1]'>
-          {/* <Hero heroType={'centered'} title={'To know more about our Story'} buttonName={'Click Here'} buttonLink={'/#'} /> */}
           <OurStory />
         </div>
         <div className='w-full max-h-fit bg-[#F1F1F1]'>
@@ -36,7 +35,6 @@ export default function Home() {
           <EventsF />
         </div>
         <div className='w-full h-[30vh] max-h-fit bg-[#F1F1F1]'>
-          {/* <Hero heroType={'centered3'} title={'want to order?'} subheading={'To know more about our purchase and delivery information'} buttonName={'Click Here'} buttonLink={'/resources/how-to-order'} /> */}
           <OrderF />
         </div>
       </Suspense>

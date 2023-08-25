@@ -41,9 +41,9 @@ export default function ProstigeF(props) {
     }
   );
   return (
-    <section className="flex flex-col items-center justify-center h-fit 2xl:h-fit max-h-fit w-full gap-8 xs:py-20 lg:py-16 xs:px-4 lg:px-32 2xl:px-48">
-      <div className="w-full h-fit flex xs:flex-col-reverse lg:flex-row xs:justify-center lg:justify-between 2xl:justify-around xs:items-center lg:items-center lg:gap-12 xs:gap-0">
-        <div className="md:max-w-lg lg:max-w-max flex flex-col gap-8 w-fit">
+    <section className="flex flex-col items-center justify-center h-fit 2xl:h-fit max-h-fit w-full gap-8 xs:py-20 lg:py-16 xs:px-4 lg:px-32 2xl:px-48 overflow-hidden">
+      <div className="w-full h-fit flex xs:flex-col-reverse lg:flex-row xs:justify-center lg:justify-between 2xl:justify-around xs:items-center lg:items-center lg:gap-12 xs:gap-0 ">
+        <div className="md:max-w-lg lg:max-w-max flex flex-col gap-8 w-fit ">
           <div className="relative w-80 h-[96px]">
             <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link : ``} fill={true} className="object-cover flex justify-start" />
           </div>
@@ -88,7 +88,7 @@ export default function ProstigeF(props) {
             </div>
           </div>
         </div>
-        <div className="xs:w-96 xs:h-96 lg:w-[556px] lg:h-[556px] 2xl:w-[720px] 2xl:h-[620px] overflow-hidden relative">
+        <div className="xs:w-96 xs:h-96 lg:w-[556px] lg:h-[556px] 2xl:w-[720px] 2xl:h-[620px] overflow-hidden relative ">
           <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} fill={true} alt="prostige-reward-card" className="object-contain" />
         </div>
       </div>
