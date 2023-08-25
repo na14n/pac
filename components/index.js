@@ -49,8 +49,9 @@ import PBanner8 from './prostige/pBanner8'
 import PBanner9 from './prostige/pBanner9'
 import Breadcrumbs from './products/breadcrumbs'
 import ProdContent from './products/prodContent'
+import QuoteForm from './products/quoteForm'
 
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading, OurStory, OrderF, PHero, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PBanner9, Breadcrumbs, ProdContent
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading, OurStory, OrderF, PHero, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PBanner9, Breadcrumbs, ProdContent, QuoteForm
 }

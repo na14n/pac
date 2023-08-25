@@ -9,18 +9,20 @@ import { Icon } from '@iconify-icon/react';
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image';
 import { slugFormatter } from '@/lib/helpers';
+import { sortByAttribute } from '@/lib/helpers';
 
 
 const query = gql`
         query getAllBrands {
-            brands {
+            brands (first: 100) {
             nodes {
-                id
-                name
-                logo {
-                link
+                    id
+                    name
+                    logo {
+                        link
+                    }
+                    slideNumber
                 }
-            }
             }
         }
     `
@@ -47,7 +49,8 @@ export const BrandSlider = () => {
         }
         return resultArray;
     }
-    const arrayOfArrays = splitArrayIntoChunks(data.brands.nodes, 10);
+
+    const arrayOfArrays = splitArrayIntoChunks(sortByAttribute(data.brands.nodes, 'slideNumber'), 10);
 
     return (
         <div className='w-full h-full lg:px-32 2xl:px-48 flex flex-col items-center justify-center py-16 max-lg:py-8'>
@@ -62,7 +65,7 @@ export const BrandSlider = () => {
                 <div className="embla__viewport  self-center h-full w-fit flex justify-center items-center `" ref={emblaRef}>
                     <div className="embla__containerBF h-full w-fit ">
                         {arrayOfArrays.map((w, index) => (
-                            <div key={index} className='embla__slideBF w-fit  h-full grid justify-items-center xs:grid-cols-2 lg:grid-cols-5 py-8 gap-6'>
+                            <div key={index} className='embla__slideBF w-fit  h-full grid justify-items-center xs:grid-cols-2 lg:grid-cols-5 py-8 gap-6 '>
                                 {w.map((c, index) => (
                                     <a key={index} className='xs:w-24  xs:h-24 lg:w-32 lg:h-32 2xl:w-56 2xl:h-56 p-2 flex flex-col justify-center items-center rounded-sm hover:-translate-y-1 hover:shadow-lg hover:border-2 border-[#575757]/0 transition-all  text-red-500`' href={`/brands/${slugFormatter(c.name, false, true)}`}>
                                         <Image width={256} height={256} src={c.logo.link ? c.logo.link : 'https://picsum.photos/2400'} alt="dental-product-brand" />

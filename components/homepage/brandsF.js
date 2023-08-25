@@ -4,15 +4,17 @@ export const dynamic = 'force-dynamic'
 
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { BrandSliderF } from "../embla/brandSliderF";
+import { sortByAttribute } from "@/lib/helpers";
 import Image from "next/image"
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 
 const query = gql`
     query GetBrandsF {
-      brands {
+      brands (first: 100) {
         nodes {
           name
+          slideNumber
           logo {
             link
           }
@@ -44,6 +46,9 @@ export default function BrandsF({ mediaUrl }) {
     }
   );
 
+  const brands = sortByAttribute(data.brands.nodes, 'slideNumber')
+
+
   return (
     <div className="w-full h-full overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 lg:px-32 2xl:px-48 py-16 ">
       <div className="absolute z-10 top-0 bg-gradient-to-b from-[#b56012]/90 to-[#3E3E3E]/90 w-full h-full"></div>
@@ -63,7 +68,7 @@ export default function BrandsF({ mediaUrl }) {
           Currently, PROS-APAC  is partnered with a total of 35 exclusive dental Brands from both local and international level of products, all of which are of the best quality for our dentists.
         </div>}
       </div>
-      <BrandSliderF brands={data?.brands?.nodes} />
+      <BrandSliderF brands={brands} />
     </div>
   )
 }
