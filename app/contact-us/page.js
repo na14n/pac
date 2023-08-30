@@ -1,6 +1,6 @@
-import { HeaderTrigger, Hero, LocationCard, MessageUsForm, ViberBanner } from "@/components"
+import { HeaderTrigger, Hero, LocationCard, MessageUsForm, ViberBanner, MessageUs } from "@/components"
 
-export default async function ContactUs() {
+export default function ContactUs() {
 
   return (
     <main className="w-full flex flex-col items-center justify-center">
@@ -12,8 +12,8 @@ export default async function ContactUs() {
       <div className="w-full 2xl:min-h-fit max-h-fit">
         <LocationCard />
       </div>
-      <div className="w-full lg:h-[63vh] ">
-        <MessageUsForm />
+      <div className="w-full h-fit ">
+        <MessageUs />
       </div>
       <div className="w-full max-h-fit">
         <ViberBanner />
