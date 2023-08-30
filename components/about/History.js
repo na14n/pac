@@ -61,13 +61,13 @@ export default function History() {
     <div className="relative flex flex-col mx-24 items-center">
       <section className="text-white text-5xl font-bold text-center items-center justify-center flex flex-col">
         <p className="pb-4">OUR STORY</p>
-        <hr className="w-1/4 border-2 border-pac-orange" />
+        <hr className="w-2/3 border-2 border-pac-orange" />
       </section>
       <section className="flex flex-row mt-20 text-xl text-pac-orange gap-24 items-center justify-center">
         {years.map((item, index) => (
           <button
             key={index}
-            className={` hover:text-pac-green focus:bg-pac-orange focus:text-white focus:font-bold focus:px-2 focus:py-1 focus:rounded-sm transition ease-in-out delay-100 ${
+            className={` hover:text-pac-green focus:bg-pac-orange focus:text-white focus:font-bold px-2 py-1 focus:rounded-sm transition ease-in-out delay-100 ${
               YearClick.year === item.year
                 ? "bg-pac-orange text-white font-bold"
                 : ""

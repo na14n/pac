@@ -6,6 +6,7 @@ import PACabout from "@/components/about/PACabout";
 import History from "@/components/about/History";
 import React from "react";
 import Facilities from "@/components/about/Facilities";
+import SalesTeam from "@/components/about/SalesTeam";
 
 export default function page() {
   return (
@@ -40,6 +41,11 @@ export default function page() {
       
       <div className="w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]">
         <Facilities />
+      </div>
+
+
+      <div className="w-full lg:h-[100vh] max-h-fit bg-[#F1F1F1]">
+        <SalesTeam />
       </div>
     </div>
   );
