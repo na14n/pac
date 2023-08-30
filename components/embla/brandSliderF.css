@@ -1,0 +1,26 @@
+.emblaBF {
+  --slide-spacing: 0rem;
+  --slide-size: 32rem;
+  --slide-height: 19rem;
+  padding: 1.6rem;
+}
+.embla__viewportBF {
+  overflow: hidden;
+}
+.embla__containerBF {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+
+}
+.embla__slideBF {
+  flex: 0 0 700px;
+  min-width: 0;
+  position: relative;
+}
+.embla__slide__img {
+  display: block;
+  height: var(--slide-height);
+  width: 100%;
+  object-fit: cover;
+}

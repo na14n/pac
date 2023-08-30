@@ -36,19 +36,19 @@ export default function PBanner4() {
     );
 
     return (
-        <section className="w-full h-screen max-h-fit flex flex-col items-center justify-center gap-16 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-[#FCFCFC]">
+        <section className="w-full h-fit max-h-fit flex flex-col items-center justify-center gap-16 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-[#FCFCFC]">
             <div className="w-full h-fit flex flex-col gap-1">
-                <h1 className="text-center text-4xl font-semibold text-pac-green">
+                <h1 className="text-center lg:text-4xl xs:text-2xl font-semibold text-pac-green">
                     {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].sectionHeading : ''}
                 </h1>
-                <h1 className="text-center text-2xl text-pac-orange">
+                <h1 className="text-center lg:text-2xl xs:text-xl text-pac-orange">
                     {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].sectionSubheading : ''}
                 </h1>
             </div>
-            <div className="flex items-start w-fit gap-8">
+            <div className="flex max-lg:flex-col items-start w-fit gap-8 lg:gap-24">
                 {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].contentLine1.
                     map((c, i) => (
-                        <div key={i} className="w-48 h-72 p-4 flex flex-col gap-2 justify-start items-center bg-[#E1E1E1] shadow-md rounded-sm">
+                        <div key={i} className="w-48 h-72 p-4 flex flex-col gap-2 justify-start items-center bg-[#E1E1E1] shadow-sm hover:shadow-md rounded-sm cursor-pointer hover:-translate-y-1 transition-all">
                             <div className="w-fit h-fit flex-col">
                                 <div className="w-40 h-40 object-fill relative">
                                     <Image src={data?.prostigePages?.nodes[0]?.mediaLine1[i]?.link} fill={true} className="object-contain" />

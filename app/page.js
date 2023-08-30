@@ -10,33 +10,31 @@ export default function Home() {
             <HeroBanner />
           </HeaderTrigger>
         </div>
-        <div className='w-full max-h-fit lg:h-[50vh] bg-[#F1F1F1]'>
+        <div className='w-full h-fit bg-[#F1F1F1]'>
           <AboutF />
         </div>
-        <div className='w-full h-0 bg-[#F1F1F1]'>
+        <div className='w-full h-fit xl:h-0 bg-[#F1F1F1]'>
           <Strengths />
         </div>
-        <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[60vh] max-h-fit bg-[#F1F1F1]'>
-          {/* <Hero heroType={'centered'} title={'To know more about our Story'} buttonName={'Click Here'} buttonLink={'/#'} /> */}
+        <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[70vh] max-h-fit bg-[#F1F1F1]'>
           <OurStory />
         </div>
         <div className='w-full max-h-fit bg-[#F1F1F1]'>
           <Reach type={'green'} />
         </div>
-        <div className='w-full min-h-min lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
+        <div className='w-full xl:h-[100vh] max-h-fit bg-[#F1F1F1]'>
           <BrandsF />
         </div>
-        <div className='w-full lg:min-h-[100vh] max-h-fit bg-[#F1F1F1]'>
+        <div className='w-full h-fit bg-[#F1F1F1]'>
           <ProstigeF link={'https://picsum.photos/1280/720'} />
         </div>
-        <div className='w-full xs:h-fit lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1] '>
+        <div className='w-full xs:h-fit xl:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1] '>
           <TestimonialsF />
         </div>
         <div className='w-full max-h-fit lg:h-fit bg-[#F1F1F1]'>
           <EventsF />
         </div>
-        <div className='w-full min-h-fit max-h-fit bg-[#F1F1F1]'>
-          {/* <Hero heroType={'centered3'} title={'want to order?'} subheading={'To know more about our purchase and delivery information'} buttonName={'Click Here'} buttonLink={'/resources/how-to-order'} /> */}
+        <div className='w-full h-[30vh] max-h-fit bg-[#F1F1F1]'>
           <OrderF />
         </div>
       </Suspense>

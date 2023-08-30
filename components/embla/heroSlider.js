@@ -17,20 +17,20 @@ export const HeroSlider = ({ height, media }) => {
     }, [emblaApi])
 
     return (
-        <div className="embla lg:h-[50vh] 2xl:h-[40vh] max-h-fit flex items-center justify-between relative px-32" >
-            <button className="embla__next z-40 bg-[#F1F1F1] flex justify-center items-center py-1 rounded-full shadow-md group" onClick={scrollPrev}>
+        <div className="embla xs:h-[200px] lg:h-[50vh] 2xl:h-[40vh] max-h-fit flex items-center justify-between relative px-32" >
+            <button className="z-40 bg-[#F1F1F1] flex justify-center items-center py-1 max-lg:hidden rounded-full shadow-md group" onClick={scrollPrev}>
                 <Icon icon="ic:round-keyboard-arrow-left" className='pl-1 pr-1 text-2xl group-hover:text-pac-orange' />
             </button>
-            <div className="embla__viewport w-full h-full absolute top-0 left-0" ref={emblaRef}>
-                <div className="embla__container h-full">
+            <div className="embla__viewport overflow-hidden w-full h-full absolute top-0 left-0" ref={emblaRef}>
+                <div className="embla__container flex h-full">
                     {media.map((m, index) => (
                         <div key={index} className="embla__slide">
-                            <Image width={2400} height={600} src={m.link ? m.link : 'https://picsum.photos/2400'} alt="dental-website-banner" />
+                            <Image width={2400} height={600} src={m.link ? m.link : 'https://picsum.photos/2400'} alt="dental-website-banner" className='object-contain' />
                         </div>
                     ))}
                 </div>
             </div>
-            <button className="embla__next z-40 bg-[#F1F1F1] flex justify-center items-center py-1 rounded-full shadow-md group" onClick={scrollNext}>
+            <button className=" z-40 bg-[#F1F1F1] flex justify-center items-center py-1 max-lg:hidden rounded-full shadow-md group" onClick={scrollNext}>
                 <Icon icon="ic:round-keyboard-arrow-right" className='pl-1 pr-1 text-2xl group-hover:text-pac-orange' />
             </button>
         </div>

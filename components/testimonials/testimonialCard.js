@@ -22,12 +22,32 @@ const TestimonialCard = (props) => {
                 </div>
             </div>
         </div>
+    ) : (props.type === 'prostige') ? (
+        <div className="w-80 h-72 p-8 bg-[#FCFCFC] rounded-md shadow-md relative flex flex-col items-center 2xl:w-[496px]">
+            <div className="w-full h-fit text-pac-orange">
+                <Icon icon="ri:double-quotes-l" width={56} height={56} />
+            </div>
+            <div className="w-full h-full italic text-sm 2xl:text-lg text-[#272727] mt-2">
+                {props?.message}
+            </div>
+            <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col gap-0 items-start">
+                <h4 className="font-bold text-[#121212] 2xl:text-xl">
+                    {props?.name}
+                </h4>
+                <h5 className="text-sm 2xl:text-lg text-[#575757]">
+                    {props?.clinic}
+                </h5>
+                <h5 className="text-sm 2xl:text-lg text-[#575757]">
+                    {props?.location}
+                </h5>
+            </div>
+        </div>
     ) : (
-        <div className="w-80 h-fit relative flex flex-col items-center 2xl:w-96">
+        <div className="w-80 h-fit grow relative flex flex-col items-center 2xl:w-96">
             <div className="absolute -top-16 w-32 h-32 rounded-full bg-[#E1E1E1] shadow-md flex items-center justify-center overflow-hidden">
                 (Image)
             </div>
-            <div className="w-full h-72 2xl:h-96 px-4 py-4 bg-[#FCFCFC] rounded-md shadow-md">
+            <div className="w-full h-80 2xl:h-96 px-4 py-4 bg-[#FCFCFC] rounded-md shadow-md">
                 <div className="w-full h-fit text-pac-green">
                     <Icon icon="ri:double-quotes-l" width={48} height={48} />
                 </div>

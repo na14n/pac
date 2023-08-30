@@ -67,7 +67,7 @@ const Footer = () => {
         },
         {
             name: 'Prostige Rewards',
-            link: '#',
+            link: '/products/prostige',
             group: 'our-products',
         },
         {
@@ -162,7 +162,7 @@ const Footer = () => {
                         <Image src="/pac-white.png" fill={true} alt='pros-apac-logo' />
                     </div>
                     <div className=" w-full h-content text-[#e1e1e1] text-sm justify-start lg:pb-4 ">
-                        We put the <span className='uppercase font-bold text-pac-orange'>smile</span> back on every <span className='uppercase font-bold text-[#077232]'>filipino</span>
+                        We put the <span className='uppercase font-bold text-pac-orange'>smile</span> back on every <span className='uppercase font-bold text-[#077232]'>filipino</span>.
                     </div>
                     <div className=" w-full h-content text-[#e1e1e1] text-sm flex flex-col justify-start lg:pb-4 justify-self-end">
                         <span>768 Gen. Malvar St.,</span>
@@ -228,7 +228,7 @@ const Footer = () => {
             </div>
             <div className="w-full shrink-1 lg:px-8 flex lg:flex-row xs:flex-col-reverse justify-between pt-2">
                 <span className=' w-content h-full text-xs text-[#fcfcfc]'>
-                    All Rights Reserved 2023
+                    © All Rights Reserved 2023
                 </span>
                 <div className=' w-content h-full flex xs:gap-8 lg:gap-4'>
                     {extraLinks.map((link, index) => (
