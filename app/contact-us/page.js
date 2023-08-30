@@ -9,7 +9,7 @@ export default async function ContactUs() {
           <Hero heroType={'orange'} title={'Contact Us'} />
         </HeaderTrigger>
       </div>
-      <div className="w-full lg:min-h-[100vh] 2xl:min-h-fit max-h-fit lg:px-32">
+      <div className="w-full 2xl:min-h-fit max-h-fit">
         <LocationCard />
       </div>
       <div className="w-full lg:h-[63vh] ">

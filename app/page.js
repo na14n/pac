@@ -13,7 +13,7 @@ export default function Home() {
         <div className='w-full h-fit bg-[#F1F1F1]'>
           <AboutF />
         </div>
-        <div className='w-full h-fit bg-[#F1F1F1]'>
+        <div className='w-full h-fit xl:h-0 bg-[#F1F1F1]'>
           <Strengths />
         </div>
         <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[70vh] max-h-fit bg-[#F1F1F1]'>
@@ -28,7 +28,7 @@ export default function Home() {
         <div className='w-full h-fit bg-[#F1F1F1]'>
           <ProstigeF link={'https://picsum.photos/1280/720'} />
         </div>
-        <div className='w-full xs:h-fit lg:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1] '>
+        <div className='w-full xs:h-fit xl:h-[100vh] 2xl:h-fit max-h-fit bg-[#F1F1F1] '>
           <TestimonialsF />
         </div>
         <div className='w-full max-h-fit lg:h-fit bg-[#F1F1F1]'>

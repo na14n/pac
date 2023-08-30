@@ -50,7 +50,7 @@ export default function BrandsF({ mediaUrl }) {
 
 
   return (
-    <div className="w-full h-fit overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 xl:px-32 2xl:px-48 py-16 ">
+    <div className="w-full max-h-fit h-fit xl:h-screen overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 xl:px-32 2xl:px-48 py-16 ">
       <div className="absolute z-10 top-0 bg-gradient-to-b from-[#b56012]/90 to-[#3E3E3E]/90 w-full h-full"></div>
       <div className="absolute z-0 top-0 w-full h-full">
         <Image fill={true} src={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0].link : 'https://picsum.photos/2400/1600'} className="z-0 object-cover" alt="dental-website-banner" />

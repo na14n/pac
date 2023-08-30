@@ -43,11 +43,11 @@ const TestimonialCard = (props) => {
             </div>
         </div>
     ) : (
-        <div className="w-80 h-fit relative flex flex-col items-center 2xl:w-96">
+        <div className="w-80 h-fit grow relative flex flex-col items-center 2xl:w-96">
             <div className="absolute -top-16 w-32 h-32 rounded-full bg-[#E1E1E1] shadow-md flex items-center justify-center overflow-hidden">
                 (Image)
             </div>
-            <div className="w-full h-72 2xl:h-96 px-4 py-4 bg-[#FCFCFC] rounded-md shadow-md">
+            <div className="w-full h-80 2xl:h-96 px-4 py-4 bg-[#FCFCFC] rounded-md shadow-md">
                 <div className="w-full h-fit text-pac-green">
                     <Icon icon="ri:double-quotes-l" width={48} height={48} />
                 </div>

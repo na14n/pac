@@ -50,7 +50,7 @@ export default function TestimonialsF() {
     }
 
     return (
-        <div className="w-full h-fit lg:px-32 relative flex flex-col justify-center items-center overflow-hidden lg:gap-32 xs:gap-24 py-16 ">
+        <div className="w-full h-full max-h-fit lg:px-16 xl:px-32 relative flex flex-col justify-center items-center overflow-hidden lg:gap-16 xl:gap-0 xs:gap-24 ">
             <div className="xs:relative lg:absolute z-10 t-0 w-full xs:h-52 lg:h-2/5 top-0 overflow-hidden flex items-center justify-center">
                 <div className="w-full h-full flex flex-col items-center justify-center gap-4 z-40">
                     <div className="uppercase lg:hidden text-[#FCFCFC] font-bold text-3xl 2xl:text-4xl">
@@ -58,15 +58,15 @@ export default function TestimonialsF() {
                     </div>
                     <div className="lg:hidden w-1/3 h-[2px] rounded-md bg-[#EFEFEF]"></div>
                 </div>
-                <Image fill={true} className="z-0 object-cover" src={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0].link : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
+                <Image fill={true} className="z-0 object-cover object-center" src={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0].link : 'https://picsum.photos/1920/1080'} alt="dental-website-banner" />
             </div>
-            <div className="z-20 w-full xs:hidden lg:flex lg:h-1/3 flex-col items-center justify-center gap-2 ">
+            <div className="z-20 w-full xs:hidden lg:flex lg:h-1/3 lg:mb-16 flex-col items-center justify-center gap-2 ">
                 <div className="uppercase text-[#FCFCFC] font-bold text-3xl 2xl:text-4xl">
                     {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading[0] : `why choose us`}
                 </div>
                 <div className=" w-1/3 h-[2px] rounded-md bg-[#EFEFEF]"></div>
             </div>
-            <div className="w-full h-fit z-30 flex xs:flex-col lg:flex-row justify-center items-center xs:gap-24 lg:gap-8 2xl:gap-8 ">
+            <div className="w-full h-full grow z-30 mb-16 flex xs:flex-col lg:flex-row justify-center items-center xs:gap-24 lg:gap-8 2xl:gap-8 ">
                 {testimonialsF.map((t, i) => (
                     <TestimonialCard key={i} data={t} />
                 ))}

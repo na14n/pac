@@ -43,17 +43,17 @@ export default function EventsF() {
     );
 
     return (
-        <div className="w-full max-h-fit h-fit bg-[#E1E1E1] flex flex-col lg:justify-center items-center lg:px-32 2xl:px-48 2xl:py-32 lg:gap-8 2xl:gap-16 xs:px-4 xs:gap-16 py-12 ">
+        <div className="w-full max-h-fit h-fit bg-[#E1E1E1] flex flex-col lg:justify-center items-center md:px-8 lg:px-16 xl:px-32 2xl:px-48 2xl:py-32 lg:gap-8 2xl:gap-16 xs:px-4 xs:gap-16 py-12 ">
             <div className="lg:max-w-full min-w-fit flex flex-col lg:gap-1 h-fit ">
                 {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading.map((h, i) => (
-                    <h1 key={i} className="lg:text-4xl xs:text-2xl text-[#272727] font-bold  text-center">
+                    <h1 key={i} className="lg:text-3xl xl:text-4xl xs:text-2xl text-[#272727] font-bold  text-center">
                         {h}
                     </h1>
                 )) : ``}
             </div>
-            <div className=" lg:max-w-[900px] 2xl:max-w-full 2xl:px-48 flex flex-col gap-6">
+            <div className="lg:max-w-[75ch] xl:max-w-[900px] 2xl:max-w-full 2xl:px-48 flex flex-col gap-6">
                 {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine2.map((h, i) => (
-                    <p key={i} className="text-lg max-lg:text-sm text-[#373737] text-justify">
+                    <p key={i} className="text-xl max-2xl:text-sm text-[#373737] text-justify">
                         {h}
                     </p>
                 )) : ``}
