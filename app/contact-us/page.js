@@ -1,8 +1,5 @@
 import { HeaderTrigger, Hero, LocationCard, MessageUsForm, ViberBanner } from "@/components"
 
-export const dynamic = 'force-dynamic'
-
-
 export default async function ContactUs() {
 
   return (
@@ -13,7 +10,7 @@ export default async function ContactUs() {
         </HeaderTrigger>
       </div>
       <div className="w-full lg:min-h-[100vh] 2xl:min-h-fit max-h-fit lg:px-32">
-        <LocationCard data={data} />
+        <LocationCard />
       </div>
       <div className="w-full lg:h-[63vh] ">
         <MessageUsForm />

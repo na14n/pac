@@ -58,7 +58,7 @@ const Header = () => {
                         <Button type={'inverse'} color={'white'} name={'Shop Now'} link={'#'} />
                         <SearchBar />
                     </div>
-                    <button className={` lg:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-4xl text-[#FCFCFC] flex items-center justify-center`}`} onClick={() => setSidebarState(true)}>
+                    <button className={`xl:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-4xl text-[#FCFCFC] flex items-center justify-center`}`} onClick={() => setSidebarState(true)}>
                         <Icon icon="mdi:menu" />
                     </button>
                 </div>

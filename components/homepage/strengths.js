@@ -70,12 +70,12 @@ export default function Strengths() {
     }
 
     return (strengths) ? (
-        <div className="w-full h-fit lg:px-32 2xl:px-48 xs:px-4 relative flex flex-col items-center justify-center z-40 xs:pb-16">
-            <div className="w-full h-fit lg:absolute xs:relative lg:-top-36 2xl:-top-32 flex xs:flex-col lg:flex-row items-center justify-center lg:gap-8 xs:gap-8 lg:px-32 xs:px-4">
+        <div className="w-full h-fitrelative flex flex-col items-center justify-center z-40 xs:pb-16">
+            <div className="w-full h-fit xl:absolute relative xl:-top-36 2xl:-top-32 flex xs:flex-col max-xl:flex-wrap lg:flex-row items-center justify-center lg:gap-4 xl:gap-8 xs:gap-4  2xl:px-48 lg:px-32 xs:px-4">
                 {strengths.map((s, index) => (
-                    <div key={index} className="w-72 h-72 lg:h-[300px] 2xl:h-64 shadow-md bg-gradient-to-b odd:from-[#FAA541] odd:to-[#EE6400] even:from-[#FCFCFC] even:to-[#EFEFEF] rounded-md flex justify-start gap-2 flex-col items-center p-4 odd:text-[#FCFCFC] even:text-[#EE6400] peer group relative overflow-hidden">
+                    <div key={index} className="w-72 h-72 shrink-0 lg:h-[300px] 2xl:h-64 shadow-md bg-gradient-to-b odd:from-[#FAA541] odd:to-[#EE6400] even:from-[#FCFCFC] even:to-[#EFEFEF] rounded-md flex justify-start gap-2 flex-col items-center p-4 odd:text-[#FCFCFC] even:text-[#EE6400] peer group relative overflow-hidden">
                         <Icon icon={s.icon} className="text-6xl" />
-                        <p className="w-full h-fit text-center text-xl font-bold peer-odd:text-[#EFEFEF] peer-even:text-[#FAA541]">
+                        <p className="w-full h-fit text-center text-xl lg:text-lg 2xl:text-xl font-bold peer-odd:text-[#EFEFEF] peer-even:text-[#FAA541]">
                             {s.title}
                         </p>
                         <p className="w-full h-fit text-center text-sm">

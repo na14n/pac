@@ -13,7 +13,7 @@ export default function Home() {
         <div className='w-full h-fit bg-[#F1F1F1]'>
           <AboutF />
         </div>
-        <div className='w-full xs:h-fit lg:h-0 bg-[#F1F1F1]'>
+        <div className='w-full h-fit bg-[#F1F1F1]'>
           <Strengths />
         </div>
         <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[70vh] max-h-fit bg-[#F1F1F1]'>
@@ -22,7 +22,7 @@ export default function Home() {
         <div className='w-full max-h-fit bg-[#F1F1F1]'>
           <Reach type={'green'} />
         </div>
-        <div className='w-full min-h-min lg:h-[100vh] max-h-fit bg-[#F1F1F1]'>
+        <div className='w-full xl:h-[100vh] max-h-fit bg-[#F1F1F1]'>
           <BrandsF />
         </div>
         <div className='w-full h-fit bg-[#F1F1F1]'>
