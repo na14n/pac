@@ -1,8 +1,8 @@
 'use client';
 
-export default function AboutS04(){
+export default function AboutS04() {
     return (
-        <>
-        </>
+        <section>
+        </section>
     )
 }
