@@ -22,10 +22,9 @@ const query = gql`
 export default function AboutHero() {
 
     const { data } = useSuspenseQuery(query);
-    // console.log('DATA: ', data);
 
     return (
-        <section className="h-[16rem] md:h-[30vh] xl:h-[50vh] max-h-fit relative flex flex-col items-center justify-center">
+        <section className="h-[16rem] md:h-[30vh] xl:h-[50vh] relative flex flex-col items-center justify-center">
             <div className="absolute top-0 left-0 w-full h-full">
                 <Image src={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.link : ``} fill={true} className="object-cover object-center z-10" />
                 <div className="w-full h-full bg-pac-orange/90 z-20 absolute top-0 left-0" />
