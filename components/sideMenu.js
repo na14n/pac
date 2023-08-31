@@ -16,7 +16,7 @@ const SideMenu = () => {
         },
         {
             link: 'about us',
-            href: '#'
+            href: '/about-us'
         },
         {
             link: 'products',
