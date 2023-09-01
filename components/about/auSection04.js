@@ -4,17 +4,19 @@ import { gql } from "@apollo/client";
 import { useState } from "react";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
-import Button from "../button";
 import parse from 'html-react-parser'
 
 const query = gql`
-    query GetAboutContentS04 {
+    query FetchAboutContentS04 {
         aboutContents(where: {name: "section-04"}) {
             nodes {
                     sectionTitle
                     sectionHeading
                     contentLine1
                     contentLine2
+                    mediaLine1{
+                        link
+                    }
                 }
             }
     }
@@ -22,14 +24,21 @@ const query = gql`
 
 export default function AboutS04() {
 
-    const { data } = useSuspenseQuery(query)
+    const { data } = useSuspenseQuery(query,
+        {
+          context: {
+            fetchOptions: {
+              next: { revalidate: 60 },
+            },
+          },
+        })
 
     const [selected, setSelected] = useState(0)
 
     return (
         <section className="w-full min-h-screen  h-fit p-4 md:p-8 lg:p-16 xl:p-32 2xl:p-48 flex flex-col items-center justify-center relative gap-8 2xl:gap-16">
             <div className="w-full h-full absolute z-10 bg-gradient-to-b from-[#272727]/90 to-[#121212]/90" />
-            <Image src={'https://picsum.photos/1600/1600'} fill={true} alt="dental-company-background" className="object-cover object-center" />
+            <Image src={data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.link : 'https://picsum.photos/1600/1600'} fill={true} alt="dental-company-background" className="object-cover object-center" />
             <div className="z-20 ">
                 <h1 className="uppercase text-xl 2xl:text-5xl font-bold text-[#FCFCFC]">our story</h1>
                 <div className="w-full h-[2px] bg-pac-orange" />

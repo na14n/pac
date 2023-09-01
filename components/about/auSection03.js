@@ -20,7 +20,14 @@ const query = gql`
 
 export default function AboutS03() {
 
-    const { data } = useSuspenseQuery(query);
+    const { data } = useSuspenseQuery(query,
+        {
+          context: {
+            fetchOptions: {
+              next: { revalidate: 60 },
+            },
+          },
+        });
 
     return (
         <section className="w-full h-[16rem] md:h-[30vh] flex flex-col items-center justify-center relative">

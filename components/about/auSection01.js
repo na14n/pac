@@ -23,7 +23,14 @@ const query = gql`
 
 export default function AboutS01() {
 
-    const { data } = useSuspenseQuery(query);
+    const { data } = useSuspenseQuery(query,
+        {
+          context: {
+            fetchOptions: {
+              next: { revalidate: 60 },
+            },
+          },
+        });
 
     // console.log('DATA: ', data);
 

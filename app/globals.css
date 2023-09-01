@@ -33,3 +33,7 @@
   min-width: 0;
   position: relative;
 }
+
+.oranged__bold b {
+  color: rgb(240 97 40);
+}
