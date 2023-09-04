@@ -71,7 +71,10 @@ export default function PBanner6() {
             </div>
             <div className="w-full flex flex-row gap-3">
                 <h4 className="shrink-0 text-pac-orange text-lg 2xl:text-2xl font-bold">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading[2] : ``}</h4>
-                <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1[2] : ``}</p>
+                <span className=" h-fit flex flex-col gap-4">
+                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1[2] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1[3] : ``}</p>
+                </span>
             </div>
         </section>
     )

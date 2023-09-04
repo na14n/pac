@@ -5,6 +5,7 @@ import Hero from './hero'
 import Button from './button'
 import LocationCard from './contact-us/locationCard'
 import MessageUsForm from './contact-us/messageUsForm'
+import MessageUs from './contact-us/messageUs'
 import EventCard from './trainings-&-seminars/eventCard'
 import EventsList from './trainings-&-seminars/eventsList'
 import Sorter from './trainings-&-seminars/sorter'
@@ -50,8 +51,19 @@ import PBanner9 from './prostige/pBanner9'
 import Breadcrumbs from './products/breadcrumbs'
 import ProdContent from './products/prodContent'
 import QuoteForm from './products/quoteForm'
+import AboutHero from './about/hero'
+import AboutS01 from './about/auSection01'
+import AboutS02 from './about/auSection02'
+import AboutS03 from './about/auSection03'
+import AboutS04 from './about/auSection04'
+import AboutS05 from './about/auSection05'
+import AboutS06 from './about/auSection06'
+import AboutS07 from './about/auSection07'
+import AboutS08 from './about/auSection08'
+import AboutS09 from './about/auSection09'
+import AboutS10 from './about/auSection10'
 
 
 export {
-    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading, OurStory, OrderF, PHero, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PBanner9, Breadcrumbs, ProdContent, QuoteForm
+    Header, MyComponent, HeaderTrigger, Hero, Button, LocationCard, MessageUsForm, EventCard, EventsList, Sorter, CategoryBanner, BrandSlider, FeaturedProductsList, ProductCard, CatalogueCard, AboutF, Strengths, Reach, BrandSliderF, BrandsF, TestimonialsF, EventsF, ProstigeF, ViberBanner, QuotationGUide, OrderingGuide, SideMenu, Faq, TestimonialCard, SalesAgentSearchBar, SalesAgentCard, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProdInfo, HeroBanner, HomeLoading, OurStory, OrderF, PHero, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PBanner9, Breadcrumbs, ProdContent, QuoteForm, MessageUs, AboutHero, AboutS01, AboutS02, AboutS03, AboutS04, AboutS05, AboutS06, AboutS07, AboutS08, AboutS09, AboutS10
 }

@@ -12,7 +12,7 @@ const Footer = () => {
         },
         {
             name: 'History',
-            link: '#',
+            link: '/about-us',
             group: 'about',
         },
         {

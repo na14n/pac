@@ -1,24 +1,21 @@
-import BannerF from "@/components/about/BannerF";
-import Coolab from "@/components/about/Coolab";
-import PACabout from "@/components/about/PACabout";
-import History from "@/components/about/History";
-import MVC from "@/components/about/MVC";
-import Founder from "@/components/about/Founder";
-import Image from "next/image";
-import Facilities from "@/components/about/Facilities";
+import { HeaderTrigger, AboutHero, AboutS01, AboutS02, AboutS03, AboutS04, AboutS05, AboutS06, AboutS07, AboutS08, AboutS09, AboutS10 } from "@/components"
 
-export default function Page() {
-  return (
-    <main className="w-full min-h-screen h-fit">
-      
-      <BannerF />
-      <PACabout />
-      <Coolab />
-      <section className="relative -mt-10">
-      <History />
-      </section>
-      <MVC />
-      <Facilities />
-    </main>
-  );
+export default function Page(){
+    return(
+        <main className="w-full min-h-screen h-fit bg-[#FCFCFC] overflow-hidden">
+            <HeaderTrigger>
+                <AboutHero />
+            </HeaderTrigger>
+            <AboutS01 />
+            <AboutS02 />
+            <AboutS03 />
+            <AboutS04 />
+            <AboutS05 />
+            <AboutS06 />
+            <AboutS07 />
+            <AboutS08 />
+            <AboutS09 />
+            <AboutS10 />
+        </main>
+    )
 }
