@@ -1,9 +1,16 @@
 import React from "react";
+import Image from "next/image";
 
 export default function SitemapF() {
   return (
-    <div className="bg-cover items-start flex-col justify-center relative mt-10 bg-[url('https://cdn-res.keymedia.com/cdn-cgi/image/f=auto/https://cdn-res.keymedia.com/cms/images/ca/120/0395_637834761430417755.jpg')] h-auto w-screen py-16">
-       <div className="bg-gray-200 opacity-70 w-full border-t-2 border-b-2 h-20 flex items-center justify-center border-pac-charcoal border-opacity-20">
+    <div className=" items-start flex-col justify-center relative h-auto w-screen py-16 ">
+      <Image
+        src="https://picsum.photos/2200/1600"
+        alt="Picture of the author"
+        layout="fill"
+        objectFit="cover"
+      />
+      <div className="bg-gray-200 opacity-70 w-full border-t-2 border-b-2 h-20 flex items-center justify-center border-pac-charcoal border-opacity-20">
         <span className="text-black font-bold text-5xl opacity-100 absolute">
           SITE MAP
         </span>
