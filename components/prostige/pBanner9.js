@@ -94,9 +94,9 @@ export default function PBanner9() {
                     {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.contentLine1.
                         map((c, i) => (
                             <div key={i} className="flex flex-col gap-2 items-center">
-                                <span className="w-fit h-fit rounded-full bg-gradient-to-b from-nav-orange to-pac-orange flex items-center justify-center">
+                                <a className="w-fit h-fit rounded-full bg-gradient-to-b from-nav-orange to-pac-orange flex items-center justify-center" href={data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.contentLine2[i] : ``}>
                                     <Icon icon={c} className="lg:text-4xl xs:text-2xl p-3 text-[#FCFCFC]" />
-                                </span>
+                                </a>
                                 <h4 className="lg:text-lg xs:text-xs text-[#272727]">
                                     {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.sectionSubheading[i] : ``}
                                 </h4>
