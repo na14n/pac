@@ -45,7 +45,7 @@ export default function AboutS02() {
                     <div className="w-full h-fit flex flex-col gap-6">
                         {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.contentLine1
                         .map((c, i) => (
-                            <p key={i} className="h-fit w-full xl:w-[50ch] 2xl:w-[55ch] xl:pr-6 text-justify 2xl:text-lg text-[#EFEFEF]">
+                            <p key={i} className="h-fit w-full xl:w-[50ch] 2xl:w-[50ch] min-[1920px]:w-[60ch] xl:pr-6 text-justify 2xl:text-lg text-[#EFEFEF]">
                                 {c}
                             </p>
                         ))

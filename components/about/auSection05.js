@@ -32,7 +32,7 @@ export default function AboutS05() {
         })
 
     return (
-        <section className="w-full xl:h-fit max-h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex  items-center justify-center relative gap-0 py-16">
+        <section className="w-full xl:h-fit max-h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col xl:flex-row items-center justify-center relative gap-0 py-16">
             <Image src={data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.link : 'https://picsum.photos/1600/1600'} fill={true} alt="dental-company-background" className="object-cover object-center" />
             <span className="w-full items-stretch z-20 flex place-items-center justify-center">
                 {data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.sectionHeading.

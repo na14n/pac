@@ -49,7 +49,7 @@ export default function AboutS06() {
             </span>
             <div className="flex gap-8 items-center justify-center">
                 {data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.sectionSubheading.map((s, i) => (
-                    <span className="w-[16rem] h-[9rem] 2xl:w-[24rem] 2xl:h-[13.5rem] flex flex-col items-center justify-end p-2 shadow-sm rounded-md hover:shadow-md cursor-pointer relative overflow-hidden">
+                    <span key={i} className="w-[16rem] h-[9rem] 2xl:w-[24rem] 2xl:h-[13.5rem] flex flex-col items-center justify-end p-2 shadow-sm rounded-md hover:shadow-md cursor-pointer relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-b from-[#373737]/25 to-[#272727]/75" />
                         <Image src={data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.mediaLine1[i]?.link : ''} alt="pros-apac-facility" fill={true} className="object-cover object-center z-0" />
                         <h4 className="uppercase font-semibold text-[#FCFCFC] text-xl z-20">{s}</h4>
