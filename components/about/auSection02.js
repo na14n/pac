@@ -54,7 +54,7 @@ export default function AboutS02() {
                 </div>
             </div>
             <div className="py-8 xl:py-0 xl:absolute xl:top-0 xl:right-32 2xl:right-48 h-full w-fit z-30 flex flex-col justify-center">
-                <VerticalSlider media={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.mediaLine1 : ``} />
+                {/* <VerticalSlider media={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.mediaLine1 : ``} /> */}
                 <AboutHorizontalSlider media={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.mediaLine1 : ``} />
             </div>
         </section>
