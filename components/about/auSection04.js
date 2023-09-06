@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic'
+
 import { gql } from "@apollo/client";
 import { useState } from "react";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";

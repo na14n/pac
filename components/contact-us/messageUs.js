@@ -27,12 +27,12 @@ export default function MessageUs() {
     const { data } = useSuspenseQuery(query);
 
     return (
-        <div className="relative w-full h-fit overflow-hidden flex justify-center items-start md:px-8 lg:px-16 xl:px-32 2xl:px-48">
+        <div className="relative w-full h-fit overflow-hidden flex justify-center items-center md:px-8 lg:px-16 xl:px-32 2xl:px-48 py-8">
             <div className="absolute z-10 t-0 bg-gradient-to-b from-[#077232]/95 via-[# 063013]/95 to-[#063013]/95 w-full h-full"></div >
             <div className="absolute z-0 t-0 w-full h-full">
                 {/* <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400'} alt="dental-website-banner" className="object-cover object-center" /> */}
             </div>
-            <div className="z-40 text-2xl w-full h-full flex max-md:flex-col-reverse justify-center items-center lg:gap-2 2xl:gap-16 lg:px-34  ">
+            <div className="z-40 text-2xl w-full h-full flex max-md:flex-col-reverse justify-center items-center lg:gap-12 2xl:gap-16 lg:px-34  ">
                 <div className="w-fit self-stretch flex flex-col justify-around xs:gap-4 lg:gap-8 2xl:gap-12 py-8 ">
                     <div className="w-full h-full items-stretch grow max-md:hidden flex flex-col gap-2 ">
                         <h1 className="md:text-3xl xl:text-4xl 2xl:text-5xl xs:text-2xl  uppercase font-bold text-[#FCFCFC] ">
