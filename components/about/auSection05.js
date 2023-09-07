@@ -39,7 +39,7 @@ export default function AboutS05() {
             <span className="w-full items-stretch z-20 flex flex-col xl:flex-row place-items-center justify-center">
                 {data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.sectionHeading.
                     map((h, i) => (
-                        <div key={i} className="z-20 w-full xl:w-[30ch] 2xl:w-[40ch] p-4 items-stretch max-h-fit flex flex-col gap-4 bg-gradient-to-b first:from-[#F0892B]/90 first:to-[#E66204]/90 from-[#077232]/90 to-[#063013]/90 last:from-[#3E3E3E]/90 last:to-[#2A2A2A]/90">
+                        <div key={i} className="z-20 w-full xl:w-[30ch] 2xl:w-[40ch] p-4 items-stretch max-h-fit flex flex-col gap-4 bg-gradient-to-b first:from-[#f9a03c]/80 first:to-[#ef6703]/80 from-[#007811]/80 to-[#153f00]/80 last:from-[#282828]/80 last:to-[#000000]/80">
                             <h4 className="text-[#FCFCFC] font-bold text-xl 2xl:text-2xl">{h}</h4>
                             <div className="w-full h-[2px] bg-[#FCFCFC]" />
                             <p className="text-justify text-[#EFEFEF] oranged__bold">{parse(data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.contentLine2[i] : '')}</p>

@@ -51,7 +51,7 @@ export default function AboutS08() {
                 <Image src={data?.aboutContents?.nodes[0] ? assets[1].link : ''} fill={true} className="object-contain object-bottom" />
             </div>
             <div className="z-10 flex flex-col gap-12 pb-16 w-fit items-center self-center">
-                <h1 className=" text-2xl lg:text-4xl 2xl:text-5xl text-center text-pac-orange font-bold uppercase">
+                <h1 className=" text-2xl lg:text-4xl 2xl:text-5xl text-center text-[#e34100] font-bold uppercase">
                     {data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.sectionHeading : ''}
                 </h1>
                 <p className="2xl:text-2xl xl:text-xl max-w-[40ch] 2xl:max-w-[55ch] text-[#171717] text-justify">
