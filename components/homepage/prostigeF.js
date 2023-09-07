@@ -88,7 +88,7 @@ export default function ProstigeF(props) {
             </div>
           </div>
         </div>
-        <div className=" xs:w-96 xs:h-96 lg:w-[32rem] lg:h-[32rem] 2xl:w-[44rem] shrink-0 test 2xl:h-[44rem] relative ">
+        <div className=" xs:w-96 xs:h-96 lg:w-[32rem] lg:h-[32rem] 2xl:w-[44rem] shrink-0 2xl:h-[44rem] relative ">
           <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} fill={true} alt="prostige-reward-card" className="object-contain object-center" />
         </div>
       </div>
