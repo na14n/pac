@@ -40,10 +40,10 @@ export default function OurStorySlider({ media, data }) {
     }, [emblaApi, onInit, onSelect])
 
     return (
-        <div className="overflow-hidden flex flex-col-reverse w-[20rem] sm:w-[36rem] md:w-[40rem] lg:w-[52rem] xl:w-[64rem] min-[1700px]:w-[72rem] h-fit gap-4" ref={emblaRef}>
+        <div className="overflow-hidden flex flex-col-reverse w-[20rem] sm:w-[36rem] md:w-[40rem] lg:w-[52rem] xl:w-[64rem] h-fit gap-8" ref={emblaRef}>
             <div className="flex touch-pan-y gap-8 shadow-md" >
                 {media ? assets.map((a, index) => (
-                    <div key={index} className='rounded-sm flex-[0_0_20rem] sm:flex-[0_0_36rem] md:flex-[0_0_40rem] lg:flex-[0_0_52rem] xl:flex-[0_0_64rem] min-[1700px]:flex-[0_0_72rem] lg:h-[34rem] xl:h-[28rem] p-4 2xl:p-8 shadow-md bg-[#FCFCFC] flex xl:justify-between flex-col xl:flex-row gap-8 xl:gap-4 2xl:gap-8'>
+                    <div key={index} className='rounded-sm flex-[0_0_20rem] sm:flex-[0_0_36rem] md:flex-[0_0_40rem] lg:flex-[0_0_52rem] xl:flex-[0_0_64rem] lg:h-[34rem] xl:h-[28rem] p-4 2xl:p-8 shadow-md bg-[#FCFCFC] flex xl:justify-between flex-col xl:flex-row gap-8 xl:gap-4 2xl:gap-8'>
                         <div className="flex flex-col gap-4">
                             <h3 className="font-bold text-3xl 2xl:text-4xl text-[#096200]">{data ? data?.contentLine1[index] : ''}</h3>
                             <p className="text-[#373737] text-justify">{parse(data ? data?.contentLine2[index] : '')}</p>
