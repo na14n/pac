@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .square {
+    aspect-ratio: 1/1;
+  }
+
+  .four-to-three {
+    aspect-ratio: 4/3
+  }
+
+  .four-to-three-p {
+    aspect-ratio: 3/4
+  }
+}
+
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -35,5 +49,5 @@
 }
 
 .oranged__bold b {
-  color: rgb(240 97 40);
+  color: rgb(255 120 0);
 }

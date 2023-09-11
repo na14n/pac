@@ -5,6 +5,7 @@ import { gql } from "@apollo/client";
 import { sortByAttribute } from "@/lib/helpers";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
+import Button from "../button";
 
 const query = gql` query FetchProstige {
   homepageSections(where: {search: "prostige"}) {
@@ -38,7 +39,7 @@ export default function PHero() {
         <section className="relative flex xs:flex-col lg:flex-row xs:justify-center lg:justify-between xs:items-center lg:items-end lg:gap-16 xs:gap-8 items-center justify-center xs:mt-24 lg:mt-0 lg:h-screen xs:min-h-fit max-h-fit w-full xs:px-4 lg:px-32 2xl:px-48 overflow-hidden xs:pt-12">
             <div className=" w-fit shrink-0 h-full  flex flex-col justify-center gap-8 lg:gap-16 ">
                 <div className="flex flex-col justify-end gap-2 relative w-80 h-[90px]">
-                    <Image src={sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link} fill={true} className="object-cover flex justify-start" />
+                    <Image src={sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link} fill={true} className="object-contain object-center" />
                 </div>
                 <div className="flex flex-col justify-center gap-1">
                     <h2 className="text-pac-green lg:text-5xl xs:text-2xl ">
@@ -56,6 +57,7 @@ export default function PHero() {
                         {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0].sectionSubheading[3] : ``}
                     </h2>
                 </div>
+                <Button type={1} name={'Sign up Now'} link={`/products/prostige#ProstigeSignUp`} />
             </div>
             <div className="xs:w-96 xs:h-96 lg:w-[550px] lg:h-[550px] 2xl:w-[800px] 2xl:h-[800px] align-bottom overflow-hidden relative lg:mt-16 ">
                 <Image src={sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[2].link} fill={true} alt="prostige-model" className="object-cover" />

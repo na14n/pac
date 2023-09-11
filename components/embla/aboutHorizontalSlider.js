@@ -39,10 +39,10 @@ export default function AboutHorizontalSlider({ media }) {
     }, [emblaApi, onInit, onSelect])
 
     return (
-        <div className="overflow-hidden xl:hidden flex flex-col gap-4" ref={emblaRef}>
-            <div className="flex touch-pan-y gap-8 shadow-md w-[16rem] h-[9rem] md:w-[40rem] md:h-[22rem] sm:w-[20rem] sm:h-[11rem] " >
+        <div className="overflow-hidden flex flex-col gap-4" ref={emblaRef}>
+            <div className="flex touch-pan-y gap-8 shadow-md w-[16rem] h-[9rem] lg:w-[28rem] lg:h-[16rem] xl:h-[18rem] xl:w-[32rem] md:w-[40rem] md:h-[22rem] sm:w-[20rem] sm:h-[11rem]  min-[1700px]:w-[40rem]  min-[1700px]:h-[22rem]" >
                 {media ? assets.map((a, index) => (
-                    <div key={index} className='rounded-sm flex-[0_0_16rem] h-[9rem] sm:flex-[0_0_20rem] sm:h-[11rem] md:flex-[0_0_40rem] md:h-[22rem] relative min-h-0 '>
+                    <div key={index} className='rounded-sm flex-[0_0_16rem] h-[9rem] sm:flex-[0_0_20rem] sm:h-[11rem] md:flex-[0_0_40rem] md:h-[22rem] lg:h-[16rem] lg:flex-[0_0_28rem] xl:h-[18rem] xl:flex-[0_0_32rem] min-[1700px]:h-[22rem] min-[1700px]:flex-[0_0_40rem] relative min-h-0 '>
                         <Image className='object-cover object-center' fill={true} src={a.link ? a.link : 'https://picsum.photos/2400'} alt="prostige-users" />
                     </div>
                 )) : ``}

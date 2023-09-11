@@ -40,7 +40,7 @@ export default function PBanner6() {
 
 
     return (
-        <section className="w-full h-fit flex flex-col items-center justify-center gap-8 py-16 bg-[#FCFCFC] xs:px-4 lg:px-32 2xl:px-48">
+        <section id="ProstigeSignUp" className="w-full h-fit flex flex-col items-center justify-center gap-8 py-16 bg-[#FCFCFC] xs:px-4 lg:px-32 2xl:px-48">
             <h3 className="text-[#121212] lg:text-3xl xs:text-2xl font-bold w-full h-fit">
                 {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionHeading : ``}
             </h3>

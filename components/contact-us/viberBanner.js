@@ -25,7 +25,7 @@ export default function ViberBanner() {
     const { data } = useSuspenseQuery(query);
 
     return (
-        <div className="w-full h-fit py-8 lg:h-64 max-h-fit bg-gradient-to-l from-[#8f5db7] via-[#8f5db7] to-[#59267c] flex max-md:flex-col justify-around items-center px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 gap-8 lg:gap-16 2xl:gap-24">
+        <div id='PACviberQR' className="w-full h-fit py-8 lg:h-64 max-h-fit bg-gradient-to-l from-[#8f5db7] via-[#8f5db7] to-[#59267c] flex max-md:flex-col justify-around items-center px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 gap-8 lg:gap-16 2xl:gap-24">
             <div className="flex flex-col gap-2">
                 <div className=" text-xl md:text-3xl 2xl:text-4xl font-bold text-[#FCFCFC] max-md:text-center">
                     {data?.contactUsInformations?.nodes ? data?.contactUsInformations?.nodes[0]?.sectionHeading[0] : ''}

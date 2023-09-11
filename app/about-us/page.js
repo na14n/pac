@@ -1,4 +1,4 @@
-import { HeaderTrigger, AboutHero, AboutS01, AboutS02, AboutS03, AboutS04, AboutS05, AboutS06, AboutS07, AboutS08, AboutS09, AboutS10 } from "@/components"
+import { HeaderTrigger, AboutHero, AboutS01, AboutS02, AboutS03, AboutS04, AboutS05, AboutS06, AboutS07, AboutS08 } from "@/components"
 
 export default function Page(){
     return(
@@ -14,9 +14,6 @@ export default function Page(){
             <AboutS06 />
             <AboutS07 />
             <AboutS08 />
-            <AboutS09 />
-            <AboutS10 />
-            <a href="components/event-landing/LandingF.js">rawr</a>
         </main>
     )
 }

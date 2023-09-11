@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic'
+
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
@@ -31,7 +33,7 @@ export default function AboutS03() {
 
     return (
         <section className="w-full h-[16rem] md:h-[30vh] flex flex-col items-center justify-center relative">
-            <div className="absolute flex items-center justify-center w-full h-full bg-[#575757] z-0" />
+            <div className="absolute flex items-center justify-center w-full h-full bg-[#757575] z-0" />
             <span className="z-10 flex flex-col items-center justify-center gap-4">
                 <span className="w-fit h-fit flex gap-2 flex-wrap">
                     {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading.

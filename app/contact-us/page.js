@@ -1,4 +1,4 @@
-import { HeaderTrigger, Hero, LocationCard, MessageUsForm, ViberBanner, MessageUs } from "@/components"
+import { HeaderTrigger, ContactUsHero, LocationCard, MessageUsForm, ViberBanner, MessageUs } from "@/components"
 
 export default function ContactUs() {
 
@@ -6,7 +6,7 @@ export default function ContactUs() {
     <main className="w-full flex flex-col items-center justify-center">
       <div className='w-full h-[33vh]'>
         <HeaderTrigger>
-          <Hero heroType={'orange'} title={'Contact Us'} />
+          <ContactUsHero />
         </HeaderTrigger>
       </div>
       <div className="w-full 2xl:min-h-fit max-h-fit">
