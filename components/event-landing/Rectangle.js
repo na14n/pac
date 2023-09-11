@@ -26,15 +26,15 @@ const Rectangle = ({
 
   return (
     <div
-      className="transition-all bg-blue-500 md:h-full relative md:mx-[2px] origin-center h-64 w-full my-[2px]"
+      className="transition-all relative origin-center h-full rounded-xl w-full mx-10 my-10"
       style={style}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={handleClick} // Add onClick handler
+      onClick={handleClick}
     >
       <div className="absolute inset-0 flex text-white px-8 py-8 text-xl font-semibold justify-center items-center flex-col">
         {customText && (
-          <div className="items-center justify-center md:text-3xl text-5xl text-center bg-gray-500 bg-opacity-10 rounded-xl">
+          <div className="md:text-3xl text-5xl text-center bg-gray-500 bg-opacity-10 rounded-xl">
             {customText}
           </div>
         )}

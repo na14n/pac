@@ -23,7 +23,7 @@ export default function PACabout() {
           </p>
 
           <p className="pb-5">
-            PAC's headquarters is located in Manila, with strategically
+            PAC&apos;s headquarters is located in Manila, with strategically
             positioned branch offices in Cebu City and Davao City.
           </p>
         </section>
