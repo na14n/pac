@@ -29,7 +29,7 @@ export default function CompanyActivitiesHero() {
                 <Image src={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.sourceUrl : ``} fill={true} className="object-cover object-center z-10" />
                 <div className="w-full h-full bg-[#007811]/75 z-20 absolute top-0 left-0" />
             </div>
-            <h1 className="uppercase text-3xl xl:text-5xl text-[#FCFCFC] font-bold z-30">{data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading : ``}</h1>
+            <h1 className="uppercase text-3xl xl:text-5xl text-[#FCFCFC] font-bold z-30">{data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[0] : ``}</h1>
         </section>
     )
 }

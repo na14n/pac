@@ -56,8 +56,12 @@ export default function CompanyActivitiesBanners() {
         </div>
       )) : ``}
       <div className="w-full h-96 flex items-center justify-center bg-pac-green flex-col gap-8">
-        <h1 className="text-3xl font-bold text-[#FCFCFC]">CSR Page</h1>
-        <p className="text-[#EFEFEF]">Discover how we're contributing to a better future through meaningful initiatives and community engagement.</p>
+        <h1 className="text-3xl font-bold text-[#FCFCFC]">
+          {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[1] : ``}
+        </h1>
+        <p className="text-[#EFEFEF]">
+          {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[2] : ``}
+        </p>
         <Button name={'Click Here'} link={`/about-us/csr`} type={1} />
       </div>
     </section>

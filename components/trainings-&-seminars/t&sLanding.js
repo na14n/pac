@@ -58,7 +58,7 @@ export default function EventsLandingPage() {
             </div>
             <div className="h-fit grid xs:grid-cols-1 lg:grid-cols-3 place-items-center overflow-hidden self-stretch">
                 {data?.events?.nodes ? data?.events?.nodes[0]?.extraContentLine1.map((c, i) => (
-                    <div className="square w-full relative flex flex-col items-center justify-center p-8">
+                    <div key={i} className="square w-full relative flex flex-col items-center justify-center p-8">
                         <Image fill={true} src={data?.events?.nodes[0] ? assets[i].sourceUrl : 'https://picsum.photos/1080/1080'} className='object-cover object-center z-10' alt={data?.events?.nodes[0] ? assets[i].altText : ``} />
                         <div className={`absolute z-20 top-0 left-0 w-full h-full bg-gradient-to-b ${i === 0 ? `from-[#f9a03c]/80 to-[#ef6703]/80` : ``} ${i === 1 ? `from-[#007811]/80 to-[#153f00]/80` : ``} ${i === 2 ? ` from-[#282828]/80 to-[#000000]/80` : ``}`} />
                         <span className="z-30 mb-12 flex flex-col gap-4">
