@@ -59,3 +59,7 @@
 .oranged__bold b {
   color: rgb(255 120 0);
 }
+
+.grid-auto--fill {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}

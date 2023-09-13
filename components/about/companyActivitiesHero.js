@@ -1,5 +1,8 @@
 'use client';
 
+export const dynamic = 'force-dynamic'
+
+
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
@@ -21,7 +24,14 @@ const query = gql`
 
 export default function CompanyActivitiesHero() {
 
-    const { data } = useSuspenseQuery(query);
+    const { data } = useSuspenseQuery(query,
+        {
+            context: {
+                fetchOptions: {
+                    next: { revalidate: 60 },
+                },
+            },
+        });
 
     return (
         <section className="h-[16rem] md:h-[32vh] xl:h-[48vh] relative flex flex-col items-center justify-center">
