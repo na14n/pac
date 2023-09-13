@@ -47,7 +47,7 @@ export default function CompanyActivitiesBanners() {
     <section className="w-full h-fit flex flex-col px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 py-16 gap-8 lg:gap-0 ">
       {data ? data?.aboutContents?.nodes[0]?.sectionSubheading.map((s, i) => (
         <div key={i} className="flex flex-col lg:flex-row w-full bg-[#FCFCFC] shadow-md lg:shadow-none">
-          <div className="w-full lg:w-2/5 self-stretch p-4 xl:p-8 flex flex-col gap-4 xl:gap-12">
+          <div className="w-full lg:w-2/5 self-stretch p-4 xl:p-8 flex flex-col justify-center gap-4 xl:gap-12">
             <h1 className="text-3xl font-bold text-[#121212]">{s ? s : ``}</h1>
             <div className="w-12 h-[2px] bg-[#373737] rounded-full" />
             <p className="text-[#272727] text-justify">{data ? data?.aboutContents?.nodes[0]?.contentLine1[i] : ``}</p>

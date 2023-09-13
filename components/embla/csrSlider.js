@@ -21,11 +21,11 @@ export default function CsrSlider({ media }) {
     const assets = sortByAttribute(media, 'title')
 
     return (
-        <section className='relative w-full h-fit flex items-center justify-center'>
-            <button className={`p-1 flex items-center justify-center hover:shadow-md shadow-md bg-[#FCFCFC]/75 hover:bg-[#FCFCFC]/100 rounded-full absolute left-4 top-1/2 z-30 transition-all`} onClick={scrollPrev}>
+        <section className='relative w-full h-fit flex items-center justify-center group'>
+            <button className={`p-1 flex items-center justify-center hover:shadow-md shadow-md opacity-0 group-hover:opacity-100 bg-[#EFEFEF]/90 hover:bg-[#FCFCFC] rounded-full absolute left-4 top-1/2 z-30 transition-all`} onClick={scrollPrev}>
                 <Icon icon="ic:round-keyboard-arrow-left" className=' text-3xl max-lg:text-xl text-nav-orange' />
             </button>
-            <button className={`p-1 flex items-center justify-center hover:shadow-md shadow-md bg-[#FCFCFC]/75 hover:bg-[#FCFCFC]/100 rounded-full absolute right-4 top-1/2 z-30 transition-all`} onClick={scrollNext}>
+            <button className={`p-1 flex items-center justify-center hover:shadow-md shadow-md opacity-0 group-hover:opacity-100 bg-[#EFEFEF]/90 hover:bg-[#FCFCFC] rounded-full absolute right-4 top-1/2 z-30 transition-all`} onClick={scrollNext}>
                 <Icon icon="ic:round-keyboard-arrow-right" className=' text-3xl max-lg:text-xl text-nav-orange' />
             </button>
             <div className='overflow-hidden w-full aspect-[3/2]' ref={emblaRef}>
