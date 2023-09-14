@@ -82,7 +82,7 @@ const Footer = () => {
         // },
         {
             name: 'News and Updates',
-            link: '#',
+            link: '/news-&-updates',
             group: 'resources',
         },
         {

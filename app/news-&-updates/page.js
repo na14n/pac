@@ -1,4 +1,5 @@
 import NewsAndUpdatesBanner from "@/components/news-and-updates/newsAndUpdatesHeroBanner"
+import NewsAndUpdatesList from "@/components/news-and-updates/newsAndUpdatesList"
 import { HeaderTrigger } from "@/components"
 
 
@@ -8,6 +9,7 @@ export default function NewsAndUpdates() {
             <HeaderTrigger>
                 <NewsAndUpdatesBanner />
             </HeaderTrigger>
+            <NewsAndUpdatesList />
         </main>
     )
 }
