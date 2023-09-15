@@ -50,18 +50,18 @@ export default function CompanyActivitiesBanners() {
           <div className="w-full lg:w-2/5 self-stretch p-4 xl:p-8 flex flex-col justify-center gap-4 xl:gap-12">
             <h1 className="text-3xl font-bold text-[#121212]">{s ? s : ``}</h1>
             <div className="w-12 h-[2px] bg-[#373737] rounded-full" />
-            <p className="text-[#272727] text-justify">{data ? data?.aboutContents?.nodes[0]?.contentLine1[i] : ``}</p>
+            <p className="text-[#272727] text-justify 2xl:text-lg">{data ? data?.aboutContents?.nodes[0]?.contentLine1[i] : ``}</p>
           </div>
           <div className={`w-full lg:w-3/5 aspect-[3/2] flex justify-center items-center relative  ${i % 2 === 0 ? `` : `lg:order-first`}`}>
             <CompanyActivitiesSlider media={assets.filter((item) => item.title.includes(`${data?.aboutContents?.nodes[0]?.contentLine2[i]}`))} index={i} />
           </div>
         </div>
       )) : ``}
-      <div className="w-full h-96 flex items-center justify-center bg-pac-green flex-col gap-8 shadow-md lg:shadow-none p-8">
+      <div className="w-full h-96 flex items-center justify-center bg-[#046d30] flex-col gap-8 shadow-md lg:shadow-none p-8">
         <h1 className="text-3xl font-bold text-[#FCFCFC]">
           {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[1] : ``}
         </h1>
-        <p className="text-[#EFEFEF] text-center">
+        <p className="text-[#EFEFEF] text-center 2xl:text-lg">
           {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[2] : ``}
         </p>
         <Button name={'Click Here'} link={`/about-us/csr`} type={1} />

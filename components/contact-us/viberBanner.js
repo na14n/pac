@@ -34,10 +34,11 @@ export default function ViberBanner() {
                     {data?.contactUsInformations?.nodes ? data?.contactUsInformations?.nodes[0]?.sectionSubheading[0] : ''}
                 </div>
             </div>
-            <div className="w-fit h-fit items-center justify-center">
-                <div className="w-44 h-44 relative shadow-md">
-                    <Image src={data?.contactUsInformations?.nodes ? data?.contactUsInformations?.nodes[0]?.mediaLine1[0]?.link : ''} fill={true} className="object-contain object-center rounded-md" />
+            <div className="w-fit h-fit items-center justify-center p-2 bg-[#FFF] rounded-md shadow-md">
+                <div className="w-36 square relative ">
+                    <Image src={data?.contactUsInformations?.nodes ? data?.contactUsInformations?.nodes[0]?.mediaLine1[0]?.link : ''} fill={true} className="object-contain object-center" />
                 </div>
+                <h5 className='uppercase text-center self-center text-lg font-bold text-[#8f5db7] mt-2 '>scan here</h5>
             </div>
         </div>
     )

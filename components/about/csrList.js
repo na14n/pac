@@ -12,6 +12,7 @@ const query = gql`
         cSRs {
         nodes {
             name
+            cSRDate
             mediaLine1 {
             altText
             title
@@ -40,10 +41,13 @@ export default function CsrList() {
                     <div className="relative w-full h-fit ">
                         <CsrSlider media={data?.cSRs?.nodes ? n.mediaLine1 : []} />
                     </div>
-                    <div className="flex flex-col px-4 py-2 h-20 ">
-                        <h3 className="text-[#121212] font-semibold">
+                    <div className="flex flex-col px-4 py-2 h-24 ">
+                        <h3 className="text-[#121212] font-semibold xl:text-lg">
                             {data?.cSRs?.nodes ? n.name : `Title`}
                         </h3>
+                        <h5 className="text-[#373737] max-xl:text-sm">
+                            {data?.cSRs?.nodes ? n.cSRDate : ``}
+                        </h5>
                     </div>
                 </div>
             )) : ``}

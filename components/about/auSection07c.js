@@ -45,14 +45,14 @@ export default function AboutS07c() {
         <section className="flex flex-col items-center w-full h-fit">
             <div className="grid gap-0 grid-cols-1 min-[512px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-center">
                 <div className="bg-[#FCFCFC] xs:h-[20rem] md:h-[32rem] 2xl:h-[38rem] md:self-start md:col-span-2 md:row-span-2 four-to-three-p relative flex flex-col justify-end">
-                    <div className="z-20 w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent via-transparent to-[#121212]/90" />
+                    <div className="z-20 w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent via-transparent to-[#121212]" />
                     <Image className='object-cover object-center z-10' fill={true} src={data?.aboutContents?.nodes[0] ? assets[0].sourceUrl : ''} alt={data?.aboutContents?.nodes[0] ? assets[0].altText : ''} />
                     <span className="z-30 mb-4 lg:mb-6 lg:px-4 px-2">
-                        <h5 className="w-full text-lg font-bold text-[#eb8420] uppercase">
+                        <h5 className="w-full text-2xl md:text-2xl lg:text-3xl font-bold text-[#eb8420] uppercase">
                             {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[0] : ''}
                         </h5>
                         <h3 className="w-full text-[#FCFCFC]">
-                            {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading[0] : ''}
+                            {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading[0] : ''},
                         </h3>
                         <h3 className="w-full text-[#FCFCFC]">
                             {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.contentLine1[0] : ''}
@@ -64,13 +64,13 @@ export default function AboutS07c() {
                         <div className="z-20 w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent via-transparent to-[#eb8420]/90" />
                         <Image className='object-cover object-center' fill={true} src={data?.aboutContents?.nodes[0] ? a.sourceUrl : ''} alt={data?.aboutContents?.nodes[0] ? a.altText : ''} />
                         <span className="z-30 mb-2 px-2">
-                        <h5 className="w-full text-xs font-semibold text-[#FFF] uppercase">
+                        <h5 className="w-full text-sm md:text-lg font-semibold text-[#FFF] uppercase">
                             {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[i+1] : ''}
                         </h5>
-                        <h3 className="w-full text-[8px] text-[#FCFCFC]">
-                            {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading[i+1] : ''}
+                        <h3 className="w-full text-xs md:text-sm text-[#FCFCFC]">
+                            {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading[i+1] : ''},
                         </h3>
-                        <h3 className="w-full text-[8px] text-[#FCFCFC]">
+                        <h3 className="w-full text-xs md:text-sm text-[#FCFCFC]">
                             {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.contentLine1[i+1] : ''}
                         </h3>
                     </span>
