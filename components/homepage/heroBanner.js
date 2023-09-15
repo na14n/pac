@@ -49,8 +49,8 @@ export default function HeroBanner() {
                 </h3>
                 <Button name={('Browse our Products')} type={1} link={'/products'} />
             </div>
-            <div className="absolute top-0 z-10 w-full h-full overflow-hidden bg-[#121212]/25" />
-            <div className="absolute z-0 top-0 w-full h-full overflow-hidden flex justify-center items-stretch">
+            <div className="absolute top-0 left-0 z-10 w-full h-full overflow-hidden bg-[#121212]/25" />
+            <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden flex justify-center items-stretch">
                 <video
                     autoPlay
                     loop

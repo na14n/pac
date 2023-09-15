@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { idFormatter } from "@/lib/helpers";
+import { idFormatter, sortByAttribute } from "@/lib/helpers";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
@@ -82,7 +82,7 @@ export default function NewsAndUpdatesBanner() {
             <div className="w-full z-20 grid grid-cols-1 lg:grid-cols-3 gap-8 gap-y-0">
                 <a href={bigPicture ? `/news-&-updates/${idFormatter(bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.id, true)}` : ``} className="group four-to-three lg:col-span-2 row-span-2 flex flex-col justify-end relative shadow-md ">
                     <div className="absolute top-0 left-0 z-0 w-full four-to-three">
-                        <Image fill src={bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine[0].sourceUrl : ``} alt={bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine[0].altText : ``} />
+                        <Image fill src={bigPicture ? sortByAttribute(bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine, 'title')[0].sourceUrl : ``} alt={bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine[0].altText : ``} />
                     </div>
                     <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-[#121212]/90 transition-all group-hover:to-[#121212] z-10" />
                     <div className="w-full h-fit z-20 p-4">
@@ -94,7 +94,7 @@ export default function NewsAndUpdatesBanner() {
                 {featured ? featured.data.newsFeatures.nodes[0].newsAndUpdates.nodes.map((n, i) => (
                     <a key={i} href={featured ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className=" group four-to-three bg-[#FCFCFC] shadow-md flex flex-col justify-end relative overflow-hidden">
                         <div className="absolute top-0 left-0 z-0 h-full four-to-three">
-                            <Image fill src={featured ? n.mediaLine[0].sourceUrl : ``} alt={featured ? n.mediaLine[0].altText : ``} />
+                            <Image fill src={featured ? sortByAttribute(n.mediaLine, 'title')[0].sourceUrl : ``} alt={featured ? n.mediaLine[0].altText : ``} />
                         </div>
                         <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-[#121212]/90 z-10 transition-all group-hover:to-[#121212]" />
                         <div className="w-full p-2 md:text-[0.875rem] text-justify z-20 text-[#FCFCFC] font-semibold">

@@ -39,10 +39,10 @@ export default function NewsPageHeader({ id }) {
                     <CsrSlider media={data ? data?.newsAndUpdate?.mediaLine : []} />
                 </div>
                 <div className="w-fit self-stretch flex items-center justify-center">
-                    <h1 className="text-[#FCFCFC] font-bold text-3xl self-center text-justify lg:max-w-[20ch] xl:max-w-[24ch]">{data ? data?.newsAndUpdate?.name : ``}</h1>
+                    <h1 className="text-[#FCFCFC] font-bold text-3xl self-center lg:max-w-[20ch] xl:max-w-[24ch]">{data ? data?.newsAndUpdate?.name : ``}</h1>
                 </div>
             </section>
-            <section className="flex flex-col lg:flex-row w-full h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 gap-8 pt-8 pb-16 justify-center lg:justify-between">
+            <section className="flex flex-col lg:flex-row w-full h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 gap-8 pt-8 pb-16 justify-center">
                 <p className="b text-[#272727] max-w-[75ch] text-justify">
                     {parse(data?.newsAndUpdate?.content)}
                 </p>
