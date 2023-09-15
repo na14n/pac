@@ -80,7 +80,7 @@ export default function NewsAndUpdatesBanner() {
                 <div className="w-1/2 h-[2px] rounded-full bg-nav-orange" />
             </div>
             <div className="w-full z-20 grid grid-cols-1 lg:grid-cols-3 gap-8 gap-y-0">
-                <Link href={bigPicture ? `/news-&-updates/${idFormatter(bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.id, true)}` : ``} className="group four-to-three lg:col-span-2 row-span-2 flex flex-col justify-end relative shadow-md ">
+                <a href={bigPicture ? `/news-&-updates/${idFormatter(bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.id, true)}` : ``} className="group four-to-three lg:col-span-2 row-span-2 flex flex-col justify-end relative shadow-md ">
                     <div className="absolute top-0 left-0 z-0 w-full four-to-three">
                         <Image fill src={bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine[0].sourceUrl : ``} alt={bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine[0].altText : ``} />
                     </div>
@@ -90,9 +90,9 @@ export default function NewsAndUpdatesBanner() {
                             {bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.name : ``}
                         </h4>
                     </div>
-                </Link>
+                </a>
                 {featured ? featured.data.newsFeatures.nodes[0].newsAndUpdates.nodes.map((n, i) => (
-                    <Link key={i} href={featured ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className=" group four-to-three bg-[#FCFCFC] shadow-md flex flex-col justify-end relative overflow-hidden">
+                    <a key={i} href={featured ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className=" group four-to-three bg-[#FCFCFC] shadow-md flex flex-col justify-end relative overflow-hidden">
                         <div className="absolute top-0 left-0 z-0 h-full four-to-three">
                             <Image fill src={featured ? n.mediaLine[0].sourceUrl : ``} alt={featured ? n.mediaLine[0].altText : ``} />
                         </div>
@@ -100,7 +100,7 @@ export default function NewsAndUpdatesBanner() {
                         <div className="w-full p-2 md:text-[0.875rem] text-justify z-20 text-[#FCFCFC] font-semibold">
                             {featured ? n.name : ``}
                         </div>
-                    </Link>
+                    </a>
                 )) : ``}
             </div>
         </section>

@@ -108,14 +108,14 @@ export default function NewsAndUpdatesList() {
       <div className="w-full h-fit relative grid grid-auto-fit-xl gap-4 ">
         {data ? data?.newsAndUpdates?.edges?.map((n, i) => (
           <div key={i} className="h-fit w-full ">
-            <Link href={data ? `/news-&-updates/${idFormatter(n?.node?.id, true)}` : ``} className="w-fit h-fit">
+            <a href={data ? `/news-&-updates/${idFormatter(n?.node?.id, true)}` : ``} className="w-fit h-fit">
               <div className="w-full four-to-three relative">
                 <Image src={data ? n?.node?.mediaLine[0].sourceUrl : ``} alt={data ? n?.node?.mediaLine[0].altText : ``} fill={true} className="object-contain object-center" />
               </div>
-            </Link>
-            <Link href={data ? `/news-&-updates/${idFormatter(n?.node?.id, true)}` : ``} className="w-full landscape-banner p-2">
+            </a>
+            <a href={data ? `/news-&-updates/${idFormatter(n?.node?.id, true)}` : ``} className="w-full landscape-banner p-2">
               <h4 className="text-[#121212]">{n?.node?.name}</h4>
-            </Link>
+            </a>
           </div>
         )) : ``}
       </div>
