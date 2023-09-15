@@ -84,7 +84,7 @@ export default function NewsAndUpdatesBanner() {
                     <div className="absolute top-0 left-0 z-0 w-full four-to-three">
                         <Image fill src={bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine[0].sourceUrl : ``} alt={bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.mediaLine[0].altText : ``} />
                     </div>
-                    <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-[#121212]/70 transition-all group-hover:to-[#121212]/90 z-10" />
+                    <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-[#121212]/90 transition-all group-hover:to-[#121212] z-10" />
                     <div className="w-full h-fit z-20 p-4">
                         <h4 className="font-semibold text-[#FCFCFC] md:text-2xl text-justify">
                             {bigPicture ? bigPicture?.data?.newsFeatures?.nodes[0]?.newsAndUpdates?.nodes[0]?.name : ``}
@@ -96,7 +96,7 @@ export default function NewsAndUpdatesBanner() {
                         <div className="absolute top-0 left-0 z-0 h-full four-to-three">
                             <Image fill src={featured ? n.mediaLine[0].sourceUrl : ``} alt={featured ? n.mediaLine[0].altText : ``} />
                         </div>
-                        <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-[#121212]/60 z-10 transition-all group-hover:to-[#121212]/90" />
+                        <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-[#121212]/90 z-10 transition-all group-hover:to-[#121212]" />
                         <div className="w-full p-2 md:text-[0.875rem] text-justify z-20 text-[#FCFCFC] font-semibold">
                             {featured ? n.name : ``}
                         </div>
