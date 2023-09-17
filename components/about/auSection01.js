@@ -40,7 +40,7 @@ export default function AboutS01() {
         <section className="w-full h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col-reverse xl:flex-row max-xl:items-center justify-between py-8 xl:py-16">
             <div className="w-fit items-stretch shrink-0 flex flex-col gap-8 xl:gap-16">
                 <span>
-                    <h1 className="w-full h-fit uppercase max-xl:text-center text-[#121212] font-bold text-2xl md:text-4xl xl:text-5xl">
+                    <h1 className="w-full h-fit uppercase max-xl:text-center text-[#121212] font-bold text-2xl md:text-4xl xl:text-5xl mb-4">
                         {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading : ``}
                     </h1>
                     <h3 className="w-full h-fit max-xl:text-center text-pac-green font-semibold max-md:px-4 xl:text-2xl">

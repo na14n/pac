@@ -7,22 +7,27 @@ const Footer = () => {
     const footerLinks = [
         {
             name: 'Careers',
-            link: '/careers',
+            link: '#',
             group: 'about',
         },
+        // {
+        //     name: 'History',
+        //     link: '/about-us',
+        //     group: 'about',
+        // },
         {
-            name: 'History',
-            link: '/about-us',
-            group: 'about',
-        },
-        {
-            name: 'Sales Agents',
+            name: 'Search for Sales Agents',
             link: '/resources/sales-agent-search',
             group: 'about',
         },
         {
-            name: 'Why Pros-Apac',
-            link: '/why-pros-apac',
+            name: 'Company Activities',
+            link: '/about-us/company-activities',
+            group: 'about',
+        },
+        {
+            name: 'Corporate Social Responsibility',
+            link: '/about-us/csr',
             group: 'about',
         },
         {
@@ -41,11 +46,6 @@ const Footer = () => {
             group: 'events',
         },
         {
-            name: 'PAC Exclusive Brands',
-            link: '#',
-            group: 'our-products',
-        },
-        {
             name: 'Orthodontics',
             link: '#',
             group: 'our-products',
@@ -61,12 +61,12 @@ const Footer = () => {
             group: 'our-products',
         },
         {
-            name: 'Implant',
+            name: 'Implant & Regenerative',
             link: '#',
             group: 'our-products',
         },
         {
-            name: 'Prostige Rewards',
+            name: 'PROSTIGE Rewards',
             link: '/products/prostige',
             group: 'our-products',
         },
@@ -82,7 +82,7 @@ const Footer = () => {
         // },
         {
             name: 'News and Updates',
-            link: '/news-updates',
+            link: '/news-&-updates',
             group: 'resources',
         },
         {
@@ -91,18 +91,23 @@ const Footer = () => {
             group: 'resources',
         },
         {
+            name: 'Blogs',
+            link: '/blogs',
+            group: 'resources',
+        },
+        {
             name: 'ri:facebook-circle-fill',
-            link: 'https://www.facebook.com/pros.apac/',
+            link: '#',
             group: 'soc-med',
         },
         {
             name: 'ri:instagram-fill',
-            link: 'https://www.instagram.com/pros.apac/?hl=en',
+            link: '#',
             group: 'soc-med',
         },
         {
             name: 'ri:tiktok-fill',
-            link: 'https://www.tiktok.com/discover/pros-apac',
+            link: '#',
             group: 'soc-med',
         },
         {
@@ -122,9 +127,9 @@ const Footer = () => {
             group: 'quick-btn',
         },
         {
-            name: 'know more',
+            name: 'Sign Up',
             link: '#',
-            title: 'Stay Updated on our Events',
+            title: 'Be Updated on our Events!',
             group: 'quick-btn',
         },
         {
@@ -135,11 +140,6 @@ const Footer = () => {
         {
             name: 'Privacy Policy',
             link: '#',
-            group: 'extras',
-        },
-        {
-            name: 'Site Map',
-            link: '/site-map',
             group: 'extras',
         }
     ]
@@ -155,7 +155,7 @@ const Footer = () => {
 
 
     return (
-        <div className="w-full min-h-content lg:max-h-[67vh] xs:h-content bg-[#171717] flex flex-col divide-y py-4 lg:px-16 xs:px-4 gap-4 pt-8 z-50">
+        <div className="w-full min-h-content lg:max-h-[67vh] xs:h-content bg-[#171717] flex flex-col divide-y py-4 2xl:px-44 lg:px-12 xs:px-4 gap-4 pt-8 z-50">
             <div className="w-full h-full shrink-0 basis-[90%] flex lg:flex-row xs:flex-col gap-4">
                 <div className='w-full basis-[30%] flex flex-col justify-start gap-4'>
                     <div className='w-64 h-12 relative'>
@@ -173,25 +173,25 @@ const Footer = () => {
                 </div>
                 <div className=' w-full basis-[50%] grid lg:grid-cols-2'>
                     <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
-                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
+                        <a href='/about-us' className="text-[#fcfcfc] hover:text-nav-orange text-sm uppercase font-bold pb-1">
                             about
-                        </span>
+                        </a>
                         {aboutLinks.map((link, index) => (
                             <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
                         ))}
                     </div>
                     <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
-                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
+                        <a href='/trainings-&-seminars' className="text-[#fcfcfc] hover:text-nav-orange text-sm uppercase font-bold pb-1">
                             events
-                        </span>
+                        </a>
                         {eventLinks.map((link, index) => (
                             <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
                         ))}
                     </div>
                     <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
-                        <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
+                        <a href='/products' className="hover:text-nav-orange text-[#fcfcfc] text-sm uppercase font-bold pb-1">
                             our products
-                        </span>
+                        </a>
                         {productLinks.map((link, index) => (
                             <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
                         ))}
@@ -228,7 +228,7 @@ const Footer = () => {
             </div>
             <div className="w-full shrink-1 lg:px-8 flex lg:flex-row xs:flex-col-reverse justify-between pt-2">
                 <span className=' w-content h-full text-xs text-[#fcfcfc]'>
-                    © All Rights Reserved 2023
+                    © 2023 PROS-APAC Corp. All rights reserved.
                 </span>
                 <div className=' w-content h-full flex xs:gap-8 lg:gap-4'>
                     {extraLinks.map((link, index) => (

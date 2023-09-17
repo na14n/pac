@@ -7,12 +7,24 @@
     aspect-ratio: 1/1;
   }
 
+  .landscape-banner {
+    aspect-ratio: 3/1;
+  }
+
   .four-to-three {
-    aspect-ratio: 4/3
+    aspect-ratio: 4/3;
   }
 
   .four-to-three-p {
-    aspect-ratio: 3/4
+    aspect-ratio: 3/4;
+  }
+
+  .six-by-nine {
+    aspect-ratio: 16/9;
+  }
+
+  .six-by-nine-p {
+    aspect-ratio: 9/16
   }
 }
 
@@ -50,4 +62,8 @@
 
 .oranged__bold b {
   color: rgb(255 120 0);
+}
+
+.grid-auto--fill {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }

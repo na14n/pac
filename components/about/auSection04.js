@@ -44,7 +44,7 @@ export default function AboutS04() {
     return (
         <section className="w-full min-h-screen h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col items-center justify-center relative gap-8 xl:gap-12 2xl:gap-16 py-16">
             <div className="w-full h-full absolute z-10 bg-gradient-to-b from-[#272727]/60 to-[#121212]/30" />
-            <Image src={data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.link : 'https://picsum.photos/1600/1600'} fill={true} alt="dental-company-background" className="object-cover object-center" />
+            <Image src={data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.link : 'https://picsum.photos/1600/1600'} fill={true} alt="dental-company-background" className="object-cover object-bottom" />
             <div className="z-20 ">
                 <h1 className="uppercase text-3xl md:text-5xl xl:text-4xl 2xl:text-5xl font-bold text-[#FCFCFC]">our story</h1>
                 <div className="w-full h-[2px] bg-pac-orange" />

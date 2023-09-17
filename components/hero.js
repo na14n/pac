@@ -2,7 +2,7 @@ import Image from "next/image";
 import Button from "./button";
 import { HeroSlider } from "./embla/heroSlider";
 
-const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, mediaUrl, mediaArray }) => {
+const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, mediaUrl, mediaArray, buttonProp }) => {
     return (
         (heroType === 'slider') ? (
             <div className="w-hull h-full overflow-hidden">
@@ -46,7 +46,7 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
                 </div>
                 <div className=" z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl text-center 2xl:text-4xl flex flex-col items-center justify-center gap-4 lg:mb-0 xs:mb-32 xs:px-4">
                     {title ? title : 'Insert Heading'}
-                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} />
+                    <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} color={buttonProp ? buttonProp : null} />
                 </div>
             </div>
         ) : (heroType === 'centered1') ? (

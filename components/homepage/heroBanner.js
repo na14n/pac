@@ -36,8 +36,8 @@ export default function HeroBanner() {
     );
 
     return (
-        <div className="relative w-full h-full bg-[#171717] flex items-center overflow-hidden">
-            <div className="z-30 xl:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-48 xl:ml-32 xs:px-4 md:px-8 py-10">
+        <div className="relative w-full h-full bg-[#171717] px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex items-center overflow-hidden">
+            <div className="z-30 xl:max-w-[900px] 2xl:max-w-fit 2xl:max-w-1/2 2xl:ml-16 xl:ml-8 py-10">
                 <h1 className="font-bold text-[#FCFCFC] xl:text-4xl 2xl:text-5xl xs:text-3xl uppercase">
                     {data?.homepageSections?.nodes[0]?.sectionHeading ? data?.homepageSections?.nodes[0]?.sectionHeading : 'Insert Heading'}
                 </h1>
@@ -49,8 +49,8 @@ export default function HeroBanner() {
                 </h3>
                 <Button name={('Browse our Products')} type={1} link={'/products'} />
             </div>
-            <div className="absolute top-0 z-10 w-full h-full overflow-hidden bg-[#121212]/25" />
-            <div className="absolute z-0 top-0 w-full h-full overflow-hidden flex justify-center items-stretch">
+            <div className="absolute top-0 left-0 z-10 w-full h-full overflow-hidden bg-[#121212]/25" />
+            <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden flex justify-center items-stretch">
                 <video
                     autoPlay
                     loop

@@ -48,7 +48,7 @@ export default function AboutS06() {
             </span>
             <span className="flex flex-col gap-4">
                 {data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.contentLine1.map((c, i) => (
-                    <p key={i} className="max-w-[40ch] md:max-w-[75ch] min-[1700px]:max-w-[95ch] text-justify text-[#272727]">
+                    <p key={i} className="max-w-[40ch] md:max-w-[75ch] min-[1700px]:max-w-[95ch] 2xl:text-lg text-justify text-[#272727]">
                         {c}
                     </p>
                 )) : ''}
