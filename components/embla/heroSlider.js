@@ -17,7 +17,7 @@ export const HeroSlider = ({ height, media }) => {
     }, [emblaApi])
 
     return (
-        <div className="embla xs:h-[200px] lg:h-[50vh] 2xl:h-[40vh] max-h-fit flex items-center justify-between relative px-32" >
+        <div className="embla w-full aspect-[16/9] md:aspect-[16/3] max-h-fit flex items-center justify-between relative px-32" >
             <button className="z-40 bg-[#F1F1F1] flex justify-center items-center py-1 max-lg:hidden rounded-full shadow-md group" onClick={scrollPrev}>
                 <Icon icon="ic:round-keyboard-arrow-left" className='pl-1 pr-1 text-2xl group-hover:text-pac-orange' />
             </button>
@@ -25,7 +25,7 @@ export const HeroSlider = ({ height, media }) => {
                 <div className="embla__container flex h-full">
                     {media.map((m, index) => (
                         <div key={index} className="embla__slide">
-                            <Image width={2400} height={600} src={m.link ? m.link : 'https://picsum.photos/2400'} alt="dental-website-banner" className='object-contain' />
+                            <Image width={3200} height={600} src={m.link ? m.link : 'https://picsum.photos/3200'} alt="dental-website-banner" className='object-contain' />
                         </div>
                     ))}
                 </div>

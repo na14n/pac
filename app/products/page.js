@@ -1,4 +1,5 @@
-import { HeaderTrigger, Hero, CategoryBanner, BrandSlider, FeaturedProductsList } from "@/components"
+import { HeaderTrigger, Hero, CategoryBanner, BrandSlider, FeaturedProductsList, BrandSliderF } from "@/components"
+import NewsHeroSlider from "@/components/embla/newsHeroSlider";
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 
@@ -48,6 +49,7 @@ async function Products() {
             <div className='w-full h-fit'>
                 <HeaderTrigger>
                     <Hero heroType={'slider'} mediaArray={sliderMedia} />
+                    {/* <NewsHeroSlider media={sliderMedia} /> */}
                 </HeaderTrigger>
             </div>
             <div className='w-full lg:h-fit'>
