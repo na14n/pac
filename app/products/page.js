@@ -34,6 +34,11 @@ async function Products() {
                       }
               `,
                 fetchPolicy: 'network-only',
+                context: {
+                fetchOptions: {
+                    next: { revalidate: 60 },
+                },
+            },
             });
             return result.data.mediaSliders.nodes[0].media;
         } catch (error) {

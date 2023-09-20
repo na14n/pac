@@ -67,7 +67,7 @@ export default function Breadcrumbs(props) {
                 <span className="text-[#121212]">&gt;</span>
                 <p className="text-[#121212]">{data.product.name}</p>
             </div>
-            <Link href={`/brands/${data ? slugFormatter(data?.product?.brand?.node?.name, false, true) : ``}`} className=" w-20 h-20 relative">
+            <Link href={`/brands/${data ? slugFormatter(data?.product?.brand?.node?.name, false, true) : ``}`} className="h-32 square relative">
                 <Image fill={true} className="object-contain" src={data ? data?.product?.brand?.node?.logo?.link : ``} />              
             </Link>
         </section>

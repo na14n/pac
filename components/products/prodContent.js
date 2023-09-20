@@ -42,9 +42,10 @@ export default function ProdContent(props) {
     );
 
     const moreInformation = [
+        
         {
-            title: 'Main Website',
-            body: 'mainWebsiteLink',
+            title: 'Video',
+            body: 'youtubeEmbedSourceLink',
         },
         {
             title: 'Catalogue',
@@ -54,18 +55,23 @@ export default function ProdContent(props) {
             title: 'Instructions',
             body: 'instructionFile',
         },
+        // {
+        //     title: 'Instructions',
+        //     body: 'instructionFile',
+        // },
         {
-            title: 'Video',
-            body: 'youtubeEmbedSourceLink',
+            title: 'Main Website',
+            body: 'mainWebsiteLink',
         },
+       
     ]
 
     const [selected, setSelected] = useState(moreInformation[0])
 
     return (
         <section className="w-full h-fit flex flex-col py-16 gap-8 ">
-            <div className="bg-[#272727] rounded-r-lg w-fit lg:px-32 2xl:px-48 py-6 flex flex-col gap-1 items-center">
-                <h3 className="mx-3 text-3xl text-[#FCFCFC] uppercase font-semibold">Description</h3>
+            <div className="w-fit lg:px-32 2xl:px-48 py-6 flex flex-col gap-1 items-center">
+                <h3 className="mx-3 text-3xl text-[#121212] uppercase font-semibold">Description</h3>
                 <span className="w-full h-[4px] bg-pac-orange rounded-md" />
             </div>
             <div className="lg:px-32 2xl:px-48 w-full h-fit py-16 bg-[#FCFCFC] flex flex-col gap-8">
