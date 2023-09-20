@@ -8,7 +8,7 @@ const SalesAgentSearchBar = ({ divisions }) => {
     const router = useRouter();
 
     const [selectedDivision, setSelectedDivision] = useState(divisions[0].name);
-    const [locationInput, setLocationInput] = useState(' ');
+    const [locationInput, setLocationInput] = useState(null);
     const [hadSearched, setHadSearched] = useState(false);
 
     // useEffect(() => {
@@ -18,13 +18,17 @@ const SalesAgentSearchBar = ({ divisions }) => {
     let search = (e) => {
         e.preventDefault();
         setHadSearched(true);
-        return router.push(`/resources/sales-agent-search?division=${selectedDivision}&location=${locationInput}`, undefined, { shallow: true })
+        if (selectedDivision && locationInput) {
+            return router.push(`/resources/sales-agent-search?division=${selectedDivision}&location=${locationInput}`, undefined, { shallow: true })
+        } else {
+            return router.push(`/resources/sales-agent-search?division=${selectedDivision}`, undefined, { shallow: true })
+        }
     }
 
     let reset = (e) => {
         e.preventDefault();
         setHadSearched(false);
-        setLocationInput('');
+        setLocationInput(null);
         return router.push(`/resources/sales-agent-search`, undefined, { shallow: true })
     }
 

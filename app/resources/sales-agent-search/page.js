@@ -72,7 +72,7 @@ export default async function SalesAgentSearch({ searchParams }) {
                     query QuerySalesAgents {
                         productDepartments(where: {name: "${searchParams.division}"}) {
                             nodes {
-                              salesAgents(where: {search: "${searchParams.location}"}) {
+                              salesAgents(where: {search: "${searchParams?.location ? searchParams?.location : ''}"}) {
                                 nodes {
                                   name
                                   mobileNumber
@@ -119,7 +119,7 @@ export default async function SalesAgentSearch({ searchParams }) {
             </div>
             <div className='w-full lg:min-h-[67vh] max-h-fit  bg-[#F1F1F1]'>
                 <SalesAgentSearchBar divisions={divisions} />
-                <div className="grid lg:grid-cols-3 2xl:grid-cols-4 pb-16 lg:px-32 2xl:px-48 place-items-center">
+                <div className="grid grid-auto-fit-[16rem] gap-y-8 pb-16 lg:px-32 2xl:px-48 place-items-center">
                     {(salesAgents?.length > 0) ? (
                         salesAgents?.map((s, index) => (
                             <SalesAgentCard key={index} i={s} />
