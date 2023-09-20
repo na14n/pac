@@ -5,7 +5,6 @@ import { gql } from 'graphql-tag';
 
 export default async function SalesAgentSearch({ searchParams }) {
 
-
     async function GetDivisions() {
         try {
             const result = await client.query({
@@ -19,8 +18,47 @@ export default async function SalesAgentSearch({ searchParams }) {
                     }
               `,
                 fetchPolicy: 'no-cache',
+                context: {
+                    fetchOptions: {
+                        next: { revalidate: 5 },
+                    }
+                }
             });
             return result.data.productDepartments.nodes;
+        } catch (error) {
+            console.error('Error occurred:', error);
+            return [];
+        }
+    }
+
+    async function GetDms() {
+        try {
+            const result = await client.query({
+                query: gql`
+                query FetchDMs {
+                    salesAgents(where: {search: "district manager"}) {
+                      nodes {
+                        name
+                        mobileNumber
+                        email
+                        specificLocations
+                        productDepartments {
+                          nodes {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+              `,
+                fetchPolicy: 'no-cache',
+                context: {
+                    fetchOptions: {
+                        next: { revalidate: 5 },
+                    }
+                }
+            });
+            return result.data.salesAgents.nodes;
         } catch (error) {
             console.error('Error occurred:', error);
             return [];
@@ -52,17 +90,25 @@ export default async function SalesAgentSearch({ searchParams }) {
                     }
               `,
                 fetchPolicy: 'no-cache',
+                context: {
+                    fetchOptions: {
+                        next: { revalidate: 5 },
+                    }
+                }
             });
             return result.data.productDepartments.nodes[0].salesAgents.nodes;
         } catch (error) {
             console.error('Error occurred:', error);
             return [];
         }
+
     }
 
     let divisions = await GetDivisions();
 
     let salesAgents = searchParams.division ? await QuerySalesAgents() : []
+
+    let defaultResult = await GetDms();
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
@@ -74,8 +120,12 @@ export default async function SalesAgentSearch({ searchParams }) {
             <div className='w-full lg:min-h-[67vh] max-h-fit  bg-[#F1F1F1]'>
                 <SalesAgentSearchBar divisions={divisions} />
                 <div className="grid lg:grid-cols-3 2xl:grid-cols-4 pb-16 lg:px-32 2xl:px-48 place-items-center">
-                    {(salesAgents.length > 0) ? (
-                        salesAgents.map((s, index) => (
+                    {(salesAgents?.length > 0) ? (
+                        salesAgents?.map((s, index) => (
+                            <SalesAgentCard key={index} i={s} />
+                        ))
+                    ) : (defaultResult?.length > 0) ? (
+                        defaultResult?.map((s, index) => (
                             <SalesAgentCard key={index} i={s} />
                         ))
                     ) : (
