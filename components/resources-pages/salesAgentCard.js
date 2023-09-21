@@ -18,6 +18,9 @@ const SalesAgentCard = (props) => {
                 <div className="cursor-pointer absolute top-0 right-0 z-40 w-8 rounded-bl-md shadow-md square bg-pac-orange opacity-50 flex flex-col items-center justify-center" onMouseEnter={() => setHovering(!hovering)} onMouseLeave={() => setHovering(!hovering)}>
                     <Icon icon="mdi:information" className='text-xl text-white' />
                 </div>
+                <div className="w-full aspect-[3/4] absolute top-0 left-0 z-10">
+                    <Image src={props?.i?.image?.sourceUrl} fill={true} className="object-cover object-center"  />
+                </div>
                 <div className="z-20 w-64 aspect-[3/4]  absolute top-0 left-0 bg-gradient-to-t from-[#01390E] via-[#01390E]/30 to-transparent" />
                 <div className="h-fit w-full px-6 py-3 flex flex-col items-start z-40 ">
                     <span className="pb-2">

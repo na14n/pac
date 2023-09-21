@@ -42,6 +42,9 @@ export default async function SalesAgentSearch({ searchParams }) {
                         mobileNumber
                         email
                         specificLocations
+                        image{
+                            sourceUrl
+                          }
                         productDepartments {
                           nodes {
                             name
@@ -78,6 +81,9 @@ export default async function SalesAgentSearch({ searchParams }) {
                                   mobileNumber
                                   email
                                   specificLocations
+                                  image{
+                                    sourceUrl
+                                  }
                                   productDepartments {
                                     nodes {
                                       name
@@ -109,6 +115,7 @@ export default async function SalesAgentSearch({ searchParams }) {
     let salesAgents = searchParams.division ? await QuerySalesAgents() : []
 
     let defaultResult = await GetDms();
+
 
     return (
         <div className="w-full flex flex-col items-center justify-center">

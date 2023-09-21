@@ -2,7 +2,7 @@
 
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { sortByAttribute } from "@/lib/helpers";
+import { sortByAttribute, idFormatter } from "@/lib/helpers";
 import Image from "next/image";
 import Button from "../button";
 import parse from 'html-react-parser'
@@ -14,6 +14,7 @@ query fetchEventsLandingPage {
         name
         eventName
         shortDescription
+        longDescription
         extraContentLine1
         extraContentLine2
         mediaLine1{
@@ -36,6 +37,8 @@ export default function EventsLandingPage() {
                 },
             },
         })
+
+        // console.log(data?.events?.nodes[0]?.longDescription);
 
     const assets = sortByAttribute(data?.events?.nodes[0]?.mediaLine1, 'title');
 
@@ -69,9 +72,9 @@ export default function EventsLandingPage() {
                                 {parse(data?.events?.nodes ? data?.events?.nodes[0]?.extraContentLine2[i] : ``)}
                             </p>
                         </span>
-                        <span className="z-30">
+                        <pre className="z-30">
                             <Button type={1} color={'white-green'} name={'View More'} link={''} />
-                        </span>
+                        </pre>
                     </div>
 
                 )) : ''}
