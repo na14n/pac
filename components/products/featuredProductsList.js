@@ -57,7 +57,7 @@ const FeaturedProductsList = () => {
                 Featured Products
             </h1>
             <div className='w-4/5 h-[2px] bg-pac-orange' />
-            <div className="w-full h-full pt-16 max-lg:pt-8 grid gap-4 grid-auto-fit-xs max-lg:grid-auto-fit-[150px] ">
+            <div className="w-full h-full pt-16 max-lg:pt-8 grid gap-4 grid-auto-fit-[12rem] justify-items-start ">
                 {data ? data?.products?.nodes?.map((p, i) => (
                     <ProductCard
                         key={i}

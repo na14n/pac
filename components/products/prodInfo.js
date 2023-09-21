@@ -31,9 +31,9 @@ export default function ProdInfo(props) {
             productLogo {
               link
             }
-            awards {
-              link
+            productAwards {
               title
+              sourceUrl
             }
             itemCategories {
                 nodes {
@@ -81,8 +81,8 @@ export default function ProdInfo(props) {
         </div>
         <div className="w-full h-fit flex gap-4 flex-wrap">
           <img src={data.product.productLogo ? data.product.productLogo.link : ''} className={`w-auto h-32 ${data.product.productLogo ? `` : `hidden`}`} />
-          {data.product.awards.map((a, index) => (
-            <img key={index} src={a.link} className={`w-auto h-32 ${a.title === 'Empty' ? `hidden` : ``}`} />
+          {data.product.productAwards.map((a, index) => (
+            <img key={index} src={a.sourceUrl} className={`w-auto h-32 ${a.title === 'Empty' ? `hidden` : ``}`} />
           ))}
         </div>
       </section>

@@ -67,7 +67,7 @@ export const BrandSlider = () => {
                 <div className="h-full w-fit touch-pan-y flex gap-8 z-40 py-4 px-8">
                     {arrayOfArrays.map((w, index) => (                        <div key={index} className=' xs:flex-[0_0_12rem] md:flex-[0_0_29rem] lg:flex-[0_0_37rem] 2xl:flex-[0_0_45rem] min-w-0 relative h-full grid xs:grid-auto-fit-[5rem] lg:grid-auto-fit-[6rem] 2xl:grid-auto-fit-[8rem] gap-2 justify-items-center z-40'>
                             {w.map((c, index) => (
-                                <a key={index} className=' bg-[#EEE] w-28 xs:w-20 lg:w-24 xl:w-28 2xl:w-32 aspect-square p-2 flex flex-col justify-center items-center rounded-md shadow-md hover:-translate-y-1 hover:shadow-lg transition-all border-2 border-[#979797]/60 hover:border-pac-green relative z-40 overflow-hidden' href={`/brands/${slugFormatter(c.name, false, true)}`}>
+                                <a key={index} className=' bg-[#FCFCFC] w-28 xs:w-20 lg:w-24 xl:w-28 2xl:w-32 aspect-square p-2 flex flex-col justify-center items-center rounded-md shadow-md hover:-translate-y-1 hover:shadow-lg transition-all border-2 border-[#979797]/60 hover:border-pac-green relative z-40 overflow-hidden' href={`/brands/${slugFormatter(c.name, false, true)}`}>
                                     <Image fill={true} className='object-contain object-center p-2' src={c.logo.link ? c.logo.link : 'https://picsum.photos/2400'} alt="dental-product-brand" />
                                 </a>
                             ))}
