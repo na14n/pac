@@ -41,6 +41,7 @@ export default async function SalesAgentSearch({ searchParams }) {
                         name
                         mobileNumber
                         email
+                        position
                         specificLocations
                         image{
                             sourceUrl
@@ -81,6 +82,7 @@ export default async function SalesAgentSearch({ searchParams }) {
                                   mobileNumber
                                   email
                                   specificLocations
+                                  position
                                   image{
                                     sourceUrl
                                   }

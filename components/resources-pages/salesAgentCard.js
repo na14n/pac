@@ -19,14 +19,34 @@ const SalesAgentCard = (props) => {
                     <Icon icon="mdi:information" className='text-xl text-white' />
                 </div>
                 <div className="w-full aspect-[3/4] absolute top-0 left-0 z-10">
-                    <Image src={props?.i?.image?.sourceUrl} fill={true} className="object-cover object-center"  />
+                    <Image src={props?.i?.image?.sourceUrl} fill={true} className="object-cover object-center" />
                 </div>
-                <div className="z-20 w-64 aspect-[3/4]  absolute top-0 left-0 bg-gradient-to-t from-[#01390E] via-[#01390E]/30 to-transparent" />
+                <div className="z-20 w-64 aspect-[3/4]  absolute top-0 left-0 bg-gradient-to-t from-[#01390E] via-[#01390E]/25 to-transparent" />
                 <div className="h-fit w-full px-6 py-3 flex flex-col items-start z-40 ">
-                    <span className="pb-2">
+                    <div className="pb-2">
                         <h2 className="text-[#FCFCFC] font-bold">{props?.i?.name}</h2>
-                        <h5 className="text-[#EFEFEF] text-sm capitalize">{props?.i?.productDepartments?.nodes[0]?.name}</h5>
-                    </span>
+                        <div className="flex gap-x-2 flex-wrap">
+                            <h5 className="text-[#EFEFEF] text-sm capitalize">
+                                {props?.i?.position ? props?.i?.position : ``},
+                            </h5>
+                            {props?.i?.productDepartments?.nodes?.length > 1 ? (
+                                <h5 className="text-[#EFEFEF] text-sm capitalize">
+                                    Multilines
+                                </h5>
+                            ) : (
+                                <div className="flex gap-2">
+                                    {props?.i?.productDepartments ? props?.i?.productDepartments?.nodes.map((d, i) => (
+                                        <h5 key={i} className="text-[#EFEFEF] text-sm capitalize">
+                                            {d.name}
+                                        </h5>
+                                    )) : ``}
+                                </div>
+                            )}
+                        </div>
+
+
+
+                    </div>
                     <span className="flex gap-2 items-center w-fit h-fit text-[#EFEFEF]">
                         <Icon icon="mdi:cellphone" width="24" height="24" className='pr-1' />
                         <h5 className="text-sm">{props?.i?.mobileNumber}</h5>
@@ -36,8 +56,8 @@ const SalesAgentCard = (props) => {
                         <h5 className="text-sm">{props?.i?.email}</h5>
                     </span>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
