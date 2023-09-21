@@ -73,7 +73,7 @@ export default function EventsLandingPage() {
                             </p>
                         </span>
                         <pre className="z-30">
-                            <Button type={1} color={'white-green'} name={'View More'} link={''} />
+                            <Button type={1} color="white-green" name="View More" link={`/trainings-&-seminars/${data?.events?.nodes[0]?.longDescription[i]}`} />
                         </pre>
                     </div>
 

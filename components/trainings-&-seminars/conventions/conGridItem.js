@@ -12,7 +12,7 @@ export default function ConGridItem({ data, position }) {
         <>
             <div
                 className={`relative flex items-center justify-center
-                        aspect-video shadow-md h-36  rounded-sm hover:shadow-lg transition-all ease-in-out duration-150 cursor-pointer ${position.i === 0 ? `xl:h-full xl:col-span-2 xl:row-span-2` : `2xl:h-48`} 
+                        aspect-video shadow-md h-36  rounded-sm hover:shadow-lg transition-all ease-in-out duration-150 cursor-pointer ${position === 0 ? `xl:h-full xl:col-span-2 xl:row-span-2` : `2xl:h-48`} 
                     `}
                 onClick={() => setOpen(!open)}
             >
