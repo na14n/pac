@@ -49,15 +49,15 @@ const FeaturedProductsList = () => {
         }
     );
 
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className="w-full h-full xs:px-4 lg:px-32 2xl:px-48 flex flex-col items-center justify-center py-16 max-lg:py-8" >
             <h1 className='w-fit py-2 uppercase text-pac-orange text-2xl font-semibold `'>
                 Featured Products
             </h1>
-            <div className='w-4/5 h-[2px] bg-pac-orange' />
-            <div className="w-full h-full pt-16 max-lg:pt-8 grid gap-4 grid-auto-fit-[12rem] justify-items-start ">
+            <div className='w-[24rem] md:w-[48rem] xl:w-[52rem] h-[2px] bg-pac-orange' />
+            <div className="max-w-[24rem] md:max-w-[48rem] xl:max-w-[52rem] h-full pt-16 max-lg:pt-8 grid justify-items-center gap-4 max-xl:grid-auto-fit-[9rem] grid-auto-fit-[12rem]">
                 {data ? data?.products?.nodes?.map((p, i) => (
                     <ProductCard
                         key={i}
