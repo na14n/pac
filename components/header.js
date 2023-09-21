@@ -55,7 +55,7 @@ const Header = () => {
                         ))}
                     </div>
                     <div className="z-[60] shrink-0 h-full basis-1/5 min-[1280px]:flex xs:hidden  justify-end items-center gap-4 text-[#fcfcfc]">
-                        <Button type={'inverse'} color={'white'} name={'Shop Now'} link={'#'} />
+                        {/* <Button type={'inverse'} color={'white'} name={'Shop Now'} link={'#'} /> */}
                         <SearchBar />
                     </div>
                     <button className={`xl:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-4xl text-[#FCFCFC] flex items-center justify-center`}`} onClick={() => setSidebarState(true)}>
