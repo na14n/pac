@@ -1,16 +1,17 @@
 import { Hero, HeaderTrigger, EventsList, ListSorter, Sorter } from "@/components";
+import ConventionsPageTitle from "@/components/trainings-&-seminars/conventions/conventionsPageTitle";
 
 const Conventions = () => {
     return (
         <div className="w-full flex flex-col items-center justify-center">
-            <div className="w-full h-[33vh]">
+            <div className="w-full h-fit">
                 <HeaderTrigger>
-                    <Hero heroType={'gray'} title={'Conventions'} />
+                    <ConventionsPageTitle />
                 </HeaderTrigger>
             </div>
             <div className="w-full min-h-[67vh] h-content lg:px-32 py-8 flex flex-col gap-12 items-center">
-                <Sorter />
-                <EventsList sorting={'nameAsc'} eventType={'conventions'}/>
+                {/* <Sorter /> */}
+                <EventsList sorting={'nameAsc'} eventType={'conventions'} />
             </div>
         </div>
     )

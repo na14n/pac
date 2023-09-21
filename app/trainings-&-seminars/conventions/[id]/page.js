@@ -1,16 +1,15 @@
 import { HeaderTrigger } from "@/components";
-// import ConHero from "@/components/trainings-&-seminars/conventions/conHero";
+import ConGrid from "@/components/trainings-&-seminars/conventions/conGrid";
+import ConHero from "@/components/trainings-&-seminars/conventions/conHero";
 
 export default function ConventionPage({ params }) {
     return (
-        <main className="w-full min-h-screen h-fit flex flex-col items-center relative">
+        <main className="w-full min-h-screen h-fit">
             <HeaderTrigger>
-                {/* <ConHero /> */}
+                {/* <div className="h-24 bg-[#000000]/80 z-0" /> */}
+                <ConHero id={params.id} />
             </HeaderTrigger>
-            <h1 className="text-xl font-bold text-black">Hello World</h1>
-            <pre>
-                {JSON.stringify(params, null, 4)}
-            </pre>
+           <ConGrid id={params.id} />
         </main>
     )
 }

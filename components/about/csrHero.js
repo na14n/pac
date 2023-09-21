@@ -44,7 +44,9 @@ export default function CsrHero() {
                 <div className="z-30 w-16 xl:w-32 h-[2px] rounded-full bg-[#ef6703]" />
             </div>
             <div className="w-full py-12 bg-[#046d30] px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 relative flex flex-col items-center justify-center">
-                <p className=" text-[#EFEFEF] 2xl:text-lg text-center z-30">{data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading[0] : ``}</p>
+                <p className=" text-[#EFEFEF] 2xl:text-lg text-center z-30">
+                    {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading[0] : ``}
+                    </p>
             </div>
         </section>
     )

@@ -1,21 +1,22 @@
 import client from '@/lib/apollo';
 import EventCard from './eventCard';
 import { gql } from '@apollo/client';
+import { idFormatter } from '@/lib/helpers';
 
 async function EventsList({ sorting, eventType }) {
 
     async function GetConventions() {
         try {
-            const result = await client.query({
+            const { data } = await client.query({
                 query: gql`
                 query GetConventions {
-                    eventsType(where: {name: "Conventions"}) {
+                    eventTypes(where: {name: "Conventions"}) {
                       nodes {
                         events {
                           nodes {
-                            name
-                            description
-                            location
+                            id
+                            eventName
+                            shortDescription
                           }
                         }
                       }
@@ -23,8 +24,13 @@ async function EventsList({ sorting, eventType }) {
                   }
           `,
                 fetchPolicy: 'network-only',
+                context: {
+                    fetchOptions: {
+                        next: { revalidate: 60 },
+                    },
+                },
             });
-            return result.data.eventsType.nodes[0].events.nodes;
+            return data?.eventTypes?.nodes[0]?.events?.nodes;
         } catch (error) {
             console.error('Error occurred:', error);
             return [];
@@ -68,6 +74,7 @@ async function EventsList({ sorting, eventType }) {
                       nodes {
                         events {
                           nodes {
+                            id
                             name
                             description
                             location
@@ -85,75 +92,35 @@ async function EventsList({ sorting, eventType }) {
           `,
                 fetchPolicy: 'no-cache',
             });
-            console.log('WORKSHOPS: ', result.data.eventsType.nodes[0].events.nodes);
-            return result.data.eventsType.nodes[0].events.nodes;
+            console.log('WORKSHOPS: ', result.data.eventsType.nodes[0].events);
+            return result.data.eventsTypes.nodes[0].events.nodes;
         } catch (error) {
             console.error('Error occurred:', error);
-            return [];
+            return []; ``
         }
     }
 
     let data
+    let type
 
     if (eventType === 'workshops') {
         data = await GetWorkshops();
+        type = 'workshops'
     } else if (eventType === 'seminars') {
         data = await GetSeminars();
+        type = 'seminars'
     } else if (eventType === 'conventions') {
         data = await GetConventions();
+        type = 'conventions'
     }
 
-    let workshops = [...data]
-
-    const nameSortedAsc = [...data].sort((a, b) => a.name.localeCompare(b.name));
-    const nameSortedDesc = [...data].sort((a, b) => b.name.localeCompare(a.name));
-    const dateSortedAsc = [...data].sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
-    const dateSortedDesc = [...data].sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
 
     return (
-
-        (sorting === 'default') ? (
-            <div className='w-full h-full grid justify-items-center gap-4 grid-auto-fit-xl '>
-                {workshops.map((w, index) => (
-                    <EventCard key={index} title={w.name} description={w.description} />
-                ))}
-            </div>
-
-        ) : (sorting === 'nameAsc') ? (
-            <div className='w-full h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
-                {nameSortedAsc.map((w, index) => (
-                    <EventCard key={index} title={w.name} description={w.description} />
-                ))}
-            </div>
-
-        ) : (sorting === 'nameDesc') ? (
-            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center  '>
-                {nameSortedDesc.map((w, index) => (
-                    <EventCard key={index} title={w.name} description={w.description} />
-                ))}
-            </div>
-
-        ) : (sorting === 'dateAsc') ? (
-            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center '>
-                {dateSortedAsc.map((w, index) => (
-                    <EventCard key={index} title={w.name} description={w.description} />
-                ))}
-            </div>
-
-        ) : (sorting === 'dateDesc') ? (
-            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center '>
-                {dateSortedDesc.map((w, index) => (
-                    <EventCard key={index} title={w.name} description={w.description} />
-                ))}
-            </div>
-
-        ) : (
-            <div className='w-full h-full grid gap-4 grid-auto-fit-xl justify-items-center'>
-                {workshops.map((w, index) => (
-                    <EventCard key={index} title={w.name} description={w.description} />
-                ))}
-            </div>
-        )
+        <div className='w-full h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
+            {data.map((d, index) => (
+                <EventCard key={index} title={d.eventName} description={d.shortDescription[0]} link={idFormatter(d.id)} type={type} />
+            ))}
+        </div>
     )
 }
 
