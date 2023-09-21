@@ -118,7 +118,7 @@ async function EventsList({ sorting, eventType }) {
 
 
   return (
-    <div className='w-full h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
+    <div className='w-[18rem] md:w-[40rem] lg:w-[60rem] xl:w-[64rem] 2xl:w-[76rem] h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
       {data.map((d, index) => (
         <EventCard key={index} title={d.eventName} description={d.shortDescription[0]} link={idFormatter(d.id)} type={type} />
       ))}

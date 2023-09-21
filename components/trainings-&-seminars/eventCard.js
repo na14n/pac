@@ -2,8 +2,10 @@ import Image from "next/image";
 
 const EventCard = ({ mediaUrl, date, title, description, link, type }) => {
     return (
-        <a className="xs:h-48 w-72 xl:h-[216px] shadow-md rounded-md overflow-hidden relative flex flex-col justify-end items-center hover:-translate-y-1 hover:shadow-lg transition-all duration-100 cursor-pointer border-pac-green/50 hover:border-2 border-0" href={`/trainings-&-seminars/${type}/${link}`}>
-            <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400'} alt="dental-website-banner" />
+        <a className="w-fit h-fit shadow-md rounded-md overflow-hidden relative flex flex-col justify-end items-center hover:-translate-y-1 hover:shadow-lg transition-all duration-100 cursor-pointer border-pac-green/50 hover:border-2 border-0" href={`/trainings-&-seminars/${type}/${link}`}>
+            <div className="relative w-72 xl:w-[20rem] 2xl:w-[24rem] aspect-video">
+                <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400'} alt="dental-website-banner" className="object-cover object-center" />
+            </div>
             <div className="z-10 w-full h-24 bg-[#F1F1F1] flex items-center justify-between px-2">
                 {date ?
                     <div className="h-content w-content flex flex-col justify-between items-center px-2">

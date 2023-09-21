@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ConGridItem from "./conGridItem";
 
 export default function ConGrid() {
 
@@ -29,14 +30,9 @@ export default function ConGrid() {
 
     return (
         <section className="w-full h-fit flex items-center justify-center py-16">
-            <div className="w-fit h-fit grid justify-items-center grid-cols-4 gap-4">
+            <div className="w-fit h-fit grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {arrayOfObjects.map((a, i) => (
-                    <div key={i} className={`relative flex items-center justify-center
-                        aspect-video shadow-md rounded-sm hover:shadow-lg transition-all ease-in-out duration-150 cursor-pointer ${i === 0 ? `h-full col-span-2 row-span-2` : `h-36 2xl:h-48`} 
-                    `}>
-                        {/* {a.body} */}
-                        <Image src={`https://picsum.photos/seed/${a.title}/1920/1080`} fill={true} className="object-center object-contain" />
-                    </div>
+                    <ConGridItem key={i} position={i} data={a} />
                 ))}
             </div>
         </section>

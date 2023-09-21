@@ -28,7 +28,7 @@ export default function ConventionsPageTitle() {
         })
 
     return (
-        <section className="w-full h-fit bg-[#000000]/80 pt-24 pb-16 flex flex-col justify-end items-center">
+        <section className="w-full h-fit bg-gradient-to-b from-[#373737] to-[#121212] pt-24 pb-16 flex flex-col justify-end items-center">
             <h1 className="text-[#FCFCFC] font-bold uppercase text-3xl xl:text-4xl 2xl:text-5xl pt-8 pb-4">
                 {data?.events?.nodes[0]?.eventName}
             </h1>
