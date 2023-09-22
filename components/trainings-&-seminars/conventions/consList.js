@@ -17,6 +17,8 @@ export default function ConsList() {
                 nodes {
                     id
                     eventName
+                    location
+                    shortDescription
                 }
                 pageInfo{
                     endCursor

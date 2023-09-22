@@ -17,6 +17,8 @@ export default function TrsList() {
                 nodes {
                     id
                     eventName
+                    date
+                    location
                 }
                 pageInfo{
                     endCursor
