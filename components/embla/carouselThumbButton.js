@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export const Thumb = (props) => {
 
     const { selected, imgSrc, index, onClick } = props
@@ -8,13 +10,14 @@ export const Thumb = (props) => {
         >
             <button
                 onClick={onClick}
-                className="bg-transparent block cursor-pointer b-0 p-0 m-0 w-full transition-opacity text-red-500"
+                className="bg-transparent block cursor-pointer b-0 p-0 m-0 w-32 aspect-square transition-opacity relative"
                 type="button"
             >
-                <img
-                    className="block w-16"
+                <Image
+                    className="object-cover object-center"
                     src={imgSrc}
                     alt="Your alt text"
+                    fill
                 />
             </button>
         </div>

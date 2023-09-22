@@ -55,10 +55,6 @@ export default function ProdContent(props) {
             title: 'Instructions',
             body: 'instructionFile',
         },
-        // {
-        //     title: 'Instructions',
-        //     body: 'instructionFile',
-        // },
         {
             title: 'Main Website',
             body: 'mainWebsiteLink',
@@ -69,19 +65,19 @@ export default function ProdContent(props) {
     const [selected, setSelected] = useState(moreInformation[0])
 
     return (
-        <section className="w-full h-fit flex flex-col pt-0 pb-8 gap-8">
-            <div className="w-fit lg:px-32 2xl:px-48 py-6 flex flex-col gap-1 items-center">
+        <section className="w-full h-fit flex flex-col ">
+            <div className="w-fit lg:px-32 2xl:px-48 py-6 flex flex-col gap-1 items-center ">
                 <h3 className="mx-3 text-3xl text-[#121212] uppercase font-semibold">Description</h3>
                 <span className="w-full h-[4px] bg-pac-orange rounded-md" />
             </div>
-            <div className="lg:px-48 2xl:px-64 w-full h-fit py-16 bg-[#FCFCFC] flex flex-col gap-8">
-                <p className='2xl:text-lg text-[#373737] text-justify'>
+            <div className="lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit py-12 bg-[#FCFCFC] flex flex-col gap-8 ">
+                <p className='2xl:text-lg text-[#373737] text-justify max-w-[75ch]'>
                     {parse(
                         data ? data?.product?.longDescription : ``
                     )}
                 </p>
             </div>
-            <div className="py-16 flex flex-col lg:px-32 2xl:px-48 w-full h-fit bg-[#FCFCFC]">
+            <div className="py-6 flex flex-col lg:px-32 2xl:px-48 w-full h-fit bg-[#FCFCFC] ">
                 <span className="flex">
                     {moreInformation.map((m, i) => (
                         <button key={i} className={
@@ -96,7 +92,7 @@ export default function ProdContent(props) {
                         </button>
                     ))}
                 </span>
-                <div className={`px-16 py-8 w-full h-fit  ${selected.body === 'mainWebsiteLink' ? `flex` : `hidden`}`}>
+                <div className={`px-40 py-8 w-full h-fit  ${selected.body === 'mainWebsiteLink' ? `flex` : `hidden`}`}>
                     <a
                         href={data?.product ? data?.product?.mainWebsiteLink : ``}
                         className="flex w items-center text-[#272727] hover:text-pac-orange underline"
@@ -107,7 +103,7 @@ export default function ProdContent(props) {
                         <Icon icon='mdi:arrow-top-right' className='text-sm' />
                     </a>
                 </div>
-                <div className={`px-16 py-8 w-full h-fit flex gap-8 flex-wrap  ${selected.body === 'youtubeEmbedSourceLink' ? `flex` : `hidden`}`}>
+                <div className={`px-40 py-8 w-full h-fit flex gap-8 flex-wrap  ${selected.body === 'youtubeEmbedSourceLink' ? `flex` : `hidden`}`}>
                     {data?.product ? data?.product?.youtubeEmbedSourceLink?.map((y, i) => (
                         <iframe
                             key={i}
@@ -117,7 +113,7 @@ export default function ProdContent(props) {
                         />
                     )) : ``}
                 </div>
-                <div className={`px-16 py-8 w-full h-fit flex gap-8 flex-wrap  ${selected.body === 'instructionFile' ? `flex` : `hidden`}`}>
+                <div className={`px-40 py-8 w-full h-fit flex gap-8 flex-wrap  ${selected.body === 'instructionFile' ? `flex` : `hidden`}`}>
                     {data?.product ? data?.product?.instructionFileTitle?.map((f, i) => (
                         <div key={i} className="h-36 w-64 shadow-sm rounded-sm bg-[#FFF] border-[2px] border-[#676767]/20 flex flex-col justify-between p-4 overflow-hidden">
                             <h5 className="text-lg font-bold text-pac-orange">{f}</h5>
@@ -133,7 +129,7 @@ export default function ProdContent(props) {
                         </div>
                     )) : ``}
                 </div>
-                <div className={`px-16 py-8 w-full h-fit flex gap-8 flex-wrap  ${selected.body === 'catalogueLink' ? `flex` : `hidden`}`}>
+                <div className={`px-40 py-8 w-full h-fit flex gap-8 flex-wrap  ${selected.body === 'catalogueLink' ? `flex` : `hidden`}`}>
                     {data?.product ? data?.product?.catalogueTitle?.map((c, i) => (
                         <div key={i} className="h-36 w-64 shadow-sm rounded-sm bg-[#FFF] border-[2px] border-[#676767]/20 flex flex-col justify-between p-4 overflow-hidden">
                             <h5 className="text-lg font-bold text-pac-orange">{c}</h5>

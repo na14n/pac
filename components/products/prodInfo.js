@@ -64,13 +64,13 @@ export default function ProdInfo(props) {
 
 
   return (
-    <main className="w-full h-fit flex justify-between gap-12 pb-4 pt-6 lg:px-30 xl:px-48 2xl:px-64">
+    <main className="w-full h-fit flex justify-between gap-4 pb-4 pt-6 lg:px-30 xl:px-48 2xl:px-64 min-[1920px]:px-80">
       <section className="lg:w-2/5 2xl:w-[600px] h-fit ">
         <ProdGallerySlider slides={Array.from(Array(data.product.imageGallery.length).keys())} images={data.product.imageGallery ? data.product.imageGallery : ``} />
       </section>
-      <section className="w-[600px] 2xl:w-[720px] h-fit flex flex-col gap-4 2xl:gap-8">
-        <h1 className="text-4xl 2xl:text-5xl font-bold text-[#121212] uppercase ">{data.product.name ? data.product.name : ``}</h1>
-        <p className="text-[#272727]  text-sm 2xl:text-lg h-[150px]">
+      <section className="max-w-[50ch] 2xl:max-w-[65ch] h-fit flex flex-col gap-4 2xl:gap-8">
+        <h1 className="text-4xl 2xl:text-5xl font-bold text-[#121212] uppercase text-justify">{data.product.name ? data.product.name : ``}</h1>
+        <p className="text-[#272727]  text-justify text-sm 2xl:text-lg h-[150px]">
           {data.product.shortDescription ? data.product.shortDescription : ``}
         </p>
         <AddToBasket item={data.product} />

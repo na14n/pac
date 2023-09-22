@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Thumb } from './carouselThumbButton';
+import Image from 'next/image';
 
 const ProdGallerySlider = (props) => {
 
@@ -42,9 +43,10 @@ const ProdGallerySlider = (props) => {
             <div className="overflow-hidden" ref={emblaMainRef}>
                 <div className="flex gap-2 items-center">
                     {slides.map((index) => (
-                        <div className="embla__slide w-full h-auto" key={index}>
-                            <img
-                                className=" w-auto h-auto"
+                        <div className="embla__slide w-full aspect-square relative" key={index}>
+                            <Image
+                                fill
+                                className="object-cover object-center"
                                 src={imageByIndex(index).link}
                                 alt="Your alt text"
                             />
