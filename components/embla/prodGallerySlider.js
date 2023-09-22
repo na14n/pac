@@ -74,6 +74,7 @@ const ProdGallerySlider = (props) => {
                                 //     key={index}
                                 // />
                                 <div
+                                    key={index}
                                     className={`relative pl-3 transition-opacity ${index === selectedIndex ? `opacity-100` : `opacity-50`}`}
                                 >
                                     <button
