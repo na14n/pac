@@ -21,7 +21,14 @@ const query = gql`
 
 export default function AboutHero() {
 
-    const { data } = useSuspenseQuery(query);
+    const { data } = useSuspenseQuery(query,
+        {
+          context: {
+            fetchOptions: {
+              next: { revalidate: 60 },
+            },
+          },
+        });
 
     return (
         <section className="h-[16rem] md:h-[30vh] xl:h-[50vh] relative flex flex-col items-center justify-center">

@@ -2,9 +2,9 @@
 export const dynamic = 'force-dynamic'
 
 import { gql } from "@apollo/client";
-import { sortByAttribute } from "@/lib/helpers";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import EventTypeCard from "../trainings-&-seminars/eventTypeCard"
+import { sortByAttribute } from "@/lib/helpers";
 
 const query = gql` query FetchEventsF {
     homepageSections(where: {search: "events"}) {
@@ -18,10 +18,6 @@ const query = gql` query FetchEventsF {
             title
         }
         mediaLine2{
-            link
-            title
-        }
-        mediaLine3 {
             link
             title
         }
@@ -42,6 +38,9 @@ export default function EventsF() {
         }
     );
 
+    const mediaLine1 = sortByAttribute(data?.homepageSections?.nodes[0]?.mediaLine1, 'title')
+    const mediaLine2 = sortByAttribute(data?.homepageSections?.nodes[0]?.mediaLine2, 'title')
+
     return (
         <div className="w-full max-h-fit h-fit bg-[#E1E1E1] flex flex-col lg:justify-center items-center md:px-8 lg:px-16 xl:px-32 2xl:px-48 2xl:py-32 lg:gap-8 2xl:gap-16 xs:px-4 xs:gap-16 py-12 ">
             <div className="lg:max-w-full min-w-fit flex flex-col lg:gap-1 h-fit ">
@@ -59,9 +58,18 @@ export default function EventsF() {
                 )) : ``}
             </div>
             <div className="w-full h-fit flex xs:flex-col lg:flex-row items-center justify-center gap-8 2xl:gap-16 xs:pt-16 lg:pt-0 ">
-                <EventTypeCard title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[0] :'Workshops'} media={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} mediaH={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link : ``} link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${data?.homepageSections?.nodes[0]?.sectionSubheading[0]}` :'Workshops'} />
+                {data ? data?.homepageSections?.nodes[0]?.sectionSubheading.map((s, i) => (
+                    <EventTypeCard
+                        key={i}
+                        title={data?.homepageSections?.nodes[0] ? s : 'Workshops'}
+                        mediaH={data?.homepageSections?.nodes[0] ? mediaLine1[i].link : ``}
+                        media={data?.homepageSections?.nodes[0] ? mediaLine2[i].link : ``}
+                        link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${s}` : ``}
+                    />
+                )) : <></>}
+                {/* <EventTypeCard title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[0] :'Workshops'} media={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} mediaH={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link : ``} link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${data?.homepageSections?.nodes[0]?.sectionSubheading[0]}` :'Workshops'} />
                 <EventTypeCard title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[1] :'Workshops'} media={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine2, 'title')[1].link : ``} mediaH={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine2, 'title')[0].link : ``} link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${data?.homepageSections?.nodes[0]?.sectionSubheading[1]}` :'Workshops'} />
-                <EventTypeCard title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[2] :'Workshops'} media={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine3, 'title')[1].link : ``} mediaH={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine3, 'title')[0].link : ``} link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${data?.homepageSections?.nodes[0]?.sectionSubheading[2]}` :'Workshops'} />
+                <EventTypeCard title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[2] :'Workshops'} media={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine3, 'title')[1].link : ``} mediaH={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine3, 'title')[0].link : ``} link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${data?.homepageSections?.nodes[0]?.sectionSubheading[2]}` :'Workshops'} /> */}
             </div>
         </div>
     )
