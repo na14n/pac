@@ -24,7 +24,6 @@ export default function zProdInfo(props) {
             }
             shortDescription
             inclusions
-            bestSelling
             imageGallery {
               link
             }
@@ -35,32 +34,22 @@ export default function zProdInfo(props) {
               title
               sourceUrl
             }
-            itemCategories {
-                nodes {
-                  parent {
-                    node {
-                      name
-                    }
-                  }
-                  name
-                }
-            }
         }
       }
     
     `
 
 
-  const { data } = useSuspenseQuery(
-    query,
-    {
-      context: {
-        fetchOptions: {
-          next: { revalidate: 60 },
-        },
-      },
-    }
-  );
+  // const { data } = useSuspenseQuery(
+  //   query,
+  //   {
+  //     context: {
+  //       fetchOptions: {
+  //         next: { revalidate: 60 },
+  //       },
+  //     },
+  //   }
+  // );
 
 
   return (
