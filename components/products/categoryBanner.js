@@ -9,7 +9,7 @@ export async function CategoryBanner() {
             const result = await client.query({
                 query: gql`
                 query GetCategories {
-                    productCategories {
+                    productCategories(first: 999) {
                       nodes {
                         name
                         icon {

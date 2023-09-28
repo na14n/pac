@@ -1,6 +1,5 @@
 'use client';
 
-// export const dynamic = 'force-dynamic'
 
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr';
 import { gql } from '@apollo/client';
@@ -8,24 +7,6 @@ import { Button } from "@/components"
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
 
-const query = gql`
-        query GetBranchesInformation {
-            branchesInformation {
-            nodes {
-                branchName
-                addressLine1
-                addressLine2
-                addressLine3
-                landlineNumber  
-                mobileNumber
-                email
-                googleMapsSourceLink
-                officeHours
-                date
-            }
-            }
-        }
-    `
 
 export default function MessageUsForm() {
 

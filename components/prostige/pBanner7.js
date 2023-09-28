@@ -28,8 +28,8 @@ const queryB = gql` query FetchPBanner7b {
           title
           sectionHeading
           sectionSubheading
-          contentLine1
-          contentLine2
+          textLine2
+          textLine1
         }
       }
     }
@@ -103,11 +103,11 @@ export default function PBanner7() {
                     {data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.sectionHeading.map(
                         (h, i) => (
                             <TestimonialCard key={i}
-                                message={data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.contentLine2[i] : ''}
+                                message={data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.textLine2[i] : ''}
                                 name={h}
                                 location={data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.sectionSubheading[i] : ''}
                                 type={'prostige'}
-                                clinic={data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.contentLine1[i] : ''}
+                                clinic={data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.textLine1[i] : ''}
                             />
                         )
                     ) : ''}

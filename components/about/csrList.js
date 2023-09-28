@@ -6,13 +6,10 @@ import Image from "next/image"
 import { gql } from "@apollo/client"
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import CsrSlider from "../embla/csrSlider";
-import { useState, startTransition } from "react";
+import { useState, startTransition, useEffect } from "react";
 import Button from "../button";
 
-export default function CsrList() {
-
-    const [after, setAfter] = useState("")
-    const [csr, setCsr] = useState([])
+export default function CsrList({params}) {
 
     const query = gql`
         query FetchCSRs($after: String, $first: Int) {
@@ -41,8 +38,13 @@ export default function CsrList() {
             },
             variables: {
                 first: 2,
+                // after: params
             }
         });
+
+    // setCsr([...csr, data]);
+    // setAfter(data?.cSRs?.pageInfo?.endCursor);
+    // setHasMore(data?.cSRs?.pageInfo?.hasNextPage)
 
     function handleLoadMore() {
         startTransition(() => {
@@ -50,9 +52,6 @@ export default function CsrList() {
                 variables: {
                     first: 2,
                     after: data?.cSRs?.pageInfo?.endCursor
-                },
-                fetchOptions: {
-                    mode: 'no-cors'
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                     if (!fetchMoreResult) {
@@ -73,6 +72,8 @@ export default function CsrList() {
             })
         })
     }
+
+    // console.log("PARAMS: ", params);
 
     return (
         <section className="w-full h-fit px-4 md:px-8 lg:px-16 xl:px-32 2l:px-48 flex flex-col gap-2">

@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import EventTypeCard from "../trainings-&-seminars/eventTypeCard"
-import { sortByAttribute } from "@/lib/helpers";
+import { sortByAttribute, pTagRemover } from "@/lib/helpers";
 
 const query = gql` query FetchEventsF {
     homepageSections(where: {search: "events"}) {
@@ -46,14 +46,14 @@ export default function EventsF() {
             <div className="lg:max-w-full min-w-fit flex flex-col lg:gap-1 h-fit ">
                 {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading.map((h, i) => (
                     <h1 key={i} className="lg:text-3xl xl:text-4xl xs:text-2xl text-[#272727] font-bold  text-center">
-                        {h}
+                        {pTagRemover(h)}
                     </h1>
                 )) : ``}
             </div>
             <div className="lg:max-w-[75ch] xl:max-w-[900px] 2xl:max-w-full 2xl:px-48 flex flex-col gap-6">
                 {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine2.map((h, i) => (
                     <p key={i} className="text-xl max-2xl:text-sm text-[#373737] text-justify">
-                        {h}
+                        {pTagRemover(h)}
                     </p>
                 )) : ``}
             </div>

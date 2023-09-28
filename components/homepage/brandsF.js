@@ -4,7 +4,8 @@ export const dynamic = 'force-dynamic'
 
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { BrandSliderF } from "../embla/brandSliderF";
-import { sortByAttribute } from "@/lib/helpers";
+import { sortByAttribute, pTagRemover } from "@/lib/helpers";
+import parse from "html-react-parser"
 import Image from "next/image"
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
@@ -62,7 +63,7 @@ export default function BrandsF({ mediaUrl }) {
         <div className='xs:w-full lg:w-[40rem] xl:w-[48rem] 2xl:w-[52rem] rounded-md h-[2px] bg-pac-orange' />
         {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine1.map((c, i) => (
           <div key={i} className='text-sm xs:w-full xs:px-4 lg:px-0 2xl:text-lg max-w-[700px] 2xl:max-w-[800px] text-center text-[#EFEFEF] mb-8'>
-            {c}
+            {parse(c)}
           </div>
         )) : <div className='text-sm xs:w-full xs:px-4 lg:px-0 2xl:text-lg max-w-[700px] 2xl:max-w-[800px] text-center text-[#EFEFEF] mb-8'>
           Currently, PROS-APAC  is partnered with a total of 35 exclusive dental Brands from both local and international level of products, all of which are of the best quality for our dentists.

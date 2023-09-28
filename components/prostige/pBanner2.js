@@ -2,6 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
+import { pTagRemover } from "@/lib/helpers";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
@@ -11,7 +12,7 @@ const query = gql` query FetchPBanner2 {
     nodes {
       title
       sectionHeading
-      contentLine2
+      contentLine1
       mediaLine1{
         link
       }
@@ -45,9 +46,9 @@ export default function PBanner2() {
                     </h1>
                 </span>
                 <span className="lg:max-w-[400px] 2xl:max-w-fit  h-fit flex flex-col gap-4 2xl:text-lg">
-                    {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2.map((c, i) => (
+                    {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1.map((c, i) => (
                         <p key={i} className="text-[#373737] text-justify">
-                            {c}
+                            {pTagRemover(c)}
                         </p>
                     )) : ``}
                 </span>

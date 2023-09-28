@@ -12,7 +12,7 @@ const query = gql` query FetchOrderF {
         sectionTitle
         sectionHeading
         sectionSubheading
-        contentLine1
+        textLine1
         mediaLine1 {
           link
         }
@@ -27,7 +27,7 @@ export default function OrderF() {
   
   return (
     <div className="w-full h-full">
-      <Hero heroType={'order'} title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading[0] : 'want to order?'} subheading={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[0] : 'To know more about our purchase and delivery information'} buttonName={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine1[0] : 'Click Here'} mediaUrl={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0]?.link : ''} buttonLink={'/resources/how-to-order'} />
+      <Hero heroType={'order'} title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading[0] : 'want to order?'} subheading={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[0] : 'To know more about our purchase and delivery information'} buttonName={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.textLine1[0] : 'Click Here'} mediaUrl={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0]?.link : ''} buttonLink={'/resources/how-to-order'} />
     </div>
   )
 }

@@ -10,31 +10,31 @@ import { idFormatter } from "@/lib/helpers";
 import Button from "../button";
 import { startTransition } from "react";
 
-const queryA = gql` query FetchBigPicture {
-    newsFeatures(where: {name: "Big picture"}) {
-      nodes {
-        newsAndUpdates {
-          nodes {
-            id
-          }
-        }
-      }
-    }
-  }
-`
+// const queryA = gql` query FetchBigPicture {
+//     newsFeatures(where: {name: "Big picture"}) {
+//       nodes {
+//         newsAndUpdates {
+//           nodes {
+//             id
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
-const queryB = gql` query FetchFeatured {
-    newsFeatures(where: {name: "featured"}) {
-      nodes {
-        newsAndUpdates {
-          nodes {
-            id
-          }
-        }
-      }
-    }
-  }
-`
+// const queryB = gql` query FetchFeatured {
+//     newsFeatures(where: {name: "featured"}) {
+//       nodes {
+//         newsAndUpdates {
+//           nodes {
+//             id
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 // const query = gql` query FetchNewsAndUpdates($cursor: String) {
 //   newsAndUpdates(
@@ -63,52 +63,56 @@ const queryB = gql` query FetchFeatured {
 // `
 
 const query = gql`
-  query FetchNewsList($after: String, $first: Int) {
-    newsAndUpdates(first: $first, after: $after) {
-      nodes {
-        id
-        mediaLine {
-          altText
-          title
-          sourceUrl
-        }
-        name
+query FetchNewsList($after: String, $first: Int) {
+  newsAndUpdates(
+    first: $first
+    after: $after
+    where: {orderby: {field: DATE, order: DESC}}
+  ) {
+    nodes {
+      id
+      mediaLine1 {
+        altText
+        title
+        sourceUrl
       }
-      pageInfo{
-        endCursor
-        hasNextPage
-      }
+      name
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
     }
   }
+}
 `
 
 export default function NewsAndUpdatesList() {
 
-  const bigPicture = useSuspenseQuery(
-    queryA,
-    {
-      context: {
-        fetchOptions: {
-          next: { revalidate: 60 },
-        },
-      },
-      variables: {
-        offset: 0,
-        limit: 6
-      },
-    }
-  );
+  // const bigPicture = useSuspenseQuery(
+  //   queryA,
+  //   {
+  //     context: {
+  //       fetchOptions: {
+  //         next: { revalidate: 60 },
+  //       },
+  //     },
+  //     variables: {
+  //       offset: 0,
+  //       limit: 6
+  //     },
+  //   }
+  // );
 
-  const featured = useSuspenseQuery(
-    queryB,
-    {
-      context: {
-        fetchOptions: {
-          next: { revalidate: 60 },
-        },
-      },
-    }
-  );
+  // const featured = useSuspenseQuery(
+  //   queryB,
+  //   {
+  //     context: {
+  //       fetchOptions: {
+  //         next: { revalidate: 60 },
+  //       },
+  //     },
+  //   }
+  // );
 
   // const { data } = useSuspenseQuery(
   //   query,
@@ -133,7 +137,7 @@ export default function NewsAndUpdatesList() {
         },
       },
       variables: {
-        first: 3
+        first: 1
       }
     }
   );
@@ -142,8 +146,11 @@ export default function NewsAndUpdatesList() {
     startTransition(() => {
       fetchMore({
         variables: {
-          first: 3,
+          first: 1,
           after: data?.newsAndUpdates?.pageInfo?.endCursor
+        },
+        fetchOptions: {
+          mode: 'no-cors'
         },
         updateQuery: (prev, { fetchMoreResult }) => {
           if (!fetchMoreResult) {
@@ -184,7 +191,7 @@ export default function NewsAndUpdatesList() {
           <div key={i} className="h-fit w-full ">
             <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-fit h-fit">
               <div className="w-full four-to-three relative">
-                <Image src={data ? n?.mediaLine[0].sourceUrl : ``} alt={data ? n?.mediaLine[0].altText : ``} fill={true} className="object-contain object-center" />
+                <Image src={data ? n?.mediaLine1[0].sourceUrl : ``} alt={data ? n?.mediaLine1[0].altText : ``} fill={true} className="object-contain object-center" />
               </div>
             </a>
             <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-full landscape-banner p-2">

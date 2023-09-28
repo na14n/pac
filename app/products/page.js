@@ -23,15 +23,16 @@ async function Products() {
         try {
             const result = await client.query({
                 query: gql`
-                    query GetMediaSlider {
-                        mediaSliders(where: {name: "Products Page Media Slider"}) {
-                          nodes {
-                            media {
-                              link
+                    query GetProdLanding {
+                        products(where: {search: "landing"}) {
+                            nodes {
+                                id
+                                imageGallery {
+                                    link
+                                }
                             }
-                          }
                         }
-                      }
+                    }
               `,
                 fetchPolicy: 'network-only',
                 context: {
@@ -40,7 +41,7 @@ async function Products() {
                 },
             },
             });
-            return result.data.mediaSliders.nodes[0].media;
+            return result.data.products.nodes[0].imageGallery;
         } catch (error) {
             console.error('Error occurred:', error);
             return [];
@@ -54,7 +55,6 @@ async function Products() {
             <div className='w-full h-fit'>
                 <HeaderTrigger>
                     <Hero heroType={'slider'} mediaArray={sliderMedia} />
-                    {/* <NewsHeroSlider media={sliderMedia} /> */}
                 </HeaderTrigger>
             </div>
             <div className='w-full lg:h-fit'>
@@ -64,7 +64,7 @@ async function Products() {
                 <BrandSlider />
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
-                <FeaturedProductsList />
+                {/* <FeaturedProductsList /> */}
             </div>
         </div>
     )

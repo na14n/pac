@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
+import parse from "html-react-parser"
 
 const query = gql` query FetchPBanner4 {
     prostigePages(where: {search: "banner-4"}) {
@@ -56,8 +57,8 @@ export default function PBanner4() {
                                 <div className="w-full h-2 bg-gradient-to-r from-nav-green to-pac-green" />
                             </div>
                             <div className="flex flex-col w-full h-fit gap-1">
-                                <h4 className="font-semibold text-lg text-pac-orange capitalize">{c}</h4>
-                                <h6 className="text font-semibold text-[#373737]">{data?.prostigePages?.nodes[0]?.contentLine2[i]}</h6>
+                                <div className="font-semibold text-lg text-pac-orange capitalize">{parse(c)}</div>
+                                <div className="text font-semibold text-[#373737]">{parse(data?.prostigePages?.nodes[0]?.contentLine2[i])}</div>
                             </div>
                         </div>
                     )) : ``}

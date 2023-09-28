@@ -14,8 +14,8 @@ const queryA = gql` query FetchPBanner9a {
         nodes {
           title
           sectionHeading
+          textLine1
           contentLine1
-          contentLine2
         }
       }
     }
@@ -26,8 +26,8 @@ const queryB = gql` query FetchPBanner9b {
           title
           sectionHeading
           sectionSubheading
-          contentLine1
-          contentLine2
+          textLine1
+          textLine2
         }
       }
     }
@@ -67,9 +67,9 @@ export default function PBanner9() {
                     {data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.sectionHeading : `faq`}
                 </h3>
                 <div className="flex flex-col gap-8">
-                    {data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.contentLine1.map((
+                    {data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.textLine1.map((
                         q, i) => (
-                        <FaqItem key={i} question={q} answer={data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.contentLine2[i] : `answer for question ${i}`} />
+                        <FaqItem key={i} question={q} answer={data9a?.data?.prostigePages?.nodes[0] ? data9a?.data?.prostigePages?.nodes[0]?.contentLine1[i] : `answer for question ${i}`} />
                     )) : ``}
                 </div>
             </div>
@@ -91,10 +91,10 @@ export default function PBanner9() {
 
                 </div>
                 <div className="flex lg:gap-12 xs:gap-8 flex-wrap">
-                    {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.contentLine1.
+                    {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.textLine1.
                         map((c, i) => (
                             <div key={i} className="flex flex-col gap-2 items-center">
-                                <a className="w-fit h-fit rounded-full bg-gradient-to-b from-nav-orange to-pac-orange flex items-center justify-center" href={data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.contentLine2[i] : ``}>
+                                <a className="w-fit h-fit rounded-full bg-gradient-to-b from-nav-orange to-pac-orange flex items-center justify-center" href={data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.textLine2[i] : ``}>
                                     <Icon icon={c} className="lg:text-4xl xs:text-2xl p-3 text-[#FCFCFC]" />
                                 </a>
                                 <h4 className="lg:text-lg xs:text-xs text-[#272727]">

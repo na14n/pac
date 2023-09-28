@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 import { sortByAttribute } from "@/lib/helpers";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
+import parse from "html-react-parser"
 
 const query = gql` query FetchPBanner5 {
     prostigePages(where: {search: "banner-5"}) {
@@ -50,7 +51,7 @@ export default function PBanner5() {
                         ))
                             : ``}
                     </span>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-wrap gap-2">
                         <span className="flex w-fit h-fit gap-2">
                             {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading.map((
                                 h, i) => (
@@ -60,20 +61,20 @@ export default function PBanner5() {
                             ))
                                 : ``}
                         </span>
-                        <span className="flex w-fit h-fit gap-2">
+                        <span className="flex flex-wrap w-fit h-fit gap-2 test`">
                             {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1.map((
                                 h, i) => (
-                                <h3 key={i} className="text-4xl xs:text-2xl peer odd:font-bold text-[#FCFCFC]">
-                                    {h}
-                                </h3>
+                                <div key={i} className="text-4xl xs:text-2xl peer odd:font-bold text-[#FCFCFC]">
+                                    {parse(h)}
+                                </div>
                             ))
                                 : ``}
                         </span>
                     </div>
                     <div>
-                        <h4 className="p-4 bg-[#DC6101] rounded-sm w-fit text-3xl xs:text-xl text-[#FCFCFC]">
-                            {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2 : ''}
-                        </h4>
+                        <div className="p-4 bg-[#DC6101] rounded-sm w-fit text-3xl xs:text-xl text-[#FCFCFC]">
+                            {data?.prostigePages?.nodes[0] ? parse(data?.prostigePages?.nodes[0]?.contentLine2[0]) : ''}
+                        </div>
                     </div>
                 </div>
                 <div className="lg:w-[700px] lg:h-[600px] xs:w-96 xs:h-96 lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto">

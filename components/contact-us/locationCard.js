@@ -8,19 +8,17 @@ import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr';
 import { gql } from '@apollo/client';
 
 const query = gql`
-        query GetBranchesInformation {
-            branchesInformation {
+        query GetBranchesInfo {
+            branchesInfo {
             nodes {
                 branchName
-                addressLine1
-                addressLine2
-                addressLine3
+                addressLine
                 landlineNumber  
                 mobileNumber
                 email
                 googleMapsSourceLink
                 officeHours
-                date
+                days
             }
             }
         }
@@ -30,7 +28,7 @@ export const LocationCard = () => {
 
     const { data, networkStatus } = useSuspenseQuery(query);
 
-    let branches = [...data.branchesInformation.nodes].sort((a, b) => new Date(a.date) - new Date(b.date))
+    let branches = [...data.branchesInfo.nodes].sort((a, b) => new Date(a.date) - new Date(b.date))
 
     const [selectedTab, setSelectedTab] = useState(branches[0]);
 
@@ -48,9 +46,9 @@ export const LocationCard = () => {
                             <div className={selectedTab.googleMapsSourceLink === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
                                 <Icon icon="mdi:location" width="24" height="24" className='pr-1' />
                                 <div className='flex flex-col'>
-                                    <span className="text-sm w-full text-left">{b.addressLine1 ? b.addressLine1 : 'Location'}</span>
-                                    <span className="text-sm text-left w-full">{b.addressLine2 ? b.addressLine2 : 'Location'}</span>
-                                    <span className="text-sm text-left w-full">{b.addressLine3 ? b.addressLine3 : 'Location'}</span>
+                                    {branches ? b.addressLine.map((a, i) => (
+                                        <span key={i} className="text-sm w-full text-left">{a}</span>
+                                    )) : <></>}
                                 </div>
                             </div>
                             {b.mobileNumber.length > 0 ? (
@@ -81,9 +79,8 @@ export const LocationCard = () => {
                                 <div className={selectedTab.googleMapsSourceLink === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
                                     <Icon icon="mdi:clock" width="24" height="24" className='pr-1' />
                                     <div className='flex flex-col text-sm h-full justify-center'>
-                                        {b.officeHours.map((m, index) => (
-                                            <span key={index} className='text-left w-full'>{m}</span>
-                                        ))}
+                                            <span key={index} className='text-left w-full'>{b.days}</span>
+                                            <span key={index} className='text-left w-full'>{b.officeHours}</span>
                                     </div>
                                 </div>
                             ) : ''}

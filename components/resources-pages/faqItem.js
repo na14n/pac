@@ -16,9 +16,9 @@ const FaqItem = (props) => {
                 </button>
             </div>
             <div className={` w-full bg-[#EFEFEF] px-8 z-0 rounded-md transition-all top-0 ease-in-out duration-300 ${accordionState === false ? ' max-h-0' : 'max-h-96'}`}>
-                <p className="py-8 text-sm flow-root w-full text-[#373737]">
+                <div className="py-8 text-sm flow-root w-full text-[#373737]`">
                     {props.answer ? props.answer : 'Answers.'}
-                </p>
+                </div>
             </div>
         </div>
     )

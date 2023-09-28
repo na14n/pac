@@ -1,5 +1,6 @@
 import { Icon } from "@iconify-icon/react";
 import Image from "next/image";
+import { pTagRemover } from "@/lib/helpers";
 
 const TestimonialCard = (props) => {
     return (props.type === 'dedicated') ? (
@@ -52,7 +53,7 @@ const TestimonialCard = (props) => {
                     <Icon icon="ri:double-quotes-l" width={48} height={48} />
                 </div>
                 <div className="w-full h-fit text-center text-sm 2xl:text-lg text-[#272727] mt-2">
-                    {props?.data?.message}
+                    {pTagRemover(props?.data?.message)}
                 </div>
             </div>
             <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col justify-center items-end">
@@ -60,7 +61,7 @@ const TestimonialCard = (props) => {
                     {props?.data?.name}
                 </div>
                 <div className="text-sm 2xl:text-lg font-semibold text-[#373737]">
-                    {props?.data?.location}
+                    {pTagRemover(props?.data?.location)}
                 </div>
             </div>
         </div>

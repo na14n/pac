@@ -8,13 +8,13 @@ import Image from "next/image";
 import Button from "../button";
 
 const query = gql`
-    query GetAboutContentS04 {
+    query GetAboutContentS03 {
         aboutContents(where: {name: "section-03"}) {
         nodes {
                 sectionTitle
                 sectionHeading
                 sectionSubheading
-                contentLine1
+                textLine1
             }
         }
     }
@@ -31,6 +31,8 @@ export default function AboutS03() {
           },
         });
 
+        console.log(data);
+
     return (
         <section className="w-full h-[16rem] md:h-[30vh] flex flex-col items-center justify-center relative">
             <div className="absolute flex items-center justify-center w-full h-full bg-[#757575] z-0" />
@@ -44,7 +46,7 @@ export default function AboutS03() {
                         ))
                         : ``}
                 </span>
-                <Button type={1} name={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading : ``} link={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.contentLine1 : ``} />
+                <Button type={1} name={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionSubheading : ``} link={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.textLine1 : ``} />
             </span>
         </section>
     )

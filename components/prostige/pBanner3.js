@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
+import parse from "html-react-parser"
 
 const query = gql` query FetchPBanner3 {
     prostigePages(where: {search: "banner-3"}) {
@@ -12,8 +13,7 @@ const query = gql` query FetchPBanner3 {
           title
           sectionHeading
           contentLine1
-          contentLine2
-          mediaLine2 {
+          mediaLine1 {
             link
           }
         }
@@ -49,9 +49,9 @@ export default function PBanner3() {
                     map((c, i) => (
                         <div key={i} className="lg:w-40 xs:w-40 flex flex-col gap-4 items-center group cursor-pointer">
                             <span className="lg:w-32 lg:h-32 xs:w-32 xs:h-32 object-fill relative group-hover:-translate-y-1">
-                                <Image src={data?.prostigePages?.nodes[0].mediaLine2[i].link} fill={true} className="object-contain" />
+                                <Image src={data?.prostigePages?.nodes[0].mediaLine1[i].link} fill={true} className="object-contain" />
                             </span>
-                            <h4 className="text-center text-sm  font-semibold uppercase text-[#F0F0F0]">{c}</h4>
+                            <div className="text-center text-sm  font-semibold uppercase text-[#F0F0F0]">{parse(c)}</div>
                         </div>
                     )) : ``}
             </div>

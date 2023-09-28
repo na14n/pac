@@ -19,7 +19,7 @@ query fetchCompanyActivitiesPage {
         sectionHeading
         sectionSubheading
         contentLine1
-        contentLine2
+        textLine1
         mediaLine2{
           sourceUrl
           title
@@ -53,7 +53,7 @@ export default function CompanyActivitiesBanners() {
             <p className="text-[#272727] text-justify 2xl:text-lg">{data ? data?.aboutContents?.nodes[0]?.contentLine1[i] : ``}</p>
           </div>
           <div className={`w-full lg:w-3/5 aspect-[3/2] flex justify-center items-center relative  ${i % 2 === 0 ? `` : `lg:order-first`}`}>
-            <CompanyActivitiesSlider media={assets.filter((item) => item.title.includes(`${data?.aboutContents?.nodes[0]?.contentLine2[i]}`))} index={i} />
+            <CompanyActivitiesSlider media={assets.filter((item) => item.title.includes(`${data?.aboutContents?.nodes[0]?.textLine1[i]}`))} index={i} />
           </div>
         </div>
       )) : ``}

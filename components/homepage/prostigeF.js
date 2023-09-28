@@ -7,7 +7,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Button from "../button";
 import Image from "next/image";
 
-const query = gql` query FetchProstigeF {
+const query = gql` query FetchProstige {
   homepageSections(where: {search: "prostige"}) {
     nodes {
       sectionTitle

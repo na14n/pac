@@ -8,7 +8,7 @@ import ProdGallerySlider from "../embla/prodGallerySlider"
 import AddToBasket from "./addToBasket"
 
 
-export default function ProdInfo(props) {
+export default function zProdInfo(props) {
 
   const query = gql`query FetchProduct {
         product(id: "${props.id}") {

@@ -2,6 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
+import { pTagRemover } from "@/lib/helpers";
 import Button from "../button";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
@@ -45,7 +46,7 @@ export default function HeroBanner() {
                     {data?.homepageSections?.nodes[0]?.sectionSubheading ? data?.homepageSections?.nodes[0]?.sectionSubheading : 'Insert Heading'}
                 </h1>
                 <h3 className="text-[#F0F0F0]/90 font-regular mt-4 mb-8 xl:max-w-[600px] 2xl:max-w-[750px] 2xl:text-xl xs:text-lg xs:max-w-[280px] md:max-w-fit">
-                    {data?.homepageSections?.nodes[0]?.contentLine1[0] ? data?.homepageSections?.nodes[0]?.contentLine1[0] : 'Insert Subheading'}
+                    {data?.homepageSections?.nodes[0]?.contentLine1[0] ? pTagRemover(data?.homepageSections?.nodes[0]?.contentLine1[0]) : 'Insert Subheading'}
                 </h3>
                 <Button name={('Browse our Products')} type={1} link={'/products'} />
             </div>

@@ -14,8 +14,8 @@ const query = gql` query FetchPBanner6 {
           title
           sectionHeading
           sectionSubheading
-          contentLine1
-          contentLine2
+          textLine1
+          textLine2
           mediaLine1 {
             title
             link
@@ -47,16 +47,16 @@ export default function PBanner6() {
             <div className="w-full flex flex-row gap-3">
                 <h4 className="shrink-0 text-pac-orange text-lg 2xl:text-2xl font-bold">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading[0] : ``}</h4>
                 <span className=" h-fit flex flex-col gap-4">
-                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1[0] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[0] : ``}</p>
                     <div className="flex xs:flex-col lg:flex-row items-center gap-4 w-fit h-fit">
-                        <Button type={1} name={'Download Now'} link={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2[0] : ``} />
+                        <Button type={1} name={'Download Now'} link={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine2[0] : ``} />
                         <h3 className="font-bold text-xl text-[#272727]">or</h3>
                         <div className="h-fit w-fit p-4 bg-[#676767] flex xs:flex-col lg:flex-row gap-3 rounded-md items-center">
                             <div className="relative lg:w-32 lg:h-32 xs:w-28 xs:h-28 shrink-0">
                                 <Image fill={true} src={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.mediaLine1[0]?.link : ``} alt="download-prostige-qr" className="object-contain" />
                             </div>
                             <h5 className="text-[#EFEFEF] w-28 text-center text-xl font-semibold">
-                                {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2[1] : ``}
+                                {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine2[1] : ``}
                             </h5>
                         </div>
                     </div>
@@ -65,15 +65,15 @@ export default function PBanner6() {
             <div className="w-full flex flex-row gap-3">
                 <h4 className="shrink-0 text-pac-orange text-lg 2xl:text-2xl font-bold">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading[1] : ``}</h4>
                 <span className=" h-fit flex flex-col gap-4">
-                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1[1] : ``}</p>
-                    <p className="text-[#373737] 2xl:text-lg">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2[2] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[1] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-lg">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine2[2] : ``}</p>
                 </span>
             </div>
             <div className="w-full flex flex-row gap-3">
                 <h4 className="shrink-0 text-pac-orange text-lg 2xl:text-2xl font-bold">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading[2] : ``}</h4>
                 <span className=" h-fit flex flex-col gap-4">
-                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1[2] : ``}</p>
-                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1[3] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[2] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[3] : ``}</p>
                 </span>
             </div>
         </section>

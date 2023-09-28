@@ -13,8 +13,8 @@ const query = gql` query FetchPBanner8 {
           title
           sectionHeading
           sectionSubheading
-          contentLine1
-          contentLine2
+          textLine1
+          textLine2
         }
       }
     }
@@ -43,7 +43,7 @@ export default function PBanner8() {
             </div>
             <h1 className="lg:text-3xl xs:text-xl w-full font-bold text-[#171717]">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading : ''}</h1>
             <span className="flex w-fit h-fit gap-2 flex-wrap">
-                {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1.map(
+                {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1.map(
                     (c, i) => (
                         <h5 key={i} className="lg:text-3xl xs:text-xl peer even:font-bold text-[#272727] even:text-pac-orange w-fit shrink-0">
                             {c}
@@ -52,7 +52,7 @@ export default function PBanner8() {
                 ) : ''}
             </span>
             <span className="flex flex-col w-fit h-fit gap-2">
-                {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine2.map(
+                {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine2.map(
                     (c, i) => (
                         <h5 key={i} className="lg:text-2xl xs:text-lg text-[#373737] tracking-tight w-fit">
                             {c}

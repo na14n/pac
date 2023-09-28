@@ -12,7 +12,7 @@ const query = gql` query FetchPageSection {
         sectionTitle
         sectionHeading
         sectionSubheading
-        contentLine1
+        textLine1
       }
     }
   }
@@ -55,7 +55,7 @@ export default function Reach({ type }) {
     for (let i = 0; i < data?.homepageSections?.nodes[0]?.sectionSubheading.length; i++) {
         stats.push({
             title: data?.homepageSections?.nodes[0]?.sectionSubheading[i],
-            description: data?.homepageSections?.nodes[0]?.contentLine1[i],
+            description: data?.homepageSections?.nodes[0]?.textLine1[i],
         })
     }
 
