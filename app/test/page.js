@@ -6,22 +6,22 @@ export const dynamic = 'force-dynamic'
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { gql } from "@apollo/client";
 
-const query = gql`query GetBrand($search: String = "american orthodontics") {
-    brands(where: {search: $search}) {
-      nodes {
-        name
-        description
-        logo {
-          link
-        }
-        itemCategories {
-          nodes {
-            name
-          }
-        }
-      }
-    }
-  }`
+// const query = gql`query GetBrand($search: String = "american orthodontics") {
+//     brands(where: {search: $search}) {
+//       nodes {
+//         name
+//         description
+//         logo {
+//           link
+//         }
+//         itemCategories {
+//           nodes {
+//             name
+//           }
+//         }
+//       }
+//     }
+//   }`
 
 const TestPage = () => {
 
@@ -34,21 +34,21 @@ const TestPage = () => {
   //     }
   // });
 
-  const { data } = useSuspenseQuery(
-    query,
-    {
-      context: {
-        fetchOptions: {
-          next: { revalidate: 5 },
-        },
-      },
-    }
-  );
+  // const { data } = useSuspenseQuery(
+  //   query,
+  //   {
+  //     context: {
+  //       fetchOptions: {
+  //         next: { revalidate: 5 },
+  //       },
+  //     },
+  //   }
+  // );
 
   // console.log(loading);
 
   return <pre className="w-full h-screen flex items-center justify-center text-black">
-    {JSON.stringify(data, null, 2)}
+    {/* {JSON.stringify(data, null, 2)} */}
   </pre>;
 };
 
