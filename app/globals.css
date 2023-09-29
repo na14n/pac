@@ -67,3 +67,32 @@
 .grid-auto--fill {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
+
+.h1 h1 {
+  color: #121212;
+  font-weight: bold;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.h2 h2 {
+  color: #171717;
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.h3 h3 {
+  color: #171717;
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.p p {
+  color: #373737;
+  font-size: 1rem;
+}
