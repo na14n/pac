@@ -11,10 +11,6 @@ const SalesAgentSearchBar = ({ divisions }) => {
     const [locationInput, setLocationInput] = useState(null);
     const [hadSearched, setHadSearched] = useState(false);
 
-    // useEffect(() => {
-    //     setHadSearched(false);
-    // }, [locationInput])
-
     let search = (e) => {
         e.preventDefault();
         setHadSearched(true);

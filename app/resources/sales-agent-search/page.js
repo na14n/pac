@@ -35,25 +35,25 @@ export default async function SalesAgentSearch({ searchParams }) {
         try {
             const result = await client.query({
                 query: gql`
-                query FetchDMs {
-                    salesAgents(where: {search: "district manager"}) {
-                      nodes {
-                        name
-                        mobileNumber
-                        email
-                        position
-                        specificLocations
-                        image{
-                            sourceUrl
-                          }
-                        productDepartments {
-                          nodes {
+                    query FetchDMs {
+                        salesAgents(where: {search: "district manager"}) {
+                        nodes {
                             name
-                          }
+                            mobileNumber
+                            email
+                            position
+                            specificLocations
+                            image{
+                                sourceUrl
+                            }
+                            productDepartments {
+                            nodes {
+                                name
+                            }
+                            }
                         }
-                      }
+                        }
                     }
-                  }
               `,
                 fetchPolicy: 'no-cache',
                 context: {
@@ -118,6 +118,7 @@ export default async function SalesAgentSearch({ searchParams }) {
 
     let defaultResult = await GetDms();
 
+    // console.log("DIVISIONS: ", divisions);
 
     return (
         <div className="w-full flex flex-col items-center justify-center">

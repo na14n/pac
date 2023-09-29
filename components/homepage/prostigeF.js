@@ -2,7 +2,7 @@
 export const dynamic = 'force-dynamic'
 
 import { gql } from "@apollo/client";
-import { sortByAttribute } from "@/lib/helpers";
+import { pTagRemover, sortByAttribute } from "@/lib/helpers";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Button from "../button";
 import Image from "next/image";
@@ -74,7 +74,7 @@ export default function ProstigeF(props) {
                     <span className="w-20 h-20 object-fill relative">
                       <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine2, 'title')[i].link : ``} fill={true} className="object-contain object-center" />
                     </span>
-                    <h4 className="text-center text-xs font-semibold uppercase">{c}</h4>
+                    <h4 className="text-center text-xs font-semibold uppercase">{pTagRemover(c)}</h4>
                   </div>
                 )) : ``}
             </div>
@@ -82,9 +82,9 @@ export default function ProstigeF(props) {
           <div className="flex flex-col gap-2 w-fit">
             <div className="w-max h-[2px] rounded-full bg-nav-green" />
             <div className="flex flex-col gap-4 w-full">
-              <h2 className="text-xl text-pac-orange font-bold uppercase">{data?.homepageSections?.nodes[0].contentLine2[0]}</h2>
-              <h4 className="text-[#373737] text-sm 2xl:text-lg max-w-max">{data?.homepageSections?.nodes[0].contentLine2[1]}</h4>
-              <Button type={1} color={'orange'} name={data?.homepageSections?.nodes[0].contentLine2[2]} link={'/products/prostige'} />
+              <h2 className="text-xl text-pac-orange font-bold uppercase">{pTagRemover(data?.homepageSections?.nodes[0].contentLine2[0])}</h2>
+              <h4 className="text-[#373737] text-sm 2xl:text-lg max-w-max">{pTagRemover(data?.homepageSections?.nodes[0].contentLine2[1])}</h4>
+              <Button type={1} color={'orange'} name={pTagRemover(data?.homepageSections?.nodes[0].contentLine2[2])} link={'/products/prostige'} />
             </div>
           </div>
         </div>
