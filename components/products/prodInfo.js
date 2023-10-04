@@ -9,7 +9,7 @@ import AddToBasket from "./addToBasket"
 import { pTagRemover } from "@/lib/helpers";
 
 
-export default function zProdInfo(props) {
+export default function ProdInfo(props) {
 
   const query = gql`query FetchProduct {
         product(id: "${props.id}") {
