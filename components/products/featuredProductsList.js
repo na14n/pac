@@ -8,32 +8,33 @@ import ProductCard from "./productCard";
 import { idFormatter } from "@/lib/helpers";
 
 const query = gql`query FetchProducts {
-    products {
-      nodes {
-        id
-        name
-        brand {
-          node {
-            name
-          }
+  products(where: {search: "product"}, first: 5) {
+    nodes {
+      id
+      name
+      bestSelling
+      brand {
+        node {
+          name
         }
-        bestSelling
-        cardImage {
-          link
-        }
-        itemCategories {
-            nodes {
-              parent {
-                node {
-                  name
-                }
-              }
+      }
+      cardImage {
+        title
+        sourceUrl
+      }
+      itemCategories {
+        nodes {
+          parent {
+            node {
               name
             }
+          }
+          name
         }
       }
     }
   }
+}
 `
 
 const FeaturedProductsList = () => {
@@ -49,7 +50,7 @@ const FeaturedProductsList = () => {
         }
     );
 
-    // console.log(data);
+    console.log(data);
 
     return (
         <div className="w-full h-full xs:px-4 lg:px-32 2xl:px-48 flex flex-col items-center justify-center py-16 max-lg:py-8" >
@@ -65,7 +66,7 @@ const FeaturedProductsList = () => {
                         brand={p.brand.node.name}
                         best={p.bestSelling}
                         category={p.itemCategories.nodes}
-                        media={p.cardImage.link}
+                        media={p.cardImage.sourceUrl}
                         slug={idFormatter(p.id)}
                     />
                 )) : ``}

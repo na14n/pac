@@ -71,11 +71,11 @@ export default function ProdContent(props) {
                 <span className="w-full h-[4px] bg-pac-orange rounded-md" />
             </div>
             <div className="lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit py-12 bg-[#FCFCFC] flex flex-col gap-8 ">
-                <p className='2xl:text-lg text-[#373737] text-justify max-w-[75ch]'>
+                <div className='2xl:text-lg text-[#373737] text-justify max-w-[75ch] h1 h2 h3 p oranged_bold'>
                     {parse(
                         data ? data?.product?.longDescription : ``
                     )}
-                </p>
+                </div>
             </div>
             <div className="py-6 flex flex-col lg:px-32 2xl:px-48 w-full h-fit bg-[#FCFCFC] ">
                 <span className="flex">

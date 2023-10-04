@@ -64,7 +64,7 @@ async function Products() {
                 <BrandSlider />
             </div>
             <div className='w-full h-fit bg-[#F4F4F4] overflow-hidden flex justify-center items-center'>
-                {/* <FeaturedProductsList /> */}
+                <FeaturedProductsList />
             </div>
         </div>
     )
