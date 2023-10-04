@@ -104,7 +104,7 @@ export default function SitemapContent() {
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[0]}</h1>
                 <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {pages ? pages.map((p, i) => (
-                        <a href={pagesLinks[i]} className="max-w-[192px] hover:text-pac-orange hover:underline">{p}</a>
+                        <a key={i} href={pagesLinks[i]} className="max-w-[192px] hover:text-pac-orange hover:underline">{p}</a>
                     )) : <></>}
                 </div>
             </div>
@@ -112,7 +112,7 @@ export default function SitemapContent() {
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[1]}</h1>
                 <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {brands ? brands.map((r, i) => (
-                        <a href={`/brands/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
+                        <a key={i} href={`/brands/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
                     )) : <></>}
                 </div>
             </div>
@@ -120,7 +120,7 @@ export default function SitemapContent() {
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[2]}</h1>
                 <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-4 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {categoriesSnapshot ? categoriesSnapshot?.data?.productCategories?.nodes.map((r, i) => (
-                        <a href={`/categories/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
+                        <a key={i} href={`/categories/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
                     )) : <></>}
                 </div>
             </div>
@@ -128,7 +128,7 @@ export default function SitemapContent() {
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[3]}</h1>
                 <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {resources ? resources.map((r, i) => (
-                        <a href={resourcesLinks[i]} className="max-w-[300px] hover:text-pac-orange hover:underline">{r}</a>
+                        <a key={i} href={resourcesLinks[i]} className="max-w-[300px] hover:text-pac-orange hover:underline">{r}</a>
                     )) : <></>}
                 </div>
             </div>
