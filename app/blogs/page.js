@@ -1,5 +1,7 @@
 import { HeaderTrigger } from "@/components"
 import BlogsHeader from "@/components/blogs/blogsHeader"
+import BlogsList from "@/components/blogs/blogsList"
+import BlogsPageContent from "@/components/blogs/blogsPageContent"
 
 export default function Blogs() {
     return(
@@ -7,6 +9,7 @@ export default function Blogs() {
             <HeaderTrigger>
                 <BlogsHeader />
             </HeaderTrigger>
+            <BlogsList />
         </main>
     )
 }

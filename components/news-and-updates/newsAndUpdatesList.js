@@ -54,7 +54,7 @@ export default function NewsAndUpdatesList() {
     startTransition(() => {
       fetchMore({
         variables: {
-          "first": 1,
+          "first": 3,
           "after": data?.newsAndUpdates?.pageInfo?.endCursor
         },
         updateQuery: (prev, { fetchMoreResult }) => {

@@ -27,7 +27,16 @@ export default function NewsPageHeader({ id }) {
       }
     `
 
-    const { data } = useSuspenseQuery(query);
+    const { data, } = useSuspenseQuery(
+        query,
+        {
+            context: {
+                fetchOptions: {
+                    next: { revalidate: 60 },
+                },
+            }
+        }
+    );
 
     return (
         <>
