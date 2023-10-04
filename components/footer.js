@@ -97,27 +97,27 @@ const Footer = () => {
         },
         {
             name: 'ri:facebook-circle-fill',
-            link: '#',
+            link: 'https://www.facebook.com/pros.apac',
             group: 'soc-med',
         },
         {
             name: 'ri:instagram-fill',
-            link: '#',
+            link: 'https://www.instagram.com/pros.apac/',
             group: 'soc-med',
         },
         {
             name: 'ri:tiktok-fill',
-            link: '#',
+            link: 'https://www.tiktok.com/@pros.apac',
             group: 'soc-med',
         },
         {
             name: 'ri:youtube-fill',
-            link: '#',
+            link: 'https://www.youtube.com/@PROSAPACchannel',
             group: 'soc-med',
         },
         {
             name: 'ri:linkedin-box-fill',
-            link: '#',
+            link: 'https://www.linkedin.com/in/pros-apac-corporation-b6a50059/',
             group: 'soc-med',
         },
         {

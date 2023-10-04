@@ -49,7 +49,6 @@ export default function BrandsF({ mediaUrl }) {
 
   const brands = sortByAttribute(data.brands.nodes, 'slideNumber')
 
-
   return (
     <div className="w-full max-h-fit h-fit xl:h-screen overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 xl:px-32 2xl:px-48 py-16 ">
       <div className="absolute z-10 top-0 bg-gradient-to-b from-[#b56012]/90 to-[#3E3E3E]/90 w-full h-full"></div>

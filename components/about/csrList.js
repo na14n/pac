@@ -37,7 +37,7 @@ export default function CsrList({params}) {
                 },
             },
             variables: {
-                first: 2,
+                first: 6,
                 // after: params
             }
         });

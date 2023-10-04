@@ -6,7 +6,7 @@ import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
 import Link from "next/link";
-import { idFormatter } from "@/lib/helpers";
+import { idFormatter, sortByAttribute } from "@/lib/helpers";
 import Button from "../button";
 import { startTransition } from "react";
 
@@ -84,7 +84,7 @@ export default function NewsAndUpdatesList() {
           <div key={i} className="h-fit w-full ">
             <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-fit h-fit">
               <div className="w-full four-to-three relative">
-                <Image src={data ? n?.mediaLine1[0].sourceUrl : ``} alt={data ? n?.mediaLine1[0].altText : ``} fill={true} className="object-contain object-center" />
+                <Image src={data ? sortByAttribute(n?.mediaLine1, 'title')[0].sourceUrl : ``} alt={data ? sortByAttribute(n?.mediaLine1, 'title')[0].altText : ``} fill={true} className="object-contain object-center" />
               </div>
             </a>
             <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-full landscape-banner p-2">

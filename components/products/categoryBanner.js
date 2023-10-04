@@ -34,9 +34,9 @@ export async function CategoryBanner() {
     return (
         <div className='w-full h-full bg-pac-green lg:px-32 flex justify-center items-center gap-1 py-4'>
             {categories.map((c, index) => (
-                <a key={index} className="flex flex-col items-center w-24 h-content justify-center gap-2 group hover:-translate-y-[2px] transition-all" href="#">
+                <a key={index} className="flex flex-col items-center square test h-fit justify-center gap-2 group hover:-translate-y-[2px] transition-all" href="#">
                     <Image width={48} height={48} src={c.icon.link ? c.icon.link : 'https://picsum.photos/2400'} alt="dental-product-category" />
-                    <div className="text-[#FCFCFC] group-hover:text-nav-orange text-xs capitalize">
+                    <div className="text-[#FCFCFC] text-center h-[5ch] group-hover:text-nav-orange text-xs capitalize">
                         {c.name}
                     </div>
                 </a>

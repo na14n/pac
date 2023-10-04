@@ -38,7 +38,7 @@ export default function EventsLandingPage() {
             },
         })
 
-        // console.log(data?.events?.nodes[0]?.longDescription);
+    // console.log(data?.events?.nodes[0]?.longDescription);
 
     const assets = sortByAttribute(data?.events?.nodes[0]?.mediaLine1, 'title');
 
@@ -49,7 +49,7 @@ export default function EventsLandingPage() {
                     <h1 className="text-5xl w-fit text-[#121212] font-bold text-center">
                         {data?.events?.nodes ? data?.events?.nodes[0]?.eventName : ``}
                     </h1>
-                    <div className="w-16 h-[4px] rounded-full bg-nav-orange" />
+                    <div className="w-2/5 h-[4px] rounded-full bg-nav-orange" />
                 </span>
                 <span className="flex flex-col gap-4 w-fit items-center">
                     {data?.events?.nodes ? data?.events?.nodes[0]?.shortDescription.map((c, i) => (
@@ -72,9 +72,9 @@ export default function EventsLandingPage() {
                                 {parse(data?.events?.nodes ? data?.events?.nodes[0]?.textLine1[i] : ``)}
                             </p>
                         </span>
-                        <pre className="z-30">
-                            <Button type={1} color="white-green" name={"View More"} link={`/trainings-&-seminars/${data?.events?.nodes[0]?.textLine2[i]}`} />
-                        </pre>
+                        <span className="z-30">
+                            <Button type={1} color="white-green" name={'View More'} link={`/trainings-&-seminars/${data?.events?.nodes[0]?.textLine2[i]}`} />
+                        </span>
                     </div>
 
                 )) : ''}

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from "react";
 import { Icon } from "@iconify-icon/react";
+import parse from "html-react-parser";
 
 const FaqItem = (props) => {
 
@@ -16,8 +17,8 @@ const FaqItem = (props) => {
                 </button>
             </div>
             <div className={` w-full bg-[#EFEFEF] px-8 z-0 rounded-md transition-all top-0 ease-in-out duration-300 ${accordionState === false ? ' max-h-0' : 'max-h-96'}`}>
-                <div className="py-8 text-sm flow-root w-full text-[#373737]`">
-                    {props.answer ? props.answer : 'Answers.'}
+                <div className="py-8 text-sm flow-root w-full text-[#373737] list oranged_bold`">
+                    {props.answer ? parse(props.answer) : 'Answers.'}
                 </div>
             </div>
         </div>

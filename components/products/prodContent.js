@@ -71,7 +71,7 @@ export default function ProdContent(props) {
                 <span className="w-full h-[4px] bg-pac-orange rounded-md" />
             </div>
             <div className="lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit py-12 bg-[#FCFCFC] flex flex-col gap-8 ">
-                <div className='2xl:text-lg text-[#373737] text-justify max-w-[75ch] h1 h2 h3 p oranged_bold'>
+                <div className='2xl:text-lg text-[#373737] text-justify max-w-[75ch] h1 h2 h3 p oranged_bold li'>
                     {parse(
                         data ? data?.product?.longDescription : ``
                     )}

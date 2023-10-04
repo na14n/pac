@@ -9,7 +9,9 @@ import { gql } from '@apollo/client';
 
 const query = gql`
         query GetBranchesInfo {
-            branchesInfo {
+            branchesInfo(
+                where: {orderby: {field: DATE, order: ASC}}
+              ) {
             nodes {
                 branchName
                 addressLine

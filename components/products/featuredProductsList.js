@@ -19,6 +19,7 @@ const query = gql`query FetchProducts {
         }
       }
       cardImage {
+        altText
         title
         sourceUrl
       }

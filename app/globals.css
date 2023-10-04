@@ -96,3 +96,7 @@
   color: #373737;
   font-size: 1rem;
 }
+
+.list li{
+  list-style-type: disc;
+}

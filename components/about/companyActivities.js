@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { sortByAttribute } from "@/lib/helpers";
+import { pTagRemover, sortByAttribute } from "@/lib/helpers";
 import Image from "next/image";
 import Button from "../button";
 import parse from 'html-react-parser'
@@ -50,7 +50,7 @@ export default function CompanyActivitiesBanners() {
           <div className="w-full lg:w-2/5 self-stretch p-4 xl:p-8 flex flex-col justify-center gap-4 xl:gap-12">
             <h1 className="text-3xl font-bold text-[#121212]">{s ? s : ``}</h1>
             <div className="w-12 h-[2px] bg-[#373737] rounded-full" />
-            <p className="text-[#272727] text-justify 2xl:text-lg">{data ? data?.aboutContents?.nodes[0]?.contentLine1[i] : ``}</p>
+            <p className="text-[#272727] text-justify 2xl:text-lg">{data ? pTagRemover(data?.aboutContents?.nodes[0]?.contentLine1[i]) : ``}</p>
           </div>
           <div className={`w-full lg:w-3/5 aspect-[3/2] flex justify-center items-center relative  ${i % 2 === 0 ? `` : `lg:order-first`}`}>
             <CompanyActivitiesSlider media={assets.filter((item) => item.title.includes(`${data?.aboutContents?.nodes[0]?.textLine1[i]}`))} index={i} />
