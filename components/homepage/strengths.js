@@ -12,7 +12,12 @@ const query = gql` query FetchStrengths {
         sectionHeading
         sectionSubheading
         contentLine1
-        contentLine2
+        # contentLine2
+        mediaLine1 {
+          title
+          sourceUrl
+          altText
+        }
       }
     }
   }
@@ -20,6 +25,7 @@ const query = gql` query FetchStrengths {
 
 import { Icon } from "@iconify-icon/react";
 import Image from "next/image";
+import { pTagRemover, sortByAttribute } from "@/lib/helpers";
 
 
 
@@ -61,11 +67,14 @@ export default function Strengths() {
 
     const strengths = []
 
+    const assets = sortByAttribute(data?.homepageSections?.nodes[0]?.mediaLine1, 'title')
+
+
     for (let i = 0; i < data?.homepageSections?.nodes[0]?.sectionSubheading.length; i++) {
         strengths.push({
             title: data?.homepageSections?.nodes[0]?.sectionSubheading[i],
             description: data?.homepageSections?.nodes[0]?.contentLine1[i],
-            icon: data?.homepageSections?.nodes[0]?.contentLine2[i],
+            // icon: data?.homepageSections?.nodes[0]?.contentLine2[i],
         })
     }
 
@@ -74,12 +83,14 @@ export default function Strengths() {
             <div className="w-fit h-fit xl:absolute relative xl:-top-36 2xl:-top-32 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 md:gap-6 xl:gap-8 xs:gap-4 ">
                 {strengths.map((s, index) => (
                     <div key={index} className="w-72 h-72 shrink-0 md:h-[16rem] xl:h-[16rem] 2xl:h-64 shadow-md bg-gradient-to-b odd:from-[#FAA541] odd:to-[#EE6400] even:from-[#FCFCFC] even:to-[#EFEFEF] rounded-md flex justify-start gap-2 flex-col items-center p-4 odd:text-[#FCFCFC] even:text-[#EE6400] peer group relative overflow-hidden">
-                        <Icon icon={s.icon} className="text-6xl" />
+                        {/* <Icon icon={s.icon} className="text-6xl" /> */}
+                        <Image src={assets[index].sourceUrl} alt={assets[index].altText} height={60} width={60} className="object-contain object-center" />
                         <p className="w-full h-fit text-center text-xl lg:text-lg 2xl:text-xl font-bold peer-odd:text-[#EFEFEF] peer-even:text-[#FAA541]">
                             {s.title}
                         </p>
                         <p className="w-full h-fit text-center text-sm">
-                            {s.description}
+                            {pTagRemover(s.description)}
+                            {/* {assets[index].sourceUrl} */}
                         </p>
                     </div>
                 ))}

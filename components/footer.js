@@ -132,16 +132,21 @@ const Footer = () => {
             title: 'Be Updated on our Events!',
             group: 'quick-btn',
         },
+        // {
+        //     name: 'Data Protection',
+        //     link: '#',
+        //     group: 'extras',
+        // },
         {
-            name: 'Data Protection',
-            link: '#',
+            name: 'Sitemap',
+            link: '/resources/sitemap',
             group: 'extras',
         },
         {
             name: 'Privacy Policy',
-            link: '#',
+            link: '/resources/privacy-policy',
             group: 'extras',
-        }
+        },
     ]
 
     const aboutLinks = footerLinks.filter((link) => link.group === 'about');
