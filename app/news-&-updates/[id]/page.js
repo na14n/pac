@@ -1,12 +1,13 @@
 import { HeaderTrigger } from "@/components"
 import NewsPageHeader from "@/components/news-and-updates/newsPageHeader"
 import client from '@/lib/apollo';
+import { partString } from "@/lib/helpers";
 import { gql } from 'graphql-tag';
 
 
 let pageData
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata({ params }) {
     try {
         const { data } = await client.query({
             query: gql`
@@ -29,9 +30,10 @@ export async function generateMetadata({ params }, parent) {
 
     return{
         title: pageData?.newsAndUpdate?.name,
+        keywords: pageData ? partString(pageData?.newsAndUpdate.name) : "prosapac",
         openGraph: {
             images: [pageData?.newsAndUpdate?.mediaLine1[0].sourceUrl]
-        }
+        },
     }
 
 }

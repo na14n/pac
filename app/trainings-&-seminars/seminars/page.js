@@ -2,6 +2,12 @@ import { Hero, HeaderTrigger, EventsList, ListSorter, Sorter } from "@/component
 import SeminarsList from "@/components/trainings-&-seminars/seminars/seminarsList";
 import SeminarsPageTitle from "@/components/trainings-&-seminars/seminars/seminarsPageTitle";
 
+export const metadata = {
+    title: 'PROS-APAC Seminars',
+    description: 'Seminars by PROS-APAC Corporation.',
+    keywords: ['PROS-APAC', 'PROS-APAC Events', 'Philippines', ' Dental Seminars Philippines']
+}
+
 const Seminars = () => {
     return (
         <div className="w-full flex flex-col items-center justify-center">

@@ -51,7 +51,7 @@ const FeaturedProductsList = () => {
         }
     );
 
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className="w-full h-full xs:px-4 lg:px-32 2xl:px-48 flex flex-col items-center justify-center py-16 max-lg:py-8" >

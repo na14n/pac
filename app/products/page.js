@@ -2,7 +2,44 @@ import { HeaderTrigger, Hero, CategoryBanner, BrandSlider, FeaturedProductsList,
 import NewsHeroSlider from "@/components/embla/newsHeroSlider";
 import CompactHeader from "@/components/products/compactHeader";
 import client from '@/lib/apollo';
+import { extractNamesFromArray } from "@/lib/helpers";
 import { gql } from 'graphql-tag';
+
+export async function generateMetadata() {
+
+    let pageData
+  
+    try {
+      const { data } = await client.query({
+        query: gql`
+              query GetBrand {
+                brands(first: 999) {
+                    nodes {
+                      name
+                      }
+                    }
+                  }
+          `,
+        fetchPolicy: 'no-cache',
+        context: {
+          fetchOptions: {
+            next: { revalidate: 60 },
+          },
+        },
+      });
+      pageData = extractNamesFromArray(data.brands.nodes)
+    } catch (error) {
+      console.error('Error occurred:', error);
+      pageData = []
+    }
+  
+    return {
+      title: "PROS-APAC's Products",
+      description: "Products List of PROS-APAC Corporation",
+      keywords: ["PROS-APAC", "PROS-APAC Products", "Dental Products", "Philippines", ...pageData],
+    }
+  
+  }
 
 async function Products() {
 

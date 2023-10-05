@@ -2,6 +2,11 @@ import { HeaderTrigger, Hero, SalesAgentSearchBar, SalesAgentCard } from "@/comp
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 
+export const metadata = {
+    title: 'PROS-APAC Sales Agents',
+    description: 'All Sales Agents of PROS-APAC Corporation.',
+    keywords: ['PROS-APAC', 'PROS-APAC Sales Agents', 'Philippines', 'Sales Agent', 'Dental Products Sales', 'Dental Products Sales Agent']
+}
 
 export default async function SalesAgentSearch({ searchParams }) {
 

@@ -1,5 +1,11 @@
 import { HeaderTrigger, PBanner2, PBanner3, PBanner4, PBanner5, PBanner6, PBanner7, PBanner8, PBanner9, PHero } from "@/components"
 
+export const metadata = {
+    title: 'PROSTIGE Rewards',
+    description: 'The First and Only Rewards Program for Dental Professionals',
+    keywords: ['PROS-APAC', 'PROS-APAC Loyalty', 'Prostige', 'Reward card', 'PROS-APAC rewards card']
+}
+
 export default function Page() {
     return (
         <main className="w-full h-fit">
