@@ -51,7 +51,7 @@ export default function Breadcrumbs(props) {
 
 
     return (
-        <section className="w-full h-fit flex items-center justify-between pt-6 lg:px-32 2xl:px-48 ">
+        <section className="w-full h-fit flex items-center justify-between pt-6 lg:px-32 2xl:px-48 bg-white ">
             <div className="w-fit h-fit flex text-pac-orange capitalize gap-2 text-sm xl:text-lg">
                 <a className="hover:underline hover:text-nav-orange font-bold" href={'/products'}>
                     <p>Products</p>

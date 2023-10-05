@@ -21,6 +21,12 @@ export async function generateMetadata({ params }) {
                         }
                     }
           `,
+            fetchPolicy: 'no-cache',
+            context: {
+                fetchOptions: {
+                    next: { revalidate: 60 },
+                },
+            },
         });
         pageData = data
     } catch (error) {
@@ -28,7 +34,7 @@ export async function generateMetadata({ params }) {
         pageData = []
     }
 
-    return{
+    return {
         title: pageData?.newsAndUpdate?.name,
         keywords: pageData ? partString(pageData?.newsAndUpdate.name) : "prosapac",
         openGraph: {

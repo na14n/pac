@@ -65,19 +65,19 @@ export default function ProdContent(props) {
     const [selected, setSelected] = useState(moreInformation[0])
 
     return (
-        <section className="w-full h-fit flex flex-col ">
+        <section className="w-full h-fit flex flex-col bg-[#FCFCFC]">
             <div className="w-fit lg:px-32 2xl:px-48 py-6 flex flex-col gap-1 items-center ">
                 <h3 className="mx-3 text-3xl text-[#121212] uppercase font-semibold">Description</h3>
                 <span className="w-full h-[4px] bg-pac-orange rounded-md" />
             </div>
-            <div className="lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit py-12 bg-[#FCFCFC] flex flex-col gap-8 ">
+            <div className="lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit py-12  flex flex-col gap-8 ">
                 <div className='2xl:text-lg text-[#373737] text-justify max-w-[75ch] h1 h2 h3 p oranged_bold li'>
                     {parse(
                         data ? data?.product?.longDescription : ``
                     )}
                 </div>
             </div>
-            <div className="py-6 flex flex-col lg:px-32 2xl:px-48 w-full h-fit bg-[#FCFCFC] ">
+            <div className="py-6 flex flex-col lg:px-32 2xl:px-48 w-full h-fit ">
                 <span className="flex">
                     {moreInformation.map((m, i) => (
                         <button key={i} className={

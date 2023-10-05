@@ -7,6 +7,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import ProdGallerySlider from "../embla/prodGallerySlider"
 import AddToBasket from "./addToBasket"
 import { pTagRemover } from "@/lib/helpers";
+import parse from "html-react-parser"
 
 
 export default function ProdInfo(props) {
@@ -54,15 +55,15 @@ export default function ProdInfo(props) {
 
 
   return (
-    <main className="w-full h-fit flex justify-between gap-4 pb-4 pt-6 lg:px-30 xl:px-48 2xl:px-64 min-[1920px]:px-80">
+    <main className="w-full h-fit flex justify-between gap-4 pb-4 pt-6 lg:px-30 xl:px-48 2xl:px-64 min-[1920px]:px-80 bg-white ">
       <section className="lg:w-2/5 2xl:w-[600px] h-fit ">
         <ProdGallerySlider slides={Array.from(Array(data.product.imageGallery.length).keys())} images={data.product.imageGallery ? data.product.imageGallery : ``} />
       </section>
       <section className="max-w-[50ch] 2xl:max-w-[65ch] h-fit flex flex-col gap-4 2xl:gap-8">
         <h1 className="text-4xl 2xl:text-5xl font-bold text-[#121212] uppercase text-justify">{data.product.name ? data.product.name : ``}</h1>
-        <p className="text-[#272727] text-justify text-sm 2xl:text-lg h-[150px]">
-          {data.product.shortDescription ? pTagRemover(data.product.shortDescription) : ``}
-        </p>
+        <div className="text-[#272727] text-justify text-sm 2xl:text-lg h-[150px]">
+          {data.product.shortDescription ? parse(data.product.shortDescription) : ``}
+        </div>
         <AddToBasket item={data.product} />
         <div className="bg-[#121212]/50 h-[1px] w-full" />
         <div className="w-fit h-fit flex flex-col gap-1">
