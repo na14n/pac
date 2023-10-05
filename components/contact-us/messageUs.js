@@ -9,6 +9,8 @@ import Image from 'next/image';
 import { Icon } from '@iconify-icon/react';
 import parse from "html-react-parser"
 import { pTagRemover } from '@/lib/helpers';
+import { useEffect, useState } from 'react';
+
 const query = gql`
     query GetcontactUsContents3 {
         contactUsContents(where: {name: "section-3"}) {
@@ -26,6 +28,39 @@ const query = gql`
 export default function MessageUs() {
 
     const { data } = useSuspenseQuery(query);
+
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        contact: '',
+        location: '',
+        message: ''
+    })
+    const [disabled, setDisabled] = useState(true)
+
+    useEffect(() => {
+
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        const isValid = emailRegex.test(form.email)
+
+        if (form.name.length > 0 && form.email.length > 0 && form.contact.length > 0 && form.location.length > 0 && form.message.length > 0 && isValid) {
+            setDisabled(false);
+        } else {
+            setDisabled(true);
+        }
+    }, [form])
+
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target)
+
+        const response = fetch('/api/email', {
+            method: 'post',
+            body: formData
+        })
+    }
 
     return (
         <div className="relative w-full h-fit overflow-hidden flex justify-center items-center md:px-8 lg:px-16 xl:px-32 2xl:px-48 py-8">
@@ -62,8 +97,11 @@ export default function MessageUs() {
                         </div>
                     </div>
                 </div>
-                <form className="h-fit grow self-start flex flex-col lg:w-fit xs:w-full 2xl:max-w-[600px] py-8 lg:gap-4 xs:gap-8 ">
-                    <div className="w-full h-fit md:hidden flex flex-col gap-2">
+                <form
+                    onSubmit={handleSubmit}
+                    className="h-fit grow self-start flex flex-col lg:w-fit xs:w-full 2xl:max-w-[600px] py-8 lg:gap-4 xs:gap-8 ">
+                    <div className="w-full h-fit md:hidden flex flex-col gap-2"
+                    >
                         <h1 className="md:text-3xl xl:text-4xl 2xl:text-5xl xs:text-2xl  uppercase font-bold text-[#FCFCFC] ">
                             {data?.contactUsContents?.nodes ? data?.contactUsContents?.nodes[0]?.sectionHeading[0] : ''}
                         </h1>
@@ -71,13 +109,50 @@ export default function MessageUs() {
                             {data?.contactUsContents?.nodes ? data?.contactUsContents?.nodes[0]?.sectionSubheading[0] : ''}
                         </p>
                     </div>
-                    <input placeholder="Your Name" className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]" />
-                    <input placeholder="E-mail Address" className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]" />
-                    <input placeholder="Contact Number" className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]" />
-                    <input placeholder="Location" className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]" />
-                    <textarea placeholder="Your Message" className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]" rows={5} />
+                    <input
+                        placeholder="Your Name"
+                        value={form.name}
+                        name='name'
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]"
+                    />
+                    <input
+                        placeholder="E-mail Address"
+                        value={form.email}
+                        name='email'
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]"
+                    />
+                    <input
+                        placeholder="Contact Number"
+                        value={form.contact}
+                        name='contact'
+                        onChange={(e) => setForm({ ...form, contact: e.target.value })}
+                        className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]"
+                    />
+                    <input
+                        placeholder="Location"
+                        value={form.location}
+                        name='location'
+                        onChange={(e) => setForm({ ...form, location: e.target.value })}
+                        className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]"
+                    />
+                    <textarea
+                        placeholder="Your Message"
+                        value={form.message}
+                        name='message'
+                        className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]" rows={5}
+                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    />
                     <div>
-                        <Button name={'Send Message'} type={'submit'} />
+                        <button
+                            disabled={disabled}
+                            // onClick={handleSubmit}
+                            type='submit'
+                            className="group w-fit h-fit bg-size-200 shadow-md bg-gradient-to-r from-[#E05B25] via-[#FD8F29] to-[#E05B25] py-2 px-3 rounded-md hover:bg-pos-100 grow-0 shrink-0 xs:text-sm 2xl:text-lg font-semibold text-[#F1F1F1] transition-all duration-50"
+                        >
+                            {disabled ? `Please complete the form properly.` : `Send Message`}
+                        </button>
                     </div>
                 </form>
             </div>
