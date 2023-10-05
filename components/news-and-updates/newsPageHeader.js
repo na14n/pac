@@ -12,9 +12,9 @@ import parse from 'html-react-parser'
 import NewsPageRec from "./newsPageRec";
 import { useEffect, useState } from "react";
 
-
-
 export default function NewsPageHeader({ id }) {
+
+
     const query = gql`query fetchNewsHeader {
         newsAndUpdate(id: "${id}=") {
           id
@@ -46,7 +46,7 @@ export default function NewsPageHeader({ id }) {
         setPageData(data);
         if (pageData) {
             // document.title = pageData?.newsAndUpdate?.name
-            
+
         }
     }, [data])
 
@@ -73,7 +73,8 @@ export default function NewsPageHeader({ id }) {
                     {pageData ? parse(pageData?.newsAndUpdate?.content) : 'Loading...'}
                 </div>
                 {/* </p> */}
-                {/* <NewsPageRec id={id} rec={pageData?.newsAndUpdate?.relatedTags} /> */}
+
+                {pageData ? <NewsPageRec id={id} rec={pageData?.newsAndUpdate?.relatedTags} /> : <></>}
             </section>
         </>
     )
