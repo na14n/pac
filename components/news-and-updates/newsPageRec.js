@@ -6,7 +6,7 @@ import { idFormatter } from "@/lib/helpers";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
-import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton } from "react-share"
+import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton, FacebookMessengerIcon, FacebookMessengerShareButton } from "react-share"
 import { usePathname } from 'next/navigation'
 
 export default function NewsPageRec({ rec, id }) {
@@ -63,6 +63,9 @@ export default function NewsPageRec({ rec, id }) {
                 <TwitterShareButton url={pathname}>
                     <TwitterIcon size={32} className="rounded-md" />
                 </TwitterShareButton>
+                <FacebookMessengerShareButton url={pathname} appId="1381850845734244">
+                    <FacebookMessengerIcon size={32} className="rounded-md" />
+                </FacebookMessengerShareButton>
             </div>
         </section>
     )
