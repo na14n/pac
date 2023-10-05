@@ -64,9 +64,6 @@ export default function NewsPageRec({ rec, id }) {
                     <TwitterIcon size={32} className="rounded-md" />
                 </TwitterShareButton>
             </div>
-            <pre>
-                {pathname}
-            </pre>
         </section>
     )
 }
