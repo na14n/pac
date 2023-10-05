@@ -37,6 +37,7 @@ export default function MessageUs() {
         message: ''
     })
     const [disabled, setDisabled] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
 
@@ -56,10 +57,16 @@ export default function MessageUs() {
 
         const formData = new FormData(event.target)
 
-        const response = fetch('/api/email', {
-            method: 'post',
-            body: formData
-        })
+        try {
+            setLoading(true);
+            const response = fetch('/api/email', {
+                method: 'post',
+                body: formData
+            })
+            setLoading(false);
+        } catch (error) {
+
+        }
     }
 
     return (
@@ -145,14 +152,25 @@ export default function MessageUs() {
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                     />
                     <div>
-                        <button
-                            disabled={disabled}
-                            // onClick={handleSubmit}
-                            type='submit'
-                            className="group w-fit h-fit bg-size-200 shadow-md bg-gradient-to-r from-[#E05B25] via-[#FD8F29] to-[#E05B25] py-2 px-3 rounded-md hover:bg-pos-100 grow-0 shrink-0 xs:text-sm 2xl:text-lg font-semibold text-[#F1F1F1] transition-all duration-50"
-                        >
-                            {disabled ? `Please complete the form properly.` : `Send Message`}
-                        </button>
+                        {loading ?
+                            <button
+                                disabled={true}
+                                // onClick={handleSubmit}
+                                type='submit'
+                                className="group w-fit h-fit bg-size-200 shadow-md bg-gradient-to-r from-[#E05B25] via-[#FD8F29] to-[#E05B25] py-2 px-3 rounded-md hover:bg-pos-100 grow-0 shrink-0 xs:text-sm 2xl:text-lg font-semibold text-[#F1F1F1] transition-all duration-50"
+                            >
+                                Loading...
+                            </button>
+                            :
+                            <button
+                                disabled={disabled}
+                                // onClick={handleSubmit}
+                                type='submit'
+                                className="group w-fit h-fit bg-size-200 shadow-md bg-gradient-to-r from-[#E05B25] via-[#FD8F29] to-[#E05B25] py-2 px-3 rounded-md hover:bg-pos-100 grow-0 shrink-0 xs:text-sm 2xl:text-lg font-semibold text-[#F1F1F1] transition-all duration-50"
+                            >
+                                {disabled ? `Please complete the form properly` : `Send Message`}
+                            </button>
+                        }
                     </div>
                 </form>
             </div>
