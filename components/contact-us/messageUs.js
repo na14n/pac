@@ -9,7 +9,10 @@ import Image from 'next/image';
 import { Icon } from '@iconify-icon/react';
 import parse from "html-react-parser"
 import { pTagRemover } from '@/lib/helpers';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { VerifyCaptcha } from '@/lib/serverActions';
+import ReCAPTCHA from "react-google-recaptcha";
+import { toast, ToastContainer } from 'react-toastify';
 
 const query = gql`
     query GetcontactUsContents3 {
@@ -38,19 +41,33 @@ export default function MessageUs() {
     })
     const [disabled, setDisabled] = useState(true)
     const [loading, setLoading] = useState(false)
+    const [verified, setVerified] = useState(false)
+
+    const recaptchaRef = useRef(null);
 
     useEffect(() => {
 
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         const isValid = emailRegex.test(form.email)
 
-        if (form.name.length > 0 && form.email.length > 0 && form.contact.length > 0 && form.location.length > 0 && form.message.length > 0 && isValid) {
+        if (form.name.length > 0 && form.email.length > 0 && form.contact.length > 0 && form.location.length > 0 && form.message.length > 0 && isValid && verified) {
             setDisabled(false);
         } else {
             setDisabled(true);
         }
-    }, [form])
+    }, [form, verified])
 
+
+    async function handleCaptchaSubmission(token) {
+        try {
+            const response = await VerifyCaptcha(token);
+            // console.log(response);
+            setVerified(response);
+        } catch (error) {
+            setVerified(false);
+            console.log("CAPTCHA FAILED: ", error.message);
+        }
+    }
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -59,13 +76,43 @@ export default function MessageUs() {
 
         try {
             setLoading(true);
-            const response = fetch('/api/email', {
+            const response = await fetch('/api/email', {
                 method: 'post',
                 body: formData
             })
-            setLoading(false);
-        } catch (error) {
+            if (response.ok) {
+                setLoading(false);
+                setForm({
+                    name: '',
+                    email: '',
+                    contact: '',
+                    location: '',
+                    message: ''
+                })
+                toast.success("Email Sent Successfully.", {
+                    position: toast.POSITION.TOP_CENTER
+                });
+                setVerified(false);
+                recaptchaRef.current.reset()
+            } else {
+                throw new Error("Something wrong happenned, please try again...")
+            }
 
+        } catch (error) {
+            toast.error("Something wrong happenned, please try again.", {
+                position: toast.POSITION.TOP_LEFT
+            });
+            console.log("Oops! Something wrong happenned... ", error.message);
+            setLoading(false)
+            setForm({
+                name: '',
+                email: '',
+                contact: '',
+                location: '',
+                message: ''
+            })
+            setVerified(false);
+            recaptchaRef.current.reset()
         }
     }
 
@@ -150,6 +197,11 @@ export default function MessageUs() {
                         name='message'
                         className="bg-[#FCFCFC] p-2 ring-2 ring-[#FCFCFC] text-[#575757] text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#b1b1b1] placeholder:text-[#C1C1C1]" rows={5}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    />
+                    <ReCAPTCHA
+                        sitekey="6Ldp5nwoAAAAAJxjk_cq_Fmr-e86simj4O6SR-L8"
+                        ref={recaptchaRef}
+                        onChange={handleCaptchaSubmission}
                     />
                     <div>
                         {loading ?

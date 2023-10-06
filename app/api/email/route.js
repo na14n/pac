@@ -257,7 +257,8 @@ export async function POST(request) {
 
     } catch (error) {
         // NextResponse.status(500).json({ message: "COULD NOT SEND MESSAGE" })
-        console.log("ERRPR: ", error.message);
+        console.log("ERROR: ", error.message);
+        return NextResponse.json({ error: error.message }, { status: 500 })
     }
 
 
