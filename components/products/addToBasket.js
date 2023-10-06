@@ -1,6 +1,7 @@
 'use client';
 import { Provider, useAtom } from "jotai";
 import { BasketAtom } from "@/lib/stores/basketAtom";
+import { toast } from 'react-toastify';
 import { useEffect } from "react";
 
 export default function AddToBasket({ item }) {
@@ -16,8 +17,12 @@ export default function AddToBasket({ item }) {
             const updatedBasketItems = [...basketItems];
             updatedBasketItems[itemIndex].qty += 1;
             setBasketItems(updatedBasketItems);
-            console.log('CURRENT BASKET: ',basketItems);
+            console.log('CURRENT BASKET: ', basketItems);
         }
+
+        toast.success("Product Added to Basket.", {
+            position: toast.POSITION.TOP_CENTER
+        });
 
         // console.log('ITEM: ', item);
         // console.log('ITEM INDEX: ', itemIndex);

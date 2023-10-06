@@ -5,11 +5,13 @@ import Button from "./button";
 import { HeaderStateAtom, SideBarStateAtom } from "@/lib/stores/headerState";
 import SearchBar from "./searchBar";
 import Image from "next/image";
+import { BasketAtom } from "@/lib/stores/basketAtom";
 
 const Header = () => {
 
     let [headerState] = useAtom(HeaderStateAtom);
     let [sidebarState, setSidebarState] = useAtom(SideBarStateAtom);
+    let [basket, setbasket] = useAtom(BasketAtom);
 
     const links = [
         {
@@ -54,8 +56,17 @@ const Header = () => {
                             </a>
                         ))}
                     </div>
-                    <div className="z-[60] shrink-0 h-full basis-1/5 min-[1280px]:flex xs:hidden  justify-end items-center gap-4 text-[#fcfcfc]">
+                    <div className="z-[60] shrink-0 h-full basis-1/5 min-[1280px]:flex xs:hidden  justify-end items-center gap-4 text-[#fcfcfc] ">
                         {/* <Button type={'inverse'} color={'white'} name={'Shop Now'} link={'#'} /> */}
+                        {basket ? basket.length > 0 ?
+                            <a
+                                className="text-2xl flex items-center justify-center gap-1 hover:text-pac-orange relative"
+                                href="/products/basket"
+                            >
+                                <Icon icon="mdi:basket-outline" />
+                            </a>
+                            : <></>
+                            : <></>}
                         <SearchBar />
                     </div>
                     <button className={`xl:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-4xl text-[#FCFCFC] flex items-center justify-center`}`} onClick={() => setSidebarState(true)}>
