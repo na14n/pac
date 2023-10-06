@@ -20,14 +20,25 @@ let transporter = nodemailer.createTransport({
 
 export async function POST(request) {
     const formData = await request.formData()
-    // console.log(formData.get('name'));
     const name = formData.get('name')
     const email = formData.get('email')
     const contact = formData.get('contact')
-    const location = formData.get('location')
-    const message = formData.get('message')
+    const basketStringified = formData.get('basket')
+    const basket = JSON.parse(formData.get('basket'))
+    // basket.parse()
 
     try {
+
+        const tableRowsHTML = basket.map((b, index) => `
+            <tr key=${index}>
+                <td style="padding: 10px; text-align: center; border: 1px solid black;">
+                <img src=${b.image} alt="Image" width="64" height="64" />
+                </td>
+                <td style="padding: 10px; border: 1px solid black; color: #272727">${b.name}</td>
+                <td style="padding: 10px; border: 1px solid black; color: #272727">${b.qty}</td>
+            </tr>
+        `).join('');
+
         const mail = await transporter.sendMail({
             from: name,
             // to: process.env.NEXT_PUBLIC_EMAIL_USERNAME,
@@ -223,7 +234,18 @@ export async function POST(request) {
                                 </tr>
                                 <tr>
                                     <td align="left" bgcolor="#FCFCFC" style="padding-right: 50px;padding-left: 50px;">
-                                        <p style="color: #272727; ">${message}</p>
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="background-color: green; padding: 10px; border: 1px solid black; color: white;">Image</th>
+                                                    <th style="background-color: green; padding: 10px; border: 1px solid black; color: white">Product Name</th>
+                                                    <th style="background-color: green; padding: 10px; border: 1px solid black; color: white">Qty</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${tableRowsHTML}
+                                            </tbody>
+                                        </table>
                                     </td>
                                 </tr>
                                 <tr>
@@ -253,7 +275,9 @@ export async function POST(request) {
                 `,
         })
 
-        return NextResponse.json({ message: "Success: email was sent" })
+        // console.log("NAME: ", name, "EMAIL: ", email, "CONTACT: ", contact, "BASKET: ", basket[0].name );
+
+        return NextResponse.json({ message: "Success: email was sent " })
 
     } catch (error) {
         // NextResponse.status(500).json({ message: "COULD NOT SEND MESSAGE" })

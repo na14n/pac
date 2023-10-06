@@ -64,7 +64,12 @@ export default function ProdInfo(props) {
         <div className="text-[#272727] text-justify text-sm 2xl:text-lg h-[150px]">
           {data.product.shortDescription ? parse(data.product.shortDescription) : ``}
         </div>
-        <AddToBasket item={data.product} />
+        <AddToBasket item={{
+          id: data.product.id,
+          name: data.product.name,
+          image: data.product.imageGallery[0].link,
+          brand: data.product.brand.node.name
+        }} />
         <div className="bg-[#121212]/50 h-[1px] w-full" />
         <div className="w-fit h-fit flex flex-col gap-1">
           <h4 className="text-[#575757] font-semibold text-xs 2xl:text-sm uppercase">inclusions</h4>

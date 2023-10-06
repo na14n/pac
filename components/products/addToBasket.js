@@ -9,10 +9,10 @@ export default function AddToBasket({ item }) {
     const [basketItems, setBasketItems] = useAtom(BasketAtom);
 
     const addToBasket = () => {
-        const itemIndex = basketItems.findIndex((basketItem) => basketItem.item.id == item.id)
+        const itemIndex = basketItems.findIndex((basketItem) => basketItem.id == item.id)
 
         if (itemIndex === -1) {
-            setBasketItems([...basketItems, { item, qty: 1 }])
+            setBasketItems([...basketItems, { ...item, qty: 1 }])
         } else {
             const updatedBasketItems = [...basketItems];
             updatedBasketItems[itemIndex].qty += 1;
@@ -24,9 +24,9 @@ export default function AddToBasket({ item }) {
             position: toast.POSITION.TOP_CENTER
         });
 
-        // console.log('ITEM: ', item);
-        // console.log('ITEM INDEX: ', itemIndex);
-        // console.log('CURRENT BASKET: ',basketItems);
+        console.log('ITEM: ', item);
+        console.log('ITEM INDEX: ', itemIndex);
+        console.log('CURRENT BASKET: ',basketItems);
     }
 
     return (

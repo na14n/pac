@@ -36,7 +36,7 @@ export default function Basket() {
     }, [basketItems, basket])
 
     const increment = (item) => {
-        const itemIndex = basketItems.findIndex((basketItem) => basketItem.item.id === item.item.id)
+        const itemIndex = basketItems.findIndex((basketItem) => basketItem.id === item.id)
         console.log(itemIndex);
         // console.log(basketItems);
         // console.log(item.item.id);
@@ -53,7 +53,7 @@ export default function Basket() {
     }
 
     const decrement = (item) => {
-        const itemIndex = basketItems.findIndex((basketItem) => basketItem.item.id === item.item.id)
+        const itemIndex = basketItems.findIndex((basketItem) => basketItem.id === item.id)
         console.log(itemIndex);
 
         if (itemIndex === -1) {
@@ -78,7 +78,7 @@ export default function Basket() {
         const parsedValue = parseInt(value);
         if (parsedValue <= 0) {
             // If the value is less than or equal to zero, remove the item from the cart
-            const updatedBasketItems = basketItems.filter((basketItem) => basketItem.item.id !== item.id);
+            const updatedBasketItems = basketItems.filter((basketItem) => basketItem.id !== item.id);
             setBasketItems(updatedBasketItems);
         } else {
             // Update the quantity of the item in the cart
@@ -105,11 +105,11 @@ export default function Basket() {
                             {basketItems.map((i, index) => (
                                 <li key={index} className="w-full min-h-32 max-h-fit shadow-md rounded-sm flex items-center border-[1px] border-[#575757]/20 p-4">
                                     <div className="w-28 h-28 shrink-0 rounded-lg relative border-[2px] border-nav-orange/75 overflow-hidden">
-                                        <Image fill={true} className="object-contain" src={i.item ? i.item?.imageGallery[0]?.link : ''} />
+                                        <Image fill={true} className="object-contain" src={i ? i.image : ''} />
                                     </div>
                                     <div className="w-full h-full flex flex-col px-4">
-                                        <h3 className="font-semibold text-lg text-[#121212]">{i.item.name}</h3>
-                                        <h5 className="text-sm text-[#373737]">{i.item.brand.node.name}</h5>
+                                        <h3 className="font-semibold text-lg text-[#121212]">{i.name}</h3>
+                                        <h5 className="text-sm text-[#373737]">{i.brand}</h5>
                                     </div>
                                     <div className="w-fit h-full shrink-0  flex items-center justify-center gap-4">
                                         <button className={`w-fit h-fit rounded-md flex items-center text-[#FCFCFC] justify-center bg-red-700 hover:bg-red-600`} onClick={() => decrement(i)}>
@@ -118,7 +118,7 @@ export default function Basket() {
                                         <input
                                             type="number"
                                             min="0"
-                                            value={inputValues[i.item.id] || i.qty}
+                                            value={inputValues[i.id] || i.qty}
                                             onChange={(e) => handleInputChange(e, i)}
                                             className="w-10 h-fit border-2 border-[#575757]/20 rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none"
                                         />
