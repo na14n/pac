@@ -9,7 +9,7 @@ const BrandCategoriesList = (props) => {
                 all
             </Link>
             {props.c.map((c, index) => (
-                <Link key={index} href={`/brands/${props.p}?q=${slugFormatter(c.name, false, true)}`} shallow scroll={false} className={`w-fit h-fit px-2 py-1 ${slugFormatter(props.q, false, false) === c.name ? `bg-nav-orange/90 text-[#EFEFEF] hover:text-[#FCFCFC] shadow-md` : `bg-[#373737]/10 text-[#373737]/70 hover:text-nav-orange/80 shadow-sm`} transition-all rounded-md  group `}>
+                <Link key={index} href={`/brands/${props.p}?q=${slugFormatter(c.name, false, true)}`} shallow scroll={false} className={`w-fit h-fit px-2 py-1 ${slugFormatter(props.q, false, false) == c.name.toLowerCase() ? `bg-nav-orange/90 text-[#EFEFEF] hover:text-[#FCFCFC] shadow-md` : `bg-[#373737]/10 text-[#373737]/70 hover:text-nav-orange/80 shadow-sm`} transition-all rounded-md  group `}>
                     {c.name}
                 </Link>
             ))}

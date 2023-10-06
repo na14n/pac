@@ -3,6 +3,7 @@ import { slugFormatter, idFormatter, extractNamesFromArray } from "@/lib/helpers
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 import { redirect } from "next/navigation";
+import BrandProductsList from "@/components/products/brandProductsList";
 
 // export const metadata = {
 
@@ -18,11 +19,23 @@ export default async function BrandPage({ params, searchParams }) {
   async function GetBrand() {
     try {
       const result = await client.query({
+        // (where: {search: "${slugFormatter(params.brandpage, false, false)}"})
         query: gql`
                 query GetBrand {
-                    brands(where: {search: "${slugFormatter(params.brandpage, false, false)}"}) {
-                        nodes {
+                  brands(where: {search: "${slugFormatter(params.brandpage, false, false)}"}) {
+                    nodes {
+                      name
+                      logo {
+                        altText
+                        sourceUrl
+                      }
+                      itemCategories{
+                        nodes{
                           name
+                        }
+                      }
+                    }
+                  }
                 }
               `,
         fetchPolicy: 'no-cache',
@@ -44,7 +57,7 @@ export default async function BrandPage({ params, searchParams }) {
       const result = await client.query({
         query: gql`
                 query GetBrandProducts {
-                    products(where: {search: "${slugFormatter(params.brandpage, false, false)}"}) {
+                    products(where: {search: "${slugFormatter(params.brandpage, false, false)}, ${searchParams.q ? searchParams.q : ``}"}) {
                       nodes {
                         id
                         name
@@ -82,6 +95,8 @@ export default async function BrandPage({ params, searchParams }) {
   let data = await GetBrand();
   let prods = await GetBrandProducts();
 
+  // console.log( data.data.brands.nodes[0].itemCategories);
+
   return (
     (data.data.brands.nodes.length === 0) ? (redirect('/error')) : (
       <main className="w-full flex flex-col items-center justify-center">
@@ -91,19 +106,20 @@ export default async function BrandPage({ params, searchParams }) {
           </HeaderTrigger>
         </div>
         <div className="w-full h-fit">
-          <BrandLogo media={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].logo.link : ''} />
+          <BrandLogo media={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].logo.sourceUrl : ''} />
         </div>
         <div className="w-full h-fit">
           <BrandInfo name={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].name : ''} description={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].description : ''} />
+          {/* {searchParams.q} */}
         </div>
         <div className="w-full h-fit relative flex justify-center items-center bg-[#EFEFEF]">
           <div className="py-16 flex flex-col justify-center items-center gap-8 ">
             <SearchBar type={'search'} placeholder={`Search ${slugFormatter(params.brandpage, false)} products here.`} />
             <BrandCategoriesList c={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].itemCategories.nodes : []} p={params.brandpage} q={searchParams.q} />
-          </div>
+          </div>  
         </div>
-        <div className="w-full h-fit lg:px-32 2xl:px-48 py-16 grid gap-4 grid-auto-fit-xs bg-[#EFEFEF]">
-          {prods ? prods.map((p, i) => (
+        {/* <div className="w-full h-fit lg:px-32 2xl:px-48 py-16 grid gap-4 grid-auto-fit-xs bg-[#EFEFEF]">
+          {prods ? prods.data.products.nodes.map((p, i) => (
             <ProductCard
               key={i}
               name={p.name}
@@ -113,7 +129,9 @@ export default async function BrandPage({ params, searchParams }) {
               slug={idFormatter(p.id)}
             />
           )) : ``}
-        </div>
+        </div> */}
+        <BrandProductsList queryVariables={searchParams.q} brand={data.data.brands.nodes[0].name.toLowerCase()} />
+        {/* <pre>{JSON.stringify(prods.data.products.nodes, null, 2)}</pre> */}
       </main>
     )
   )

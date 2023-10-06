@@ -76,7 +76,7 @@ export default function MessageUs() {
 
         try {
             setLoading(true);
-            const response = await fetch('/api/email', {
+            const response = await fetch('/api/email/inquiry', {
                 method: 'post',
                 body: formData
             })
