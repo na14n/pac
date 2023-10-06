@@ -35,16 +35,17 @@ export default function QuoteForm() {
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         const isValid = emailRegex.test(form.email)
 
-        if (form.name.length > 0 && form.email.length > 0 && form.contact.length > 0 && isValid && verified) {
+        if (form.name.length > 0 && form.email.length > 0 && form.contact.length > 0 && isValid && verified && basket) {
             setDisabled(false);
         } else {
             setDisabled(true);
         }
-    }, [form])
+    }, [form, verified, basket])
 
     async function handleCaptchaSubmission(token) {
         try {
             const response = await VerifyCaptcha(token);
+            console.log("CAPTCHA RESPONSE: ", response);
             setVerified(response);
         } catch (error) {
             setVerified(false);
@@ -58,7 +59,7 @@ export default function QuoteForm() {
         const formData = new FormData(event.target)
         console.log("BASKET: ", basket);
         // basket.forEach((item) => formData.append("items[]", item))
-        formData.append("items", JSON.stringify(basket))
+        formData.append("basket", JSON.stringify(basket))
         try {
             setLoading(true);
             const response = await fetch('/api/email/quotation', {
@@ -73,7 +74,7 @@ export default function QuoteForm() {
                     email: '',
                     contact: '',
                 })
-                toast.success(`Quote Sent Successfully: ${response}`, {
+                toast.success(`Quote Sent Successfully:`, {
                     position: toast.POSITION.TOP_CENTER
                 });
                 setVerified(false);

@@ -29,6 +29,8 @@ export async function POST(request) {
 
     try {
 
+        // console.log(basketStringified);
+
         const tableRowsHTML = basket.map((b, index) => `
             <tr key=${index}>
                 <td style="padding: 10px; text-align: center; border: 1px solid black;">
