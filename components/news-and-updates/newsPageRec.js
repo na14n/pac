@@ -6,8 +6,9 @@ import { idFormatter } from "@/lib/helpers";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
-import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton, FacebookMessengerIcon, FacebookMessengerShareButton } from "react-share"
+import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton, FacebookMessengerIcon, FacebookMessengerShareButton, ViberIcon, ViberShareButton } from "react-share"
 import { usePathname } from 'next/navigation'
+import { Icon } from "@iconify-icon/react";
 
 export default function NewsPageRec({ rec, id }) {
 
@@ -63,9 +64,18 @@ export default function NewsPageRec({ rec, id }) {
                 <TwitterShareButton url={pathname}>
                     <TwitterIcon size={32} className="rounded-md" />
                 </TwitterShareButton>
-                <FacebookMessengerShareButton url={pathname} appId="1381850845734244">
+                {/* <FacebookMessengerShareButton url={pathname} appId="1381850845734244">
                     <FacebookMessengerIcon size={32} className="rounded-md" />
-                </FacebookMessengerShareButton>
+                </FacebookMessengerShareButton> */}
+                <ViberShareButton url={pathname}>
+                    <ViberIcon size={32} className="rounded-md" />
+                </ViberShareButton>
+                <button
+                    onClick={() => { navigator.clipboard.writeText(pathname)}}
+                    className=" px-2 rounded-md square bg-gray-600 text-white flex items-center justify-center"
+                >
+                    <Icon icon="material-symbols:link" size={32} />
+                </button>
             </div>
         </section>
     )
