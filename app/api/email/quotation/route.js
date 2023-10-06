@@ -47,7 +47,7 @@ export async function POST(request) {
             to: "antonio.iannicolas@gmail.com",
             replyTo: process.env.NEXT_PUBLIC_EMAIL_USERNAME,
             // replyTo: "na14an.07@gmail.com",
-            subject: `Customer Inquiry ${generateDateString()}`,
+            subject: `Quote Request ${generateDateString()}`,
             html: `
             <!DOCTYPE html
             PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
