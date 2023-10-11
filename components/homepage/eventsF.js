@@ -5,6 +5,7 @@ import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import EventTypeCard from "../trainings-&-seminars/eventTypeCard"
 import { sortByAttribute, pTagRemover } from "@/lib/helpers";
+import parse from "html-react-parser"
 
 const query = gql` query FetchEventsF {
     homepageSections(where: {search: "events"}) {
@@ -52,9 +53,10 @@ export default function EventsF() {
             </div>
             <div className="lg:max-w-[75ch] xl:max-w-[900px] 2xl:max-w-full 2xl:px-48 flex flex-col gap-6">
                 {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine2.map((h, i) => (
-                    <p key={i} className="text-xl max-2xl:text-sm text-[#373737] text-justify">
-                        {pTagRemover(h)}
-                    </p>
+                    <div key={i} className="text-xl max-2xl:text-sm text-[#373737] text-justify">
+                        {/* {pTagRemover(h)} */}
+                        {parse(h)}
+                    </div>
                 )) : ``}
             </div>
             <div className="w-full h-fit flex xs:flex-col lg:flex-row items-center justify-center gap-8 2xl:gap-16 xs:pt-16 lg:pt-0 ">
