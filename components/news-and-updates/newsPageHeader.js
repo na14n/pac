@@ -19,6 +19,7 @@ export default function NewsPageHeader({ id }) {
         newsAndUpdate(id: "${id}=") {
           id
           name
+          publicationDate
           mediaLine1 {
             title
             sourceUrl
@@ -61,8 +62,9 @@ export default function NewsPageHeader({ id }) {
                 <div className="w-full md:w-2/5 aspect-[3/2] shrink-0 rounded-sm shadow-sm overflow-hidden">
                     <CsrSlider media={pageData ? pageData?.newsAndUpdate?.mediaLine1 : []} />
                 </div>
-                <div className="w-fit self-stretch flex items-center justify-center">
+                <div className="w-fit self-stretch flex flex-col gap-4 justify-center">
                     <h1 className="text-[#FCFCFC] font-bold text-3xl self-center lg:max-w-[20ch] xl:max-w-[24ch]">{pageData ? pageData?.newsAndUpdate?.name : ``}</h1>
+                    <h5 className="text-[#EFEFEF] lg:max-w-[20ch] xl:max-w-[24ch]">{pageData ? pageData?.newsAndUpdate?.publicationDate : ``}</h5>
                 </div>
             </section>
             <section className="flex flex-col lg:flex-row w-full h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 gap-8 pt-8 pb-16 justify-center">
