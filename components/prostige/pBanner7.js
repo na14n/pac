@@ -90,7 +90,7 @@ export default function PBanner7() {
         <section className="w-full h-fit flex flex-col items-center justify-center bg-[#FCFCFC] overflow-hidden">
             <div className="w-full min-h-[20vh] max-h-fit relative flex items-center justify-center py-16">
                 <div className="w-full h-full top-0 absolute bg-gradient-to-r from-[#E1E1E1] via-[#E1E1E1]/90 to-[#EFEFEF]/60 z-10" />
-                <Image fill={true} className="object-cover z-0" src={data7a?.prostigePages?.nodes[0] ? data7a?.prostigePages?.nodes[0].mediaLine1[0].link : ''} alt="dental-clinic" />
+                <Image fill={true} className="object-cover object-top z-0" src={data7a?.prostigePages?.nodes[0] ? data7a?.prostigePages?.nodes[0].mediaLine1[0].link : ''} alt="dental-clinic" />
                 <div className="flex flex-col gap-2 z-20  w-full xs:px-4 lg:px-32 2xl:px-48">
                     {data7a?.prostigePages?.nodes[0] ? data7a?.prostigePages?.nodes[0].sectionHeading.map(
                         (h, i) => (

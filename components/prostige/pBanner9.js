@@ -88,7 +88,6 @@ export default function PBanner9() {
                     <h1 className="text-[#373737] lg:text-lg xs:text-2xl">
                         {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.sectionHeading[2] : `faq`}
                     </h1>
-
                 </div>
                 <div className="flex lg:gap-12 xs:gap-8 flex-wrap">
                     {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.textLine1.

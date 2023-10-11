@@ -27,8 +27,8 @@ export default function HorizontalSlider({ media }) {
                     </div>
                 ))}
             </div>
-            <div className='w-full pt-4 flex justify-end  gap-4'>
-            <button className=" w-fit h-fit z-40 flex justify-center items-center group " onClick={scrollPrev}>
+            <div className='w-full pt-4 flex justify-between  gap-4'>
+                <button className=" w-fit h-fit z-40 flex justify-center items-center group " onClick={scrollPrev}>
                     <Icon icon="ic:round-keyboard-arrow-left" className=' text-5xl max-lg:text-2xl  text-[#FCFCFC] group-hover:text-[#FFF]' />
                 </button>
                 <button className=" w-fit h-fit z-40 flex justify-center items-center group " onClick={scrollNext}>
