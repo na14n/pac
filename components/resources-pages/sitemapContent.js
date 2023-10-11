@@ -93,10 +93,10 @@ export default function SitemapContent() {
     const pagesLinks = sorter(data?.aboutContents?.nodes[0]?.textLine2, "pages/")
     const resourcesLinks = sorter(data?.aboutContents?.nodes[0]?.textLine2, "resources/")
 
-    console.log("PAGES: ", pages);
-    console.log("RESOURCES: ", resources);
-    console.log("PAGES LINKS: ", pagesLinks);
-    console.log("RESOURCES LINKS: ", resourcesLinks);
+    // console.log("PAGES: ", pages);
+    // console.log("RESOURCES: ", resources);
+    // console.log("PAGES LINKS: ", pagesLinks);
+    // console.log("RESOURCES LINKS: ", resourcesLinks);
 
     return (
         <section className="flex flex-col gap-8 py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
