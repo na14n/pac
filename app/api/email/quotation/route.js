@@ -5,12 +5,10 @@ import { NextResponse, NextRequest } from "next/server";
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-    host: "smtp.zoho.com",
-    port: 587,
-    tls: {
-        ciphers: "SSLv3",
-        rejectUnauthorized: false,
-    },
+    name: "mail.prosapac.com",
+    host: "mail.prosapac.com",
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.NEXT_PUBLIC_EMAIL_USERNAME,
         pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD
@@ -42,11 +40,8 @@ export async function POST(request) {
         `).join('');
 
         const mail = await transporter.sendMail({
-            from: name,
-            // to: process.env.NEXT_PUBLIC_EMAIL_USERNAME,
-            to: "antonio.iannicolas@gmail.com",
-            replyTo: process.env.NEXT_PUBLIC_EMAIL_USERNAME,
-            // replyTo: "na14an.07@gmail.com",
+            from: email,
+            to: process.env.NEXT_PUBLIC_EMAIL_USERNAME,
             subject: `Quote Request ${generateDateString()}`,
             html: `
             <!DOCTYPE html
