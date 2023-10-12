@@ -3,7 +3,7 @@ import { Icon } from '@iconify-icon/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const SalesAgentSearchBar = ({ divisions }) => {
+const SalesAgentsTeamsSearchBar = ({ divisions, team, querySearch, queryDivision }) => {
 
     const router = useRouter();
 
@@ -13,30 +13,36 @@ const SalesAgentSearchBar = ({ divisions }) => {
     ]
 
     const [selectedDivision, setSelectedDivision] = useState(d[0].name);
-    const [locationInput, setLocationInput] = useState(null);
+    const [search, setSearch] = useState(null);
     const [hadSearched, setHadSearched] = useState(false);
 
-    let search = (e) => {
+    useEffect(() => {
+        if (querySearch || queryDivision) {
+            setHadSearched(true);
+        }
+    }, [querySearch, queryDivision])
+
+    let HandleSearch = (e) => {
         e.preventDefault();
         if (selectedDivision != "Any") {
             setHadSearched(true);
-            if (selectedDivision && locationInput) {
-                return router.push(`/resources/sales-agent-search?division=${selectedDivision}&location=${locationInput}`, undefined, { shallow: true })
+            if (selectedDivision && search) {
+                return router.push(`/resources/sales-agent-search/${team}?division=${selectedDivision}&search=${search}`, undefined, { shallow: true })
             } else {
-                return router.push(`/resources/sales-agent-search?division=${selectedDivision}`, undefined, { shallow: true })
+                return router.push(`/resources/sales-agent-search/${team}?division=${selectedDivision}`, undefined, { shallow: true })
             }
         }
         else {
-            return router.push(`/resources/sales-agent-search?location=${locationInput}`, undefined, { shallow: true })
+            return router.push(`/resources/sales-agent-search/${team}?search=${search}`, undefined, { shallow: true })
         }
     }
 
     let reset = (e) => {
         e.preventDefault();
         setHadSearched(false);
-        setLocationInput("");
+        setSearch("");
         setSelectedDivision(d[0].name);
-        return router.push(`/resources/sales-agent-search`, undefined, { shallow: true })
+        return router.push(`/resources/sales-agent-search/${team}`, undefined, { shallow: true })
     }
 
     return (
@@ -47,9 +53,9 @@ const SalesAgentSearchBar = ({ divisions }) => {
                         <option key={index} value={d.name} className='capitalize'>{d.name}</option>
                     ))}
                 </select>
-                <input type='text' placeholder='Enter your Main Location (Manila, Cavite, ...)' className='h-10 w-[400px] px-2 rounded-md border-[#272727]/30 border-2 focus:border-pac-orange outline-none placeholder:text-[#575757]/50 text-[#272727]' id='inputLocation' value={locationInput} onChange={(e) => { setLocationInput(e.target.value) }} />
+                <input type='text' placeholder='Enter your Main Location (Manila, Cavite, ...)' className='h-10 w-[400px] px-2 rounded-md border-[#272727]/30 border-2 focus:border-pac-orange outline-none placeholder:text-[#575757]/50 text-[#272727]' id='inputLocation' value={search} onChange={(e) => { setSearch(e.target.value) }} />
                 <button type='submit' className='h-10 w-fit flex items-center justify-around px-2 gap-2 rounded-md shadow-md bg-nav-orange text-[#FCFCFC] hover:shadow-lg hover:bg-pac-orange transition-all'
-                    onClick={search}>
+                    onClick={HandleSearch}>
                     <Icon icon="mdi:account-search-outline" className='text-xl' />
                     <p className='font-semibold'>Search</p>
                 </button>
@@ -63,4 +69,4 @@ const SalesAgentSearchBar = ({ divisions }) => {
     )
 }
 
-export default SalesAgentSearchBar;
+export default SalesAgentsTeamsSearchBar;
