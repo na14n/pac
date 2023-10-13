@@ -54,7 +54,7 @@ export default function BlogsPageContent({ params }) {
             </div>
             <div className="w-full my-12 flex flex-col items-center gap-6">
                 {data?.blog?.blogContents?.map((b, i) => (
-                    <div key={i}>
+                    <div key={i} className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 2xl:text-lg">
                         {parse(b)}
                     </div>
                 ))}

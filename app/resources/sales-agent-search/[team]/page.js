@@ -36,8 +36,17 @@ export default async function SalesAgentsTeams({ params, searchParams }) {
     return (
         <main className="w-full h-fit min-h-screen">
             <HeaderTrigger>
-                <div className="w-full flex flex-col items-center justify-end pb-16 aspect-video lg:aspect-[16/3] bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90" >
-                    <h1 className="text-white text-3xl 2xl:text-5xl font-bold uppercase">{`${params.team} Sales Force`}</h1>
+                <div className="relative w-full aspect-video lg:aspect-[16/3] flex flex-col items-center justify-end">
+                    {params?.team === "luzon" ?
+                        <div className={`w-full h-full absolute top-0 left-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 z-0`} />
+                        : params?.team === "visayas" ?
+                            <div className={`w-full h-full absolute top-0 left-0 bg-gradient-to-b from-[#077232]/90 to-[#063013]/90 z-0`} />
+                            : params?.team === "mindanao" ?
+                                <div className={`w-full h-full absolute top-0 left-0 bg-gradient-to-b from-[#3E3E3E]/90 to-[#121212]/90 z-0`} />
+                                :
+                                <div className={`w-full h-full absolute top-0 left-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 z-0`} />
+                    }
+                    <h1 className="text-white text-3xl 2xl:text-5xl font-bold uppercase z-20 mb-16">{`${params.team} Sales Force`}</h1>
                 </div>
             </HeaderTrigger>
             <SalesAgentsTeamsSearchBar team={params?.team} divisions={divisions} queryDivision={searchParams?.division} querySearch={searchParams?.search} />
