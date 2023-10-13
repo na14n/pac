@@ -27,6 +27,10 @@ const Header = () => {
             href: '/products'
         },
         {
+            link: 'prostige',
+            href: '/products/prostige'
+        },
+        {
             link: 'trainings & seminars',
             href: '/trainings-&-seminars'
         },
