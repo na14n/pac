@@ -81,7 +81,7 @@ const ProdGallerySlider = (props) => {
                                 >
                                     <button
 
-                                        className="bg-transparent block cursor-pointer b-0 p-0 m-0 w-32 aspect-square transition-opacity relative"
+                                        className="bg-transparent block cursor-pointer b-0 p-0 m-0 w-24 aspect-square transition-opacity relative"
                                         type="button"
                                     >
                                         <Image

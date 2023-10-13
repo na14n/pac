@@ -7,6 +7,8 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import parse from 'html-react-parser'
 import { useState } from "react";
 import { Icon } from "@iconify-icon/react";
+import Recommended from "./recommended";
+
 
 
 export default function ProdContent(props) {
@@ -22,6 +24,7 @@ export default function ProdContent(props) {
             instructionFileDownloadLink
             instructionFileTitle
             catalogueTitle
+            relatedTags
             catalogueDownloadLink
             productLogo {
                 link
@@ -42,7 +45,7 @@ export default function ProdContent(props) {
     );
 
     const moreInformation = [
-        
+
         {
             title: 'Video',
             body: 'youtubeEmbedSourceLink',
@@ -59,13 +62,13 @@ export default function ProdContent(props) {
             title: 'Main Website',
             body: 'mainWebsiteLink',
         },
-       
+
     ]
 
     const [selected, setSelected] = useState(moreInformation[0])
 
     return (
-        <section className="w-full h-fit flex flex-col bg-[#FCFCFC]">
+        <section className="w-full h-fit flex flex-col bg-[#EFEFEF]">
             <div className="w-fit lg:px-32 2xl:px-48 py-6 flex flex-col gap-1 items-center ">
                 <h3 className="mx-3 text-3xl text-[#121212] uppercase font-semibold">Description</h3>
                 <span className="w-full h-[4px] bg-pac-orange rounded-md" />
@@ -107,8 +110,8 @@ export default function ProdContent(props) {
                     {data?.product ? data?.product?.youtubeEmbedSourceLink?.map((y, i) => (
                         <iframe
                             key={i}
-                            className="h-48 w-72 shadow-sm rounded-sm"
-                            src={y} title="YouTube video player" frameBorder="0"
+                            className="w-72 md:w-[24rem] lg:w-[28rem] xl:w-[32rem] 2xl:w-[36rem] aspect-video shadow-sm rounded-sm"
+                            src={y} title="YouTube video player"
                             allow="accelerometer; clipboard-write; encrypted-media;" allowfullscreen
                         />
                     )) : ``}
@@ -145,6 +148,14 @@ export default function ProdContent(props) {
                         </div>
                     )) : ``}
                 </div>
+            </div>
+            {/* <Recommended /> */}
+            <div className="py-6 flex flex-col lg:px-32 2xl:px-48 w-full h-fit ">
+                <div className="w-fit py-6 flex flex-col gap-1 items-center ">
+                    <h3 className="mx-3 text-3xl text-[#121212] uppercase font-semibold">Related Products</h3>
+                    <span className="w-full h-[4px] bg-pac-orange rounded-md" />
+                </div>
+                <Recommended tags={`${data?.product?.relatedTags}`} id={`${props.id}=`}/>
             </div>
         </section>
     )
