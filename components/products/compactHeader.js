@@ -42,8 +42,8 @@ export default async function CompactHeader({ media }) {
                 </div>
                 <div className="w-full grid-cols-3 grid md:grid-cols-6 xl:grid-cols-12 bg-pac-green">
                     {categories.map((c, index) => (
-                        <a key={index} className="aspect-square p-2 flex flex-col items-center gap-1 group" href={``}>
-                            <span className="w-2/3 xl:w-4/5 square relative border-2 rounded-md border-white/50 group-hover:border-white">
+                        <a key={index} className="aspect-square p-2 flex flex-col items-center gap-1 group" href={`/categories?category=${c?.name.toLowerCase()}`}>
+                            <span className="w-2/3 xl:w-4/5 square relative border-[1.5px] rounded-md border-white/25 group-hover:border-white/80">
                                 <Image src={c?.icon?.link} fill={true} className="object-contain object-center p-1" />
                             </span>
                             <p className="text-xs text-white w-full text-center group-hover:text-nav-orange">
