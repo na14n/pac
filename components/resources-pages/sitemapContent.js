@@ -111,32 +111,32 @@ export default function SitemapContent() {
                 </div>
             </div>
             <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
-                <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[0]}</h1>
-                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <h1 className="font-bold text-pac-orange text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[0]}</h1>
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 pr-8 md:pr-16 lg:pr-32 xl:pr-48 2xl:pr-64 ">
                     {pages ? pages.map((p, i) => (
                         <a key={i} href={pagesLinks[i]} className="max-w-[192px] hover:text-pac-orange hover:underline">{p}</a>
                     )) : <></>}
                 </div>
             </div>
             <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
-                <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[1]}</h1>
-                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <h1 className="font-bold text-pac-orange text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[1]}</h1>
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 pr-8 md:pr-16 lg:pr-32 xl:pr-48 2xl:pr-64 ">
                     {brands ? brands.map((r, i) => (
                         <a key={i} href={`/brands/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
                     )) : <></>}
                 </div>
             </div>
             <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
-                <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[2]}</h1>
-                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <h1 className="font-bold text-pac-orange text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[2]}</h1>
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 pr-8 md:pr-16 lg:pr-32 xl:pr-48 2xl:pr-64 ">
                     {categoriesSnapshot ? categoriesSnapshot?.data?.productCategories?.nodes.map((r, i) => (
                         <a key={i} href={`/categories/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
                     )) : <></>}
                 </div>
             </div>
             <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
-                <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[3]}</h1>
-                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <h1 className="font-bold text-pac-orange text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[3]}</h1>
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 pr-8 md:pr-16 lg:pr-32 xl:pr-48 2xl:pr-64 ">
                     {resources ? resources.map((r, i) => (
                         <a key={i} href={resourcesLinks[i]} className="max-w-[300px] hover:text-pac-orange hover:underline">{r}</a>
                     )) : <></>}
