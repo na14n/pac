@@ -12,23 +12,23 @@ import Button from "@/components/button";
 export default function ConsList() {
 
     const query = gql`
-        query FetchConventions($after: String,  $first: Int) {
-            events(where: {search: "conventions"}, first: $first, after: $after) {
-                nodes {
-                    id
-                    eventName
-                    location
-                    shortDescription
-                }
-                pageInfo{
-                    endCursor
-                    hasNextPage
-                }
-            }
+    query FetchConventions($after: String, $first: Int) {
+        conventions(first: $first, after: $after) {
+          nodes {
+            id
+            eventName
+            location
+            shortDescription
+          }
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
         }
+      }
     `
 
-    const { data, fetchMore, loading } = useSuspenseQuery(
+    const { data, fetchMore } = useSuspenseQuery(
         query,
         {
             context: {
@@ -47,20 +47,20 @@ export default function ConsList() {
             fetchMore({
                 variables: {
                     first: 3,
-                    after: data?.events?.pageInfo?.endCursor
+                    after: data?.conventions?.pageInfo?.endCursor
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                     if (!fetchMoreResult) {
                         return prev;
                     }
                     return {
-                        events: {
+                        conventions: {
                             ...prev,
                             nodes: [
-                                ...prev.events.nodes, ...fetchMoreResult.events.nodes
+                                ...prev.conventions.nodes, ...fetchMoreResult.conventions.nodes
                             ],
                             pageInfo: {
-                                ...fetchMoreResult.events.pageInfo
+                                ...fetchMoreResult.conventions.pageInfo
                             }
                         }
                     }
@@ -74,7 +74,7 @@ export default function ConsList() {
     return (
         <section className="flex flex-col items-center gap-8">
             <div className='w-[18rem] md:w-[40rem] lg:w-[60rem] xl:w-[64rem] 2xl:w-[76rem] h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
-                {data?.events?.nodes.map((d, index) => (
+                {data?.conventions?.nodes.map((d, index) => (
                     <EventCard
                         key={index}
                         title={d.eventName}
@@ -82,9 +82,6 @@ export default function ConsList() {
                         link={idFormatter(d.id)}
                         type={"conventions"}
                         date={d.shortDescription}
-                        // month={monthNames[new Date(d.date).getMonth() + 1]}
-                        // day={new Date(d.date).getDate()}
-                    // log={new Date(d.date).getMonth()+1}
                     />
                 ))}
             </div>
