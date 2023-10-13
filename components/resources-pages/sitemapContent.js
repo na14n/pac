@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { sortByAttribute } from "@/lib/helpers";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import Image from "next/image";
 
 const query = gql`
     query GetSiteMap {
@@ -15,6 +16,9 @@ const query = gql`
                 sectionSubheading
                 textLine1
                 textLine2
+                mediaLine1{
+                    sourceUrl
+                }
             }
         }
     }
@@ -79,7 +83,7 @@ export default function SitemapContent() {
         {
             context: {
                 fetchOptions: {
-                    next: {revalidate: 60},
+                    next: { revalidate: 60 },
                 },
             },
         })
@@ -99,34 +103,40 @@ export default function SitemapContent() {
     // console.log("RESOURCES LINKS: ", resourcesLinks);
 
     return (
-        <section className="flex flex-col gap-8 py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
-            <div className="w-full h-fit flex flex-col items-start gap-4">
+        <section className="flex flex-col gap-8 py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 relative">
+            <div className="absolute top-0 left-0 w-full h-full z-0">
+                <div className="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-[#EFEFEF] via-[#EFEFEF]/90 to-[#EFEFEF]/80 z-20" />
+                <div className="w-full h-full z-0 absolute top-0 left-0">
+                    <Image fill src={data?.aboutContents?.nodes[0]?.mediaLine1[0].sourceUrl} className="object-center object-cover z-0" />
+                </div>
+            </div>
+            <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[0]}</h1>
-                <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {pages ? pages.map((p, i) => (
                         <a key={i} href={pagesLinks[i]} className="max-w-[192px] hover:text-pac-orange hover:underline">{p}</a>
                     )) : <></>}
                 </div>
             </div>
-            <div className="w-full h-fit flex flex-col items-start gap-4">
+            <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[1]}</h1>
-                <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {brands ? brands.map((r, i) => (
                         <a key={i} href={`/brands/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
                     )) : <></>}
                 </div>
             </div>
-            <div className="w-full h-fit flex flex-col items-start gap-4">
+            <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[2]}</h1>
-                <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-4 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {categoriesSnapshot ? categoriesSnapshot?.data?.productCategories?.nodes.map((r, i) => (
                         <a key={i} href={`/categories/${r.name}`} className="max-w-[300px] hover:text-pac-orange hover:underline">{r.name}</a>
                     )) : <></>}
                 </div>
             </div>
-            <div className="w-full h-fit flex flex-col items-start gap-4">
+            <div className="w-full h-fit flex flex-col items-start gap-4 z-40">
                 <h1 className="font-bold text-black text-3xl">{data?.aboutContents?.nodes[0]?.sectionSubheading[3]}</h1>
-                <div className="w-fit ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
+                <div className="w-full ml-8 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-4 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32">
                     {resources ? resources.map((r, i) => (
                         <a key={i} href={resourcesLinks[i]} className="max-w-[300px] hover:text-pac-orange hover:underline">{r}</a>
                     )) : <></>}
