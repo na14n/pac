@@ -11,12 +11,9 @@ const BrandCategoriesList = (props) => {
                 scroll={false}
                 className={`w-fit h-fit px-2 py-1 
                 ${!props.q ?
-                        `${props?.colors && props?.bg ?
-                            `${props.colors[props.bg]}`
-                            :
-                            `bg-nav-orange/90 text-[#EFEFEF] hover:text-[#FCFCFC]`
-                        } shadow-md`
-                        : `bg-[#373737]/10 text-[#373737]/50 hover:text-[#121212] shadow-sm`} 
+                        `bg-nav-orange/90 text-[#EFEFEF] hover:text-[#FCFCFC]shadow-md`
+                        :
+                        `bg-[#373737]/10 text-[#373737]/50 hover:text-[#121212] shadow-sm`} 
                 transition-all rounded-md  group `}
             >
                 all
@@ -29,11 +26,7 @@ const BrandCategoriesList = (props) => {
                     scroll={false}
                     className={`w-fit h-fit px-2 py-1 
                     ${slugFormatter(props.q, false, false) == c.name.toLowerCase() ?
-                            `${props?.colors && props?.bg ?
-                                `${props.colors[props.bg]}`
-                                :
-                                `bg-nav-orange/90 text-[#EFEFEF] hover:text-[#FCFCFC]`
-                            } shadow-md`
+                            `bg-nav-orange/90 text-[#EFEFEF] hover:text-[#FCFCFC] shadow-md`
                             : `bg-[#373737]/10 text-[#373737]/50 hover:text-[#121212] shadow-sm`} 
                             transition-all rounded-md  group `}>
                     {c.name}
