@@ -52,7 +52,7 @@ export default function CategoryListSidebar({ setSearch, setSelected, selected, 
                 {data?.productCategories?.nodes?.map((p, index) => (
                     <>
                         <div className="flex gap-2 items-center w-full justify-between">
-                            <a key={index} href={`/categories/${p.name.toLowerCase()}`} className={`font-bold ${open === index + 1 || category === p.name.toLowerCase() ? `text-pac-orange underline` : `text-[#373737]`} hover:underline`}>{p.name}</a>
+                            <a key={index} href={`/categories?category=${p.name.toLowerCase()}`} className={`font-bold ${open === index + 1 || category === p.name.toLowerCase() ? `text-pac-orange underline` : `text-[#373737]`} hover:underline`}>{p.name}</a>
                             <a href={`/categories/${p.name.toLowerCase()}`}>
                                 <Icon icon="mdi:chevron-right" className={`text-xl transition-transform ${open === index + 1 || category === p.name.toLowerCase() ? `text-pac-orange underline rotate-90` : `text-[#373737]`} hover:underline`} />
                             </a>

@@ -11,6 +11,8 @@ import Button from "../button";
 import { startTransition, useEffect, useState } from "react";
 import CategorySearchBar from "./searchbar";
 import CategoryListSidebar from "./categoryList";
+import { Icon } from "@iconify-icon/react";
+import RecommendedProductCard from "../products/recProductCard";
 
 const query = gql`
     query SearchProducts($after: String, $first: Int, $search: String) {
@@ -22,11 +24,24 @@ const query = gql`
         nodes {
             id
             name
-            tags
-            bestSelling
             cardImage{
-            title
-            sourceUrl
+              sourceUrl
+            }
+            bestSelling
+            brand{
+              node{
+                name
+              }
+            }
+            itemCategories{
+              nodes{
+                name
+                parent{
+                  node{
+                    name
+                  }
+                }
+              }
             }
         }
         pageInfo {
@@ -48,26 +63,53 @@ export default function CategoryContent({ category }) {
         setSearch(category)
     }, [category])
 
-    // const { data, fetchMore, } = useSuspenseQuery(
-    //     query,
-    //     {
-    //         variables: {
-    //             "first": 8,
-    //             "search": "",
-    //         },
-    //         context: {
-    //             fetchOptions: {
-    //                 next: { revalidate: 60 },
-    //             },
-    //         }
-    //     }
-    // );
-
-    const HandleSearchBar = () => {
-        setSearch(category);
-        if (searchTerm) {
-            setSearch(`${category}, ${searchTerm}`);
+    const { data, fetchMore, } = useSuspenseQuery(
+        query,
+        {
+            variables: {
+                "first": 8,
+                "search": `${search}`,
+            },
+            context: {
+                fetchOptions: {
+                    next: { revalidate: 60 },
+                },
+            }
         }
+    );
+
+    // const HandleSearchBar = () => {
+    //     setSearch(category);
+    //     if (searchTerm) {
+    //         setSearch(`${category}, ${searchTerm}`);
+    //     }
+    // }
+
+    function handleLoadMore() {
+        startTransition(() => {
+            fetchMore({
+                variables: {
+                    "first": 4,
+                    "after": data?.products?.pageInfo?.endCursor
+                },
+                updateQuery: (prev, { fetchMoreResult }) => {
+                    if (!fetchMoreResult) {
+                        return prev;
+                    }
+                    return {
+                        products: {
+                            ...prev,
+                            nodes: [
+                                ...prev.products.nodes, ...fetchMoreResult.products.nodes
+                            ],
+                            pageInfo: {
+                                ...fetchMoreResult.products.pageInfo
+                            }
+                        }
+                    }
+                }
+            })
+        })
     }
 
     const ClearFilters = () => {
@@ -82,7 +124,46 @@ export default function CategoryContent({ category }) {
             <CategorySearchBar setSearch={setSearch} setSearchTerm={setSearchTerm} searchTerm={searchTerm} category={category} setHasFilters={setHasFilters} clearFilters={ClearFilters} hasFilters={hasFilters} />
             <div className="w-full h-full flex gap-8 mt-12">
                 <CategoryListSidebar setSearch={setSearch} setSelected={setSelected} selected={selected} category={category} setHasFilters={setHasFilters} />
-                <div className="w-full h-fit">{JSON.stringify(search, null, 2)}</div>
+                <div className="w-full h-fit">
+                    {search ?
+                        (data ?
+                            <div className="w-full h-fit flex flex-col gap-4">
+                                <div className="w-full grid xl:grid-cols-4 min-[1920px]:grid-cols-5 gap-4 mb-8">
+                                    {data ? data?.products?.nodes?.map((p, i) => (
+                                        <RecommendedProductCard
+                                            key={i}
+                                            name={p.name}
+                                            brand={p.brand.node.name}
+                                            best={p.bestSelling}
+                                            category={p.itemCategories.nodes}
+                                            media={p.cardImage.sourceUrl}
+                                            slug={idFormatter(p.id)}
+                                        />
+                                    ))
+                                        :
+                                        <div className="w-full h-fit flex flex-col gap-2 items-center justify-center p-8">
+                                            <p className="text-[#121212]/75">No Products Found.</p>
+                                        </div>
+                                    }
+                                </div>
+                                {data?.products?.pageInfo?.hasNextpage ?
+                                    <button onClick={() => handleLoadMore()}>
+                                        <Button type={1} name={'Load More'} />
+                                    </button>
+                                    : <></>
+                                }
+                            </div>
+                            :
+                            <div className="w-full h-fit flex flex-col gap-2 items-center justify-center p-8">
+                                <p className="text-[#121212]/75">No Products Found.</p>
+                            </div>
+                        )
+                        :
+                        <div className="w-full h-fit flex flex-col gap-2 items-center justify-center p-8">
+                            <Icon icon="svg-spinners:90-ring-with-bg" />
+                            <p className="text-[#121212]/75">Loading...</p>
+                        </div>}
+                </div>
             </div>
         </section>
     )
