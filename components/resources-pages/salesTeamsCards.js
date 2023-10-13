@@ -37,10 +37,10 @@ export default function SalesTeamsCards() {
         sortByAttribute(data?.salesAgentsTeams?.nodes, "position").map((d, index) => (
             <a
                 key={index}
-                className="w-full h-fit flex flex-col gap-2 border-2 hover:border-pac-orange hover:shadow-lg border-[#DDD]/0 transition-all p-2 group"
+                className="w-full h-fit flex flex-col gap-2 border-2 hover:first:border-pac-orange hover:first:text-pac-orange hover:border-pac-green hover:text-pac-green hover:last:border-[#323232] hover:last:text-[#373737] hover:shadow-lg border-[#DDD]/0 transition-all p-2 group hover:-translate-y-2"
                 href={`/resources/sales-agent-search/${d.name}`}
             >
-                <h1 className="uppercase text-xl 2xl:text-3xl font-bold group-hover:text-pac-orange">
+                <h1 className="uppercase text-xl 2xl:text-3xl font-bold ">
                     {d.name} sales force
                 </h1>
                 <div className="w-full aspect-[3/2] relative shadow-md group-hover:shadow-lg">
