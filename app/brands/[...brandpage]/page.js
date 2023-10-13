@@ -1,5 +1,5 @@
 import { HeaderTrigger, Hero, BrandLogo, BrandInfo, SearchBar, BrandCategoriesList, ProductCard } from "@/components"
-import { slugFormatter, idFormatter, extractNamesFromArray } from "@/lib/helpers"
+import { slugFormatter, idFormatter, extractNamesFromArray, transformArrayToColorsObject } from "@/lib/helpers"
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
 import { redirect } from "next/navigation";
@@ -25,6 +25,7 @@ export default async function BrandPage({ params, searchParams }) {
                   brands(where: {search: "${slugFormatter(params.brandpage, false, false)}"}) {
                     nodes {
                       name
+                      backgroundAccent
                       logo {
                         altText
                         sourceUrl
@@ -92,10 +93,43 @@ export default async function BrandPage({ params, searchParams }) {
     }
   }
 
+  async function GetColors() {
+    try {
+      const result = await client.query({
+        query: gql`
+              query FetchColors {
+                colors {
+                  nodes {
+                    styleName
+                    styleDetails
+                  }
+                }
+              }
+              `,
+        fetchPolicy: 'no-cache',
+        context: {
+          fetchOptions: {
+            next: { revalidate: 60 },
+          },
+        },
+      });
+      return transformArrayToColorsObject(result?.data?.colors?.nodes);
+    } catch (error) {
+      console.error('Error occurred:', error);
+      return error;
+    }
+  }
+
   let data = await GetBrand();
   let prods = await GetBrandProducts();
+  let colors = await GetColors();
+  //   let colors = {
+  //     aoBackground: "text-white bg-[#193a89]",
+  // }
 
   // console.log( data.data.brands.nodes[0].itemCategories);
+
+  console.log(data?.data?.brands?.nodes[0]?.backgroundAccent);
 
   return (
     (data.data.brands.nodes.length === 0) ? (redirect('/error')) : (
@@ -109,14 +143,14 @@ export default async function BrandPage({ params, searchParams }) {
           <BrandLogo media={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].logo.sourceUrl : ''} />
         </div>
         <div className="w-full h-fit">
-          <BrandInfo name={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].name : ''} description={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].description : ''} />
+          <BrandInfo name={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].name : ''} description={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].description : ''} colors={colors} bg={data?.data?.brands?.nodes[0]?.backgroundAccent} />
           {/* {searchParams.q} */}
         </div>
         <div className="w-full h-fit relative flex justify-center items-center bg-[#EFEFEF]">
           <div className="py-16 flex flex-col justify-center items-center gap-8 ">
             <SearchBar type={'search'} placeholder={`Search ${slugFormatter(params.brandpage, false)} products here.`} />
-            <BrandCategoriesList c={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].itemCategories.nodes : []} p={params.brandpage} q={searchParams.q} />
-          </div>  
+            <BrandCategoriesList c={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].itemCategories.nodes : []} p={params.brandpage} q={searchParams.q} colors={colors} bg={data?.data?.brands?.nodes[0]?.backgroundAccent} />
+          </div>
         </div>
         {/* <div className="w-full h-fit lg:px-32 2xl:px-48 py-16 grid gap-4 grid-auto-fit-xs bg-[#EFEFEF]">
           {prods ? prods.data.products.nodes.map((p, i) => (
