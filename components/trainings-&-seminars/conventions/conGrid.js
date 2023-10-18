@@ -55,7 +55,7 @@ export default function ConGrid({ id }) {
                 {data.convention.images.map((a, i) => (
                     <ConGridItem key={i} position={i} data={a} />
                 ))}
-                <div className="flex flex-col w-full aspect-video p-2">
+                <div className="flex flex-col w-full aspect-video p-2 gap-4">
                     <h5 className="font-semibold text-black/70">Share this Event</h5>
                     <div className="w-full flex flex-wrap gap-2">
                         <FacebookShareButton url={pathname}>

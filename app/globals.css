@@ -64,6 +64,10 @@
   color: rgb(255 120 0);
 }
 
+.b b {
+  font-weight: 700;
+}
+
 .grid-auto--fill {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }

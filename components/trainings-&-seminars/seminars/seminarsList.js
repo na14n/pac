@@ -12,18 +12,23 @@ import Button from "@/components/button";
 export default function SeminarsList() {
 
     const query = gql`
-        query FetchSeminars($after: String,  $first: Int) {
-            events(where: {search: "seminars"}, first: $first, after: $after) {
-                nodes {
-                    id
-                    eventName
-                }
-                pageInfo{
-                    endCursor
-                    hasNextPage
-                }
+    query FetchSeminars($after: String, $first: Int) {
+        seminars(first: $first, after: $after) {
+          nodes {
+            id
+            eventName
+            eventDate
+            location
+            eventBanner{
+              sourceUrl
             }
+          }
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
         }
+      }
     `
 
     const { data, fetchMore } = useSuspenseQuery(
@@ -72,17 +77,17 @@ export default function SeminarsList() {
     return (
         <section className="flex flex-col items-center gap-8">
             <div className='w-[18rem] md:w-[40rem] lg:w-[60rem] xl:w-[64rem] 2xl:w-[76rem] h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
-                {data?.events?.nodes.map((d, index) => (
+                {data?.seminars?.nodes.map((d, index) => (
                     <EventCard
                         key={index}
                         title={d.eventName}
                         location={d.location}
                         link={idFormatter(d.id)}
-                        type={"workshops"}
+                        type={"seminars"}
                         date={d.shortDescription}
-                        month={monthNames[new Date(d.date).getMonth() + 1]}
-                        day={new Date(d.date).getDate()}
-                    // log={new Date(d.date).getMonth()+1}
+                        month={monthNames[new Date(d.eventDate).getMonth() + 1]}
+                        day={new Date(d.eventDate).getDate()}
+                        mediaUrl={ d.eventBanner.sourceUrl}
                     />
                 ))}
             </div>

@@ -8,10 +8,7 @@ import { Icon } from "@iconify-icon/react";
 import Image from "next/image"
 
 
-
-export default function ConHero({ id }) {
-
-    const query = gql`
+const query = gql`
     query fetchCovention($id: ID!) {
         convention(id: $id) {
           eventName
@@ -23,6 +20,10 @@ export default function ConHero({ id }) {
         }
       }
     `
+
+export default function ConHero({ id }) {
+
+    
 
     const { data } = useSuspenseQuery(
         query,
