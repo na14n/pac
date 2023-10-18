@@ -19,6 +19,9 @@ export default function ConsList() {
             eventName
             location
             shortDescription
+            banner{
+              sourceUrl
+            }
           }
           pageInfo {
             endCursor
@@ -82,6 +85,7 @@ export default function ConsList() {
                         link={idFormatter(d.id)}
                         type={"conventions"}
                         date={d.shortDescription}
+                        mediaUrl={d.banner.sourceUrl}
                     />
                 ))}
             </div>

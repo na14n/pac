@@ -16,7 +16,8 @@ export default function ConGridItem({ data, position }) {
                     `}
                 onClick={() => setOpen(!open)}
             >
-                <Image src={`https://picsum.photos/seed/${data.title}/1920/1080`} fill={true} className="object-center object-contain" />
+                {/* <Image src={`https://picsum.photos/seed/${data.title}/1920/1080`} fill={true} className="object-center object-contain" /> */}
+                <Image src={data.sourceUrl} fill={true} className="object-center object-contain" />
             </div>
             <div
                 onClick={() => setOpen(!open)}
@@ -24,7 +25,8 @@ export default function ConGridItem({ data, position }) {
             >
                 <Button type={1} color={"white-green"} name={"Close"} onClick={() => setOpen(false)} />
                 <div className="w-full relative aspect-video bg-white rounded-sm shadow-md cursor-default overflow-hidden">
-                    <Image src={`https://picsum.photos/seed/${data.title}/1920/1080`} fill={true} className="object-center object-contain" />
+                    {/* <Image src={`https://picsum.photos/seed/${data.title}/1920/1080`} fill={true} className="object-center object-contain" /> */}
+                    <Image src={data.sourceUrl} fill={true} className="object-center object-contain" />
                 </div>
             </div>
         </>

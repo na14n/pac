@@ -61,7 +61,7 @@ export default function BrandsF({ mediaUrl }) {
         </div>
         <div className='xs:w-full lg:w-[40rem] xl:w-[48rem] 2xl:w-[52rem] rounded-md h-[2px] bg-pac-orange' />
         {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.contentLine1.map((c, i) => (
-          <div key={i} className='text-sm xs:w-full xs:px-4 lg:px-0 2xl:text-lg max-w-[700px] 2xl:max-w-[800px] text-center text-[#EFEFEF] mb-8'>
+          <div key={i} className='text-sm xs:w-full xs:px-4 lg:px-0 2xl:text-lg max-w-[700px] 2xl:max-w-[800px] text-center text-[#EFEFEF] mb-2'>
             {parse(c)}
           </div>
         )) : <div className='text-sm xs:w-full xs:px-4 lg:px-0 2xl:text-lg max-w-[700px] 2xl:max-w-[800px] text-center text-[#EFEFEF] mb-8'>
