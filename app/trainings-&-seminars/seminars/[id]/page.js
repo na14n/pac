@@ -45,7 +45,6 @@ export async function generateMetadata({ params }) {
             images: [pageData?.seminar?.eventBanner?.sourceUrl]
         },
     }
-
 }
 
 export default function Page({ params }) {

@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer utilities {
+
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background: #e6d4c8;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #ff862f;
+    border-radius: 100vh;
+  }
   .square {
     aspect-ratio: 1/1;
   }

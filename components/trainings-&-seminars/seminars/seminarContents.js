@@ -18,7 +18,7 @@ import { usePathname } from 'next/navigation'
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const query = gql`
-query FetchSeminars($id: ID!) {
+query FetchSeminarContent($id: ID!) {
     seminar(id: $id) {
       id
       eventName
@@ -52,6 +52,22 @@ query FetchSeminars($id: ID!) {
     }
   }
     `
+
+const seminar = gql`
+query FetchSuggestedSeminars($first: Int, $search: String, $notIn: [ID]) {
+    seminars(first: $first, where: {search: $search, notIn: $notIn}) {
+      nodes {
+        id
+        eventName
+        eventDate
+        location
+        eventBanner {
+          sourceUrl
+        }
+      }
+    }
+  }
+`
 
 export default function SeminarContents({ id }) {
 
@@ -120,25 +136,25 @@ export default function SeminarContents({ id }) {
             </div>
             <div className="w-full py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col items-center gap-4 2xl:gap-8 bg-[#E1E1E1] justify-center ">
                 <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-green uppercase mb-8">SUGGESTED SEMINARS</h3>
-                <SuggestedList search={data.seminar.relatedTags} id={data.seminar.id} />
+                <SuggestedList search={data.seminar.relatedTags} id={data.seminar.id} query={seminar} type={"seminars"} />
             </div>
             <div className="py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col items-center gap-4 2xl:gap-8 justify-center">
                 <h1 className="font-semibold text-[#272727] text-xl 2xl:text-2xl">Share this Event</h1>
                 <div className="flex flex-wrap gap-2">
                     <FacebookShareButton url={pathname}>
-                        <FacebookIcon size={32} className="rounded-md" />
+                        <FacebookIcon size={36} className="rounded-md" />
                     </FacebookShareButton>
                     <TwitterShareButton url={pathname}>
-                        <TwitterIcon size={32} className="rounded-md" />
+                        <TwitterIcon size={36} className="rounded-md" />
                     </TwitterShareButton>
                     <ViberShareButton url={pathname}>
-                        <ViberIcon size={32} className="rounded-md" />
+                        <ViberIcon size={36} className="rounded-md" />
                     </ViberShareButton>
                     <button
                         onClick={() => { navigator.clipboard.writeText(pathname) }}
-                        className=" px-2 rounded-md square bg-gray-600 text-white flex items-center justify-center"
+                        className=" px-2 rounded-md square self-stretch w-[36px] bg-gray-600 text-white flex items-center justify-center"
                     >
-                        <Icon icon="material-symbols:link" size={32} />
+                        <Icon icon="material-symbols:link" size={48} />
                     </button>
                 </div>
             </div>

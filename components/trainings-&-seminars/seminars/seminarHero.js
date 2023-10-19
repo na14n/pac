@@ -8,7 +8,7 @@ import Image from "next/image"
 import { Icon } from "@iconify-icon/react"
 
 const query = gql`
-    query fetchCovention($id: ID!) {
+    query fetchSeminar($id: ID!) {
         seminar(id: $id) {
           eventName
           eventBanner {

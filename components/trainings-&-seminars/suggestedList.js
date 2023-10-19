@@ -9,23 +9,8 @@ import EventCard from "./eventCard";
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-const query = gql`
-query FetchSuggestedSeminars($first: Int, $search: String, $notIn: [ID]) {
-    seminars(first: $first, where: {search: $search, notIn: $notIn}) {
-      nodes {
-        id
-        eventName
-        eventDate
-        location
-        eventBanner {
-          sourceUrl
-        }
-      }
-    }
-  }
-`
 
-export default function SuggestedList({ search, id }) {
+export default function SuggestedList({ search, id, query, type }) {
 
     const { data } = useSuspenseQuery(
         query,
@@ -51,19 +36,19 @@ export default function SuggestedList({ search, id }) {
                         <EventCard
                             key={index}
                             title={d.eventName}
-                            location={d.location}
+                            location={type === "seminars" ? d.location : type === "workshops" ? d.currentEventSpecificLocation : ''}
                             link={idFormatter(d.id)}
-                            type={"seminars"}
+                            type={type}
                             date={d.shortDescription}
-                            month={monthNames[new Date(d.eventDate).getMonth() + 1]}
-                            day={new Date(d.eventDate).getDate()}
+                            month={type === "seminars" ? monthNames[new Date(d.eventDate).getMonth() + 1] : type === "workshops" ? monthNames[new Date(d.currentEventDate).getMonth() + 1] : ''}
+                            day={type === "seminars" ? new Date(d.eventDate).getDate() : type === "workshops" ? new Date(d.currentEventDate).getDate() : ''}
                             mediaUrl={d.eventBanner.sourceUrl}
                         />
                     ))
                 )
                 :
                 (
-                    <div className="font-semibold text-black/50">No Seminars Found</div>
+                    <div className="font-semibold text-black/50">No {type} found</div>
 
                 )}
         </div>

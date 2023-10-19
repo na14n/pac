@@ -12,20 +12,23 @@ import Button from "@/components/button";
 export default function TrsList() {
 
     const query = gql`
-        query FetchTrainings($after: String,  $first: Int) {
-            events(where: {search: "workshops"}, first: $first, after: $after) {
-                nodes {
-                    id
-                    eventName
-                    date
-                    location
-                }
-                pageInfo{
-                    endCursor
-                    hasNextPage
-                }
+    query FetchWorkshops($after: String, $first: Int) {
+        workshops(first: $first, after: $after) {
+          nodes {
+            id
+            eventName
+            currentEventDate
+            currentEventSpecificLocation
+            eventBanner{
+              sourceUrl
             }
+          }
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
         }
+      }
     `
 
     const { data, fetchMore } = useSuspenseQuery(
@@ -74,21 +77,21 @@ export default function TrsList() {
     return (
         <section className="flex flex-col items-center gap-8">
             <div className='w-[18rem] md:w-[40rem] lg:w-[60rem] xl:w-[64rem] 2xl:w-[76rem] h-full grid justify-items-center gap-4 grid-auto-fit-xl'>
-                {data?.events?.nodes.map((d, index) => (
+                {data?.workshops?.nodes.map((d, index) => (
                     <EventCard
                         key={index}
                         title={d.eventName}
-                        location={d.location}
+                        location={d.currentEventSpecificLocation}
                         link={idFormatter(d.id)}
                         type={"workshops"}
-                        date={d.shortDescription}
-                        month={monthNames[new Date(d.date).getMonth() + 1]}
-                        day={new Date(d.date).getDate()}
-                    // log={new Date(d.date).getMonth()+1}
+                        // date={d.currentEventDate}
+                        month={monthNames[new Date(d.currentEventDate).getMonth() + 1]}
+                        day={new Date(d.currentEventDate).getDate()}
+                        mediaUrl={d.eventBanner.sourceUrl}
                     />
                 ))}
             </div>
-            {data?.events?.pageInfo?.hasNextPage ?
+            {data?.workshops?.pageInfo?.hasNextPage ?
                 <button
                     onClick={() => handleFetchMore()}
                 >

@@ -6,7 +6,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
 const query = gql`
 query fetchWorkshopsPage {
-    events(where: {title: "landing-t&w"}) {
+    events(where: {title: "landing-tr"}) {
       nodes {
         name
         eventName
