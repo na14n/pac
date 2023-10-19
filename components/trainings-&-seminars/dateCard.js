@@ -4,7 +4,7 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep
 
 export default function DateCard({ date, time, location, color }) {
     return (color === "orange" ?
-        <div className="shrink-0 h-fit flex rounded-md overflow-hidden shadow-md">
+        <div className="shrink-0 h-fit w-fit flex rounded-md overflow-hidden shadow-md">
             <div className="bg-pac-orange flex flex-col items-center justify-center p-4 text-white">
                 <h4 className="uppercase text-2xl 2xl:text-3xl">{monthNames[new Date(date).getMonth() + 1]
                 }</h4 >
@@ -28,7 +28,7 @@ export default function DateCard({ date, time, location, color }) {
 
         :
 
-        <div className="shrink-0 h-fit flex rounded-md overflow-hidden shadow-md">
+        <div className="shrink-0 h-fit w-fit flex rounded-md overflow-hidden shadow-md">
             <div className="bg-pac-green flex flex-col items-center justify-center p-4 text-white">
                 <h4 className="uppercase text-2xl 2xl:text-3xl">{monthNames[new Date(date).getMonth() + 1]
                 }</h4 >

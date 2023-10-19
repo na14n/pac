@@ -94,7 +94,7 @@ export default function WorkshopContents({ id }) {
 
     return (
         <section className="flex flex-col w-full h-fit">
-            <div className="w-full flex gap-4 xl:gap-32 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
+            <div className="w-full flex flex-col lg:flex-row items-center gap-4 xl:gap-32 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
                 <div className="w-full flex flex-col gap-2">
                     <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-orange">{data.workshop.eventName}</h3>
                     <div className="flex flex-col flex-wrap">
@@ -128,7 +128,7 @@ export default function WorkshopContents({ id }) {
                     />
                 ))}
             </div>
-            <div className="w-full py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex gap-16 2xl:gap-32 bg-[#E1E1E1] justify-center ">
+            <div className="w-full py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col lg:flex-row items-center gap-8 2xl:gap-32 bg-[#E1E1E1] justify-center ">
                 <div className="flex flex-col gap-2 px-4">
                     <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-orange uppercase">TOPICS</h3>
                     <div className="w-full h-[2px] rounded-full bg-pac-orange" />
@@ -136,56 +136,15 @@ export default function WorkshopContents({ id }) {
                         {parse(data.workshop.topics)}
                     </div>
                 </div>
-                {/* <EventCalendar prevDate={data.workshop.eventsDate} /> */}
-                <div className="rounded-md shadow-md bg-white flex flex-col h-full w-full aspect-[3/4] overflow-hidden">
-                    <div className="w-full h-fit shrink-0 p-2 bg-pac-orange flex items-center text-white font-bold text-2xl 2xl:text-3xl">
-                        <Icon icon="mdi:calendar-month" className="mx-2 text-3xl 2xl:text-4xl" />
-                        Schedule
-                    </div>
-                    <div className="h-fit w-full overflow-y-auto scrollbar p-2">
-                        <div className="bg-nav-orange/25 w-full h-fit p-2 mb-1 rounded-sm flex justify-between items-center">
-                            <div className="w-2 h-2 2xl:w-3 2xl:h-3 shrink-0 mr-2 rounded-full bg-pac-orange" />
-                            <h5 className="uppercase font-bold text-sm 2xl:text-2xl text-[#121212] w-full">
-                                {formatWordPressDate(data.workshop.currentEventDate)}
-                            </h5>
-                            <h5 className="uppercase font-bold text-xs 2xl:text-lg text-[#121212] w-fit shrink-0">
-                                {data.workshop.currentEventLocation}
-                            </h5>
-                            <Icon icon="material-symbols:location-on-rounded" className="text-xs 2xl:text-lg ml-1 text-pac-orange shrink-0" />
-                        </div>
-                        {data.workshop.upcomingEventsDate ? data.workshop.upcomingEventsDate.map((pd, index) => (
-                            <div key={index} className="bg-nav-orange/25 w-full h-fit p-2 mb-1 rounded-sm flex justify-between items-center">
-                                <div className="w-2 h-2 2xl:w-3 2xl:h-3 shrink-0 mr-2 rounded-full bg-pac-orange" />
-                                <h5 className="uppercase font-semibold text-sm 2xl:text-2xl text-[#474747] w-full">
-                                    {pd}
-                                </h5>
-                                <h5 className="uppercase font-semibold text-xs 2xl:text-lg text-[#474747] w-fit shrink-0">
-                                    {data.workshop.upcomingEventsLocation[index]}
-                                </h5>
-                                <Icon icon="material-symbols:location-on-rounded" className="text-xs 2xl:text-lg ml-1 text-pac-orange shrink-0" />
-                            </div>
-                        )) : <></>}
-                        {data.workshop.eventsDate ? data.workshop.eventsDate.map((pd, index) => (
-                            <div key={index} className="bg-[#EFEFEF] w-full h-fit p-2 mb-1 rounded-sm flex justify-between items-center">
-                                <div className="w-2 h-2 2xl:w-3 2xl:h-3 shrink-0 mr-2 rounded-full bg-[#575757]" />
-                                <h5 className="uppercase font-semibold text-sm 2xl:text-2xl text-[#474747] w-full">
-                                    {pd}
-                                </h5>
-                                <h5 className="uppercase font-semibold text-xs 2xl:text-lg text-[#474747] w-fit shrink-0">
-                                    {data.workshop.eventsLocation[index]}
-                                </h5>
-                                <Icon icon="material-symbols:location-on-rounded" className="text-xs 2xl:text-lg ml-1 text-[#474747] shrink-0" />
-                            </div>
-                        )) : <></>}
-                    </div>
-                </div>
+                <EventCalendar data={data} />
             </div>
             <div className=" w-full py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col justify-center items-center 2xl:gap-12 bg-gradient-to-b to-[#f9a03c] from-[#ef6703]">
                 <h1 className="font-bold text-white text-3xl 2xl:text-5xl mb-6">Grow and Elevate your Dental Practice!</h1>
-                <Slider media={data.workshop.imageGallery} />
-                <span className={data.workshop.open ? '' : 'hidden'}>
+                <span className={data.workshop.open ? 'mb-12' : 'hidden'}>
                     <Button type={1} color={"white-green"} name={'REGISTER HERE'} link={data?.workshop?.formsLink} newtab={true} />
                 </span>
+                <Slider media={data.workshop.imageGallery} />
+                
             </div>
             <div className="w-full py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col items-center gap-4 2xl:gap-8 bg-[#E1E1E1] justify-center ">
                 <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-orange uppercase mb-8">SUGGESTED WORKSHOPS</h3>

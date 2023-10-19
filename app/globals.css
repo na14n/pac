@@ -6,11 +6,11 @@
 
   .scrollbar::-webkit-scrollbar {
     width: 8px;
-    background: #e6d4c8;
+    background: #FCFCFC;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #ff862f;
+    background: #777;
     border-radius: 100vh;
   }
   .square {
