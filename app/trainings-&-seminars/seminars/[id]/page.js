@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     try {
         const { data } = await client.query({
             query: gql`
-            query fetchSeminar($id: ID!) {
+            query fetchSeminarMeta($id: ID!) {
                 seminar(id: $id) {
                   eventName
                   location
