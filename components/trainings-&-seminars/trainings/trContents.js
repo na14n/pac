@@ -181,7 +181,7 @@ export default function WorkshopContents({ id }) {
                 </div>
             </div>
             <div className=" w-full py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col justify-center items-center 2xl:gap-12 bg-gradient-to-b to-[#f9a03c] from-[#ef6703]">
-                <h1 className="font-bold text-white text-3xl 2xl:text-5xl">Grow and Elevate your Dental Practice!</h1>
+                <h1 className="font-bold text-white text-3xl 2xl:text-5xl mb-6">Grow and Elevate your Dental Practice!</h1>
                 <Slider media={data.workshop.imageGallery} />
                 <span className={data.workshop.open ? '' : 'hidden'}>
                     <Button type={1} color={"white-green"} name={'REGISTER HERE'} link={data?.workshop?.formsLink} newtab={true} />

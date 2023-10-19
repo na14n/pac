@@ -130,7 +130,7 @@ export default function SeminarContents({ id }) {
                 </div>
             </div>
             <div className=" w-full py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col justify-center items-center gap-8 2xl:gap-12 bg-gradient-to-b to-[#007811] from-[#153f00]">
-                <h1 className="font-bold text-white text-3xl 2xl:text-5xl">Grow and Elevate your Dental Practice!</h1>
+                <h1 className="font-bold text-white text-3xl 2xl:text-5xl mb-6">Grow and Elevate your Dental Practice!</h1>
                 <Slider media={data.seminar.imageGallery} />
                 <Button type={1} color={"green"} name={data.seminar.finished ? 'INQUIRE NOW' : 'REGISTER HERE'} link={data?.seminar?.formsLink} newtab={true} />
             </div>
