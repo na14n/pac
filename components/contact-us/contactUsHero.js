@@ -34,7 +34,7 @@ export default function ContactUsHero() {
     );
 
     return (
-        <div className="relative w-full aspect-[16/6] md:aspect-[16/3] flex items-center justify-center overflow-hidden z-0">
+        <div className="relative w-full aspect-[16/9] md:aspect-[16/3] flex items-center justify-center overflow-hidden z-0">
             <div className="absolute top-0 left-0 w-full h-full flex flex-col p-4 items">
                 <Image fill={true} src={data?.homepageSections?.nodes ? data?.homepageSections?.nodes[0]?.mediaLine1[0].link : 'https://picsum.photos/1920/1080'} className='object-cover object-center' alt="dental-website-banner" />
             </div>

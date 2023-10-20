@@ -123,13 +123,13 @@ export default function MessageUs() {
                 {/* <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400'} alt="dental-website-banner" className="object-cover object-center" /> */}
             </div>
             <div className="z-40 text-2xl w-full h-full flex max-md:flex-col-reverse justify-center items-center lg:gap-12 2xl:gap-16 lg:px-34  ">
-                <div className="w-fit self-stretch flex flex-col justify-around xs:gap-4 lg:gap-8 2xl:gap-12 py-8 ">
+                <div className="w-fit self-stretch flex flex-col justify-around px-4 xs:gap-4 lg:gap-8 2xl:gap-12 py-8 ">
                     <div className="w-full h-full items-stretch grow max-md:hidden flex flex-col gap-2 ">
                         <h1 className="md:text-3xl xl:text-4xl 2xl:text-5xl xs:text-2xl  uppercase font-bold text-[#FCFCFC] ">
                             {data?.contactUsContents?.nodes ? data?.contactUsContents?.nodes[0]?.sectionHeading[0] : ''}
                         </h1>
                         <p className="text-[#E1E1E1] w-fit md:max-w-[50ch] text-sm 2xl:text-lg text-left">
-                            {data?.contactUsContents?.nodes ? pTagRemover(data?.contactUsContents?.nodes[0]?.contentLine1[0]) : ''}
+                            {data?.contactUsContents?.nodes ? pTagRemover(data?.contactUsContents?.nodes[0]?.contentLine1[1]) : ''}
                         </p>
                     </div>
                     <div className="w-full h-fit flex flex-col shrink-0 gap-2">
@@ -141,7 +141,7 @@ export default function MessageUs() {
                         </p>
                         <div className="flex items-center justify-center gap-4 mt-4 max-md:w-full w-fit">
                             {data?.contactUsContents?.nodes ?
-                                data?.contactUsContents?.nodes[0]?.sectionHeading.map(
+                                data?.contactUsContents?.nodes[0]?.sectionSubheading.map(
                                     (c, i) => (
                                         <a key={i} className="text-[#EFEFEF]/90 underline-offset-2 hover:underline hover:text-nav-orange" href={data?.contactUsContents?.nodes ? data?.contactUsContents?.nodes[0]?.textLine1[i] : ''}>
                                             <Icon icon={c} width="48" height="48" />
@@ -153,14 +153,14 @@ export default function MessageUs() {
                 </div>
                 <form
                     onSubmit={handleSubmit}
-                    className="h-fit grow self-start flex flex-col lg:w-fit xs:w-full 2xl:max-w-[600px] py-8 lg:gap-4 xs:gap-8 ">
+                    className="h-fit grow self-start flex flex-col lg:w-fit xs:w-full 2xl:max-w-[600px] px-4 py-8 lg:gap-4 xs:gap-8 ">
                     <div className="w-full h-fit md:hidden flex flex-col gap-2"
                     >
                         <h1 className="md:text-3xl xl:text-4xl 2xl:text-5xl xs:text-2xl  uppercase font-bold text-[#FCFCFC] ">
                             {data?.contactUsContents?.nodes ? data?.contactUsContents?.nodes[0]?.sectionHeading[0] : ''}
                         </h1>
                         <p className="text-[#E1E1E1] w-fit md:max-w-[50ch] text-sm 2xl:text-lg text-left">
-                            {data?.contactUsContents?.nodes ? data?.contactUsContents?.nodes[0]?.sectionSubheading[0] : ''}
+                        {data?.contactUsContents?.nodes ? pTagRemover(data?.contactUsContents?.nodes[0]?.contentLine1[0]) : ''}
                         </p>
                     </div>
                     <input
