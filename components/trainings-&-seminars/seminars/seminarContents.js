@@ -89,7 +89,7 @@ export default function SeminarContents({ id }) {
 
     return (
         <section className="flex flex-col w-full h-fit">
-            <div className="w-full flex gap-4 xl:gap-32 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
+            <div className="w-full flex max-md:flex-col gap-4 xl:gap-32 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
                 <div className="w-full flex flex-col gap-2">
                     <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-green">{data.seminar.eventName}</h3>
                     <div className="flex flex-col flex-wrap">
@@ -117,7 +117,7 @@ export default function SeminarContents({ id }) {
                     />
                 ))}
             </div>
-            <div className="w-full py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex gap-16 2xl:gap-32 bg-[#E1E1E1] justify-center ">
+            <div className="w-full py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex max-md:flex-col max-md:items-center gap-16 2xl:gap-32 bg-[#E1E1E1] justify-center ">
                 <div className="flex flex-col gap-2 px-4">
                     <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-green uppercase">TOPICS</h3>
                     <div className="w-full h-[2px] rounded-full bg-pac-green" />
@@ -129,13 +129,13 @@ export default function SeminarContents({ id }) {
                     <Image fill className="object-center object-cover" src={data.seminar.eventSecondaryImage.sourceUrl} />
                 </div>
             </div>
-            <div className=" w-full py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col justify-center items-center gap-8 2xl:gap-12 bg-gradient-to-b to-[#007811] from-[#153f00]">
-                <h1 className="font-bold text-white text-3xl 2xl:text-5xl mb-6">Grow and Elevate your Dental Practice!</h1>
+            <div className=" w-full py-16 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col justify-center items-center gap-8 2xl:gap-12 bg-gradient-to-b to-[#007811] from-[#153f00]">
+                <h1 className="font-bold text-white text-3xl 2xl:text-5xl mb-6 text-center">Grow and Elevate your Dental Practice!</h1>
                 <Slider media={data.seminar.imageGallery} />
                 <Button type={1} color={"green"} name={data.seminar.finished ? 'INQUIRE NOW' : 'REGISTER HERE'} link={data?.seminar?.formsLink} newtab={true} />
             </div>
             <div className="w-full py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col items-center gap-4 2xl:gap-8 bg-[#E1E1E1] justify-center ">
-                <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-green uppercase mb-8">SUGGESTED SEMINARS</h3>
+                <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-green uppercase mb-8 text-center">SUGGESTED SEMINARS</h3>
                 <SuggestedList search={data.seminar.relatedTags} id={data.seminar.id} query={seminar} type={"seminars"} />
             </div>
             <div className="py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col items-center gap-4 2xl:gap-8 justify-center">

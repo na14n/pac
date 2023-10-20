@@ -39,19 +39,7 @@ export default function ConGrid({ id }) {
 
     return (
         <section className="w-full h-fit flex items-center justify-center py-16">
-
-            {/* {data ?
-                data.convention.images.map((a, i) => (
-                    <div className="w-full h-fit grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        <ConGridItem key={i} position={i} data={a} />
-                    </div>
-                ))
-                :
-                <div className="w-full h-full flex items-center justify-center">
-                    <Icon icon="svg-spinners:270-ring" className="text-3xl" />
-                </div>
-            } */}
-            <div className="w-fit h-fit grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="w-full md:w-fit h-fit grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4">
                 {data.convention.images.map((a, i) => (
                     <ConGridItem key={i} position={i} data={a} />
                 ))}

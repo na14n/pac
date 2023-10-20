@@ -23,9 +23,9 @@ export default function Slider({ media }) {
 
     return (
         <div className="overflow-hidden flex flex-col gap-4 w-full" ref={emblaRef}>
-            <div className="flex touch-pan-y gap-4 shadow-md w-fit" >
+            <div className="flex touch-pan-y gap-4 shadow-md w-full" >
                 {media ? assets.map((a, index) => (
-                    <div key={index} className='rounded-sm flex-[0_0_4rem] sm:flex-[0_0_8rem] md:flex-[0_0_28rem] lg:flex-[0_0_16rem] xl:flex-[0_0_20rem] min-[1700px]:flex-[0_0_28rem] aspect-[3/2] relative min-h-0'>
+                    <div key={index} className='rounded-sm flex-[0_0_20rem] sm:flex-[0_0_24rem] md:flex-[0_0_28rem] lg:flex-[0_0_16rem] xl:flex-[0_0_20rem] min-[1700px]:flex-[0_0_28rem] aspect-[3/2] relative min-h-0'>
                         <Image className='object-contain object-center' fill={true} src={a.sourceUrl ? a.sourceUrl : 'https://picsum.photos/2400'} alt="prostige-users" />
                     </div>
                 )) : ``}
