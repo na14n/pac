@@ -56,7 +56,7 @@ export default function NewsAndUpdatesBanner() {
         <section className="h-fit w-full relative flex flex-col items-center justify-end px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 pt-32 gap-8">
             <div className="absolute top-0 left-0 w-full h-24 md:h-[24vh] xl:h-[32vh] 2xl:h-[36vh] bg-[#153f00]" />
             <div className="flex flex-col gap-2 z-10 font-bold self-start">
-                <h1 className="text-3xl text-[#FCFCFC]">News & Updates</h1>
+                <h1 className="text-3xl max-md:text-pac-green text-[#FCFCFC]">News & Updates</h1>
                 <div className="w-1/2 h-[2px] rounded-full bg-nav-orange" />
             </div>
             <div className="w-full z-20 grid grid-cols-1 lg:grid-cols-3 gap-8 gap-y-0">
