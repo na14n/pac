@@ -39,21 +39,25 @@ export default function CareersHeroBanner() {
 
     return (
         <section className="w-full h-fit bg-white flex flex-col md:flex-row md:items-center">
-            <div className="flex flex-col items-center justify-center gap-2 w-fit h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 shrink-0">
+            <div className="flex flex-col justify-center gap-2 w-full h-fit py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
                 <span>
                     <h1 className="text-3xl 2xl:text-5xl text-[#121212] font-semibold">
                         {data?.contactUsContents?.nodes[0]?.sectionHeading[0]}
                     </h1>
-                    <h1 className="text-5xl 2xl:text-6xl text-pac-green uppercase font-bold">
+                    <h1 className="text-4xl sm:text-5xl 2xl:text-6xl text-pac-green uppercase font-bold">
                         {data?.contactUsContents?.nodes[0]?.sectionHeading[1]}
                     </h1>
-                    <h1 className="text-5xl 2xl:text-6xl text-pac-green uppercase font-bold">
+                    <h1 className="text-4xl sm:text-5xl 2xl:text-6xl text-pac-green uppercase font-bold">
                         {data?.contactUsContents?.nodes[0]?.sectionHeading[2]}
                     </h1>
                 </span>
-
+                <a className="group w-fit h-fit shadow-md hover:bg-[#FCFCFC] mt-12 py-2 px-3 rounded-md bg-nav-orange grow-0 shrink-0" href="#list">
+                    <span className="xs:text-sm lg:text-lg 2xl:text-xl font-semibold group-hover:text-nav-orange text-[#FCFCFC] transition-all duration-50">
+                        See All Open Positions
+                    </span>
+                </a>
             </div>
-            <div className="w-full h-full square relative">
+            <div className="min-w-[40%] h-full shrink-0 aspect-square relative">
                 <Image fill className="object-center object-fill" src={data?.contactUsContents?.nodes[0]?.mediaLine1[0].sourceUrl} />
             </div>
         </section>

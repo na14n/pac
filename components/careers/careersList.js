@@ -74,7 +74,7 @@ export default function CareersList() {
       }
 
     return (
-        <section className="w-full h-fit flex flex-col items-center px-4 md:px-8 gap-12 lg:px-16 xl:px-32 2xl:px-48 py-12 bg-gradient-to-b from-[#f9a03c] to-[#ef6703] overflow-hidden transition-all">
+        <section id="list" className="w-full h-fit flex flex-col items-center px-4 md:px-8 gap-12 lg:px-16 xl:px-32 2xl:px-48 py-12 bg-gradient-to-b from-[#f9a03c] to-[#ef6703] overflow-hidden transition-all">
             <h1 className="text-white font-bold text-3xl 2xl:text-4xl uppercase">
                 Current Openings
             </h1>
