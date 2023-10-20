@@ -73,13 +73,13 @@ export default function CareersSection1() {
                         </h1>
                     </div>
                     {/* Four Cards */}
-                    <div className="w-full h-full z-10 flex flex-col gap-8">
+                    <div className="w-full h-full z-10 flex flex-col gap-4">
                         {data?.contactUsContents?.nodes[0]?.sectionSubheading?.map((sh, index) => (
-                            <div className="flex rounded-md shadow-md bg-white test">
-                                <div className="text-white font-bold text-3xl bg-pac-orange flex items-center justify-center shrink-0 p-4">{index + 1}</div>
-                                <div>
-                                    <span>{sh}</span>
-                                    <span>{parse(data?.contactUsContents?.nodes[0]?.contentLine2[index])}</span>
+                            <div key={index} className="flex rounded-md shadow-md bg-white overflow-hidden">
+                                <div className="text-white font-bold text-3xl bg-[#fe7b11] flex items-center justify-center shrink-0 p-4">{index + 1}</div>
+                                <div className="p-2">
+                                    <span className="font-bold text-lg text-[#fe7b11]">{sh}</span>
+                                    <span className="text-sm text-[#171717]">{parse(data?.contactUsContents?.nodes[0]?.contentLine2[index])}</span>
                                 </div>
                             </div>
                         ))}
