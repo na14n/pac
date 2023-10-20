@@ -34,10 +34,10 @@ export default async function CompactHeader({ media }) {
     let assets = sortByAttribute(media, 'title')
 
     return (
-        <section className="h-fit w-full relative flex flex-col items-center justify-end px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 pt-32 gap-8 bg-[#F4F4F4]">
+        <section className="h-fit w-full relative flex flex-col items-center justify-end md:px-8 lg:px-16 xl:px-32 2xl:px-48 md:pt-32 gap-8 bg-[#F4F4F4]">
             <div className="absolute top-0 left-0 w-full z-0 h-24 md:h-[24vh] xl:h-[32vh] 2xl:h-[36vh] bg-[#153f00]" />
-            <div className="w-full h-fit shadow-lg rounded-sm z-10">
-                <div className="w-full aspect-[8/3] bg-white">
+            <div className="w-full h-fit shadow-lg rounded-sm z-10 max-md:mt-24">
+                <div className="w-full max-md:aspect-[16/9] aspect-[8/3] bg-white">
                     <ProductHeroSlider media={assets} />
                 </div>
                 <div className="w-full grid-cols-3 grid md:grid-cols-6 xl:grid-cols-12 bg-pac-green">
