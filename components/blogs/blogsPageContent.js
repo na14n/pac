@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Link from "next/link"
 import parse from "html-react-parser"
+import CsrSlider from "../embla/csrSlider";
 
 export default function BlogsPageContent({ params }) {
 
@@ -42,9 +43,9 @@ export default function BlogsPageContent({ params }) {
                 <span className="font-semibold text-white">{data?.blog?.name}</span>
             </div>
             {/* Page Contents */}
-            <div className="w-full h-fit p-8 bg-white rounded-sm shadow-md flex flex-col lg:flex-row gap-4">
+            <div className="w-full h-fit p-2 md:p-8 bg-white rounded-sm shadow-md flex flex-col lg:flex-row gap-4">
                 <div className="md:w-2/5 aspect-video shrink-0">
-
+                    <CsrSlider media={data ? data?.blog?.mediaLine1 : []} />
                 </div>
                 <div className="w-full h-fit">
                     <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold">
