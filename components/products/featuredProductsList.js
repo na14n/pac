@@ -7,30 +7,49 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import ProductCard from "./productCard";
 import { idFormatter } from "@/lib/helpers";
 
-const query = gql`query FetchProducts {
-  products(where: {search: "product"}, first: 5) {
-    nodes {
-      id
-      name
-      bestSelling
-      brand {
-        node {
-          name
+const query = gql`query fetchBlog($id: ID!) {
+  blog(id: $id) {
+    id
+    name
+    mediaLine1 {
+      title
+      sourceUrl
+    }
+    uploadDate
+    blogContents
+    relatedBlog {
+      nodes {
+        id
+        name
+        shortDescription
+        mediaLine1 {
+          title
+          sourceUrl
         }
       }
-      cardImage {
-        altText
-        title
-        sourceUrl
-      }
-      itemCategories {
-        nodes {
-          parent {
-            node {
-              name
+    }
+    relatedProduct {
+      nodes {
+        id
+        name
+        bestSelling
+        cardImage {
+          sourceUrl
+        }
+        itemCategories {
+          nodes {
+            parent {
+              node {
+                name
+              }
             }
+            name
           }
-          name
+        }
+        brand {
+          node {
+            name
+          }
         }
       }
     }
