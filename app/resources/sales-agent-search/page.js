@@ -1,4 +1,5 @@
 import { HeaderTrigger, Hero, SalesAgentSearchBar, SalesAgentCard } from "@/components"
+import PageWrapper from "@/components/pageWrapper";
 import SalesTeamsCards from "@/components/resources-pages/salesTeamsCards";
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
@@ -116,33 +117,35 @@ export default async function SalesAgentSearch({ searchParams }) {
     let defaultResult = await GetDms();
 
     return (
-        <div className="w-full flex flex-col items-center justify-center">
-            <div className='w-full h-[33vh]'>
-                <HeaderTrigger>
-                    <Hero heroType={'orange'} title={'Search a Sales Agent'} />
-                </HeaderTrigger>
-            </div>
-            <div className='w-full lg:min-h-[67vh] max-h-fit  bg-[#F1F1F1]'>
-                <SalesAgentSearchBar divisions={divisions} />
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 min-[1920px]:grid-cols-5 gap-y-8 pb-16 px-4 md:px-8 lg:px-16 2xl:px-48 place-items-center gap-4">
-                    {(salesAgents?.length > 0 && searchParams.division || searchParams.location) ? (
-                        salesAgents?.map((s, index) => (
-                            <SalesAgentCard key={index} i={s} />
-                        ))
-                    ) : (defaultResult?.length > 0) ? (
-                        defaultResult?.map((s, index) => (
-                            <SalesAgentCard key={index} i={s} />
-                        ))
-                    ) : (
-                        <h1>No Sales Agent Found.</h1>
-                    )}
+        <PageWrapper>
+            <div className="w-full flex flex-col items-center justify-center">
+                <div className='w-full h-[33vh]'>
+                    <HeaderTrigger>
+                        <Hero heroType={'orange'} title={'Search a Sales Agent'} />
+                    </HeaderTrigger>
                 </div>
-                <div className="w-full h-fit justify-items-center grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mb-16 px-4 md:px-8 lg:px-16 2xl:px-48 place-items-center gap-4">
-                    <SalesTeamsCards />
+                <div className='w-full lg:min-h-[67vh] max-h-fit  bg-[#F1F1F1]'>
+                    <SalesAgentSearchBar divisions={divisions} />
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 min-[1920px]:grid-cols-5 gap-y-8 pb-16 px-4 md:px-8 lg:px-16 2xl:px-48 place-items-center gap-4">
+                        {(salesAgents?.length > 0 && searchParams.division || searchParams.location) ? (
+                            salesAgents?.map((s, index) => (
+                                <SalesAgentCard key={index} i={s} />
+                            ))
+                        ) : (defaultResult?.length > 0) ? (
+                            defaultResult?.map((s, index) => (
+                                <SalesAgentCard key={index} i={s} />
+                            ))
+                        ) : (
+                            <h1>No Sales Agent Found.</h1>
+                        )}
+                    </div>
+                    <div className="w-full h-fit justify-items-center grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mb-16 px-4 md:px-8 lg:px-16 2xl:px-48 place-items-center gap-4">
+                        <SalesTeamsCards />
+                    </div>
+
                 </div>
-                
             </div>
-        </div>
+        </PageWrapper>
     )
 }
 

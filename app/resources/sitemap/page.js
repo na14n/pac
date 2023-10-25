@@ -2,19 +2,21 @@ import React from "react";
 import Image from "next/image";
 import { HeaderTrigger } from "@/components";
 import SitemapContent from "@/components/resources-pages/sitemapContent";
+import PageWrapper from "@/components/pageWrapper";
 
 export default function Sitemap() {
   return (
-    <main className="min-h-screen h-fit w-full bg-[#EFEFEF]">
-      <HeaderTrigger>
-        <div className="relative w-full aspect-[16/9] md:aspect-[16/3] py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex items-end justify-start overflow-hidden z-0 bg-[#153f00]">
-          <span className="w-fit">
-            <h1 className="text-3xl 2xl:text-5xl xl:text-4xl mb-2 font-bold text-white">PROS-APAC Site Map</h1>
-            <div className="w-full h-[4px] bg-pac-orange rounded-full" />
-          </span>
-        </div>
-      </HeaderTrigger>
-      {/* <div className="w-full px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 py-16">
+    <PageWrapper>
+      <main className="min-h-screen h-fit w-full bg-[#EFEFEF]">
+        <HeaderTrigger>
+          <div className="relative w-full aspect-[16/9] md:aspect-[16/3] py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex items-end justify-start overflow-hidden z-0 bg-[#153f00]">
+            <span className="w-fit">
+              <h1 className="text-3xl 2xl:text-5xl xl:text-4xl mb-2 font-bold text-white">PROS-APAC Site Map</h1>
+              <div className="w-full h-[4px] bg-pac-orange rounded-full" />
+            </span>
+          </div>
+        </HeaderTrigger>
+        {/* <div className="w-full px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 py-16">
         <div className="text-black mb-5">
           <h1 className="text-lg font-bold">HOME</h1>
           <p className="indent-5 text-sm">
@@ -71,7 +73,8 @@ export default function Sitemap() {
           <h1 className="text-lg font-bold">SHOP NOW</h1>
         </div>
       </div> */}
-      <SitemapContent />
-    </main >
+        <SitemapContent />
+      </main >
+    </PageWrapper>
   );
 }

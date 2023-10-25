@@ -1,5 +1,6 @@
 import { HeaderTrigger } from "@/components"
 import NewsPageHeader from "@/components/news-and-updates/newsPageHeader"
+import PageWrapper from "@/components/pageWrapper";
 import client from '@/lib/apollo';
 import { partString } from "@/lib/helpers";
 import { gql } from 'graphql-tag';
@@ -46,11 +47,13 @@ export async function generateMetadata({ params }) {
 
 export default async function NewsPage({ params }) {
     return (
-        <main className="w-full min-h-screen h-fit bg-[#EFEFEF] overflow-hidden">
-            <HeaderTrigger>
-                <section className="h-fit w-full pt-24 bg-[#153f00]" />
-            </HeaderTrigger>
-            <NewsPageHeader id={params?.id} />
-        </main>
+        <PageWrapper>
+            <main className="w-full min-h-screen h-fit bg-[#EFEFEF] overflow-hidden">
+                <HeaderTrigger>
+                    <section className="h-fit w-full pt-24 bg-[#153f00]" />
+                </HeaderTrigger>
+                <NewsPageHeader id={params?.id} />
+            </main>
+        </PageWrapper>
     )
 }

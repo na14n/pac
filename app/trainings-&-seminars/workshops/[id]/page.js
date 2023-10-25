@@ -1,4 +1,5 @@
 import { HeaderTrigger } from "@/components";
+import PageWrapper from "@/components/pageWrapper";
 import WorkshopContents from "@/components/trainings-&-seminars/trainings/trContents";
 import TrHero from "@/components/trainings-&-seminars/trainings/trHero";
 import client from '@/lib/apollo';
@@ -48,11 +49,13 @@ export async function generateMetadata({ params }) {
 
 export default function Page({ params }) {
     return (
-        <main className="w-full min-h-screen h-fit">
-            <HeaderTrigger>
-                <TrHero id={params.id} />
-            </HeaderTrigger>
-            <WorkshopContents id={params.id} />
-        </main>
+        <PageWrapper>
+            <main className="w-full min-h-screen h-fit">
+                <HeaderTrigger>
+                    <TrHero id={params.id} />
+                </HeaderTrigger>
+                <WorkshopContents id={params.id} />
+            </main>
+        </PageWrapper>
     )
 }
