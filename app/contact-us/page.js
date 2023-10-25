@@ -1,4 +1,5 @@
 import { HeaderTrigger, ContactUsHero, LocationCard, MessageUsForm, ViberBanner, MessageUs } from "@/components"
+import Careersbanner from "@/components/contact-us/careersBanner"
 
 export default function ContactUs() {
 
@@ -17,6 +18,9 @@ export default function ContactUs() {
       </div>
       <div className="w-full max-h-fit">
         <ViberBanner />
+      </div>
+      <div className="w-full max-h-fit">
+        <Careersbanner />
       </div>
     </main>
   )
