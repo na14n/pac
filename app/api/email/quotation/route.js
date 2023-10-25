@@ -49,7 +49,7 @@ export async function POST(request) {
         <html xmlns="http://www.w3.org/1999/xhtml">
         
         <head>
-            <title>Email Title</title>
+            <title>PROS-APAC Quote Request ${generateDateString()}</title>
         
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <meta name="x-apple-disable-message-reformatting" />
@@ -210,7 +210,7 @@ export async function POST(request) {
                                 <tr>
                                     <td align="left" bgcolor="#154829"
                                         style="padding-top: 20px;padding-right: 50px;padding-bottom: 20px;padding-left: 50px;">
-                                        <h1 style="color: #FFF; font-weight: 700;">Customer Inquiry</h1>
+                                        <h1 style="color: #FFF; font-weight: 700;">Quote Request ${generateDateString()}</h1>
                                     </td>
                                 </tr>
                                 <tr>
