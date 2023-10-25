@@ -16,7 +16,8 @@ export default function Home() {
         <div className='w-full h-fit xl:h-0 bg-[#F1F1F1]'>
           <Strengths />
         </div>
-        <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[70vh] max-h-fit bg-[#F1F1F1]'>
+        {/* <div className='w-full xs:h-[50vh] lg:h-[80vh] 2xl:h-[70vh] max-h-fit bg-[#F1F1F1]'> */}
+        <div className='w-full h-fit max-h-fit bg-[#F1F1F1]'>
           <OurStory />
         </div>
         <div className='w-full max-h-fit bg-[#F1F1F1]'>

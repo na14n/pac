@@ -33,11 +33,11 @@ export const BrandSliderF = ({ brands, mediaUrl, chunk }) => {
     const arrayOfArrays = brands ? splitArrayIntoChunks(brands, 10) : [];
 
     return (
-        <div className='max-md:w-full test w-fit h-full lg:px-32 2xl:px-48 flex items-center justify-center py-16 max-lg:py-8 bg-red-500'>
+        <div className='max-md:w-full w-fit h-full lg:px-32 2xl:px-48 flex items-center justify-center '>
             <button className=" w-fit h-fit z-40 bg-nav-orange flex justify-center items-center group rounded-lg hover:shadow-lg" onClick={scrollPrev}>
                 <Icon icon="ic:round-keyboard-arrow-left" className=' text-5xl max-lg:text-2xl  text-[#FCFCFC] group-hover:text-[#FFF]' />
             </button>
-            <div className="embla__viewport self-center test h-full xs:w-[15rem] md:w-[30rem] lg:w-[38rem] 2xl:w-[46rem] flex justify-center items-center `" ref={emblaRef}>
+            <div className="embla__viewport self-center h-full xs:w-[15rem] md:w-[30rem] lg:w-[38rem] 2xl:w-[46rem] flex justify-center items-center `" ref={emblaRef}>
                 {/* Between Slides */}
                 <div className="h-full w-fit touch-pan-y flex gap-8 z-40 py-4 px-8">
                     {arrayOfArrays.map((w, index) => (

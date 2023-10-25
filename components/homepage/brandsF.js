@@ -50,12 +50,12 @@ export default function BrandsF({ mediaUrl }) {
   const brands = sortByAttribute(data.brands.nodes, 'slideNumber')
 
   return (
-    <div className="w-full max-h-fit h-fit xl:h-screen overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 xl:px-32 2xl:px-48 py-16 ">
+    <div className="w-full max-h-fit h-fit overflow-hidden relative shadow-lg flex flex-col items-center justify-center xs:px-0 xl:px-32 2xl:px-48 py-16">
       <div className="absolute z-10 top-0 bg-gradient-to-b from-[#b56012]/90 to-[#3E3E3E]/90 w-full h-full"></div>
       <div className="absolute z-0 top-0 w-full h-full">
         <Image fill={true} src={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.mediaLine1[0].link : 'https://picsum.photos/2400/1600'} className="z-0 object-cover" alt="dental-website-banner" />
       </div>
-      <div className=' xs:w-full lg:w-fit  flex flex-col gap-3 items-center justify-center  z-40 mt-20 xs:px-4 lg:px-0 lg:mt-24 2xl:mt-32 xs:mt-28'>
+      <div className=' xs:w-full lg:w-fit  flex flex-col gap-3 items-center justify-center z-40 mt-20 xs:px-4 lg:px-0 lg:mt-24 2xl:mt-32 xs:mt-28'>
         <div className='px-4 uppercase text-3xl 2xl:text-5xl font-bold text-[#FCFCFC] text-center'>
           {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionHeading : `Our Partner Brands`}
         </div>

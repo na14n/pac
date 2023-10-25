@@ -39,12 +39,12 @@ const Hero = ({ heroType, title, title2, subheading, buttonName, buttonLink, med
 
             </div>
         ) : (heroType === 'centered') ? (
-            <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden z-30 ">
+            <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden z-30 test">
                 <div className="absolute z-10 t-0 bg-gradient-to-b from-[#3E3E3E]/90 to-[#b56012]/90 w-full h-full"></div>
                 <div className="absolute z-0 t-0 w-full h-full">
                     <Image fill={true} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1600/1600'} className='object-cover object-top' alt="dental-website-banner" />
                 </div>
-                <div className=" z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl text-center 2xl:text-4xl flex flex-col items-center justify-center gap-4 lg:mb-0 xs:mb-32 xs:px-4">
+                <div className=" z-20 font-bold text-[#FCFCFC] lg:text-3xl xs:text-2xl text-center 2xl:text-4xl flex flex-col items-center justify-center gap-4 lg:mb-0 xs:mb-32 xs:px-4 test">
                     {title ? title : 'Insert Heading'}
                     <Button name={(buttonName ? buttonName : 'Insert Button Name')} type={1} link={buttonLink} color={buttonProp ? buttonProp : null} />
                 </div>
