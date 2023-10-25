@@ -51,8 +51,8 @@ export default function Breadcrumbs(props) {
 
 
     return (
-        <section className="w-full h-fit flex items-center justify-between pt-6 lg:px-32 2xl:px-48 bg-white ">
-            <div className="w-fit h-fit flex text-pac-orange capitalize gap-2 text-sm xl:text-lg">
+        <section className="w-full h-fit flex flex-col md:flex-row justify-between pt-6 px-8 max-md:gap-4 lg:px-32 2xl:px-48 bg-white ">
+            <div className="w-fit h-fit flex flex-wrap text-pac-orange capitalize gap-2 text-sm xl:text-lg">
                 <a className="hover:underline hover:text-nav-orange font-bold" href={'/products'}>
                     <p>Products</p>
                 </a>
@@ -67,7 +67,7 @@ export default function Breadcrumbs(props) {
                 <span className="text-[#121212]">&gt;</span>
                 <p className="text-[#121212]">{data.product.name}</p>
             </div>
-            <Link href={`/brands/${data ? slugFormatter(data?.product?.brand?.node?.name, false, true) : ``}`} className="h-32 square relative">
+            <Link href={`/brands/${data ? slugFormatter(data?.product?.brand?.node?.name, false, true) : ``}`} className="h-24 md:h-32 square relative w-fit">
                 <Image fill={true} className="object-contain" src={data ? data?.product?.brand?.node?.logo?.link : ``} />              
             </Link>
         </section>

@@ -55,7 +55,7 @@ const Header = () => {
                     <div className="shrink-0 z-[60] h-full basis-1/2 min-[1280px]:flex xs:hidden xs:w-0 justify-center items-center">
                         {links.map((item, index) => (
                             <a key={index} href={item.href} className="m-2">
-                                <h6 className="w-content uppercase font-semibold text-sm text-[#fcfcfc] hover:text-white group">{item.link}
+                                <h6 className="text-center w-content uppercase font-semibold text-sm text-[#fcfcfc] hover:text-white group">{item.link}
                                     <div className="w-0 h-[2px] bg-nav-orange group-hover:w-full transition-all"></div></h6>
                             </a>
                         ))}

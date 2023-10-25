@@ -56,7 +56,7 @@ export default function Recommended({ tags, id }) {
     );
 
     return (
-        <div className=" w-full grid xl:grid-cols-5 min-[1080px]:grid-cols-6 gap-4">
+        <div className=" w-full grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 min-[1080px]:grid-cols-6 gap-4">
             {data ? data?.products?.nodes?.map((p, i) => (
                 <RecommendedProductCard
                     key={i}
