@@ -22,6 +22,8 @@ const query = gql`
           sourceUrl
         }
         name
+        uploadDate
+        shortDescription
       }
       pageInfo {
         endCursor
@@ -78,7 +80,7 @@ export default function BlogsList() {
         <section className="h-fit w-full flex flex-col gap-8 py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
             <div className="w-full h-fit relative grid grid-auto-fit-xl gap-4 ">
                 {data ? data?.blogs?.nodes?.map((b, i) => (
-                    <BlogCard key={i} name={b.name} id={b.id} media={b.mediaLine1} />
+                    <BlogCard key={i} name={b.name} id={b.id} media={b.mediaLine1} text={b.shortDescription} date={b.uploadDate} />
                 )) : ``}
             </div>
             {data?.blogs?.pageInfo?.hasNextPage ?
