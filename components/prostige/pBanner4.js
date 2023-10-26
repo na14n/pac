@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
 import parse from "html-react-parser"
+import { motion } from "framer-motion";
 
 const query = gql` query FetchPBanner4 {
     prostigePages(where: {search: "banner-4"}) {
@@ -49,7 +50,13 @@ export default function PBanner4() {
             <div className="flex max-lg:flex-col items-start w-fit gap-8 lg:gap-24">
                 {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].contentLine1.
                     map((c, i) => (
-                        <div key={i} className="w-48 h-72 p-4 flex flex-col gap-2 justify-start items-center bg-[#E1E1E1] shadow-sm hover:shadow-md rounded-sm cursor-pointer hover:-translate-y-1 transition-all">
+                        <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.25 * i }}
+                            key={i}
+                            className="w-48 h-72 p-4 flex flex-col gap-2 justify-start items-center bg-[#E1E1E1] shadow-sm hover:shadow-md rounded-sm cursor-pointer hover:-translate-y-1 transition-all"
+                        >
                             <div className="w-fit h-fit flex-col">
                                 <div className="w-40 h-40 object-fill relative">
                                     <Image src={data?.prostigePages?.nodes[0]?.mediaLine1[i]?.link} fill={true} className="object-contain" />
@@ -60,7 +67,7 @@ export default function PBanner4() {
                                 <div className="font-semibold text-lg text-pac-orange capitalize">{parse(c)}</div>
                                 <div className="text font-semibold text-[#373737]">{parse(data?.prostigePages?.nodes[0]?.contentLine2[i])}</div>
                             </div>
-                        </div>
+                        </motion.div>
                     )) : ``}
             </div>
         </section>

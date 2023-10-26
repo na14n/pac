@@ -6,6 +6,7 @@ import { pTagRemover } from "@/lib/helpers";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const query = gql` query FetchPBanner2 {
   prostigePages(where: {search: "banner-2"}) {
@@ -53,9 +54,14 @@ export default function PBanner2() {
                     )) : ``}
                 </span>
             </div>
-            <div className="xs:w-96 xs:h-96 lg:w-[480px] lg:h-[480px] 2xl:w-[720px] 2xl:h-[720px] 2xl:shrink-0 overflow-hidden relative ">
+            <motion.div
+                initial={{ x: 30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: .45 }}
+                className="xs:w-96 xs:h-96 lg:w-[480px] lg:h-[480px] 2xl:w-[720px] 2xl:h-[720px] 2xl:shrink-0 overflow-hidden relative "
+            >
                 <Image src={data?.prostigePages?.nodes[0]?.mediaLine1[0]?.link} fill={true} alt="prostige-reward-card" className="object-contain" />
-            </div>
+            </motion.div>
         </section>
     )
 }

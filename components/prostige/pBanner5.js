@@ -7,6 +7,7 @@ import { sortByAttribute } from "@/lib/helpers";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
 import parse from "html-react-parser"
+import { motion } from "framer-motion";
 
 const query = gql` query FetchPBanner5 {
     prostigePages(where: {search: "banner-5"}) {
@@ -77,10 +78,15 @@ export default function PBanner5() {
                         </div>
                     </div>
                 </div>
-                <div className="lg:w-[700px] lg:h-[600px] xs:w-96 xs:h-96 lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 15, x: 15 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    transition={{ duration: 0.45 }}
+                    className="lg:w-[700px] lg:h-[600px] xs:w-96 xs:h-96 lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto"
+                >
                     <Image fill={true} className="object-cover" src={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.mediaLine1[0].link : ''} />
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </section >
     )
 }

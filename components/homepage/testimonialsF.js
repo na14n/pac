@@ -73,7 +73,7 @@ export default function TestimonialsF() {
                         key={i}
                         initial={{ y: 15, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.45 * i }}
+                        transition={{ delay: 0.25 * i }}
                     >
                         <TestimonialCard key={i} data={t} />
                     </motion.span>

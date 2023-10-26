@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
 import parse from "html-react-parser"
+import { motion } from "framer-motion";
 
 const query = gql` query FetchPBanner3 {
     prostigePages(where: {search: "banner-3"}) {
@@ -47,12 +48,18 @@ export default function PBanner3() {
             <div className="flex flex-wrap items-start max-lg:justify-center w-fit lg:gap-24 xs:gap-8">
                 {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0].contentLine1.
                     map((c, i) => (
-                        <div key={i} className="lg:w-40 xs:w-40 flex flex-col gap-4 items-center group cursor-pointer">
+                        <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.25 * i }}
+                            key={i}
+                            className="lg:w-40 xs:w-40 flex flex-col gap-4 items-center group cursor-pointer"
+                        >
                             <span className="lg:w-32 lg:h-32 xs:w-32 xs:h-32 object-fill relative group-hover:-translate-y-1">
                                 <Image src={data?.prostigePages?.nodes[0].mediaLine1[i].link} fill={true} className="object-contain" />
                             </span>
                             <div className="text-center text-sm  font-semibold uppercase text-[#F0F0F0]">{parse(c)}</div>
-                        </div>
+                        </motion.div>
                     )) : ``}
             </div>
         </section>
