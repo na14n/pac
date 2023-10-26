@@ -74,7 +74,7 @@ export default function ProstigeF(props) {
                   <motion.div
                     initial={{ y: 15, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.15 * i }}
+                    transition={{ delay: 0.25 * i }}
                     key={i}
                     className="w-32 flex flex-col gap-2 lg:gap-4 items-center"
                   >
@@ -98,7 +98,7 @@ export default function ProstigeF(props) {
         <motion.div
           initial={{ x: 30, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.25 }}
+          transition={{ duration: 0.45 }}
           className=" xs:w-96 xs:h-96 lg:w-[32rem] lg:h-[32rem] 2xl:w-[44rem] shrink-0 2xl:h-[44rem] relative "
         >
           <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} fill={true} alt="prostige-reward-card" className="object-contain object-center" />

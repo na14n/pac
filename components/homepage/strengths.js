@@ -93,10 +93,7 @@ export default function Strengths() {
 
     return (strengths) ? (
         <div className="w-full h-fit xl:h-0 relative flex flex-col items-center justify-center z-40 xs:pb-16 2xl:px-48 lg:px-32 xs:px-4">
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ staggerChildren: 0.5, delayChildren: 0.5 }}
+            <div
                 className="w-fit h-fit xl:absolute relative xl:-top-36 2xl:-top-32 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 md:gap-6 xl:gap-8 xs:gap-4 "
             >
                 {strengths.map((s, index) => (
@@ -104,7 +101,7 @@ export default function Strengths() {
                         key={index}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{delay: 0.15 * index}}
+                        transition={{delay: 0.35 * index}}
                         className="w-72 h-72 shrink-0 md:h-[16rem] xl:h-[16rem] 2xl:h-64 shadow-md bg-gradient-to-b odd:from-[#FAA541] odd:to-[#EE6400] even:from-[#FCFCFC] even:to-[#EFEFEF] rounded-md flex justify-start gap-2 flex-col items-center p-4 odd:text-[#FCFCFC] even:text-[#EE6400] peer group relative overflow-hidden"
                     >
                         {/* <Icon icon={s.icon} className="text-6xl" /> */}
@@ -118,7 +115,7 @@ export default function Strengths() {
                         </p>
                     </motion.div>
                 ))}
-            </motion.div>
+            </div>
         </div>
     ) : (
         <div className="w-full h-fit lg:px-32 xs:px-4 relative flex flex-col items-center z-40 xs:pb-16 lg:pb-0">
