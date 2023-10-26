@@ -126,7 +126,7 @@ export default function MessageUs() {
             <motion.div
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: .45 }}
+                transition={{ duration: 1 }}
                 className="z-40 text-2xl w-full h-full flex max-md:flex-col-reverse justify-center items-center lg:gap-12 2xl:gap-16 lg:px-34  "
             >
                 <div className="w-fit self-stretch flex flex-col justify-around px-4 xs:gap-4 lg:gap-8 2xl:gap-12 py-8 ">

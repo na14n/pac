@@ -43,7 +43,7 @@ export default function CategorySearchBar({ setSearch, setSearchTerm, searchTerm
                 }
             </AnimatePresence>
             <button
-                className="text-lg text-pac-orange px-2 flex items-center justify-center gap-2"
+                className="max-lg:hidden text-lg text-pac-orange px-2 flex items-center justify-center gap-2"
                 onClick={() => setOpen(!open)}
             >
                 <Icon icon="ic:outline-filter-alt" />

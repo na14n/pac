@@ -57,7 +57,7 @@ export default function PBanner2() {
             <motion.div
                 initial={{ x: 30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: .45 }}
+                transition={{ duration: 1 }}
                 className="xs:w-96 xs:h-96 lg:w-[480px] lg:h-[480px] 2xl:w-[720px] 2xl:h-[720px] 2xl:shrink-0 overflow-hidden relative "
             >
                 <Image src={data?.prostigePages?.nodes[0]?.mediaLine1[0]?.link} fill={true} alt="prostige-reward-card" className="object-contain" />

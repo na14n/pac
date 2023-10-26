@@ -41,7 +41,7 @@ export default function EventsLandingExtras() {
                 <motion.div
                     initial={{ x: -30, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.45 }}
+                    transition={{ duration: 0.5 }}
                     className="w-full h-fit flex "
                 >
                     <div className="w-1/2 h-full aspect-square relative">

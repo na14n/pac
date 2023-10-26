@@ -61,9 +61,9 @@ export default function AboutS01() {
                 </div>
             </div>
             <motion.div
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 1.5 }}
                 className="w-96 h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[30rem] 2xl:h-[30rem] relative"
             >
                 <Image src={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.link : ``} fill={true} className="object-contain object-center" />
