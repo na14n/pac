@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const query = gql`
     query GetAboutContent01 {
@@ -27,11 +28,11 @@ export default function AboutS01() {
 
     const { data } = useSuspenseQuery(query,
         {
-          context: {
-            fetchOptions: {
-              next: { revalidate: 60 },
+            context: {
+                fetchOptions: {
+                    next: { revalidate: 60 },
+                },
             },
-          },
         });
 
     // console.log('DATA: ', data);
@@ -59,9 +60,14 @@ export default function AboutS01() {
                     </div>
                 </div>
             </div>
-            <div className="w-96 h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[30rem] 2xl:h-[30rem] relative ">
+            <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="w-96 h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[30rem] 2xl:h-[30rem] relative"
+            >
                 <Image src={data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.mediaLine1[0]?.link : ``} fill={true} className="object-contain object-center" />
-            </div>
+            </motion.div>
         </section>
     )
 }
