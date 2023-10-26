@@ -71,7 +71,7 @@ export default function CategoryProducts({ searchTerm }) {
 
     return(data ?
         <div className="w-full h-fit flex flex-col gap-4">
-            <div className="w-full grid xl:grid-cols-4 min-[1920px]:grid-cols-5 gap-4 mb-8">
+            <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 min-[1920px]:grid-cols-5 gap-4 mb-8">
                 {data?.products?.nodes?.length > 0 ? data?.products?.nodes?.map((p, i) => (
                     <RecommendedProductCard
                         key={i}
