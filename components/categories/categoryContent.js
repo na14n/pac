@@ -13,6 +13,7 @@ import CategorySearchBar from "./searchbar";
 import CategoryListSidebar from "./categoryList";
 import { Icon } from "@iconify-icon/react";
 import RecommendedProductCard from "../products/recProductCard";
+import CategoryProducts from "./categoryProducts";
 
 const query = gql`
     query SearchProducts($after: String, $first: Int, $search: String) {
@@ -63,20 +64,20 @@ export default function CategoryContent({ category }) {
         setSearch(category)
     }, [category])
 
-    const { data, fetchMore, } = useSuspenseQuery(
-        query,
-        {
-            variables: {
-                "first": 8,
-                "search": `${search}`,
-            },
-            context: {
-                fetchOptions: {
-                    next: { revalidate: 60 },
-                },
-            }
-        }
-    );
+    // const { data, fetchMore, } = useSuspenseQuery(
+    //     query,
+    //     {
+    //         variables: {
+    //             "first": 8,
+    //             "search": `${search}`,
+    //         },
+    //         context: {
+    //             fetchOptions: {
+    //                 next: { revalidate: 60 },
+    //             },
+    //         }
+    //     }
+    // );
 
     // const HandleSearchBar = () => {
     //     setSearch(category);
@@ -85,32 +86,32 @@ export default function CategoryContent({ category }) {
     //     }
     // }
 
-    function handleLoadMore() {
-        startTransition(() => {
-            fetchMore({
-                variables: {
-                    "first": 4,
-                    "after": data?.products?.pageInfo?.endCursor
-                },
-                updateQuery: (prev, { fetchMoreResult }) => {
-                    if (!fetchMoreResult) {
-                        return prev;
-                    }
-                    return {
-                        products: {
-                            ...prev,
-                            nodes: [
-                                ...prev.products.nodes, ...fetchMoreResult.products.nodes
-                            ],
-                            pageInfo: {
-                                ...fetchMoreResult.products.pageInfo
-                            }
-                        }
-                    }
-                }
-            })
-        })
-    }
+    // function handleLoadMore() {
+    //     startTransition(() => {
+    //         fetchMore({
+    //             variables: {
+    //                 "first": 4,
+    //                 "after": data?.products?.pageInfo?.endCursor
+    //             },
+    //             updateQuery: (prev, { fetchMoreResult }) => {
+    //                 if (!fetchMoreResult) {
+    //                     return prev;
+    //                 }
+    //                 return {
+    //                     products: {
+    //                         ...prev,
+    //                         nodes: [
+    //                             ...prev.products.nodes, ...fetchMoreResult.products.nodes
+    //                         ],
+    //                         pageInfo: {
+    //                             ...fetchMoreResult.products.pageInfo
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         })
+    //     })
+    // }
 
     const ClearFilters = () => {
         setSearchTerm("");
@@ -122,42 +123,12 @@ export default function CategoryContent({ category }) {
     return (
         <section className="w-full h-full flex flex-col items-center justify-center py-16 px-4 md:px-8 lg:px-16 2xl:px-32">
             <CategorySearchBar setSearch={setSearch} setSearchTerm={setSearchTerm} searchTerm={searchTerm} category={category} setHasFilters={setHasFilters} clearFilters={ClearFilters} hasFilters={hasFilters} />
+            <p className="text-sm text-black/50  my-2">{search}</p>
             <div className="w-full h-full flex gap-8 mt-12">
                 <CategoryListSidebar setSearch={setSearch} setSelected={setSelected} selected={selected} category={category} setHasFilters={setHasFilters} />
                 <div className="w-full h-fit">
                     {search ?
-                        (data ?
-                            <div className="w-full h-fit flex flex-col gap-4">
-                                <div className="w-full grid xl:grid-cols-4 min-[1920px]:grid-cols-5 gap-4 mb-8">
-                                    {data ? data?.products?.nodes?.map((p, i) => (
-                                        <RecommendedProductCard
-                                            key={i}
-                                            name={p.name}
-                                            brand={p.brand.node.name}
-                                            best={p.bestSelling}
-                                            category={p.itemCategories.nodes}
-                                            media={p.cardImage.sourceUrl}
-                                            slug={idFormatter(p.id)}
-                                        />
-                                    ))
-                                        :
-                                        <div className="w-full h-fit flex flex-col gap-2 items-center justify-center p-8">
-                                            <p className="text-[#121212]/75">No Products Found.</p>
-                                        </div>
-                                    }
-                                </div>
-                                {data?.products?.pageInfo?.hasNextpage ?
-                                    <button onClick={() => handleLoadMore()}>
-                                        <Button type={1} name={'Load More'} />
-                                    </button>
-                                    : <></>
-                                }
-                            </div>
-                            :
-                            <div className="w-full h-fit flex flex-col gap-2 items-center justify-center p-8">
-                                <p className="text-[#121212]/75">No Products Found.</p>
-                            </div>
-                        )
+                        <CategoryProducts searchTerm={search} />
                         :
                         <div className="w-full h-fit flex flex-col gap-2 items-center justify-center p-8">
                             <Icon icon="svg-spinners:90-ring-with-bg" />
