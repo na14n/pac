@@ -6,6 +6,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import EventTypeCard from "../trainings-&-seminars/eventTypeCard"
 import { sortByAttribute, pTagRemover } from "@/lib/helpers";
 import parse from "html-react-parser"
+import { motion } from "framer-motion";
 
 const query = gql` query FetchEventsF {
     homepageSections(where: {search: "events"}) {
@@ -61,13 +62,19 @@ export default function EventsF() {
             </div>
             <div className="w-full h-fit flex xs:flex-col lg:flex-row items-center justify-center gap-8 2xl:gap-16 xs:pt-16 lg:pt-0 ">
                 {data ? data?.homepageSections?.nodes[0]?.sectionSubheading.map((s, i) => (
-                    <EventTypeCard
-                        key={i}
-                        title={data?.homepageSections?.nodes[0] ? s : 'Workshops'}
-                        mediaH={data?.homepageSections?.nodes[0] ? mediaLine1[i].link : ``}
-                        media={data?.homepageSections?.nodes[0] ? mediaLine2[i].link : ``}
-                        link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${s}` : ``}
-                    />
+                    <motion.span
+                        initial={{ y: 15, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.15 * i }}
+                    >
+                        <EventTypeCard
+                            key={i}
+                            title={data?.homepageSections?.nodes[0] ? s : 'Workshops'}
+                            mediaH={data?.homepageSections?.nodes[0] ? mediaLine1[i].link : ``}
+                            media={data?.homepageSections?.nodes[0] ? mediaLine2[i].link : ``}
+                            link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${s}` : ``}
+                        />
+                    </motion.span>
                 )) : <></>}
                 {/* <EventTypeCard title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[0] :'Workshops'} media={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} mediaH={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link : ``} link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${data?.homepageSections?.nodes[0]?.sectionSubheading[0]}` :'Workshops'} />
                 <EventTypeCard title={data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0]?.sectionSubheading[1] :'Workshops'} media={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine2, 'title')[1].link : ``} mediaH={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine2, 'title')[0].link : ``} link={data?.homepageSections?.nodes[0] ? `trainings-&-seminars/${data?.homepageSections?.nodes[0]?.sectionSubheading[1]}` :'Workshops'} />

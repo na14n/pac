@@ -102,8 +102,9 @@ export default function Strengths() {
                 {strengths.map((s, index) => (
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{delay: 0.15 * index}}
                         className="w-72 h-72 shrink-0 md:h-[16rem] xl:h-[16rem] 2xl:h-64 shadow-md bg-gradient-to-b odd:from-[#FAA541] odd:to-[#EE6400] even:from-[#FCFCFC] even:to-[#EFEFEF] rounded-md flex justify-start gap-2 flex-col items-center p-4 odd:text-[#FCFCFC] even:text-[#EE6400] peer group relative overflow-hidden"
                     >
                         {/* <Icon icon={s.icon} className="text-6xl" /> */}

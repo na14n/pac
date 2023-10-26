@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import TestimonialCard from "../testimonials/testimonialCard"
 import Image from "next/image"
+import { motion } from "framer-motion";
 
 const query = gql` query FetchTestimonialsF {
     homepageSections(where: {search: "why-choose-us"}) {
@@ -68,7 +69,13 @@ export default function TestimonialsF() {
             </div>
             <div className="w-full h-fit z-30 flex xs:flex-col lg:flex-row justify-center items-center xs:gap-24 lg:gap-8 2xl:gap-8 ">
                 {testimonialsF.map((t, i) => (
-                    <TestimonialCard key={i} data={t} />
+                    <motion.span
+                        initial={{ y: 15, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.15 * i }}
+                    >
+                        <TestimonialCard key={i} data={t} />
+                    </motion.span>
                 ))}
             </div>
         </div>

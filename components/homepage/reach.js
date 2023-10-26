@@ -3,6 +3,7 @@
 export const dynamic = 'force-dynamic'
 
 import { gql } from "@apollo/client";
+import { motion } from "framer-motion";
 import Counter from "./counter"
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
@@ -60,7 +61,12 @@ export default function Reach({ type }) {
     }
 
     return (data) ? (
-        <div className="w-full h-full relative z-40 px-32 flex flex-col items-center">
+        <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.25 }}
+            className="w-full h-full relative z-40 px-32 flex flex-col items-center"
+        >
             <div className={`lg:h-48 xs:h-56 2xl:h-64 w-content shadow-lg rounded-md overflow-hidden bg-gradient-to-b max-lg:mx-2 ${type === 'orange' ? ' from-[#EF873C] to-[#D95B00]' : 'from-[#0E6200] to-[#103900]'} absolute xs:-top-28 lg:-top-24 2xl:-top-32 flex xs:flex-col lg:flex-row`}>
                 <div className="h-full lg:w-[400px] 2xl:w-[600px] flex items-center justify-center overflow-hidden relative">
                     <div className="w-[150px] 2xl:w-[350px] h-full bg-[#FCFCFC] xs:hidden lg:block lg:absolute left-0">
@@ -82,7 +88,7 @@ export default function Reach({ type }) {
                     }
                 </div>
             </div>
-        </div>
+        </motion.div>
     ) : (
         <div className="w-full h-full relative z-40 px-32 flex flex-col items-center">
             <div className={`lg:h-48 xs:h-56  2xl:h-64 w-content shadow-lg rounded-md overflow-hidden bg-gradient-to-b ${type === 'orange' ? ' from-[#EF873C] to-[#D95B00]' : 'from-pac-green to-nav-green'} absolute xs:-top-28 lg:-top-24 2xl:-top-28 flex xs:flex-col lg:flex-row`}>

@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 
 import { gql } from "@apollo/client";
 import { pTagRemover, sortByAttribute } from "@/lib/helpers";
+import { motion } from "framer-motion";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Button from "../button";
 import Image from "next/image";
@@ -70,12 +71,18 @@ export default function ProstigeF(props) {
             <div className="flex flex-wrap items-start xs:justify-center lg:justify-start w-fit gap-4">
               {data?.homepageSections?.nodes[0] ? data?.homepageSections?.nodes[0].contentLine1.
                 map((c, i) => (
-                  <div key={i} className="w-32 flex flex-col gap-2 lg:gap-4 items-center">
+                  <motion.div
+                    initial={{ y: 15, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.15 * i }}
+                    key={i}
+                    className="w-32 flex flex-col gap-2 lg:gap-4 items-center"
+                  >
                     <span className="w-20 h-20 object-fill relative">
                       <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine2, 'title')[i].link : ``} fill={true} className="object-contain object-center" />
                     </span>
                     <h4 className="text-center text-xs font-semibold uppercase">{pTagRemover(c)}</h4>
-                  </div>
+                  </motion.div>
                 )) : ``}
             </div>
           </div>
@@ -88,9 +95,14 @@ export default function ProstigeF(props) {
             </div>
           </div>
         </div>
-        <div className=" xs:w-96 xs:h-96 lg:w-[32rem] lg:h-[32rem] 2xl:w-[44rem] shrink-0 2xl:h-[44rem] relative ">
+        <motion.div
+          initial={{ x: 30, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.25 }}
+          className=" xs:w-96 xs:h-96 lg:w-[32rem] lg:h-[32rem] 2xl:w-[44rem] shrink-0 2xl:h-[44rem] relative "
+        >
           <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} fill={true} alt="prostige-reward-card" className="object-contain object-center" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
