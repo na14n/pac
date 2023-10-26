@@ -7,6 +7,7 @@ import Image from "next/image";
 import Button from "../button";
 import parse from 'html-react-parser'
 import { motion } from "framer-motion";
+import EventsLandingExtras from "./t&sLandingExtras";
 
 const query = gql`
 query fetchEventsLandingPage {
@@ -86,35 +87,7 @@ export default function EventsLandingPage() {
 
                 )) : ''}
             </div>
-            <div className="w-full h-fit grid grid-cols-1 md:grid-cols-2">
-                <motion.div
-                    initial={{ x: -30, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.45 }}
-                    className="w-full h-fit flex"
-                >
-                    <div className="w-full square relative">
-                        <Image src={''} fill className="object-center object-fill" />
-                    </div>
-                    <div className="w-full square flex flex-col justify-center px-12 gap-8">
-                        <h3 className="text-2xl 2xl:text-3xl font-bold text-black">Check out our Latest News & Updates</h3>
-                        <Button type={1} name={"Click here"} link={"/news-&-updates"} />
-                    </div>
-                </motion.div>
-                <motion.div
-                    initial={{ x: 30, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.45 }}
-                    className="w-full h-fit flex">
-                    <div className="w-full square relative">
-                        <Image src={''} fill className="object-center object-fill" />
-                    </div>
-                    <div className="w-full square flex flex-col justify-center px-12 gap-8">
-                        <h3 className="text-2xl 2xl:text-3xl font-bold text-black">Check out our Latest Blogs</h3>
-                        <Button type={1} name={"Click here"} link={"/blogs"} />
-                    </div>
-                </motion.div>
-            </div>
+            <EventsLandingExtras />
         </section>
     )
 }
