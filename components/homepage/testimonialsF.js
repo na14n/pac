@@ -70,6 +70,7 @@ export default function TestimonialsF() {
             <div className="w-full h-fit z-30 flex xs:flex-col lg:flex-row justify-center items-center xs:gap-24 lg:gap-8 2xl:gap-8 ">
                 {testimonialsF.map((t, i) => (
                     <motion.span
+                        key={i}
                         initial={{ y: 15, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.15 * i }}

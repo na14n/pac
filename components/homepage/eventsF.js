@@ -63,6 +63,7 @@ export default function EventsF() {
             <div className="w-full h-fit flex xs:flex-col lg:flex-row items-center justify-center gap-8 2xl:gap-16 xs:pt-16 lg:pt-0 ">
                 {data ? data?.homepageSections?.nodes[0]?.sectionSubheading.map((s, i) => (
                     <motion.span
+                        key={i}
                         initial={{ y: 15, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.15 * i }}
