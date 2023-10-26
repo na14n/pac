@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Icon } from '@iconify-icon/react';
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr';
 import { gql } from '@apollo/client';
+import { motion } from 'framer-motion';
 
 const query = gql`
         query GetBranchesInfo {
@@ -42,7 +43,12 @@ export const LocationCard = () => {
         <div className="flex w-full h-fit flex-col justify-start items-center px-4 md:px-8 lg:px-16 xl:px-32 py-16 gap-16">
             <div className='h-fit flex lg:flex-row flex-col gap-6 2xl:gap-16'>
                 {branches.map((b, index) => (
-                    <button className={`lg:w-72 xl:w-80 h-[360px] bg-gradient-to-b shadow-md rounded-md group hover:-translate-y-1 transition-all flex flex-col items-center justify-start px-4 xl:px-8 py-4 cursor-pointer shrink-0 gap-2 hover:shadow-lg ${selectedTab.googleMapsSourceLink === b.googleMapsSourceLink ? 'first:from-[#E66204] first:to-[#F0892B] from-[#077232] to-[#063013] last:from-[#3E3E3E] last:to-[#2A2A2A]' : 'from-[#f1f1f1] to-[#efefef] hover:first:from-[#E66204] hover:first:to-[#F0892B] hover:from-[#077232] hover:to-[#063013] hover:last:from-[#5E5E5E] hover:last:to-[#3E3E3E]'}`} key={index} onClick={() => handleTabClick(b)}>
+                    <motion.button
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.25 * index }}
+                        className={`lg:w-72 xl:w-80 h-[360px] bg-gradient-to-b shadow-md rounded-md group hover:-translate-y-1 transition-all flex flex-col items-center justify-start px-4 xl:px-8 py-4 cursor-pointer shrink-0 gap-2 hover:shadow-lg ${selectedTab.googleMapsSourceLink === b.googleMapsSourceLink ? 'first:from-[#E66204] first:to-[#F0892B] from-[#077232] to-[#063013] last:from-[#3E3E3E] last:to-[#2A2A2A]' : 'from-[#f1f1f1] to-[#efefef] hover:first:from-[#E66204] hover:first:to-[#F0892B] hover:from-[#077232] hover:to-[#063013] hover:last:from-[#5E5E5E] hover:last:to-[#3E3E3E]'}`} key={index} onClick={() => handleTabClick(b)}
+                    >
                         <span className={selectedTab.googleMapsSourceLink === b.googleMapsSourceLink ? 'w-full text-xl font-bold uppercase text-center text-[#FCFCFC] group-hover:text-[#F1F1F1] mb-2' : 'w-full text-xl font-bold uppercase text-center text-[#121212] group-hover:text-[#FCFCFC] mb-2'}>{b.branchName ? b.branchName : 'Branch Name'}</span>
                         <div className='w-full flex flex-col items-start justify-start h-full gap-2'>
                             <div className={selectedTab.googleMapsSourceLink === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
@@ -81,13 +87,13 @@ export const LocationCard = () => {
                                 <div className={selectedTab.googleMapsSourceLink === b.googleMapsSourceLink ? 'text-[#F1F1F1] group-hover:text-[#F0F0F0] flex items-start gap-2' : 'text-[#575757] group-hover:text-[#EFEFEF] flex items-start gap-2'}>
                                     <Icon icon="mdi:clock" width="24" height="24" className='pr-1' />
                                     <div className='flex flex-col text-sm h-full justify-center'>
-                                            <span key={index} className='text-left w-full'>{b.days}</span>
-                                            <span key={index} className='text-left w-full'>{b.officeHours}</span>
+                                        <span key={index} className='text-left w-full'>{b.days}</span>
+                                        <span key={index} className='text-left w-full'>{b.officeHours}</span>
                                     </div>
                                 </div>
                             ) : ''}
                         </div>
-                    </button>
+                    </motion.button>
                 ))}
             </div>
             <iframe src={selectedTab.googleMapsSourceLink} allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='border-2 border-[#121212]/25 shadow-md rounded-md w-full h-96 2xl:h-80 lg:h-72'></iframe>

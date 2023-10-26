@@ -13,6 +13,7 @@ import { useEffect, useState, useRef } from 'react';
 import { VerifyCaptcha } from '@/lib/serverActions';
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast, ToastContainer } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 const query = gql`
     query GetcontactUsContents3 {
@@ -122,7 +123,12 @@ export default function MessageUs() {
             <div className="absolute z-0 t-0 w-full h-full">
                 {/* <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/2400'} alt="dental-website-banner" className="object-cover object-center" /> */}
             </div>
-            <div className="z-40 text-2xl w-full h-full flex max-md:flex-col-reverse justify-center items-center lg:gap-12 2xl:gap-16 lg:px-34  ">
+            <motion.div
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: .45 }}
+                className="z-40 text-2xl w-full h-full flex max-md:flex-col-reverse justify-center items-center lg:gap-12 2xl:gap-16 lg:px-34  "
+            >
                 <div className="w-fit self-stretch flex flex-col justify-around px-4 xs:gap-4 lg:gap-8 2xl:gap-12 py-8 ">
                     <div className="w-full h-full items-stretch grow max-md:hidden flex flex-col gap-2 ">
                         <h1 className="md:text-3xl xl:text-4xl 2xl:text-5xl xs:text-2xl  uppercase font-bold text-[#FCFCFC] ">
@@ -160,7 +166,7 @@ export default function MessageUs() {
                             {data?.contactUsContents?.nodes ? data?.contactUsContents?.nodes[0]?.sectionHeading[0] : ''}
                         </h1>
                         <p className="text-[#E1E1E1] w-fit md:max-w-[50ch] text-sm 2xl:text-lg text-left">
-                        {data?.contactUsContents?.nodes ? pTagRemover(data?.contactUsContents?.nodes[0]?.contentLine1[0]) : ''}
+                            {data?.contactUsContents?.nodes ? pTagRemover(data?.contactUsContents?.nodes[0]?.contentLine1[0]) : ''}
                         </p>
                     </div>
                     <input
@@ -225,7 +231,7 @@ export default function MessageUs() {
                         }
                     </div>
                 </form>
-            </div>
+            </motion.div>
         </div >
     )
 }
