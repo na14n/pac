@@ -31,7 +31,7 @@ export default function OrderGuideHeader() {
     );
 
     return (
-        <div className="relative w-full aspect-video md:aspect-[16/5] flex items-center justify-center overflow-hidden z-0">
+        <div className="relative w-full aspect-video md:aspect-[16/3] flex items-center justify-center overflow-hidden z-0">
             <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
             {/* <div className="absolute z-0 t-0 w-full h-full">
                 <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover' alt="dental-website-banner" />
