@@ -6,7 +6,9 @@ export default async function HowToOrder() {
     return (
         <PageWrapper>
             <div className="w-full h-fit">
-                <OrderGuideHeader />
+                <HeaderTrigger>
+                    <OrderGuideHeader />
+                </HeaderTrigger>
                 <QuotationGUide />
                 <OrderingGuide />
                 <Faq />
