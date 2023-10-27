@@ -82,13 +82,13 @@ export default function NewsAndUpdatesList() {
       <div className="w-full h-fit relative grid grid-auto-fit-xl gap-4 ">
         {data ? data?.newsAndUpdates?.nodes?.map((n, i) => (
           <div key={i} className="h-fit w-full ">
-            <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-fit h-fit">
-              <div className="w-full four-to-three relative">
+            <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-fit h-fit group">
+              <div className="w-full four-to-three relative group-hover:opacity-50 transition-all">
                 <Image src={data ? sortByAttribute(n?.mediaLine1, 'title')[0].sourceUrl : ``} alt={data ? sortByAttribute(n?.mediaLine1, 'title')[0].altText : ``} fill={true} className="object-contain object-center" />
               </div>
             </a>
-            <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-full landscape-banner p-2">
-              <h4 className="text-[#121212]">{n?.name}</h4>
+            <a href={data ? `/news-&-updates/${idFormatter(n?.id, true)}` : ``} className="w-full landscape-banner mt-2 group">
+              <h4 className="text-[#121212] font-bold group-hover:font-bold group-hover:underline transition-all">{n?.name}</h4>
             </a>
           </div>
         )) : ``}
