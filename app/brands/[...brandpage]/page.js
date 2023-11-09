@@ -21,6 +21,11 @@ export default async function BrandPage({ params, searchParams }) {
                         altText
                         sourceUrl
                       }
+                      description
+                      # mediaLine1{
+                      #  sourceUrl
+                      #  altText
+                      # }
                       itemCategories{
                         nodes{
                           name
