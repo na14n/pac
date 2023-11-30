@@ -49,7 +49,7 @@ export default function OurStorySlider({ media, data }) {
                             <p className="text-[#373737] text-justify">{parse(data ? data?.contentLine2[index] : '')}</p>
                         </div>
                         <div className="flex-[0_0_9rem] w-[16rem] sm:flex-[0_0_18rem] sm:w-[32rem] md:flex-[0_0_20.25rem] md:w-[36rem] lg:w-[28rem] lg:flex-[0_0_16rem] xl:h-[18rem] xl:flex-[0_0_32rem] min-h-0 relative self-center">
-                            <Image className='object-cover object-center' fill={true} src={a.sourceUrl ? a.sourceUrl : 'https://picsum.photos/2400'} alt="prostige-users" />
+                            <Image className='object-contain object-center' fill={true} src={a.sourceUrl ? a.sourceUrl : 'https://picsum.photos/2400'} alt="prostige-users" />
                         </div>
                     </div>
                 )) : ``}
