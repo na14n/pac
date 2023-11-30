@@ -78,10 +78,10 @@ export default function ProstigeF(props) {
                     key={i}
                     className="w-32 flex flex-col gap-2 lg:gap-4 items-center"
                   >
-                    <span className="w-20 h-20 object-fill relative">
+                    <span className="w-24 aspect-square object-fill relative">
                       <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine2, 'title')[i].link : ``} fill={true} className="object-contain object-center" />
                     </span>
-                    <h4 className="text-center text-xs font-semibold uppercase">{pTagRemover(c)}</h4>
+                    <h4 className="text-center text-[0.8rem] font-semibold uppercase">{pTagRemover(c)}</h4>
                   </motion.div>
                 )) : ``}
             </div>
@@ -99,7 +99,7 @@ export default function ProstigeF(props) {
           initial={{ x: 60, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className=" xs:w-96 xs:h-96 lg:w-[32rem] lg:h-[32rem] 2xl:w-[44rem] shrink-0 2xl:h-[44rem] relative "
+          className=" xs:w-96 lg:w-[32rem] 2xl:w-[44rem] shrink-0 aspect-square relative "
         >
           <Image src={data?.homepageSections?.nodes[0] ? sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[1].link : ``} fill={true} alt="prostige-reward-card" className="object-contain object-center" />
         </motion.div>

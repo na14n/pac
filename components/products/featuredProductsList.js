@@ -58,7 +58,7 @@ const FeaturedProductsList = () => {
       <h1 className='w-fit py-2 uppercase text-pac-orange text-2xl font-semibold `'>
         Featured Products
       </h1>
-      <div className='w-[24rem] md:w-[48rem] xl:w-[52rem] h-[2px] bg-pac-orange' />
+      <div className='w-[24rem] md:w-[48rem] xl:w-[52rem] h-[2px] bg-[#005600]' />
       <div className="max-w-[24rem] md:max-w-[48rem] xl:max-w-[52rem] h-full pt-16 max-lg:pt-8 grid justify-items-center gap-4 max-xl:grid-auto-fit-[9rem] grid-auto-fit-[12rem]">
         {data ? data?.products?.nodes?.map((p, i) => (
           <ProductCard

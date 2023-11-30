@@ -55,10 +55,10 @@ export default function NewsPageHeader({ id }) {
 
     return (
         <>
-            <section className="flex flex-col px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 bg-[#153f00]">
+            <section className="flex flex-col px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 bg-[#133701] pt-4">
                 <a href="/news-&-updates/all?f=9" className="text-[#EFEFEF]/90 hover:text-[#FCFCFC]/90 hover:underline">View All News & Updates</a>
             </section>
-            <section className="flex flex-col md:flex-row justify-center w-full h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 gap-8 pt-8 pb-16 bg-[#153f00]">
+            <section className="flex flex-col md:flex-row justify-center w-full h-fit px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 gap-8 pt-8 pb-16 bg-gradient-to-b from-[#133701] to-[#107200]">
                 <div className="w-full md:w-2/5 aspect-[3/2] shrink-0 rounded-sm shadow-sm overflow-hidden">
                     <CsrSlider media={pageData ? pageData?.newsAndUpdate?.mediaLine1 : []} />
                 </div>

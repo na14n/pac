@@ -13,8 +13,8 @@ module.exports = {
         'pac-green': '#067133',
         'pac-charcoal': '#323232',
         'base': '#f2f2f2',
-        // 'nav-green': '#154829',
-        'nav-green': '#004813',
+        // 'nav-green': '#004813',
+        'nav-green': '#004e09',
         'nav-orange': '#ff862f',
       },
       backgroundSize: {

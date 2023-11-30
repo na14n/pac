@@ -25,7 +25,7 @@ export default function Home() {
           <div className='w-full max-h-fit bg-[#F1F1F1]'>
             <Reach type={'green'} />
           </div>
-          <div className='w-full xl:h-[100vh] max-h-fit bg-[#F1F1F1]'>
+          <div className='w-full max-h-fit bg-[#F1F1F1]'>
             <BrandsF />
           </div>
           <div className='w-full h-fit bg-[#F1F1F1]'>

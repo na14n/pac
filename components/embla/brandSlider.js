@@ -57,9 +57,9 @@ export const BrandSlider = () => {
             <h1 className='w-fit px-4 py-2 uppercase text-pac-orange text-2xl font-semibold `'>
                 Shop By Brands
             </h1>
-            <div className='w-full h-[2px] bg-pac-orange mb-8' />
+            <div className='w-full h-[2px] bg-[#005600] mb-8' />
             <div className="h-fit w-full overflow-hidden relative flex items-center justify-center gap-4 md:gap-8 z-40" >
-            <button className=" w-fit h-fit z-40 bg-nav-orange flex justify-center items-center group rounded-lg hover:shadow-lg" onClick={scrollPrev}>
+            <button className=" w-fit h-fit z-40 bg-[#ec6501] flex justify-center items-center group rounded-lg hover:shadow-lg" onClick={scrollPrev}>
                 <Icon icon="ic:round-keyboard-arrow-left" className=' text-5xl max-lg:text-2xl  text-[#FCFCFC] group-hover:text-[#FFF]' />
             </button>
             <div className="embla__viewport self-center h-full xs:w-[15rem] md:w-[30rem] lg:w-[38rem] 2xl:w-[46rem] flex justify-center items-center `" ref={emblaRef}>
@@ -75,7 +75,7 @@ export const BrandSlider = () => {
                     ))}
                 </div>
             </div>
-            <button className=" z-40 bg-nav-orange flex justify-center items-center group rounded-lg hover:shadow-lg" onClick={scrollNext}>
+            <button className=" z-40 bg-[#ec6501] flex justify-center items-center group rounded-lg hover:shadow-lg" onClick={scrollNext}>
                 <Icon icon="ic:round-keyboard-arrow-right" className=' text-5xl max-lg:text-2xl text-[#FCFCFC] group-hover:text-[#FFF]' />
             </button>
         </div>

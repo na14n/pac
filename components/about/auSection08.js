@@ -43,7 +43,7 @@ export default function AboutS08() {
     // console.log('ASSETS: ', assets);
 
     return (
-        <section className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 pt-16 flex items-end gap-8 2xl:gap-8 relative">
+        <section className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 max-md:pt-16 flex items-end gap-8 2xl:gap-8 relative">
             <div className="w-full h-full absolute top-0 left-0 z-0">
                 <Image src={data?.aboutContents?.nodes[0] ? assets[0].link : ''} fill={true} className="object-cover object-bottom " />
             </div>

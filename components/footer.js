@@ -173,7 +173,7 @@ const Footer = () => {
                         <span>768 Gen. Malvar St.,</span>
                         <span>Malate, Manila, Philippines 1004</span>
                         <a href="mailto:customerservice@prosapac.com" className='hover:text-nav-orange hover:underline'>customerservice@prosapac.com</a>
-                        <span>+63 2 8526 2911 / 8526 3870 / 8524 0331</span>
+                        <span>+63 2 8526 3870 / 8526 0331 / 8524 2911</span>
                     </div>
                 </div>
                 <div className=' w-full basis-[50%] grid lg:grid-cols-2'>
