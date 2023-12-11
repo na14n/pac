@@ -3,7 +3,7 @@ import PageWrapper from "@/components/pageWrapper"
 
 export const metadata = {
     title: 'PROS-APAC Events',
-    description: 'Trainings & Workshops, Conventions, and Seminars of PROS-APAC.',
+    description: 'Trainings, Seminars, & Events of PROS-APAC.',
     keywords: ['PROS-APAC', 'PROS-APAC Events', 'Trainings & Workshops', 'Conventions', 'Dental Events', 'Dentists Seminars', 'Philippine', ' Dental Conventions Philippines']
 }
 
