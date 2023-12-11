@@ -55,7 +55,7 @@ export default function ProdInfo(props) {
 
 
   return (
-    <main className="w-full h-fit flex max-md:flex-col justify-between gap-4 2xl:gap-28 pb-4 pt-6 px-4 md:px-12 lg:px-30 xl:px-48 2xl:px-64 min-[1920px]:px-80 bg-white ">
+    <main className="w-full h-fit flex max-md:flex-col justify-between gap-4 2xl:gap-28 pb-16 pt-12 px-4 md:px-12 lg:px-30 xl:px-48 2xl:px-64 min-[1920px]:px-80 bg-white">
       <section className="md:w-2/5 2xl:w-[600px] h-fit ">
         <ProdGallerySlider slides={Array.from(Array(data.product.imageGallery.length).keys())} images={data.product.imageGallery ? data.product.imageGallery : ``} />
       </section>

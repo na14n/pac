@@ -69,25 +69,25 @@ export default function ProdContent(props) {
 
     return (
         <section className="w-full h-fit flex flex-col bg-[#EFEFEF]">
-            <div className="w-fit px-4 md:px-12 lg:px-32 2xl:px-48 py-6 flex flex-col gap-1 items-center ">
+            <div className="w-full px-4 md:px-12 lg:px-32 2xl:px-48 py-12 flex gap-4 items-center ">
                 <h3 className="mx-3 text-3xl text-[#121212] uppercase font-semibold">Description</h3>
-                <span className="w-full h-[4px] bg-pac-orange rounded-md" />
+                <div className="w-full h-[4px] bg-[#C5C5C5] rounded-md" />
             </div>
-            <div className="px-4 md:px-12 lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit py-12  flex flex-col gap-8 ">
+            <div className="px-4 md:px-12 lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit  flex flex-col gap-8 ">
                 <div className='2xl:text-lg text-[#373737] text-justify max-w-[75ch] h1 h2 h3 p oranged_bold list'>
                     {parse(
                         data ? data?.product?.longDescription : ``
                     )}
                 </div>
             </div>
-            <div className="py-6 flex flex-col px-4 md:px-12 lg:px-32 2xl:px-48 w-full h-fit ">
+            <div className="py-12 flex flex-col px-4 md:px-12 lg:px-32 2xl:px-48 w-full h-fit ">
                 <span className="flex flex-wrap">
                     {moreInformation.map((m, i) => (
                         <button key={i} className={
                             `border-[1px] px-4 py-2 max-md:w-1/2
                             hover:border-pac-orange/70 hover:shadow-md text-xl transition-all duration-75
-                            ${selected.title === m.title ? `text-pac-orange border-nav-orange shadow-sm font-bold`
-                                : `border-pac-orange/30 text-[#575757]/70 font-semibold`}
+                            ${selected.title === m.title ? `text-white border-nav-orange bg-nav-orange shadow-sm font-bold`
+                                : `border-nav-orange text-[#575757]/90 font-semibold`}
                             `
                         }
                             onClick={() => setSelected(moreInformation[i])}>
