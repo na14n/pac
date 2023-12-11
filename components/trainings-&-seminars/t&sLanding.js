@@ -134,6 +134,11 @@ export default function EventsLandingPage() {
             ))
           : ""}
       </div>
+      <div className="bg-[#EFEFEF] w-full px-4 lg:px-8 md:px-16 xl:px-32 2xl:px-48 py-16 flex gap-8 items-center">
+        <div className="w-full h-[3px] rounded-full bg-[#474747]/50" />
+        <h4 className="shrink-0 text-xl text-[#474747] font-semibold">Suggested For You</h4>
+        <div className="w-full h-[3px] rounded-full bg-[#474747]/50" />
+      </div>
       <EventsLandingExtras />
     </section>
   );
