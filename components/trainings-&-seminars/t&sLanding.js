@@ -109,9 +109,10 @@ export default function EventsLandingPage() {
                     i === 2 ? ` from-[#282828]/90 to-[#000000]/95` : ``
                   }`}
                 />
-                <span className="z-30 mb-12 flex flex-col gap-8">
-                  <h1 className="text-3xl text-center font-bold text-[#FCFCFC]">
+                <span className="z-30 mb-12 flex flex-col items-center gap-8">
+                  <h1 className="text-3xl text-center font-bold text-[#FCFCFC] flex flex-col items-center gap-4">
                     {parse(c)}
+                    <div className="w-3/5 h-[2px] rounded-full bg-white/75" />
                   </h1>
                   <p className="text-xs 2xl:text-lg text-justify text-[#EFEFEF] h-28 max-h-fit">
                     {parse(
@@ -124,7 +125,7 @@ export default function EventsLandingPage() {
                 <span className="z-30">
                   <Button
                     type={1}
-                    color={i === 0 ? "green" : (i === 1 ? "white-green" : "gray" )}
+                    color={i === 0 ? "green" : i === 1 ? "white-green" : "gray"}
                     name={"View More"}
                     link={`/trainings-&-seminars/${data?.events?.nodes[0]?.textLine2[i]}`}
                   />
