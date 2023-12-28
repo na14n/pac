@@ -114,7 +114,7 @@ export default function EventsLandingPage() {
                     {parse(c)}
                     <div className="w-3/5 h-[2px] rounded-full bg-white/75" />
                   </h1>
-                  <p className="text-xs 2xl:text-lg text-justify text-[#EFEFEF] h-28 max-h-fit">
+                  <p className="text-xs 2xl:text-lg text-justify text-[#EFEFEF] min-h-28 max-h-fit">
                     {parse(
                       data?.events?.nodes
                         ? data?.events?.nodes[0]?.textLine1[i]
