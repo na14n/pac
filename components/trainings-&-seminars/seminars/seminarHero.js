@@ -37,8 +37,8 @@ export default function SeminarHero({ id }) {
 
     return (
         <section className="w-full lg:aspect-[16/3] flex flex-col py-8 items-start justify-end px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 relative">
-            <div className="absolute w-full max-lg:h-28 h-auto lg:aspect-[16/3] top-0 left-0 bg-pac-green" />
-            <div className="w-full md:aspect-[16/9] z-10 mt-24 flex flex-col gap-4">
+            <div className="absolute w-full max-lg:h-28 h-auto lg:aspect-[16/3] top-0 left-0 bg-[#03710f]" />
+            <div className="w-full md:aspect-[2/1] z-10 mt-24 flex flex-col gap-4">
                 <div className="flex items-center flex-wrap gap-2 text-pac-green/50 lg:text-white/75 ml-4">
                     <a className="font-semibold text-sm text-pac-green/60 lg:text-white/90 hover:text-white hover:underline transition-all " href="/trainings-&-seminars/seminars">
                         Seminars
