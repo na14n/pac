@@ -197,7 +197,7 @@ export default function SeminarContents({ id }) {
           <Image
             fill
             src={data?.seminar?.brand?.node?.logo?.sourceUrl}
-            className="object-scale-down object-center"
+            className="object-scale-down object-left"
           />
         </div>
         <div className="w-full flex flex-col items-center gap-4 2xl:gap-8">
