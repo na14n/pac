@@ -44,7 +44,7 @@ export default function CatalogueList() {
 
   const { data, fetchMore } = useSuspenseQuery(query, {
     variables: {
-      first: 8,
+      first: 10,
     },
     context: {
       fetchOptions: {
@@ -83,7 +83,7 @@ export default function CatalogueList() {
 
   return (
     <section className="h-fit w-full flex flex-col gap-8 py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
-      <div className="w-full h-fit relative grid grid-auto-fit-xl gap-4 ">
+      <div className="w-full h-fit relative grid grid-auto-fit-[15rem] gap-4 ">
         {data
           ? data?.productCatalogs?.nodes?.map((n, i) => (
               <CatalogueCard
