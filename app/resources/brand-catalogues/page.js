@@ -1,11 +1,12 @@
 import { HeaderTrigger, Hero, CatalogueCard } from "@/components";
 import PageWrapper from "@/components/pageWrapper";
+import CatalogueList from "@/components/resources-pages/catalogueList";
 
 export default async function BrandCatalogues() {
   return (
     <PageWrapper>
-      <div className="w-full flex flex-col items-center justify-center">
-        <div className="w-full h-[33vh]">
+      <main className="w-full min-h-screen h-fit bg-[#EFEFEF] overflow-hidden">
+        <section className="w-full h-[33vh]">
           <HeaderTrigger>
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
               <div className="absolute z-10 t-0 bg-gradient-to-b from-[#133701] to-[#107200] w-full h-full"></div>
@@ -14,11 +15,11 @@ export default async function BrandCatalogues() {
               </div>
             </div>
           </HeaderTrigger>
-        </div>
-        <div className="w-full lg:min-h-[100vh] max-h-fit  bg-[#F1F1F1] lg:px-32 grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-1 sm:px-4 py-8">
-          <CatalogueCard />
-        </div>
-      </div>
+        </section>
+        <section>
+          <CatalogueList />
+        </section>
+      </main>
     </PageWrapper>
   );
 }

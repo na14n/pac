@@ -42,7 +42,7 @@ const Button = ({ type, name, link, color, newtab }) => {
             </button>
         ) : (type === 'download') ? (
             <a className="group w-fit h-fit text-nav-orange hover:text-pac-orange transition-all duration-500 flex items-center justify-center" target='_blank' href={link} download={name} rel='noreferrer'>
-                <Icon icon="mdi:file-download" width="32" height="32" />
+                <Icon icon="material-symbols:cloud-download" width="32" height="32" />
             </a>
         ) : (type === 'inverse') ? (
             <a className="group w-fit h-fit bg-[#FCFCFC] py-1 px-2 rounded-md hover:bg-nav-orange grow-0 shrink-0" href={link}>
