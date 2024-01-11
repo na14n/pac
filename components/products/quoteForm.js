@@ -111,7 +111,7 @@ export default function QuoteForm() {
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-2 w-full h-fit"
             >
-                <h2 className="pb-2 text-lg text-pac-orange font-bold">Inquiry Form</h2>
+                <h2 className="pb-2 text-lg text-pac-orange font-bold">Quotation Form</h2>
                 <div className="flex flex-col gap-1 w-full h-fit">
                     <label className="font-semibold text-sm text-[#121212]">
                         Full Name
