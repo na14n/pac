@@ -58,15 +58,21 @@ export default function CareersSection4() {
                 <h4>{data?.contactUsContents?.nodes[0]?.sectionSubheading}</h4>
                 <div className="p-4 bg-white w-fit rounded-md flex flex-col gap-2">
                     <span className="flex gap-2 items-center">
-                        <Icon icon="mdi:email-outline" className="text-xl 2xl:text-2xl" />
+                        <Icon icon="mdi:account-circle-outline" className="text-xl 2xl:text-2xl" />
                         <p className="2xl:text-lg text-pac-orange font-semibold">
                             {data?.contactUsContents?.nodes[0]?.textLine1[0]}
                         </p>
                     </span>
                     <span className="flex gap-2 items-center">
+                        <Icon icon="mdi:email-outline" className="text-xl 2xl:text-2xl" />
+                        <p className="2xl:text-lg text-pac-orange font-semibold">
+                            {data?.contactUsContents?.nodes[0]?.textLine1[2]}
+                        </p>
+                    </span>
+                    <span className="flex gap-2 items-center">
                         <Icon icon="mdi:phone-outline" className="text-xl 2xl:text-2xl" />
                         <p className="2xl:text-lg text-pac-orange font-semibold">
-                            {data?.contactUsContents?.nodes[0]?.textLine1[1]}
+                            {data?.contactUsContents?.nodes[0]?.textLine1[3]}
                         </p>
                     </span>
                 </div>
