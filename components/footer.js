@@ -179,10 +179,10 @@ const Footer = () => {
                         <h5>Members of the PROS-APAC Group of Companies</h5>
                         <div className="flex gap-4 items-center self-stretch grow-1 h-full xl:pr-16">
                             <div className="relative w-full h-16">
-                                <Image src="/otaner-logo.png" alt="otaner" fill className="object-contain object-center" />
+                                <Image src="/otaner-logo.png" alt="otaner" fill className="object-contain object-left" />
                             </div>
                             <div className="relative w-full h-16 ">
-                                <Image src="/unipro-logo.png" alt="unipro" fill className="object-contain object-center" />
+                                <Image src="/unipro-logo.png" alt="unipro" fill className="object-contain object-left" />
                             </div>
                         </div>
                     </div>
