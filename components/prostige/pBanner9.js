@@ -74,12 +74,13 @@ export default function PBanner9() {
                 </div>
             </div>
             <div className="w-full h-fit flex flex-col lg:gap-2 gap-3">
-                <div className="flex gap-2 items-center">
-                    <Icon className="text-[#474747] font-semibold lg:text-lg xs:text-lg" icon="mdi:information-variant-circle" />
-                    <h3 className="text-[#474747] font-semibold lg:text-xl xs:text-xl">
+                <a className="flex gap-2 items-center group hover:underline hover:text-pac-orange hover:cursor-pointer" href="/products/prostige/terms-&-conditions">
+                    <Icon className="text-[#474747] group-hover:text-pac-orange font-semibold lg:text-lg xs:text-lg" icon="mdi:information-variant-circle" />
+                    <h3 className="text-[#474747] group-hover:text-pac-orange font-semibold lg:text-xl xs:text-xl">
                         {data9b?.data?.prostigePages?.nodes[0] ? data9b?.data?.prostigePages?.nodes[0]?.sectionHeading[0] : `faq`}
                     </h3>
-                </div>
+                    <Icon className="text-[#474747] group-hover:text-pac-orange font-semibold lg:text-xl xs:text-lg group-hover:opacity-100 opacity-0" icon="mdi:arrow-top-right-bold-box-outline" />
+                </a>
                 <div className="w-full h-[2px] bg-pac-green" />
                 <div className="flex flex-col gap-3">
                     <h2 className="text-[#121212] lg:text-xl xs:text-2xl font-bold">
