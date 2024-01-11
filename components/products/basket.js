@@ -97,7 +97,7 @@ export default function Basket() {
         <Provider>
             <div className="bg-[#FCFCFC] flex flex-col gap-8 w-full min-h-full h-fit p-8 grow shadow-md rounded-sm">
                 <h1 className="font-bold text-2xl text-pac-orange">
-                    Your Basket
+                    My Cart
                 </h1>
                 <div className={`w-full h-full flex flex-col ${basketItems.length === 0 ? `justify-center items-center` : `justify-start items-start`}`}>
                     {loading ? <p>Loading...</p> : basket.length != 0 ? (

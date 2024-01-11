@@ -21,6 +21,8 @@ export async function POST(request) {
     const name = formData.get('name')
     const email = formData.get('email')
     const contact = formData.get('contact')
+    const prc_id = formData.get('id')
+    const address = formData.get('address')
     const basketStringified = formData.get('basket')
     const basket = JSON.parse(formData.get('basket'))
     // basket.parse()
@@ -219,8 +221,10 @@ export async function POST(request) {
                                             <h2 style="color: #f06128;">FROM </h2>
                                             <p style="color: #272727; font-weight: 700;">
                                                <span style="padding-bottom: 2px">${name}<br></span>
+                                               <span style="padding-bottom: 2px">${prc_id}<br></span>
                                                <span style="padding-bottom: 2px">${email}<br></span>
                                                <span style="padding-bottom: 2px">${contact}<br></span>
+                                               <span style="padding-bottom: 2px">${address}<br></span>
                                             </p>
                                     </td>
                                 </tr>

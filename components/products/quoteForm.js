@@ -14,6 +14,8 @@ export default function QuoteForm() {
         name: '',
         contact: '',
         email: '',
+        id: '',
+        address: ''
     })
 
     const [basketItems, setBasketItems] = useAtom(BasketAtom);
@@ -73,6 +75,8 @@ export default function QuoteForm() {
                     name: '',
                     email: '',
                     contact: '',
+                    id: '',
+                    address: ''
                 })
                 toast.success(`Quote Sent Successfully:`, {
                     position: toast.POSITION.TOP_CENTER
@@ -93,6 +97,8 @@ export default function QuoteForm() {
                 name: '',
                 email: '',
                 contact: '',
+                id: '',
+                address: ''
             })
             setVerified(false);
             recaptchaRef.current.reset()
@@ -119,26 +125,6 @@ export default function QuoteForm() {
                         className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none"
                     />
                 </div>
-                {/* <div className="flex flex-col gap-1 w-full h-fit">
-                    <label className="font-semibold text-sm text-[#121212]">
-                        PRC ID
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="PRC ID number"
-                        className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none"
-                    />
-                </div> */}
-                {/* <div className="flex flex-col gap-1 w-full h-fit">
-                    <label className="font-semibold text-sm text-[#121212]">
-                        Clinic Address
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Clinic Address"
-                        className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none"
-                    />
-                </div> */}
                 <div className="flex flex-col gap-1 w-full h-fit">
                     <label className="font-semibold text-sm text-[#121212]">
                         Contact Number
@@ -163,6 +149,27 @@ export default function QuoteForm() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none"
+                    />
+                </div>
+                <div className="flex flex-col gap-1 w-full h-fit">
+                    <label className="font-semibold text-sm text-[#121212]">
+                        PRC ID <span className="font-normal italic opacity-60">(optional)</span>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="PRC ID number"
+                        className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none"
+                    />
+                </div>
+                <div className="flex flex-col gap-1 w-full h-fit">
+                    <label className="font-semibold text-sm text-[#121212]">
+                        Clinic Address <span className="font-normal italic opacity-60">(optional)</span>
+                    </label>
+                    <textarea
+                        type="text"
+                        rows="3"
+                        placeholder="Clinic Address"
+                        className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none resize-none"
                     />
                 </div>
                 <ReCAPTCHA

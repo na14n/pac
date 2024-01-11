@@ -14,7 +14,7 @@ export default function BasketPage() {
                         Request for Quotation
                     </h1>
                 </section>
-                <div className=" absolute top-0 w-full h-[50vh] bg-pac-green z-0" />
+                <div className=" absolute top-0 w-full h-[50vh] bg-[#005f19] z-0" />
                 <section className="w-full h-fit 2xl:px-48 lg:px-32 xs:px-4 z-10 py-8 flex gap-12 grow">
                     <Basket />
                     <QuoteForm />
