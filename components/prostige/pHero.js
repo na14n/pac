@@ -38,8 +38,8 @@ export default function PHero() {
     return (
         <section className="relative flex xs:flex-col lg:flex-row xs:justify-center lg:justify-between xs:items-center lg:items-end lg:gap-16 xs:gap-8 items-center justify-center xs:mt-24 lg:mt-0 lg:h-screen xs:min-h-fit max-h-fit w-full xs:px-4 lg:px-32 2xl:px-48 overflow-hidden xs:pt-12">
             <div className=" w-fit shrink-0 h-full  flex flex-col justify-center gap-8 lg:gap-16 ">
-                <div className="flex flex-col justify-end gap-2 relative w-80 h-[90px]">
-                    <Image src={sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link} fill={true} className="object-contain object-center" />
+                <div className="flex flex-col justify-end gap-2 relative w-96 h-48">
+                    <Image src={sortByAttribute(data?.homepageSections?.nodes[0].mediaLine1, 'title')[0].link} fill={true} className="object-contain object-left" />
                 </div>
                 <div className="flex flex-col justify-center gap-1">
                     <h2 className="text-pac-green lg:text-5xl xs:text-2xl ">

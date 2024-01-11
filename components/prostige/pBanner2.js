@@ -39,14 +39,14 @@ export default function PBanner2() {
         <section className="w-full h-fit flex xs:flex-col-reverse lg:flex-row items-center justify-around lg:gap-16 xs:px-4 lg:px-32 2xl:px-48 py-16 bg-[rgb(252,252,252)] overflow-hidden">
             <div className="lg:w-fit xs:w-full h-full flex flex-col justify-center gap-8 2xl:gap-16">
                 <span className="h-fit lg:w-fit xs:w-full flex flex-col xs:items-center lg:items-start gap-1">
-                    <h1 className="w-fit lg:text-5xl xs:text-2xl text-pac-green ">
+                    <h1 className="w-fit lg:text-6xl xs:text-2xl text-pac-green ">
                         {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionHeading[0] : ``}
                     </h1>
-                    <h1 className="w-fit lg:text-6xl xs:text-3xl text-pac-orange">
+                    <h1 className="w-fit lg:text-7xl xs:text-3xl text-pac-orange">
                         {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionHeading[1] : ``}
                     </h1>
                 </span>
-                <span className="lg:max-w-[400px] 2xl:max-w-fit  h-fit flex flex-col gap-4 2xl:text-lg">
+                <span className="lg:max-w-[400px] 2xl:max-w-fit  h-fit flex flex-col gap-4 2xl:text-xl">
                     {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.contentLine1.map((c, i) => (
                         <p key={i} className="text-[#373737] text-justify">
                             {pTagRemover(c)}
