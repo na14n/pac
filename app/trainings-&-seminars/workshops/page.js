@@ -9,7 +9,7 @@ export const metadata = {
     keywords: ['PROS-APAC', 'PROS-APAC Events', 'Philippines', 'Dental Workshop Philippines', 'Dental Workshop', 'Dental Training Philippines', 'Dentists Training Philippines', 'Dentists Training']
 }
 
-const Workshops = () => {
+const Workshops = ({searchParams}) => {
     return (
         <PageWrapper>
             <div className="w-full flex flex-col items-center justify-center">
@@ -19,8 +19,7 @@ const Workshops = () => {
                     </HeaderTrigger>
                 </div>
                 <div className="w-full min-h-[67vh] h-content lg:px-32 py-8 flex flex-col gap-12 items-center">
-                    {/* <Sorter /> */}
-                    {/* <EventsList sorting={'nameAsc'} eventType={'workshops'}/> */}
+                    <Sorter current={searchParams.sort ? searchParams.sort : "DATE"} link={"/trainings-&-seminars/workshops?sort="}/>
                     <TrsList />
                 </div>
             </div>

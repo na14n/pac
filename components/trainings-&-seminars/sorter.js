@@ -1,14 +1,23 @@
-import { Icon } from "@iconify-icon/react";
+"use client"
 
-const Sorter = () => {
+import { useRouter } from 'next/navigation';
+
+const Sorter = ({current, link}) => {
+
+    const router = useRouter();
+
+    let search = (e) => {
+        e.preventDefault();
+        return router.push(`${link}${e.target.value}`, undefined, { shallow: true })
+    }
+
     return (
-        <div className="w-full h-content flex justify-end px-4">
-            <select id="sorting" className="bg-[#EFEFEF] p-2 border-2 outline-none rounded-md border-[#E1E1E1] text-sm">
-                <option value="date">Default</option>
-                <option value="name">Name</option>
-                <option value="name">Date</option>
-            </select>
-        </div>
+            <div className="w-full h-content flex justify-end px-4">
+                <select id="sorting" className=" p-2 px-3 border-2 outline-none rounded-md border-[#EFEFEF] text-sm" value={current} onChange={(e) => search(e)}>
+                    <option value="DATE">Date</option>
+                    <option value="TITLE">Title</option>
+                </select>
+            </div>
     )
 }
 
