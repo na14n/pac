@@ -53,7 +53,15 @@ export default function EventsLandingPage() {
           </h1>
           <div className="w-full h-[3px] rounded-full bg-[#cfcfcf]" />
         </span>
-        {/* <span className="flex flex-col gap-4 w-fit items-center">
+        <span className="flex flex-col gap-4 w-fit items-center">
+          {data?.events?.nodes ? (
+            <p className="max-w-[40ch] md:max-w-[75ch] min-[1700px]:max-w-[75ch] text-center text-xl text-[#272727]">
+              {data?.events?.nodes[0]?.location}
+            </p>
+          ) : (
+            ""
+          )}
+          <span className="flex flex-col gap-4 py-16 w-fit items-center">
           {data?.events?.nodes
             ? data?.events?.nodes[0]?.shortDescription.map((c, i) => (
                 <p
@@ -64,15 +72,7 @@ export default function EventsLandingPage() {
                 </p>
               ))
             : ""}
-        </span> */}
-        <span className="flex flex-col gap-4 w-fit items-center">
-          {data?.events?.nodes ? (
-            <p className="max-w-[40ch] md:max-w-[75ch] min-[1700px]:max-w-[75ch] text-center text-xl text-[#272727]">
-              {data?.events?.nodes[0]?.location}
-            </p>
-          ) : (
-            ""
-          )}
+        </span>
           {data?.events?.nodes ? (
             <p className="max-w-[40ch] md:max-w-[75ch] min-[1700px]:max-w-[75ch] text-center text-xl font-bold text-[#272727]">
               {data?.events?.nodes[0]?.eventDate}
