@@ -62,7 +62,7 @@ const TestimonialCard = (props) => {
                 <div className="font-bold text-pac-green 2xl:text-xl">
                     {props?.data?.name}
                 </div>
-                <div className="text-sm 2xl:text-lg font-semibold text-[#373737]">
+                <div className="text-sm 2xl:text-lg text-[#373737]">
                     {pTagRemover(props?.data?.location)}
                 </div>
             </div>
