@@ -1,6 +1,7 @@
 import { Icon } from "@iconify-icon/react";
 import Image from "next/image";
 import { pTagRemover } from "@/lib/helpers";
+import parse from "html-react-parser"
 
 const TestimonialCard = (props) => {
     return (props.type === 'dedicated') ? (
@@ -29,7 +30,7 @@ const TestimonialCard = (props) => {
                 <Icon icon="ri:double-quotes-l" width={56} height={56} />
             </div>
             <div className="w-full h-full italic text-sm 2xl:text-lg text-[#272727] mt-2">
-                {props?.message}
+                {parse(props?.message)}
             </div>
             <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col gap-0 items-start">
                 <h4 className="font-bold text-[#121212] 2xl:text-xl">
@@ -46,14 +47,15 @@ const TestimonialCard = (props) => {
     ) : (
         <div className="w-80 h-fit grow relative flex flex-col items-center 2xl:w-96">
             <div className="absolute -top-16 w-32 h-32 rounded-full bg-[#E1E1E1] shadow-md flex items-center justify-center overflow-hidden">
-                (Image)
+                <Image fill src={props?.data?.image} />
             </div>
-            <div className="w-full h-80 2xl:h-96 px-4 py-4 bg-[#FCFCFC] rounded-md shadow-md">
+            <div className="w-full h-fit-content px-4 py-4 bg-[#FCFCFC] rounded-md shadow-md">
                 <div className="w-full h-fit text-pac-green">
                     <Icon icon="ri:double-quotes-l" width={48} height={48} />
                 </div>
-                <div className="w-full h-fit text-center text-sm 2xl:text-lg text-[#272727] mt-2">
-                    {pTagRemover(props?.data?.message)}
+                <div className="w-full h-fit text-center text-sm text-[#272727] mt-2">
+                    {/* {pTagRemover(props?.data?.message)} */}
+                    {parse(props?.data?.message)}
                 </div>
             </div>
             <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col justify-center items-end">

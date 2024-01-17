@@ -7,6 +7,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import TestimonialCard from "../testimonials/testimonialCard"
 import Image from "next/image"
 import { motion } from "framer-motion";
+import { sortByAttribute } from "@/lib/helpers";
 
 const query = gql` query FetchTestimonialsF {
     homepageSections(where: {search: "why-choose-us"}) {
@@ -16,8 +17,12 @@ const query = gql` query FetchTestimonialsF {
         sectionSubheading
         contentLine1
         contentLine2
-        mediaLine1{
-            link
+        mediaLine1 {
+          link
+        }
+        mediaLine2{
+          sourceUrl
+          altText
         }
       }
     }
@@ -47,6 +52,8 @@ export default function TestimonialsF() {
             name: data?.homepageSections?.nodes[0]?.sectionSubheading[i],
             location: data?.homepageSections?.nodes[0]?.contentLine1[i],
             message: data?.homepageSections?.nodes[0]?.contentLine2[i],
+            // image: data?.homepageSections?.nodes[0]?.mediaLine2[i]?.sourceUrl
+            image: sortByAttribute(data?.homepageSections?.nodes[0]?.mediaLine2, 'altText')[i].sourceUrl
         })
     }
 
