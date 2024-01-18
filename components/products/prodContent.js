@@ -8,27 +8,45 @@ import parse from "html-react-parser";
 import { useState } from "react";
 import { Icon } from "@iconify-icon/react";
 import Recommended from "./recommended";
+import CatalogueCard from "../resources-pages/catalogueCard";
 
 export default function ProdContent(props) {
   const query = gql`query FetchProduct {
         product(id: "${props.id}") {
-            id
-            name
-            shortDescription
-            mainWebsiteLink
-            youtubeEmbedSourceLink
-            faqTitle
-            faqContent
-            longDescription
-            instructionFileDownloadLink
-            instructionFileTitle
-            relatedTags
-            descriptionImage{
+          id
+          name
+          shortDescription
+          mainWebsiteLink
+          youtubeEmbedSourceLink
+          faqTitle
+          faqContent
+          longDescription
+          instructionFileDownloadLink
+          instructionFileTitle
+          relatedTags
+          descriptionImage {
+            link
+          }
+          productLogo {
+            link
+          }
+          catalogue {
+            nodes {
+              id
+              name
+              brand {
+                node {
+                  name
+                }
+              }
+              thumbnail {
+                sourceUrl
+              }
+              file {
                 link
+              }
             }
-            productLogo {
-                link
-            }
+          }
         }
       }
     `;
@@ -169,29 +187,17 @@ export default function ProdContent(props) {
             selected.body === "catalogueLink" ? `flex` : `hidden`
           }`}
         >
-          {/* {data?.product
-            ? data?.product?.catalogueTitle?.map((c, i) => (
-                <div
+          {data?.product
+            ? data?.product?.catalogue?.nodes?.map((c, i) => (
+                  <CatalogueCard
                   key={i}
-                  className="h-36 w-64 shadow-sm rounded-sm bg-[#FFF] border-[2px] border-[#676767]/20 flex flex-col justify-between p-4 overflow-hidden"
-                >
-                  <h5 className="text-lg font-bold text-pac-orange">{c}</h5>
-                  <a
-                    href={
-                      data?.product
-                        ? data?.product?.catalogueDownloadLink[0]
-                        : ``
-                    }
-                    className="flex w items-center text-[#272727] hover:text-pac-orange underline"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <p>Download Catalogue</p>
-                    <Icon icon="mdi:download-outline" className="text-sm" />
-                  </a>
-                </div>
+                  name={c?.name}
+                  img={c?.thumbnail.sourceUrl}
+                  link={c?.file?.link}
+                  brand={c?.brand?.node?.name}
+                />
               ))
-            : ``} */}
+            : ``}
         </div>
       </div>
       {/* Videos Section */}
