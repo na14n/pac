@@ -130,7 +130,7 @@ export default function SearchUI({search}){
                         {data? <pre>
                           {JSON.stringify(transformData(data), null, 2)}
                         </pre> : <></>} */}
-                        {search ? (data ? 
+                        {search ? (data && transformData(data).length > 0 ? 
                           <section className=" w-full flex flex-col gap-4">
                             {transformData(data).map((data, index) => 
                             <a href={data.link} key={index} className="w-full aspect-[8/1] bg-[#F5F5F5] rounded-md shadow-sm flex items-center justify-center overflow-hidden">
@@ -142,7 +142,10 @@ export default function SearchUI({search}){
                                 <h6 className="font-bold text-xl opacity-95 capitalize">{data.title}</h6>
                               </div>
                             </a>)}
-                          </section> : <>no data</>) : <></>}
+                          </section> : 
+                          <section className="w-full flex items-center justify-center">
+                            <h5 className="text-3xl text-[#474747]">No Search Results for <span className="text-[#171717]">{search}</span></h5>
+                          </section>) : <></>}
                 </main>
         )
 }
