@@ -58,11 +58,11 @@ const TestimonialCard = (props) => {
                     {parse(props?.data?.message)}
                 </div>
             </div>
-            <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col justify-center items-end">
-                <div className="font-bold text-pac-green 2xl:text-xl">
+            <div className="w-full h-fit mt-2 2xl:mt-4 flex flex-col justify-center items-center">
+                <div className="font-bold text-pac-green 2xl:text-xl w-fit">
                     {props?.data?.name}
                 </div>
-                <div className="text-sm 2xl:text-lg text-[#373737]">
+                <div className="text-sm text-[#373737] w-fit text-center">
                     {pTagRemover(props?.data?.location)}
                 </div>
             </div>

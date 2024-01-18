@@ -7,6 +7,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { sortByAttribute } from "@/lib/helpers";
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
+import parse from "html-react-parser"
 
 const query = gql`
     query FetchAboutContentS07a {
@@ -55,9 +56,11 @@ export default function AboutS07a() {
                 </div>
                 <span>
                     <Icon icon="el:quotes" width={56} height={56} className="text-[#FCFCFC]" />
-                    <p className=" text-[#EFEFEF] 2xl:text-lg 2xl:max-w-[75ch] text-justify">
-                        {data?.aboutContents?.nodes ? data?.aboutContents?.nodes[0]?.contentLine1 : ''}
-                    </p>
+                    <div className=" text-[#EFEFEF] 2xl:text-lg 2xl:max-w-[75ch] text-justify">
+                        {data?.aboutContents?.nodes[0]?.contentLine1?.map((statement, index) => 
+                            <div key={index}>{parse(statement)}</div>
+                        )}
+                    </div>
                 </span>
             </div>
             <div className="h-[16rem] w-[12rem] max-md:hidden md:h-[24rem] md:w-[18rem] xl:h-[32rem] xl:w-[24rem] 2xl:h-[40rem] 2xl:w-[30rem] rounded-sm shadow-md relative shrink-0">
