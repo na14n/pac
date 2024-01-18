@@ -1,0 +1,18 @@
+import { HeaderTrigger } from "@/components"
+import LimitlessHero from "@/components/limitless/limitless-hero"
+
+export const metadata = {
+    title: "Limitless",
+    description: "2024 PROS-APAC Sales Kickoff",
+    keywords: ['PROS-APAC', 'About PROS-APAC', 'About us', 'PROS-APAC activities', 'Company Activities', 'PROS-APAC Company Activities', 'Limitless', 'Sales Kickoff'],
+}
+
+export default function CompanyActivities() {
+    return(
+        <main className="w-full min-h-screen h-fit bg-[#EFEFEF] overflow-hidden">
+            <HeaderTrigger>
+                <LimitlessHero />
+            </HeaderTrigger>
+        </main>
+    )
+}
