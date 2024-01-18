@@ -22,12 +22,10 @@ export default function ProdContent(props) {
             longDescription
             instructionFileDownloadLink
             instructionFileTitle
-            catalogueTitle
             relatedTags
             descriptionImage{
                 link
             }
-            catalogueDownloadLink
             productLogo {
                 link
             }
@@ -171,7 +169,7 @@ export default function ProdContent(props) {
             selected.body === "catalogueLink" ? `flex` : `hidden`
           }`}
         >
-          {data?.product
+          {/* {data?.product
             ? data?.product?.catalogueTitle?.map((c, i) => (
                 <div
                   key={i}
@@ -193,7 +191,7 @@ export default function ProdContent(props) {
                   </a>
                 </div>
               ))
-            : ``}
+            : ``} */}
         </div>
       </div>
       {/* Videos Section */}
