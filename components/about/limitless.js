@@ -51,7 +51,7 @@ export default function Limitless(){
                     {data?.aboutContents?.nodes[0]?.sectionHeading?.map((heading, index) => (
                         <h2 key={index} className='z-10 text-white font-bold text-2xl xl:text-5xl uppercase text-center'>{heading}</h2>
                     ))}
-                    <a href="#" className="bg-white px-6 py-3 rounded-full flex items-center justify-center text-xl z-10 uppercase font-bold text-[#6800b1] hover:text-[#6800b1]/80 shadow-sm hover:shadow-lg">
+                    <a href="/about-us/limitless" className="bg-white px-6 py-3 rounded-full flex items-center justify-center text-xl z-10 uppercase font-bold text-[#6800b1] hover:text-[#6800b1]/80 shadow-sm hover:shadow-lg">
                         {data?.aboutContents?.nodes[0]?.sectionSubheading.map((text, index) => (<h1 key={index}>{text}</h1>))}
                     </a>
                 </div>
