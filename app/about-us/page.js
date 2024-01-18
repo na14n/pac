@@ -1,4 +1,5 @@
 import { HeaderTrigger, AboutHero, AboutS01, AboutS02, AboutS03, AboutS04, AboutS05, AboutS06, AboutS07, AboutS08 } from "@/components"
+import Limitless from "@/components/about/limitless"
 import PageWrapper from "@/components/pageWrapper"
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function Page() {
                 <AboutS01 />
                 <AboutS02 />
                 <AboutS03 />
+                <Limitless />
                 <AboutS04 />
                 <AboutS05 />
                 <AboutS06 />
