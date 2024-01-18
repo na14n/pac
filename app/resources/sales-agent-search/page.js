@@ -3,6 +3,7 @@ import PageWrapper from "@/components/pageWrapper";
 import SalesTeamsCards from "@/components/resources-pages/salesTeamsCards";
 import client from '@/lib/apollo';
 import { gql } from 'graphql-tag';
+import Image from "next/image";
 
 export const metadata = {
     title: 'PROS-APAC Sales Agents',
@@ -121,7 +122,15 @@ export default async function SalesAgentSearch({ searchParams }) {
             <div className="w-full flex flex-col items-center justify-center">
                 <div className='w-full h-[33vh]'>
                     <HeaderTrigger>
-                        <Hero heroType={'orange'} title={'Search a Sales Agent'} />
+                        {/* <Hero heroType={'orange'} title={'Search a Sales Agent'} mediaUrl="https://web.prosapac.com/wp-content/uploads/2024/01/Search-a-sales-agent-Banner.jpg" /> */}
+                        <div className="relative w-full h-full flex items-center justify-center overflow-hidden z-0">
+                            <div className="absolute z-0 t-0 w-full h-full">
+                                <Image fill src="https://web.prosapac.com/wp-content/uploads/2024/01/Search-a-sales-agent-Banner.jpg" className='object-cover object-center' alt="dental-website-banner" />
+                            </div>
+                            <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16 uppercase">
+                                Search a Sales Agent
+                            </div>
+                        </div>
                     </HeaderTrigger>
                 </div>
                 <div className='w-full lg:min-h-[67vh] max-h-fit  bg-[#F1F1F1]'>
