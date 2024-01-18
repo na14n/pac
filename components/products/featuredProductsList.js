@@ -8,7 +8,7 @@ import ProductCard from "./productCard";
 import { idFormatter } from "@/lib/helpers";
 
 const query = gql`query FetchProducts {
-  products(where: {search: "product"}, first: 5) {
+  products(where: {search: "product"}, first: 8) {
     nodes {
       id
       name
