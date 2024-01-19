@@ -24,7 +24,7 @@ export default function LimitlessPage() {
             <LimitlessMindset />     
             <LimitessMerch />
             <LimitlessCommunity />  
-            {/* <LimitlessPossibilities />           */}
+            <LimitlessPossibilities />          
         </main>
     )
 }

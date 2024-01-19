@@ -9,18 +9,17 @@ import parse from 'html-react-parser'
 
 export default function LimitlessPossibilities(){
 
-    const query = gql` query FetchAboutLimitless {
+    const query = gql` query FetchLimitlessPossibilities {
         aboutContents(where: {search: "limitless-page-possibilities"}) {
           nodes {
             sectionTitle
             sectionHeading
+            sectionSubheading
             mediaLine1 {
                 sourceUrl
             }
-            mediaLine2 {
-                sourceUrl
-            }
-            contentLine1
+            textLine1
+            textLine2
           }
         }
       }
@@ -38,25 +37,31 @@ export default function LimitlessPossibilities(){
     );
 
     return(
-        <section className="relative w-full min-h-screen h-fit bg-white pl-0 md:pl-8 lg:pl-16 xl:pl-32 2xl:pl-48 flex max-md:flex-col items-center overflow-hidden">
-            <div className="w-1/2 max-md:w-full h-full max-md:p-8 flex flex-col justify-center gap-8 xl:gap-16 max-md:pt-16">
-                <div className="flex flex-col gap-0 w-4/5 max-md:w-full h-fit items-center">
-                    <h2 className="text-5xl font-black uppercase text-[#504ea1]">{data?.aboutContents?.nodes[0]?.sectionHeading}</h2>
-                    <div className="w-full aspect-[16/7] relative">
-                        <Image fill src={data?.aboutContents?.nodes[0]?.mediaLine1[0]?.sourceUrl} className="object-cover object-center" />
-                    </div>
-                </div>
-                <div className="flex flex-col gap-4 w-4/5 h-fit max-md:w-full">
-                    {data?.aboutContents?.nodes[0]?.contentLine1?.map((content, index) => (
-                        <span key={index} className="text-justify xl:text-lg 2xl:text-xl">
-                            {parse(content)}
-                        </span>
+        <section className="relative w-full h-fit md:h-screen bg-[#0c0a1f] flex flex-col items-center overflow-hidden py-8 md:py-16">
+            <div className="absolute top-0 right-0 w-full h-full z-0">
+                <Image fill src={data?.aboutContents?.nodes[0]?.mediaLine1[0]?.sourceUrl} className="object-center object-cover"/>
+            </div>
+            <div className="w-full h-full z-10 flex flex-col items-center justify-center gap-8 md:gap-16">
+                <span>
+                    <h1 className="text-3xl md:text-5xl xl:text-6xl font-black text-white uppercase text-center">{data?.aboutContents?.nodes[0]?.sectionHeading}</h1>
+                </span>
+                <div className="w-full gap-8 grid grid-cols-1 md:grid-cols-2 px-4 sm:px-8 md:px-16 xl:px-32 2xl:px-48 place-items-center">
+                    {data?.aboutContents?.nodes[0]?.sectionSubheading.map((text, index) => (
+                        <h5 key={index} className={`w-full max-w-[32rem] text-center text-lg md:text-3xl text-black bg-white font-bold px-4 py-2 rounded-full ${index === 0 ? 'text-[#7b2fd0]' : index === 1 ? 'text-[#7b2fd0]' : index === 2 ? 'text-[#a40aa0]' : index === 3 ? 'text-[#a40aa0]' : 'text-white'}`}>{text}</h5>
                     ))}
-                    
                 </div>
             </div>
-            <div className="w-1/2 max-md:w-full max-md:rotate-90 max-md:aspect-square self-stretch relative overflow-auto">
-                <Image fill src={data?.aboutContents?.nodes[0]?.mediaLine2[0]?.sourceUrl} className="object-center" />
+            <div className="w-full h-1/5 shrink-0 flex flex-col items-center justify-end gap-4 z-10 pt-12">
+                <div className="h-fit max-md:w-full w-1/2 flex flex-col items-center justify-center gap-2 text-center">
+                    {data?.aboutContents?.nodes[0]?.textLine1.map((text, index) => (
+                        <h5 key={index} className="md:text-3xl text-white">{text}</h5>
+                    ))}
+                </div>
+                <div className="h-fit w-1/2 flex flex-col items-center justify-center gap-2 text-center">
+                    {data?.aboutContents?.nodes[0]?.textLine2.map((text, index) => (
+                        <h6 key={index} className="text-xs xl:text-lg uppercase tracking-widest text-white">{text}</h6>
+                    ))}
+                </div>
             </div>
         </section>
     )
