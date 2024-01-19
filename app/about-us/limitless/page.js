@@ -1,4 +1,5 @@
 import { HeaderTrigger } from "@/components"
+import AboutLimitlessList from "@/components/limitless/AboutLimitlessList"
 import AboutLimitless from "@/components/limitless/about-limitless"
 import LimitlessHero from "@/components/limitless/limitless-hero"
 
@@ -14,7 +15,8 @@ export default function CompanyActivities() {
             <HeaderTrigger>
                 <LimitlessHero />
             </HeaderTrigger>
-            <AboutLimitless />                      
+            <AboutLimitless />  
+            <AboutLimitlessList />                    
         </main>
     )
 }
