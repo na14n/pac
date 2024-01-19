@@ -2,8 +2,10 @@
 
 export const dynamic = 'force-dynamic'
 
+import { sortByAttribute } from "@/lib/helpers";
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import Image from "next/image";
 
 const query = gql` query FetchLimitlessHero {
     aboutContents(where: {search: "limitless-page-hero"}) {
@@ -12,7 +14,7 @@ const query = gql` query FetchLimitlessHero {
         sectionHeading
         mediaLine1 {
           sourceUrl
-          mimeType
+          altText
         }
         mediaLine2 {
             link
@@ -37,8 +39,14 @@ export default function LimitlessHero() {
     );
 
     return (
-        <section className="relative w-full h-screen bg-[#171717] px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex items-center overflow-hidden">
-            <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden flex justify-center items-stretch text-white">
+        <section className="relative w-full h-screen bg-white px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex items-center overflow-hidden">
+            <div className="absolute top-0 left-0 z-0 w-full h-full text-black">
+                <Image src={sortByAttribute(data?.aboutContents?.nodes[0]?.mediaLine1, "altText")[1]?.sourceUrl} fill className="object-cover object-center" />
+            </div>
+            <div className="z-20 w-full h-full text-black">
+                <Image src={sortByAttribute(data?.aboutContents?.nodes[0]?.mediaLine1, "altText")[0]?.sourceUrl} fill className="object-contain object-center p-16" />
+            </div>
+            <div className="absolute z-10 top-0 left-0 w-full h-full overflow-hidden flex justify-center items-stretch">
                 <video
                     autoPlay
                     loop
@@ -52,9 +60,6 @@ export default function LimitlessHero() {
                     Your browser does not support the video tag.
                 </video>
             </div>
-            {/* <pre>
-                {JSON.stringify(data?.aboutContents?.nodes[0]?.mediaLine2[0].link, null, 4)}
-            </pre> */}
         </section>
     )
 }
