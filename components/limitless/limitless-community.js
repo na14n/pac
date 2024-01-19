@@ -52,7 +52,7 @@ export default function LimitlessCommunity(){
                 </div>
             </div>
             <div className="w-1/2 max-md:w-full flex flex-col gap-2 items-center justify-center p-4 md:p-16 max-md:aspect-square self-stretch relative overflow-auto bg-[#e0e4ff]">
-                <a href={data?.aboutContents?.nodes[0]?.textLine1[0]} target="blank" referrer="no-referrer" className="w-2/3 2xl:w-1/3 aspect-[16/5] md:aspect-[16/3] relative">
+                <a href={data?.aboutContents?.nodes[0]?.textLine1[0]} target="blank" className="w-2/3 2xl:w-1/3 aspect-[16/5] md:aspect-[16/3] relative">
                     <Image fill src={data?.aboutContents?.nodes[0]?.mediaLine1[0]?.sourceUrl} className="object-center object-cover" />
                 </a>
                 <div className="w-1/2 2xl:w-1/5 aspect-square relative">
