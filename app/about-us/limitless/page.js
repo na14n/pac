@@ -1,4 +1,5 @@
 import { HeaderTrigger } from "@/components"
+import AboutLimitless from "@/components/limitless/about-limitless"
 import LimitlessHero from "@/components/limitless/limitless-hero"
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default function CompanyActivities() {
             <HeaderTrigger>
                 <LimitlessHero />
             </HeaderTrigger>
+            <AboutLimitless />                      
         </main>
     )
 }
