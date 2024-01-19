@@ -5,6 +5,7 @@ import LimitlessCommunity from "@/components/limitless/limitless-community"
 import LimitlessHero from "@/components/limitless/limitless-hero"
 import LimitessMerch from "@/components/limitless/limitless-merch"
 import LimitlessMindset from "@/components/limitless/limitless-mindset"
+import LimitlessPossibilities from "@/components/limitless/limitless-possibilities"
 
 export const metadata = {
     title: "Limitless",
@@ -22,7 +23,8 @@ export default function LimitlessPage() {
             <AboutLimitlessList />
             <LimitlessMindset />     
             <LimitessMerch />
-            <LimitlessCommunity />            
+            <LimitlessCommunity />  
+            {/* <LimitlessPossibilities />           */}
         </main>
     )
 }

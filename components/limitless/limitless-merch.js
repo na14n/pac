@@ -42,7 +42,7 @@ export default function LimitessMerch(){
         <section className="relative w-full md:min-h-screen h-fit bg-gradient-to-br from-[#2c0087] to-[#b818a0] flex max-md:flex-col-reverse items-center overflow-hidden">
             <div className="w-1/2 max-md:w-full h-full gap-4 grid md:grid-cols-3 md:grid-rows-3 p-4 md:p-16">
                 {sortByAttribute(data?.aboutContents?.nodes[0]?.mediaLine2, "altText").map((image, index) => 
-                <div className={`${index === 0 ? "h-full md:row-span-3 md:col-span-2 max-md:aspect-[9/16]" : "aspect-square"} w-full relative bg-white`}>
+                <div key={index} className={`${index === 0 ? "h-full md:row-span-3 md:col-span-2 max-md:aspect-[9/16]" : "aspect-square"} w-full relative bg-white`}>
                     <Image fill src={image.sourceUrl} className="object-cover object-center" />
                 </div>
                 )}
