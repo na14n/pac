@@ -47,7 +47,7 @@ export default function LimitlessPossibilities(){
                 </span>
                 <div className="w-full gap-8 grid grid-cols-1 md:grid-cols-2 px-4 sm:px-8 md:px-16 xl:px-32 2xl:px-48 place-items-center">
                     {data?.aboutContents?.nodes[0]?.sectionSubheading.map((text, index) => (
-                        <h5 key={index} className={`w-full max-w-[32rem] text-center text-lg md:text-3xl text-black bg-white font-bold px-4 py-2 rounded-full ${index === 0 ? 'text-[#7b2fd0]' : index === 1 ? 'text-[#7b2fd0]' : index === 2 ? 'text-[#a40aa0]' : index === 3 ? 'text-[#a40aa0]' : 'text-white'}`}>{text}</h5>
+                        <h5 key={index} className={`w-full max-w-[32rem] text-center text-lg md:text-3xl bg-white font-bold px-4 py-2 rounded-full ${index === 0 ? 'text-[#7b2fd0]' : index === 1 ? 'text-[#7b2fd0]' : index === 2 ? 'text-[#a40aa0]' : index === 3 ? 'text-[#a40aa0]' : 'text-white'}`}>{text}</h5>
                     ))}
                 </div>
             </div>
