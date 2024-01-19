@@ -2,6 +2,7 @@ import { HeaderTrigger } from "@/components"
 import AboutLimitlessList from "@/components/limitless/AboutLimitlessList"
 import AboutLimitless from "@/components/limitless/about-limitless"
 import LimitlessHero from "@/components/limitless/limitless-hero"
+import LimitessMerch from "@/components/limitless/limitless-merch"
 import LimitlessMindset from "@/components/limitless/limitless-mindset"
 
 export const metadata = {
@@ -18,7 +19,8 @@ export default function CompanyActivities() {
             </HeaderTrigger>
             <AboutLimitless />  
             <AboutLimitlessList />
-            <LimitlessMindset />                 
+            <LimitlessMindset />     
+            <LimitessMerch />            
         </main>
     )
 }

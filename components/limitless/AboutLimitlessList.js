@@ -10,7 +10,7 @@ import { sortByAttribute } from "@/lib/helpers";
 
 export default function AboutLimitlessList(){
 
-    const query = gql` query FetchAboutLimitless {
+    const query = gql` query FetchLimitlessList {
         aboutContents(where: {search: "limitless-page-abtlist"}) {
           nodes {
             sectionTitle

@@ -9,7 +9,7 @@ import parse from 'html-react-parser'
 
 export default function LimitlessMindset(){
 
-    const query = gql` query FetchAboutLimitless {
+    const query = gql` query FetchLimitlessMindset{
         aboutContents(where: {search: "limitless-page-mindset"}) {
           nodes {
             sectionTitle
