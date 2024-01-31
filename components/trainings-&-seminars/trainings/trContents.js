@@ -125,12 +125,12 @@ export default function WorkshopContents({ id }) {
           </h3>
           <div className="flex flex-col flex-wrap">
             {data?.workshop?.eventSubheading?.map((s, index) => (
-              <h5 key={index} className="2xl:text-xl">
+              <h5 key={index} className="2xl:text-xl text-justify">
                 {s}
               </h5>
             ))}
           </div>
-          <div className="h1 h2 h3 p list b 2xl:text-lg">
+          <div className="h1 h2 h3 p list b 2xl:text-lg text-justify">
             {parse(data.workshop.description)}
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function WorkshopContents({ id }) {
         <EventCalendar data={data} />
       </div>
       <div className=" w-full py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col justify-center items-center 2xl:gap-12 bg-gradient-to-b to-[#f9a03c] from-[#ef6703]">
-        <h1 className="font-bold text-white text-3xl 2xl:text-5xl mb-6">
+        <h1 className="font-bold text-white text-3xl 2xl:text-5xl mb-6 text-center">
           Grow and Elevate your Dental Practice!
         </h1>
         <span className={data.workshop.open ? "mb-12" : "hidden"}>
@@ -184,7 +184,7 @@ export default function WorkshopContents({ id }) {
         <Slider media={data.workshop.imageGallery} />
       </div>
       <div className="w-full py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col items-center gap-4 2xl:gap-8 bg-[#E1E1E1] justify-center ">
-        <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-orange uppercase mb-8">
+        <h3 className="text-3xl 2xl:text-5xl font-bold text-pac-orange uppercase mb-8 text-center">
           SUGGESTED WORKSHOPS
         </h3>
         <SuggestedList
@@ -199,7 +199,7 @@ export default function WorkshopContents({ id }) {
           <Image
             fill
             src={data?.workshop?.brand?.node?.logo?.sourceUrl}
-            className="object-scale-down object-left"
+            className="object-scale-down object-left max-md:object-center"
           />
         </div>
         <div className="w-full flex flex-col items-center justify-center gap-4 2xl:gap-8">
@@ -226,7 +226,7 @@ export default function WorkshopContents({ id }) {
             </button>
           </div>
         </div>
-        <div className="w-full"></div>
+        <div className="w-full max-md:hidden"></div>
       </div>
     </section>
   );

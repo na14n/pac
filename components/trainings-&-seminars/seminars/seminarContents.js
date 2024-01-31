@@ -192,12 +192,12 @@ export default function SeminarContents({ id }) {
           type={"seminars"}
         />
       </div>
-      <div className="py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex items-center gap-4 2xl:gap-8 justify-center">
+      <div className="py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex items-center gap-4 2xl:gap-8 justify-center max-md:items-center">
         <div className="w-full h-auto flex items-center justify-start relative self-stretch">
           <Image
             fill
             src={data?.seminar?.brand?.node?.logo?.sourceUrl}
-            className="object-scale-down object-left"
+            className="object-scale-down object-left max-md:object-center"
           />
         </div>
         <div className="w-full flex flex-col items-center gap-4 2xl:gap-8">
@@ -224,7 +224,7 @@ export default function SeminarContents({ id }) {
             </button>
           </div>
         </div>
-        <div className="w-full h-full"></div>
+        <div className="w-full h-full max-md:hidden"></div>
       </div>
     </section>
   );
