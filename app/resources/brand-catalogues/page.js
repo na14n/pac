@@ -10,7 +10,7 @@ export default async function BrandCatalogues() {
           <HeaderTrigger>
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
               <div className="absolute z-10 t-0 bg-gradient-to-b from-[#133701] to-[#107200] w-full h-full"></div>
-              <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16 uppercase">
+              <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16 uppercase text-center">
                 <h1>Product Catalogues</h1>
               </div>
             </div>
