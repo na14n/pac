@@ -58,7 +58,7 @@ export default function CompanyActivitiesBanners() {
         </div>
       )) : ``}
       <div className="w-full h-96 flex items-center justify-center bg-[#046d30] flex-col gap-8 shadow-md lg:shadow-none p-8">
-        <h1 className="text-3xl 2xl:text-4xl font-bold text-[#FCFCFC]">
+        <h1 className="text-3xl 2xl:text-4xl font-bold text-[#FCFCFC] text-center">
           {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.sectionHeading[1] : ``}
         </h1>
         <p className="text-[#EFEFEF] text-center 2xl:text-[1.2rem]">
