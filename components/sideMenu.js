@@ -23,8 +23,12 @@ const SideMenu = () => {
             href: '/products'
         },
         {
+            link: 'prostige',
+            href: '/products/prostige'
+        },
+        {
             link: 'trainings & seminars',
-            href: '#'
+            href: '/trainings-&-seminars'
         },
         {
             link: 'contact us',
