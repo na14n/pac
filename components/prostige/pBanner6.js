@@ -44,9 +44,9 @@ export default function PBanner6() {
             <h3 className="text-[#121212] lg:text-3xl xs:text-2xl font-bold w-full h-fit">
                 {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionHeading : ``}
             </h3>
-            <div className="w-full flex flex-row gap-3">
+            <div className="w-full flex flex-col max-md:items-center md:flex-row gap-3">
                 <h4 className="shrink-0 text-pac-orange text-lg 2xl:text-xl font-bold">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading[0] : ``}</h4>
-                <span className=" h-fit flex flex-col gap-4">
+                <span className=" h-fit flex flex-col gap-4 items-center text-center">
                     <p className="text-[#373737] 2xl:text-xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[0] : ``}</p>
                     <div className="flex xs:flex-col lg:flex-row items-center gap-4 w-fit h-fit">
                         <Button type={1} name={'Download Now'} link={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine2[0] : ``} />
@@ -62,18 +62,18 @@ export default function PBanner6() {
                     </div>
                 </span>
             </div>
-            <div className="w-full flex flex-row gap-3">
+            <div className="w-full flex flex-col max-md:items-center md:flex-row gap-3">
                 <h4 className="shrink-0 text-pac-orange text-lg 2xl:text-xl font-bold">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading[1] : ``}</h4>
-                <span className=" h-fit flex flex-col gap-4">
-                    <p className="text-[#373737] 2xl:text-xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[1] : ``}</p>
-                    <p className="text-[#373737] 2xl:text-lg">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine2[2] : ``}</p>
+                <span className=" h-fit flex flex-col gap-4 max-md:items-center text-center">
+                    <p className="text-[#373737] 2xl:text-xl text-justify">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[1] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-lg text-justify">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine2[2] : ``}</p>
                 </span>
             </div>
-            <div className="w-full flex flex-row gap-3">
+            <div className="w-full flex flex-col max-md:items-center md:flex-row gap-3">
                 <h4 className="shrink-0 text-pac-orange text-lg 2xl:text-xl font-bold">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading[2] : ``}</h4>
-                <span className=" h-fit flex flex-col gap-4">
-                    <p className="text-[#373737] 2xl:text-xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[2] : ``}</p>
-                    <p className="text-[#373737] 2xl:text-2xl">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[3] : ``}</p>
+                <span className=" h-fit flex flex-col max-md:items-center gap-4">
+                    <p className="text-[#373737] 2xl:text-xl text-justify">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[2] : ``}</p>
+                    <p className="text-[#373737] 2xl:text-2xl text-justify">{data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.textLine1[3] : ``}</p>
                 </span>
             </div>
         </section>

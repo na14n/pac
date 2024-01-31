@@ -98,7 +98,7 @@ export default function PBanner7() {
                         )) : ''}
                 </div>
             </div>
-            <div className="w-full h-fit py-16 bg-gradient-to-b from-[#f9a03c] to-[#ef6703] gap-16 flex flex-col">
+            <div className="w-full h-fit py-16 bg-gradient-to-b from-[#f9a03c] to-[#ef6703] gap-16 flex flex-col px-4">
                 <div className="w-full h-fit flex xs:flex-col lg:flex-row justify-center items-center gap-16 2xl:gap-24">
                     {data7b?.prostigePages?.nodes[0] ? data7b.prostigePages?.nodes[0]?.sectionHeading.map(
                         (h, i) => (

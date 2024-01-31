@@ -52,6 +52,14 @@ export default function PBanner5() {
                         ))
                             : ``}
                     </span>
+                    <motion.div
+                        initial={{ opacity: 0, y: 15, x: 15 }}
+                        whileInView={{ opacity: 1, y: 0, x: 0 }}
+                        transition={{ duration: 1 }}
+                        className="w-full aspect-square lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto"
+                    >
+                        <Image fill={true} className="object-cover" src={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.mediaLine1[0].link : ''} />
+                    </motion.div>
                     <div className="flex flex-wrap gap-2">
                         <span className="flex w-fit h-fit gap-2">
                             {data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.sectionSubheading.map((
@@ -82,7 +90,7 @@ export default function PBanner5() {
                     initial={{ opacity: 0, y: 15, x: 15 }}
                     whileInView={{ opacity: 1, y: 0, x: 0 }}
                     transition={{ duration: 1 }}
-                    className="lg:w-[700px] lg:h-[600px] xs:w-96 xs:h-96 lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto"
+                    className="lg:w-[700px] lg:h-[600px] xs:w-96 xs:h-96 lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto max-md:hidden"
                 >
                     <Image fill={true} className="object-cover" src={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.mediaLine1[0].link : ''} />
                 </motion.div>

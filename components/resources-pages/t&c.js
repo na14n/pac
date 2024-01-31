@@ -31,7 +31,7 @@ export default function TandCbody() {
     );
 
     return (
-        <section className="h-fit w-full relative flex flex-col h1 h2 h3 p list px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 py-16 gap-1">
+        <section className="h-fit w-full relative flex flex-col h1-s h2-s h3-s p-justified list px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 py-16 gap-1">
             {parse(data?.prostigePages?.nodes[0]?.contentLine1[0])}
         </section>
     )

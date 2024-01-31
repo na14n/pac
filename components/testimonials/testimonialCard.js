@@ -25,7 +25,7 @@ const TestimonialCard = (props) => {
             </div>
         </div>
     ) : (props.type === 'prostige') ? (
-        <div className="w-80 h-72 p-8 bg-[#FCFCFC] rounded-md shadow-md relative flex flex-col items-center 2xl:w-[496px]">
+        <div className="w-full md:w-80 h-72 p-8 bg-[#FCFCFC] rounded-md shadow-md relative flex flex-col items-center 2xl:w-[496px]">
             <div className="w-full h-fit text-pac-orange">
                 <Icon icon="ri:double-quotes-l" width={56} height={56} />
             </div>

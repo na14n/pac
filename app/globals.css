@@ -90,12 +90,36 @@
   font-size: 3rem;
 }
 
+.h1-s h1 {
+  color: #121212;
+  font-weight: bold;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
 .h2 h2 {
   color: #171717;
   font-weight: bold;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 2.5rem;
+}
+
+.h2-s h2 {
+  color: #171717;
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.h3-s h3 {
+  color: #171717;
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .h3 h3 {
@@ -109,6 +133,12 @@
 .p p {
   color: #373737;
   font-size: 1rem;
+}
+
+.p-justified p {
+  color: #373737;
+  font-size: 1rem;
+  text-align: justify;
 }
 
 
