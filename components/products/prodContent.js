@@ -89,11 +89,11 @@ export default function ProdContent(props) {
         </h3>
         <div className="w-full h-[3px] bg-[#777] rounded-md" />
       </div>
-      <div className="px-4 md:px-12 lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit pb-12 flex gap-8 bg-[#EFEFEF]">
-        <div className="2xl:text-lg text-[#373737] text-justify max-w-[75ch] h1 h2 h3 p oranged_bold list  shrink-0">
+      <div className="px-4 md:px-12 lg:px-48 2xl:px-64 min-[1920px]:px-80 w-full h-fit pb-12 flex flex-wrap gap-8 bg-[#EFEFEF]">
+        <div className="2xl:text-lg text-[#373737] text-justify w-full md:max-w-[75ch] h1 h2 h3 p oranged_bold list shrink-0">
           {parse(data ? data?.product?.longDescription : ``)}
         </div>
-        <div className=" w-full py-24 relative">
+        <div className=" w-full md:py-24 relative">
           <img
             src={data?.product?.descriptionImage?.link}
             className=" w-full h-auto"
