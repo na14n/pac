@@ -39,15 +39,15 @@ export default function CareersHeroBanner() {
 
     return (
         <section className="w-full h-fit bg-white flex flex-col md:flex-row md:items-center">
-            <div className="flex flex-col justify-center gap-2 w-full h-fit py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
+            <div className="flex flex-col max-md:items-center justify-center gap-2 w-full h-fit py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
                 <span>
-                    <h1 className="text-3xl 2xl:text-5xl text-[#121212] font-semibold">
+                    <h1 className="text-3xl 2xl:text-5xl text-[#121212] font-semibold text-center">
                         {data?.contactUsContents?.nodes[0]?.sectionHeading[0]}
                     </h1>
-                    <h1 className="text-4xl sm:text-5xl 2xl:text-6xl text-pac-green uppercase font-bold">
+                    <h1 className="text-4xl sm:text-5xl 2xl:text-6xl text-pac-green uppercase font-bold text-center">
                         {data?.contactUsContents?.nodes[0]?.sectionHeading[1]}
                     </h1>
-                    <h1 className="text-4xl sm:text-5xl 2xl:text-6xl text-pac-green uppercase font-bold">
+                    <h1 className="text-4xl sm:text-5xl 2xl:text-6xl text-pac-green uppercase font-bold text-center">
                         {data?.contactUsContents?.nodes[0]?.sectionHeading[2]}
                     </h1>
                 </span>

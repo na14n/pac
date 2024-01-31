@@ -50,7 +50,7 @@ export default function CareersSection1() {
             <div className="flex gap-16 py-16 w-full h-fit bg-[#EFEFEF] px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
                 <div className="flex flex-col gap-12 shrink-0 w-full md:w-[55ch] h-fit">
                     {data?.contactUsContents?.nodes[0].contentLine1?.map((c, index) => (
-                        <span key={index} className="text-lg 2xl:text-xl">
+                        <span key={index} className="text-lg 2xl:text-xl text-justify">
                             {parse(c)}
                         </span>
                     ))}
