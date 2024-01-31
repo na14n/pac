@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import VerticalSlider from "../embla/verticalSlider";
 import AboutHorizontalSlider from "../embla/aboutHorizontalSlider";
+import parse from "html-react-parser"
 
 const query = gql`
     query GetAboutContent02 {
@@ -47,9 +48,9 @@ export default function AboutS02() {
                     <div className="w-full h-fit flex flex-col gap-6">
                         {data?.aboutContents?.nodes[0] ? data?.aboutContents?.nodes[0]?.contentLine1
                         .map((c, i) => (
-                            <p key={i} className="h-fit w-full xl:w-[50ch] 2xl:w-[50ch] min-[1920px]:w-[60ch] xl:pr-6 text-justify 2xl:text-lg text-[#EFEFEF]">
-                                {c}
-                            </p>
+                            <div key={i} className="h-fit w-full xl:w-[50ch] 2xl:w-[50ch] min-[1920px]:w-[60ch] xl:pr-6 text-justify 2xl:text-lg text-[#EFEFEF]">
+                                {parse(c)}
+                            </div>
                         ))
                         : ``}
                     </div>
