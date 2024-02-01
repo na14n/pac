@@ -16,7 +16,13 @@ const SearchBar = (props) => {
 
     let generalSearch = (e) => {
         e.preventDefault();
-        return router.push(`search?q=${searchInput}`, undefined, { shallow: true })
+        return router.push(`/search?q=${searchInput}`, undefined, { shallow: true })
+    }
+
+    let generalSearchM = (e) => {
+        e.preventDefault();
+        props.setSidebarState(false);
+        return router.push(`/search?q=${searchInput}`, undefined, { shallow: true, reload: true });
     }
 
     const text = props.textAccent
@@ -45,6 +51,15 @@ const SearchBar = (props) => {
                     </button>
                 </form>
             </div>
+        ) : (props.type === 'm') ? (
+            <div className="relative w-full justify-center h-content rounded-md py-2 px-1 flex gap-2 items-center">
+                <form className="flex items-center gap-4" onSubmit={() => {generalSearchM; }}>
+                    <input type="text" placeholder="Search" className="bg-white/0 w-full px-1 py-1 ring-2 ring-[#FCFCFC] text-white text-sm focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#575757] focus:bg-[#f1f1f1] placeholder:text-[#f1f1f1]" onChange={(e) => { setSearchInput(e.target.value) }}/>
+                    <button className="flex items-center justify-center text-nav-orange bg-white p-1 rounded-sm hover:text-pac-orange" type="submit">
+                        <Icon icon="ic:round-search" width="24" height="24" />
+                    </button>
+                </form>
+            </div>
         ) : (
             <div className="relative w-content justify-end h-content rounded-md py-2 px-1 flex gap-2 items-center">
                 <form className="flex items-center gap-4" onSubmit={generalSearch}>
@@ -53,7 +68,6 @@ const SearchBar = (props) => {
                         <Icon icon="ic:round-search" width="24" height="24" />
                     </button>
                 </form>
-                
             </div>
         )
     )

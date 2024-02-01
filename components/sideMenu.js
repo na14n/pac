@@ -2,6 +2,7 @@
 import { Icon } from "@iconify-icon/react";
 import { useAtom } from "jotai";
 import { SideBarStateAtom } from "@/lib/stores/headerState";
+import SearchBar from "./searchBar";
 import Image from "next/image";
 
 const SideMenu = () => {
@@ -59,6 +60,7 @@ const SideMenu = () => {
                         </a>
                     ))}
                 </div>
+                {/* <SearchBar type="m" setSidebarState={setSidebarState} /> */}
             </div>
         </div>
     )

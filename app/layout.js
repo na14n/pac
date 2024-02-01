@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { ApolloWrapper } from '@/lib/apollo-wrapper'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
+import SearchBanner from '@/components/SearchBanner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <ApolloWrapper>
           <Header />
           <SideMenu />
+          <SearchBanner />
           {children}
           <Footer />
         </ApolloWrapper>
