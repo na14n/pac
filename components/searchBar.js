@@ -43,7 +43,7 @@ const SearchBar = (props) => {
                 </form>
             </div>
         ) : (props.type === 'general-lg') ? (
-            <div className="relative w-1/2 h-content rounded-md py-2 px-1 flex gap-2 items-center">
+            <div className="relative max-md:w-4/5 w-1/2 h-content rounded-md py-2 px-1 flex gap-2 items-center">
                 <form className="w-full h-content flex items-center gap-4" onSubmit={generalSearch}>
                     <input type="text" placeholder="Search" className="bg-white/0 w-full px-2 py-1 ring-2 ring-pac-orange text-[#777] text-xl xl:text-3xl focus:outline-none focus:ring-nav-orange rounded-md focus:text-[#272727] focus:placeholder:text-[#575757] focus:bg-[#f1f1f1] placeholder:text-[#777]" onChange={(e) => { setSearchInput(e.target.value) }}/>
                     <button className="flex items-center justify-center bg-pac-orange text-white p-2 rounded-md" type="submit">

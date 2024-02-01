@@ -14,7 +14,7 @@ export default function SearchPage({searchParams}) {
         <PageWrapper>
             <main className="w-full min-h-screen h-fit bg-[#EEE] overflow-hidden">
                 <HeaderTrigger>
-                    <section className="bg-gradient-to-b from-[#ef6703] to-[#f9a03c] w-full aspect-video lg:aspect-[8/1] flex flex-col py-8 items-start justify-end px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 relative">
+                    <section className="bg-gradient-to-b from-[#ef6703] to-[#f9a03c] w-full max-md:aspect-video lg:aspect-[8/1] flex flex-col pt-24 items-start justify-end px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 relative">
                         <div className="text-[#FCFCFC] pt-8 pb-4">
                             {searchParams.q ? 
                             <div className=" w-fit h-fit flex flex-col gap-2">
@@ -25,7 +25,7 @@ export default function SearchPage({searchParams}) {
                                 <h2 className="text-2xl xl:text-4xl font-bold">{searchParams.q}</h2>
                             </div> : 
                             <div className=" w-fit h-fit flex items-center gap-4">
-                                <h2 className="text-4xl">Searching for something?</h2>
+                                <h2 className="max-md:text-xl text-4xl">Searching for something?</h2>
                                 <Icon icon="ic:round-search" className="text-xl xl:text-5xl" />
                             </div>}
                         </div>

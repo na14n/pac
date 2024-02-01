@@ -125,21 +125,17 @@ export default function SearchUI({search}){
         )
 
         return (
-                <main className="flex flex-col w-full lg:w-3/5 h-fit gap-4">
-                        {/* <pre>{JSON.stringify(typeof search)}</pre>
-                        {data? <pre>
-                          {JSON.stringify(transformData(data), null, 2)}
-                        </pre> : <></>} */}
+                <main className="flex flex-col w-full lg:w-3/5 h-fit gap-4 xl:px-0 px-4 lg:px-8 ">
                         {search ? (data && transformData(data).length > 0 ? 
                           <section className=" w-full flex flex-col gap-4">
                             {transformData(data).map((data, index) => 
-                            <a href={data.link} key={index} className="w-full aspect-[8/1] bg-[#F5F5F5] rounded-md shadow-sm flex items-center justify-center overflow-hidden">
+                            <a href={data.link} key={index} className="w-full aspect-[16/5] md:aspect-[4/1] xl:aspect-[8/1] bg-[#F5F5F5] rounded-md shadow-sm flex items-center justify-center overflow-hidden">
                               <div className="h-full w-full relative">
                                 <Image fill src={data.thumbnail} className="object-cover object-center" />
                               </div>
-                              <div className="p-4 w-5/6 h-full shrink-0">
+                              <div className="p-4  w-2/3 xl:w-5/6 h-full shrink-0">
                                 <h6 className="font-bold text-sm opacity-60 capitalize">{data.type}</h6>
-                                <h6 className="font-bold text-xl opacity-95 capitalize">{data.title}</h6>
+                                <h6 className="font-bold text-lg md:text-xl opacity-95 capitalize">{data.title}</h6>
                               </div>
                             </a>)}
                           </section> : 
