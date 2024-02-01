@@ -24,8 +24,8 @@ const SalesAgentCard = (props) => {
                 </div>
                 <div className={`z-20 w-full h-full absolute top-0 left-0 bg-gradient-to-t 
                 ${props?.i?.specificLocations.includes("district manager") ?
-                        `from-[#cc602f] via-[#cc602f]/25 to-transparent`
-                        : `from-[#01390E] via-[#01390E]/25 to-transparent`} `} />
+                        `from-[#cc602f] via-[#cc602f]/25 max-md:via-transparent to-transparent`
+                        : `from-[#01390E] via-[#01390E]/25 max-md:via-transparent to-transparent`} `} />
                 <div className="h-fit w-full px-6 py-3 flex flex-col items-start z-40 ">
                     <div className="pb-2">
                         <h2 className="text-[#FCFCFC] font-bold">{props?.i?.name}</h2>
