@@ -40,7 +40,7 @@ export default async function CompactHeader({ media }) {
                 <div className="w-full aspect-[8/3] bg-white">
                     <ProductHeroSlider media={assets} />
                 </div>
-                <div className="w-full items-center grid-cols-3 grid md:grid-cols-6 xl:grid-cols-12 bg-[#ec6501]">
+                <div className="w-full items-center grid-cols-4 grid md:grid-cols-6 xl:grid-cols-12 bg-[#ec6501]">
                     {categories.map((c, index) => (
                         <a key={index} className="aspect-square md:p-2 flex flex-col items-center justify-center gap-1 max-md:gap-2 group" href={`/categories?category=${c?.name.toLowerCase()}`}>
                             <span className="w-1/2 xl:w-3/5 square relative border-[1.5px] rounded-md border-white/25 group-hover:border-white/80">
