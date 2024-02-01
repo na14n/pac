@@ -23,6 +23,7 @@ export async function POST(request) {
     const contact = formData.get('contact')
     const prc_id = formData.get('id')
     const address = formData.get('address')
+    const notes = formData.get('notes')
     const basketStringified = formData.get('basket')
     const basket = JSON.parse(formData.get('basket'))
     // basket.parse()
@@ -234,7 +235,7 @@ export async function POST(request) {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left" bgcolor="#FCFCFC" style="padding-right: 50px;padding-left: 50px;">
+                                    <td align="left" bgcolor="#FCFCFC" style="padding-right: 50px;padding-left: 50px;padding-bottom: 50px">
                                         <table style="width: 100%; border-collapse: collapse;">
                                             <thead>
                                                 <tr>
@@ -249,6 +250,15 @@ export async function POST(request) {
                                         </table>
                                     </td>
                                 </tr>
+                                <tr>
+                                <td align="left" bgcolor="#FCFCFC"
+                                    style="padding-top: 10px;padding-right: 50px;padding-bottom: 5px;padding-left: 50px;">
+                                        <h2 style="color: #f06128;">Additional Notes </h2>
+                                        <p style="color: #272727; font-weight: 700;">
+                                           <span style="padding-bottom: 2px">${notes}<br></span>
+                                        </p>
+                                </td>
+                            </tr>
                                 <tr>
                                     <td align="right" bgcolor="#FCFCFC" style="padding-right: 50px;padding-left: 50px;">
                                         <h1 style="color: #067133; font-size: xx-large; font-style: italic;">"</h1>

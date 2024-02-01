@@ -15,7 +15,8 @@ export default function QuoteForm() {
         contact: '',
         email: '',
         id: '',
-        address: ''
+        address: '',
+        notes: '',
     })
 
     const [basketItems, setBasketItems] = useAtom(BasketAtom);
@@ -158,6 +159,7 @@ export default function QuoteForm() {
                     <input
                         type="text"
                         placeholder="PRC ID number"
+                        onChange={(e) => setForm({ ...form, id: e.target.value })}
                         className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none"
                     />
                 </div>
@@ -169,6 +171,19 @@ export default function QuoteForm() {
                         type="text"
                         rows="3"
                         placeholder="Clinic Address"
+                        onChange={(e) => setForm({ ...form, address: e.target.value })}
+                        className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none resize-none"
+                    />
+                </div>
+                <div className="flex flex-col gap-1 w-full h-fit">
+                    <label className="font-semibold text-sm text-[#121212]">
+                        Additional Notes <span className="font-normal italic opacity-60">(optional)</span>
+                    </label>
+                    <textarea
+                        type="text"
+                        rows="3"
+                        placeholder="Add your Additional Notes Here"
+                        onChange={(e) => setForm({ ...form, notes: e.target.value })}
                         className="w-60 h-fit border-2 border-[#575757]/20 text-[#373737] rounded-sm focus:border-nav-orange/80 px-2 py-1 outline-none resize-none"
                     />
                 </div>
