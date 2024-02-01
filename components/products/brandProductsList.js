@@ -60,7 +60,7 @@ export default function BrandProductsList({ queryVariables, brand }) {
 
     return (
         <section className="w-full h-fit py-8 bg-[#EFEFEF] flex flex-col items-center">
-            <div className="max-w-[24rem] md:max-w-[48rem] xl:max-w-[60rem] h-full max-lg:pt-8 grid justify-items-center gap-4 max-xl:grid-auto-fit-[9rem] grid-auto-fit-[12rem]">
+            <div className="max-w-[24rem] md:max-w-[48rem] xl:max-w-[60rem] 2xl:max-w-[72rem] h-full max-lg:pt-8 grid justify-items-center gap-4 max-xl:grid-auto-fit-[9rem] grid-auto-fit-[12rem]">
                 {data ? data.products.nodes.map((p, i) => (
                     // w-48 max-xl:w-36
                     <ProductCard
