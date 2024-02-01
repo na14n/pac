@@ -160,9 +160,9 @@ const Footer = () => {
 
 
     return (
-        <div className="w-full min-h-content lg:max-h-[67vh] xs:h-content bg-[#171717] flex flex-col divide-y py-4 2xl:px-44 lg:px-12 xs:px-4 gap-4 pt-8 z-50">
-            <div className="w-full h-full shrink-0 basis-[90%] flex lg:flex-row xs:flex-col gap-4">
-                <div className='w-full basis-[30%] flex flex-col justify-start gap-4'>
+        <div className="w-full min-h-content xl:max-h-[67vh] xs:h-content bg-[#171717] flex flex-col divide-y py-4 2xl:px-44 lg:px-12 xs:px-4 gap-4 pt-8 z-50">
+            <div className="w-full h-full shrink-0 lg:basis-[90%] flex lg:flex-row xs:flex-col gap-4">
+                <div className='w-full lg:basis-[30%] flex flex-col justify-start gap-4'>
                     <div className='w-64 h-12 relative shrink-0'>
                         <Image src="/pac-white.png" fill={true} alt='pros-apac-logo' />
                     </div>
@@ -187,7 +187,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' w-full basis-[50%] grid lg:grid-cols-2'>
+                <div className=' w-full h-fit grid-gap-0 lg:basis-[50%] grid lg:grid-cols-2'>
                     <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
                         <a href='/about-us' className="text-[#fcfcfc] hover:text-nav-orange text-sm uppercase font-bold pb-1">
                             about
@@ -221,7 +221,7 @@ const Footer = () => {
                         ))}
                     </div>
                 </div>
-                <div className=' w-full h-full basis-[20%] flex flex-col justify-between'>
+                <div className=' w-full h-full lg:basis-[20%] flex flex-col justify-between'>
                     <div className=' w-full h-content py-1 flex lg:justify-between gap-2'>
                         {socmedLinks.map((link, index) => (
                             <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>
