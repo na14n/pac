@@ -85,9 +85,12 @@ const Header = () => {
                                 </a>
                                 : <></>
                                 : <></>}
-                        <button className={`xl:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-2xl text-[#FCFCFC] flex items-center justify-center`}`} onClick={() => setSearchBannerState(true)}>
+                        {/* <button className={`xl:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-2xl text-[#FCFCFC] flex items-center justify-center`}`} onClick={() => setSearchBannerState(true)}>
                             <Icon icon="mdi:search" />
-                        </button>      
+                        </button> */}
+                        <a className={`xl:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-2xl text-[#FCFCFC] flex items-center justify-center`}`} href="/search">
+                            <Icon icon="mdi:search" />
+                        </a>      
                         <button className={`xl:hidden z-50 ${sidebarState === true ? `hidden` : `w-fit h-fit text-4xl text-[#FCFCFC] flex items-center justify-center`}`} onClick={() => setSidebarState(true)}>
                             <Icon icon="mdi:menu" />
                         </button>
