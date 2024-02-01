@@ -107,8 +107,8 @@ export default async function BrandPage({ params, searchParams }) {
           <div className="w-full h-fit">
             <BrandLogo media={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].logo.sourceUrl : ''} />
           </div>
-          <div className={`w-full h-fit lg:px-32 2xl:px-48 lg:pt-32 2xl:pt-40 flex flex-col items-center justify-center gap-4 xl:gap-8 pb-20 `}>
-              <h1 className={`text-5xl font-bold text-[#121212]`}>{data?.data?.brands?.nodes[0]?.name}</h1>
+          <div className={`w-full h-fit lg:px-32 2xl:px-48 lg:pt-32 2xl:pt-40 flex flex-col items-center justify-center gap-4 xl:gap-8 pb-20 max-lg:pt-32`}>
+              <h1 className={`text-5xl font-bold text-[#121212] text-center max-lg:pb-8`}>{data?.data?.brands?.nodes[0]?.name}</h1>
               <div className={`text-[#373737] p h1 h2 h3 b text-sm px-16 xl:text-lg`}>{parse(data?.data?.brands?.nodes[0]?.description)}</div>
           </div>
           <div className="w-full h-fit relative flex justify-center items-center bg-[#EFEFEF]">
