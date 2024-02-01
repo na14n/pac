@@ -95,15 +95,15 @@ export default function Basket() {
 
     return (
         <Provider>
-            <div className="bg-[#FCFCFC] flex flex-col gap-8 w-full min-h-full h-fit p-8 grow shadow-md rounded-sm">
+            <div className="bg-[#FCFCFC] flex flex-col gap-8 w-full min-h-full h-fit p-2 py-8 sm:p-8 grow shadow-md rounded-sm">
                 <h1 className="font-bold text-2xl text-pac-orange">
                     My Cart
                 </h1>
                 <div className={`w-full h-full flex flex-col ${basketItems.length === 0 ? `justify-center items-center` : `justify-start items-start`}`}>
                     {loading ? <p>Loading...</p> : basket.length != 0 ? (
-                        <ul className="flex flex-col gap-4 w-full h-full px-4">
+                        <ul className="flex flex-col gap-4 w-full h-full md:px-4">
                             {basketItems.map((i, index) => (
-                                <li key={index} className="w-full min-h-32 max-h-fit shadow-md rounded-sm flex items-center border-[1px] border-[#575757]/20 p-4">
+                                <li key={index} className="w-full min-h-32 max-h-fit shadow-md rounded-sm flex items-center border-[1px] border-[#575757]/20 p-0 sm:p-4">
                                     <div className="w-28 h-28 shrink-0 rounded-lg relative border-[2px] border-nav-orange/75 overflow-hidden">
                                         <Image fill={true} className="object-contain" src={i ? i.image : ''} />
                                     </div>
@@ -111,7 +111,7 @@ export default function Basket() {
                                         <h3 className="font-semibold text-lg text-[#121212]">{i.name}</h3>
                                         <h5 className="text-sm text-[#373737]">{i.brand}</h5>
                                     </div>
-                                    <div className="w-fit h-full shrink-0  flex items-center justify-center gap-4">
+                                    <div className="w-fit h-full shrink-0 flex max-md:flex-col-reverse max-md:gap-2 items-center justify-center gap-4">
                                         <button className={`w-fit h-fit rounded-md flex items-center text-[#FCFCFC] justify-center bg-red-700 hover:bg-red-600`} onClick={() => decrement(i)}>
                                             <Icon icon={'mdi:minus'} className="text-lg p-1" />
                                         </button>

@@ -106,7 +106,7 @@ export default function QuoteForm() {
     }
 
     return (
-        <section className="w-fit h-full p-4 rounded-sm shadow-md bg-[#FCFCFC] shrink-0">
+        <section className="w-full xl:w-fit h-full p-4 rounded-sm shadow-md bg-[#FCFCFC] shrink-0">
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-2 w-full h-fit"
@@ -176,6 +176,7 @@ export default function QuoteForm() {
                     sitekey="6Ldp5nwoAAAAAJxjk_cq_Fmr-e86simj4O6SR-L8"
                     ref={recaptchaRef}
                     onChange={handleCaptchaSubmission}
+                    className="w-full"
                 />
                 <div>
                     {loading ?
