@@ -56,7 +56,7 @@ export default function PBanner5() {
                         initial={{ opacity: 0, y: 15, x: 15 }}
                         whileInView={{ opacity: 1, y: 0, x: 0 }}
                         transition={{ duration: 1 }}
-                        className="w-full aspect-square lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto"
+                        className="w-full md:hidden aspect-square lg:relative xs:relative md:absolute md:top-0 md:right-0 xs:place-self-end md:place-self-auto"
                     >
                         <Image fill={true} className="object-cover" src={data?.prostigePages?.nodes[0] ? data?.prostigePages?.nodes[0]?.mediaLine1[0].link : ''} />
                     </motion.div>
