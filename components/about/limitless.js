@@ -47,9 +47,9 @@ export default function Limitless(){
             <div className="w-full md:w-[62%] h-96 md:h-full relative flex flex-col gap-8 items-center justify-center">
                 <Image fill src={sortByAttribute(data?.aboutContents?.nodes[0]?.mediaLine2, "title")[1]?.sourceUrl} className="z-0 object-cover object-left block max-md:hidden"/>
                 <Image fill src={sortByAttribute(data?.aboutContents?.nodes[0]?.mediaLine2, "title")[0]?.sourceUrl} className="z-0 object-cover object-left block md:hidden"/>
-                <div className="flex flex-col items-center justify-center gap-4 ml-16 xl:ml-32 max-md:px-8">
+                <div className="flex flex-col items-center justify-center gap-4 md:ml-16 xl:ml-32 max-md:px-8">
                     {data?.aboutContents?.nodes[0]?.sectionHeading?.map((heading, index) => (
-                        <h2 key={index} className='z-10 text-white font-bold text-2xl xl:text-5xl uppercase text-center'>{heading}</h2>
+                        <h2 key={index} className='z-10 text-white font-bold max-md:text-[1.75rem] text-2xl xl:text-5xl uppercase text-center'>{heading}</h2>
                     ))}
                     <a href="/about-us/limitless" className="bg-white px-6 py-3 rounded-full flex items-center justify-center text-xl z-10 uppercase font-bold text-[#6800b1] hover:text-[#6800b1]/80 shadow-sm hover:shadow-lg">
                         {data?.aboutContents?.nodes[0]?.sectionSubheading.map((text, index) => (<h1 key={index}>{text}</h1>))}
