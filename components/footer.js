@@ -188,7 +188,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className=' w-full h-fit grid-gap-0 lg:basis-[50%] grid lg:grid-cols-2'>
-                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                    <div className=' w-fit h-fit flex flex-col xs:py-2 lg:p-2 test'>
                         <a href='/about-us' className="text-[#fcfcfc] hover:text-nav-orange text-sm uppercase font-bold pb-1">
                             about
                         </a>
@@ -196,7 +196,7 @@ const Footer = () => {
                             <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
                         ))}
                     </div>
-                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                    <div className=' w-fit h-fit flex flex-col xs:py-2 lg:p-2 test'>
                         <a href='/trainings-&-seminars' className="text-[#fcfcfc] hover:text-nav-orange text-sm uppercase font-bold pb-1">
                             events
                         </a>
@@ -204,7 +204,7 @@ const Footer = () => {
                             <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
                         ))}
                     </div>
-                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                    <div className=' w-fit h-fit flex flex-col xs:py-2 lg:p-2 test'>
                         <a href='/products' className="hover:text-nav-orange text-[#fcfcfc] text-sm uppercase font-bold pb-1">
                             our products
                         </a>
@@ -212,7 +212,7 @@ const Footer = () => {
                             <a key={index} className="text-[#e1e1e1]/90 underline-offset-2 hover:underline hover:text-nav-orange text-sm" href={link.link}>{link.name}</a>
                         ))}
                     </div>
-                    <div className=' w-full h-full flex flex-col xs:py-2 lg:p-2'>
+                    <div className=' w-fit h-fit flex flex-col xs:py-2 lg:p-2 test'>
                         <span className="text-[#fcfcfc] text-sm uppercase font-bold pb-1">
                             resources
                         </span>
