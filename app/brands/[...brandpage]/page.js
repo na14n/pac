@@ -23,10 +23,11 @@ export default async function BrandPage({ params, searchParams }) {
                         sourceUrl
                       }
                       description
-                      # mediaLine1{
-                      #  sourceUrl
-                      #  altText
-                      # }
+                      mediaLine1{
+                        link
+                        sourceUrl
+                        altText
+                      }
                       itemCategories{
                         nodes{
                           name
@@ -101,7 +102,7 @@ export default async function BrandPage({ params, searchParams }) {
         <main className="w-full flex flex-col items-center justify-center">
           <div className='w-full h-fit bg-[#121212]'>
             <HeaderTrigger>
-              <Hero heroType={'slider'} title={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].name : 'Brand Name'} mediaArray={[]} />
+              <Hero heroType={'slider'} title={data.data.brands.nodes.length > 0 ? data.data.brands.nodes[0].name : 'Brand Name'} mediaArray={data?.data?.brands?.nodes[0].mediaLine1} />
             </HeaderTrigger>
           </div>
           <div className="w-full h-fit">

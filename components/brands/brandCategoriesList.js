@@ -4,7 +4,7 @@ import Link from 'next/link';
 const BrandCategoriesList = (props) => {
 
     return (
-        <div className=" w-full h-fit flex items-center justify-center gap-4">
+        <div className=" w-full h-fit flex flex-wrap items-center justify-center gap-4">
             <Link
                 href={`/brands/${props.p}`}
                 shallow
