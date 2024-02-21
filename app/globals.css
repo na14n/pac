@@ -74,6 +74,12 @@
   color: rgb(255 120 0);
 }
 
+.a a{
+  color: #FF852F;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
 .b b {
   font-weight: 700;
 }

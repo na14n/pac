@@ -14,7 +14,7 @@ export default async function HowToOrder() {
                 <OrderingDescription />
                 <OrderingStepByStep />
                 {/* <QuotationGUide /> */}
-                {/* <OrderingGuide /> */}
+                <OrderingGuide />
                 {/* <Faq /> */}
             </div>
         </PageWrapper>
