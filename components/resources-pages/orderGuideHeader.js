@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import parse from "html-react-parser"
+import Image from "next/image";
 
 const query = gql`
     query FetchOrderGuideHeader {
@@ -12,6 +13,11 @@ const query = gql`
             nodes {
                 title
                 sectionHeading
+                sectionSubheading
+                mediaLine1{
+                    sourceUrl
+                    altText
+                }
             }
         }
     }
@@ -31,14 +37,21 @@ export default function OrderGuideHeader() {
     );
 
     return (
-        <div className="relative w-full aspect-video md:aspect-[16/3] flex items-center justify-center overflow-hidden z-0">
-            <div className="absolute z-10 t-0 bg-gradient-to-b from-[#F0892B]/90 to-[#E66204]/90 w-full h-full"></div>
-            {/* <div className="absolute z-0 t-0 w-full h-full">
-                <Image width={2400} height={1600} src={mediaUrl ? mediaUrl : 'https://picsum.photos/1920/1080'} className='object-cover' alt="dental-website-banner" />
-            </div> */}
-            <div className="z-20 font-bold text-[#FCFCFC] text-4xl mt-16 uppercase">
-                {data?.contactUsContents?.nodes[0] ? data?.contactUsContents?.nodes[0]?.sectionHeading : 'How to Order'}
+        <section className="relative w-full h-fit aspect-[2/2] md:aspect-[16/5] flex items-center justify-center overflow-hidden z-0">
+            <div className="absolute z-0 t-0 bg-[#ff6100] w-full h-full"></div>
+            <div className="w-full h-full z-10 flex flex-col-reverse items-center justify-center max-md:mt-48">
+                <div className="self-stretch w-full h-full relative">
+                    <Image fill src={data?.contactUsContents?.nodes[0]?.mediaLine1[0] ? data?.contactUsContents?.nodes[0]?.mediaLine1[0]?.sourceUrl : 'https://picsum.photos/1920/1080'} className='object-contain object-left-bottom md:object-left' alt="dental-website-banner" />
+                </div>
+                <div className="md:w-1/2 shrink-0 flex flex-col md:gap-2 items-center">
+                    <h2 className="text-[#FCFCFC] text-3xl xl:text-5xl uppercase w-fit">
+                        {data?.contactUsContents?.nodes[0] ? data?.contactUsContents?.nodes[0]?.sectionHeading : 'Nationwide'}
+                    </h2>
+                    <h1 className="font-bold text-[#FCFCFC] text-4xl xl:text-6xl tracking-wide uppercase w-fit">
+                        {data?.contactUsContents?.nodes[0] ? data?.contactUsContents?.nodes[0]?.sectionSubheading : 'Delivery'}
+                    </h1>
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
