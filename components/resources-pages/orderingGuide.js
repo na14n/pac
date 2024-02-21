@@ -63,9 +63,9 @@ const OrderingGuide = () => {
                     {data?.contactUsContents?.nodes[0]?.sectionSubheading}
                 </h3>
             </div>
-            <div className="flex flex-wrap gap-4 bg-[#F1F1F1] p-2 rounded-md mb-8">
+            <div className="flex items-center justify-center flex-wrap gap-4 w-fit bg-[#F1F1F1] p-2 rounded-md mb-8">
                 {sortByAttribute(data?.orderingOptions?.nodes, "order").map((option, index) => (
-                    <button key={index} className={`p-4 gap-4 rounded-md lg:w-[160px] flex flex-col items-center ${selectedTab === index ? `bg-nav-orange text-[#FCFCFC]` : `text-[#575757]/50 hover:text-nav-orange`}`} onClick={() => handleTabClick(index)}>
+                    <button key={index} className={`p-4 gap-4 rounded-md self-stretch w-[128px] lg:w-[160px] flex flex-col items-center ${selectedTab === index ? `bg-nav-orange text-[#FCFCFC]` : `text-[#575757]/50 hover:text-nav-orange`}`} onClick={() => handleTabClick(index)}>
                         <div className="w-1/3 aspect-square relative">
                             <Image fill src={option?.icon?.sourceUrl} className="object-contain object-center" />
                         </div>
