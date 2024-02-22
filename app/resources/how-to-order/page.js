@@ -2,6 +2,7 @@ import { HeaderTrigger, Hero, QuotationGUide, OrderingGuide, Faq } from "@/compo
 import PageWrapper from "@/components/pageWrapper"
 import OrderingDelivery from "@/components/resources-pages/order-delivery"
 import OrderingDescription from "@/components/resources-pages/order-desc"
+import OrderPayment from "@/components/resources-pages/order-payment"
 import OrderingStepByStep from "@/components/resources-pages/order-stepbystep"
 import OrderGuideHeader from "@/components/resources-pages/orderGuideHeader"
 
@@ -16,7 +17,8 @@ export default async function HowToOrder() {
                 <OrderingStepByStep />
                 <OrderingGuide />
                 <OrderingDelivery />
-                {/* <Faq /> */}
+                <OrderPayment />
+                <Faq />
             </div>
         </PageWrapper>
     )

@@ -9,8 +9,8 @@ import { Icon } from "@iconify-icon/react";
 import FaqItem from "./faqItem";
 
 const query = gql`
-    query FetchOrderingFaq {
-        contactUsContents(where: {search: "faq"}) {
+    query FetchOrderFaq {
+        contactUsContents(where: {search: "order-faq"}) {
             nodes {
                 title
                 sectionHeading
@@ -22,25 +22,6 @@ const query = gql`
 `
 
 const Faq = () => {
-
-    // const placeholder = [
-    //     {
-    //         q: 'Question One?',
-    //         a: 'Answer One'
-    //     },
-    //     {
-    //         q: 'Question Two?',
-    //         a: 'Answer Two'
-    //     },
-    //     {
-    //         q: 'Question Three?',
-    //         a: 'Answer Three'
-    //     },
-    //     {
-    //         q: 'Question Four?',
-    //         a: 'Answer Four'
-    //     },
-    // ]
 
     const { data } = useSuspenseQuery(
         query,
