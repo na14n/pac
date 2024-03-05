@@ -93,8 +93,8 @@ export default function OrderPayment() {
                             </div>
                             <p className="text-sm font-bold text-[#272727] text-center max-w-[40ch]">{node?.sectionSubheading}</p>
                             {node.contentLine1.map((content, index) => (
-                                <div className=" w-full h-fit self-stretch flex items-center justify-center">
-                                    <div key={index} className="relative w-full aspect-[3/2]">
+                                <div key={index} className=" w-full h-fit self-stretch flex items-center justify-center">
+                                    <div className="relative w-full aspect-[3/2]">
                                         <Image fill src={node?.mediaLine2[index].sourceUrl} className="object-contain object-center" />
                                     </div>
                                     <div className="p b a link list  w-[30ch] shrink-0">{parse(content)}</div>
