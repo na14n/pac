@@ -57,7 +57,7 @@ export default function OrderingStepByStep() {
                     </div>
                     <div className="flex flex-col w-full h-fit gap-1 group-last:items-center">
                         <h4 className="font-bold text-pac-orange capitalize text-xl group-last:text-2xl">{data?.contactUsContents?.nodes[0]?.sectionSubheading[index]}</h4>
-                        <span className="b text-sm font-semibold text-[#373737] group-last:text-center">{parse(content)}</span>
+                        <span className="b text-sm font-semibold text-[#373737] group-last:text-center text-justify">{parse(content)}</span>
                     </div>
                 </motion.div>
             ))}

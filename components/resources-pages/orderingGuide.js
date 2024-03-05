@@ -55,11 +55,11 @@ const OrderingGuide = () => {
 
     return (
         <div className="w-full h-full flex flex-col justify-center 2xl:justify-start items-center bg-gradient-to-b from-[#F9A03C] to-[#EF6703] gap-8 xl:gap-12 py-12 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 2xl:py-32">
-            <div className="flex flex-col items-center justify-center gap-2">
-                <h1 className="w-fit h-fit text-3xl 2xl:text-6xl text-white font-bold uppercase text-center">
+            <div className="flex flex-col items-center justify-center gap-4">
+                <h1 className="w-fit h-fit text-3xl 2xl:text-6xl text-white font-black uppercase text-center">
                     {data?.contactUsContents?.nodes[0]?.sectionHeading}
                 </h1>
-                <h3 className="w-fit h-fit text-xl text-[#FCFCFC] text-center">
+                <h3 className="w-fit h-fit text-xl 2xl:text-3xl font-bold text-[#FCFCFC] text-center">
                     {data?.contactUsContents?.nodes[0]?.sectionSubheading}
                 </h3>
             </div>
