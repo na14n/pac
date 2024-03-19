@@ -35,12 +35,12 @@ export default function OrderingDescription() {
     return (
         <section className="relative w-full h-fit py-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48 flex flex-col gap-8 items-center justify-center overflow-hidden z-0">
             {data?.contactUsContents?.nodes[0]?.contentLine1.map((content, index) => (
-                <span className="p text-justify" key={index}>
+                <span className="text-justify text-lg 2xl:text-xl" key={index}>
                     {parse(content)}
                 </span>
             ))}
             {data?.contactUsContents?.nodes[0]?.contentLine2.map((content, index) => (
-                <span className="text-center font-bold" key={index}>
+                <span className="text-center font-bold text-xl 2xl:text-2xl" key={index}>
                     {parse(content)}
                 </span>
             ))}
