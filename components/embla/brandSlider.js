@@ -64,8 +64,8 @@ export const BrandSlider = () => {
             </button>
             <div className="embla__viewport self-center h-full xs:w-[15rem] md:w-[30rem] lg:w-[38rem] 2xl:w-[46rem] overflow-hidden" ref={emblaRef}>
                 {/* Between Slides */}
-                <div className="h-full touch-pan-y flex gap-8 z-40 py-4 px-8">
-                    {arrayOfArrays.map((w, index) => (                        <div key={index} className=' xs:flex-[0_0_14rem] md:flex-[0_0_29rem] lg:flex-[0_0_37rem] 2xl:flex-[0_0_45rem] min-w-0 relative h-full grid xs:grid-auto-fit-[6rem] lg:grid-auto-fit-[6rem] 2xl:grid-auto-fit-[8rem] gap-2 justify-items-center z-40'>
+                <div className="h-full touch-pan-y flex z-40 py-4">
+                    {arrayOfArrays.map((w, index) => (                        <div key={index} className=' xs:flex-[0_0_15rem] md:flex-[0_0_30rem] lg:flex-[0_0_38rem] 2xl:flex-[0_0_46rem] min-w-0 relative h-full grid xs:grid-auto-fit-[6rem] lg:grid-auto-fit-[6rem] 2xl:grid-auto-fit-[8rem] gap-2 justify-items-center z-40 px-4'>
                             {w.map((c, index) => (
                                 <a key={index} className=' bg-[#FCFCFC] w-28 md:w-[5rem] lg:w-24 xl:w-28 2xl:w-32 aspect-square p-2 flex flex-col justify-center items-center rounded-md shadow-md hover:-translate-y-1 hover:shadow-lg transition-all border-2 border-[#979797]/60 hover:border-pac-green relative z-40 overflow-hidden' href={`/brands/${slugFormatter(c.name, false, true)}`}>
                                     <Image fill={true} className='object-contain object-center p-2' src={c.logo.link ? c.logo.link : 'https://picsum.photos/2400'} alt="dental-product-brand" />
